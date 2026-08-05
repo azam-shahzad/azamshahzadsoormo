@@ -1,0 +1,22 @@
+LOCKED GAME PROJECT ORDER
+
+01. Fashion Store Simulator 3D -> assets/images/games/fashion-store-simulator-3d/cover.jpg
+02. Ludo World -> assets/images/games/ludo-world/cover.jpg
+03. Fashion Game -> assets/images/games/fashion-game/cover.jpg
+04. Tattoo Games -> assets/images/games/tattoo-games/cover.jpg
+05. Bubble Buster 2048 -> assets/images/games/bubble-buster-2048/cover.jpg
+06. Merge the Number -> assets/images/games/merge-the-number/cover.jpg
+07. Art ASMR Tattoo -> assets/images/games/art-asmr-tattoo/cover.jpg
+08. Ball Sort -> assets/images/games/ball-sort/cover.jpg
+09. Car Sort Puzzle -> assets/images/games/car-sort-puzzle/cover.jpg
+10. Dress up Styles -> assets/images/games/dress-up-styles/cover.jpg
+11. Find the Difference -> assets/images/games/find-the-difference-01/cover.jpg
+12. Bubble Shooter Pop -> assets/images/games/bubble-shooter-pop/cover.jpg
+13. Classic Sudoku Puzzle -> assets/images/games/classic-sudoku-puzzle/cover.jpg
+14. Connect the Dots -> assets/images/games/connect-the-dots/cover.jpg
+15. Tic Tac Toe -> assets/images/games/tic-tac-toe/cover.jpg
+16. Water Sort Puzzle -> assets/images/games/water-sort-puzzle/cover.jpg
+17. Find the Difference -> assets/images/games/find-the-difference-02/cover.jpg
+18. Triple Match Goods -> assets/images/games/triple-match-goods/cover.jpg
+
+Future game cards must start from #19 and be appended after Triple Match Goods. Do not reorder #1–#18.

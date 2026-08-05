@@ -1,0 +1,59 @@
+PERMANENT GAME PROJECT IMAGE STRUCTURE
+
+01. Fashion Store Simulator 3D
+    Thumbnail: assets/images/games/01-fashion-store-simulator-3d/cover.jpg
+    Gallery:   assets/images/games/01-fashion-store-simulator-3d/01.jpg ... 06.jpg
+02. Ludo World
+    Thumbnail: assets/images/games/02-ludo-world/cover.jpg
+    Gallery:   assets/images/games/02-ludo-world/01.jpg ... 06.jpg
+03. Fashion Game
+    Thumbnail: assets/images/games/03-fashion-game/cover.jpg
+    Gallery:   assets/images/games/03-fashion-game/01.jpg ... 06.jpg
+04. Tattoo Games
+    Thumbnail: assets/images/games/04-tattoo-games/cover.jpg
+    Gallery:   assets/images/games/04-tattoo-games/01.jpg ... 06.jpg
+05. Bubble Buster 2048
+    Thumbnail: assets/images/games/05-bubble-buster-2048/cover.jpg
+    Gallery:   assets/images/games/05-bubble-buster-2048/01.jpg ... 06.jpg
+06. Merge the Number
+    Thumbnail: assets/images/games/06-merge-the-number/cover.jpg
+    Gallery:   assets/images/games/06-merge-the-number/01.jpg ... 06.jpg
+07. Art ASMR Tattoo
+    Thumbnail: assets/images/games/07-art-asmr-tattoo/cover.jpg
+    Gallery:   assets/images/games/07-art-asmr-tattoo/01.jpg ... 06.jpg
+08. Ball Sort
+    Thumbnail: assets/images/games/08-ball-sort/cover.jpg
+    Gallery:   assets/images/games/08-ball-sort/01.jpg ... 06.jpg
+09. Car Sort Puzzle
+    Thumbnail: assets/images/games/09-car-sort-puzzle/cover.jpg
+    Gallery:   assets/images/games/09-car-sort-puzzle/01.jpg ... 06.jpg
+10. Dress up Styles
+    Thumbnail: assets/images/games/10-dress-up-styles/cover.jpg
+    Gallery:   assets/images/games/10-dress-up-styles/01.jpg ... 06.jpg
+11. Find the Difference
+    Thumbnail: assets/images/games/11-find-the-difference/cover.jpg
+    Gallery:   assets/images/games/11-find-the-difference/01.jpg ... 06.jpg
+12. Bubble Shooter Pop
+    Thumbnail: assets/images/games/12-bubble-shooter-pop/cover.jpg
+    Gallery:   assets/images/games/12-bubble-shooter-pop/01.jpg ... 06.jpg
+13. Classic Sudoku Puzzle
+    Thumbnail: assets/images/games/13-classic-sudoku-puzzle/cover.jpg
+    Gallery:   assets/images/games/13-classic-sudoku-puzzle/01.jpg ... 06.jpg
+14. Connect the Dots
+    Thumbnail: assets/images/games/14-connect-the-dots/cover.jpg
+    Gallery:   assets/images/games/14-connect-the-dots/01.jpg ... 06.jpg
+15. Tic Tac Toe
+    Thumbnail: assets/images/games/15-tic-tac-toe/cover.jpg
+    Gallery:   assets/images/games/15-tic-tac-toe/01.jpg ... 06.jpg
+16. Water Sort Puzzle
+    Thumbnail: assets/images/games/16-water-sort-puzzle/cover.jpg
+    Gallery:   assets/images/games/16-water-sort-puzzle/01.jpg ... 06.jpg
+17. Find the Difference
+    Thumbnail: assets/images/games/17-find-the-difference/cover.jpg
+    Gallery:   assets/images/games/17-find-the-difference/01.jpg ... 06.jpg
+18. Triple Match Goods
+    Thumbnail: assets/images/games/18-triple-match-goods/cover.jpg
+    Gallery:   assets/images/games/18-triple-match-goods/01.jpg ... 06.jpg
+
+FUTURE PROJECTS:
+Start from 19-project-name, then 20-project-name, etc. Never reorder 01-18.

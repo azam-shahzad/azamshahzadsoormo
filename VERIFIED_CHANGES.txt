@@ -1,0 +1,6 @@
+v2.6.35 VERIFIED
+1. Home > Explore My Work category icon is removed from the JavaScript render source.
+2. Category JPG thumbnails remain intact.
+3. All 18 game cards retain their locked order.
+4. Game card purple-circle icon uses a thin white outline SVG, not an emoji/heavy filled icon.
+5. No approved navigation, banner, card order, or category thumbnail paths were changed.

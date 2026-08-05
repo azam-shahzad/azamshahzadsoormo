@@ -1,0 +1,7 @@
+VERIFIED v2.6.37
+- Game Project card icon container removed from JavaScript render source.
+- No icon/circle is rendered beside project title.
+- Project title, subtitle and description are left aligned.
+- Home Explore My Work overlay icons remain removed.
+- Existing 18 game project order remains unchanged.
+- No navigation/banner/category thumbnail path changes were made.

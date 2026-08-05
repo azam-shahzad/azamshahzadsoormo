@@ -1439,3 +1439,99 @@ border-color:rgba(104,70,241,.28)!important;box-shadow:none!important;transform:
 .catgrid [data-cat] .catart > *,
 .catgrid [data-cat] .cat-art > *,
 .catgrid [data-cat] .category-art > *{visibility:hidden!important}
+
+/* v2.6.33 — Home category thumbnails: image only, no overlay icons */
+.catgrid [data-cat] .catart > *,
+.catgrid [data-cat] .cat-art > *,
+.catgrid [data-cat] .category-art > *{
+  display:none!important;
+}
+
+/* Game project circular icon: clean white vector line icon */
+.project-card .project-icon,
+.project-card .picon,
+.project-card .project-ico{
+  color:#fff!important;
+}
+.project-card .project-icon svg,
+.project-card .picon svg,
+.project-card .project-ico svg{
+  width:24px!important;
+  height:24px!important;
+  fill:none!important;
+  stroke:#fff!important;
+  stroke-width:2!important;
+  stroke-linecap:round!important;
+  stroke-linejoin:round!important;
+}
+
+/* v2.6.34 exact fixes */
+
+/* Home Explore My Work: absolutely no overlay icon/text inside thumbnail. */
+#cats .catcard .catart{
+  font-size:0!important;
+  color:transparent!important;
+  text-shadow:none!important;
+}
+#cats .catcard .catart::before,
+#cats .catcard .catart::after{
+  content:none!important;
+  display:none!important;
+}
+
+/* Game cards: thin, clean, white outline icon inside existing purple circle. */
+#projects .project-round-icon{
+  display:inline-flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  font-size:0!important;
+}
+#projects .project-round-icon .game-line-icon{
+  width:25px!important;
+  height:25px!important;
+  display:block!important;
+  fill:none!important;
+  stroke:#fff!important;
+  stroke-width:1.55!important;
+  stroke-linecap:round!important;
+  stroke-linejoin:round!important;
+}
+#projects .project-round-icon .game-line-icon circle{
+  fill:#fff!important;
+  stroke:none!important;
+}
+
+/* v2.6.36 — Elegant gamepad icon based on approved reference */
+#projects .project-round-icon .game-elegant-icon{
+  width:29px!important;
+  height:22px!important;
+  display:block!important;
+}
+#projects .project-round-icon .game-elegant-icon .pad-body{
+  fill:#fff!important;
+  stroke:none!important;
+}
+#projects .project-round-icon .game-elegant-icon .cut{
+  fill:#7448ff!important;
+  stroke:none!important;
+}
+
+/* v2.6.37 — Game Project cards: NO ICON, clean left-aligned text */
+#projects .project-round-icon{
+  display:none!important;
+}
+#projects .project-title,
+#projects .project-title-wrap,
+#projects .project-head,
+#projects .project-meta,
+#projects .project-card h3,
+#projects .project-card .sub,
+#projects .project-card p{
+  text-align:left!important;
+}
+#projects .project-head,
+#projects .project-title-wrap,
+#projects .project-meta{
+  justify-content:flex-start!important;
+  align-items:flex-start!important;
+}
