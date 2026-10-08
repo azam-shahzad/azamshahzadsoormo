@@ -30,7 +30,13 @@ if len(parts) != 3:
 lst = os.path.join(OUT, 'tmp', 'parts.txt')
 with open(lst, 'w') as f:
     f.writelines(f"file '{p}'\n" for p in parts)
-run('ffmpeg', '-y', '-loglevel', 'error', '-f', 'concat', '-safe', '0', '-i', lst, '-c', 'copy', '-movflags', '+faststart', SILENT)
+MASTER = os.path.join(OUT, 'tmp', 'master.mp4')   # CRF 16 render master (~160 MB, not committed)
+run('ffmpeg', '-y', '-loglevel', 'error', '-f', 'concat', '-safe', '0', '-i', lst, '-c', 'copy', MASTER)
+# delivery encode: two-pass 12 Mb/s keeps each file well under GitHub's 100 MB limit
+x264 = ['-c:v', 'libx264', '-preset', 'slow', '-b:v', '12M', '-maxrate', '18M', '-bufsize', '24M', '-pix_fmt', 'yuv420p']
+passlog = os.path.join(OUT, 'tmp', 'x264pass')
+run('ffmpeg', '-y', '-loglevel', 'error', '-i', MASTER, *x264, '-pass', '1', '-passlogfile', passlog, '-an', '-f', 'mp4', os.devnull)
+run('ffmpeg', '-y', '-loglevel', 'error', '-i', MASTER, *x264, '-pass', '2', '-passlogfile', passlog, '-an', '-movflags', '+faststart', SILENT)
 
 # two-pass loudness normalisation to -14 LUFS / -1.5 dBTP, with a 28 Hz high-pass for rumble
 af = 'highpass=f=28,loudnorm=I=-14:TP=-1.5:LRA=11'
@@ -47,7 +53,7 @@ for old in glob.glob(os.path.join(OUT, 'stills', 'f*.*')):
     os.remove(old)
 for t in KEY_TIMES:
     frame = round(t * 30)
-    run('ffmpeg', '-y', '-loglevel', 'error', '-i', SILENT, '-vf', f'select=eq(n\\,{frame})', '-vframes', '1',
+    run('ffmpeg', '-y', '-loglevel', 'error', '-i', MASTER, '-vf', f'select=eq(n\\,{frame})', '-vframes', '1',
         '-q:v', '2', os.path.join(OUT, 'stills', f'f{frame:04d}.jpg'))
 run(sys.executable, os.path.join(ROOT, 'render', 'contact_sheet.py'), os.path.join(OUT, 'stills'), os.path.join(OUT, 'contact_sheet.jpg'), '4')
 

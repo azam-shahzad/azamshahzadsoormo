@@ -225,12 +225,12 @@ export function drawIdeaNote(ctx, x, y, w, h) {
 export function drawFocus(ctx, x, y, w, h, { time = '10:00 AM – 12:00 PM', conflict = false, protectedOk = false } = {}) {
   rr(ctx, x, y, w, h, 0.06); ctx.fillStyle = C.yellow; ctx.fill();
   if (conflict) { ctx.setLineDash([0.04, 0.03]); ctx.lineWidth = 0.012; ctx.strokeStyle = C.ink; rr(ctx, x + 0.012, y + 0.012, w - 0.024, h - 0.024, 0.05); ctx.stroke(); ctx.setLineDash([]); }
-  txt(ctx, 'FOCUS', x + 0.1, y + 0.13, 0.058, { weight: 700, spacing: 0.1 });
-  txt(ctx, 'Q3 report', x + 0.1, y + 0.27, 0.11, { weight: 700 });
-  txt(ctx, time, x + 0.1, y + 0.39, 0.074, { weight: 550, color: '#4A3F14' });
-  if (conflict) txt(ctx, 'Overlaps Dentist 3:30', x + 0.1, y + h - 0.08, 0.066, { weight: 600, color: '#4A3F14' });
+  txt(ctx, 'FOCUS', x + 0.1, y + 0.115, 0.056, { weight: 700, spacing: 0.1 });
+  txt(ctx, 'Q3 report', x + 0.1, y + 0.235, 0.105, { weight: 700 });
+  txt(ctx, time, x + 0.1, y + 0.335, 0.07, { weight: 550, color: '#4A3F14' });
+  if (conflict) txt(ctx, 'Overlaps Dentist 3:30', x + 0.1, y + h - 0.075, 0.064, { weight: 600, color: '#4A3F14' });
   if (protectedOk) {
-    const cw = 0.56, ch = 0.15, cx = x + 0.1, cy = y + h - ch - 0.06;
+    const cw = 0.56, ch = 0.14, cx = x + 0.1, cy = y + h - ch - 0.045;
     rr(ctx, cx, cy, cw, ch, ch / 2); ctx.fillStyle = C.ink; ctx.fill();
     ctx.beginPath(); ctx.arc(cx + 0.08, cy + ch / 2, 0.042, 0, Math.PI * 2); ctx.fillStyle = C.green; ctx.fill();
     check(ctx, cx + 0.08, cy + ch / 2, 0.045, C.ink, 0.011);
