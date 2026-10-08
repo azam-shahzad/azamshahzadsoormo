@@ -1,0 +1,12 @@
+{
+  "name": "daypilot-3d",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "render": "node render/render.mjs",
+    "audio": "python3 audio/score.py"
+  },
+  "dependencies": {
+    "three": "0.186.1"
+  }
+}
