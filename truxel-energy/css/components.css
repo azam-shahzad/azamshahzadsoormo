@@ -670,6 +670,45 @@ a.b-card:hover, .b-card:hover { transform: translateY(-4px); box-shadow: var(--s
 .itile__value sup { font-size: .42em; vertical-align: top; position: relative; top: .18em; margin-left: 2px; color: var(--c-green); }
 .itile__label { font-size: var(--fs-sm); color: color-mix(in srgb, var(--c-on-night) 80%, transparent); }
 
+/* =====================================================================
+   v2.10 — Why Nebula: control hub + glass reason cards
+   ===================================================================== */
+.why .head h2 .accent { color: var(--c-green); }
+.why__grid { display: grid; gap: var(--sp-6); grid-template-columns: 1fr; align-items: center; }
+@media (min-width: 1000px) { .why__grid { grid-template-columns: 1fr 1.25fr 1fr; gap: var(--sp-5); } }
+.why__grid > * { min-width: 0; }
+@media (max-width: 999px) { .hub { order: -1; } }
+.wcard {
+  display: grid; gap: var(--sp-4); padding: var(--sp-7) var(--sp-6); border-radius: var(--r-lg); overflow: hidden;
+  background: linear-gradient(160deg, color-mix(in srgb, var(--c-night-2) 90%, transparent), color-mix(in srgb, var(--c-night) 70%, transparent));
+  border: 1px solid var(--c-night-line); box-shadow: 0 30px 60px -40px rgba(0, 0, 0, .8);
+  transition: transform var(--dur) var(--ease), border-color var(--dur) var(--ease);
+}
+.wcard:hover { transform: translateY(-6px); border-color: color-mix(in srgb, var(--c-green) 55%, transparent); }
+.wcard__top { display: flex; align-items: center; justify-content: space-between; }
+.wcard__top svg { width: 56px; height: 56px; padding: 10px; border-radius: 16px; color: var(--c-green); background: color-mix(in srgb, var(--c-green) 12%, transparent); }
+.wcard__num { font: 400 var(--fs-3xl)/1 var(--font-sans); letter-spacing: -0.05em; color: transparent; -webkit-text-stroke: 1px color-mix(in srgb, var(--c-green) 55%, transparent); }
+.wcard h3 { font-size: var(--fs-xl); color: var(--c-on-night); }
+.wcard p { color: var(--c-on-night-2); }
+.hub { width: 100%; max-width: 540px; margin-inline: auto; }
+.hub svg { width: 100%; height: auto; overflow: visible; }
+.hub__ring circle { fill: none; stroke: var(--c-night-line); stroke-width: 1.2; stroke-dasharray: 4 8; }
+.hub__ring { transform-origin: 260px 260px; transform-box: view-box; animation: spin 60s linear infinite; }
+.hub__ring--b { animation-duration: 40s; animation-direction: reverse; }
+.hub__orbit { transform-origin: 260px 260px; transform-box: view-box; animation: spin 14s linear infinite; }
+.hub__orbit circle { fill: var(--c-green); filter: drop-shadow(0 0 6px var(--c-green)); }
+.hub__spoke { stroke: var(--c-night-line); stroke-width: 1.2; }
+.hub__pulse { stroke: var(--c-green); stroke-width: 2; stroke-linecap: round; stroke-dasharray: 18 200; animation: hubflow 2.4s linear infinite; filter: drop-shadow(0 0 5px var(--c-green)); }
+@keyframes hubflow { from { stroke-dashoffset: 218; } to { stroke-dashoffset: 0; } }
+.hub__core { fill: var(--c-night-2); stroke: color-mix(in srgb, var(--c-green) 70%, transparent); stroke-width: 1.5; filter: drop-shadow(0 0 24px color-mix(in srgb, var(--c-green) 55%, transparent)); }
+.hub__bar { fill: var(--c-on-night); }
+.hub__bar--g { fill: var(--c-green); }
+.hub__nodebg { fill: var(--c-night-2); stroke: var(--c-night-line); stroke-width: 1.2; transition: stroke var(--dur) var(--ease); }
+.hub__nodeicon { fill: none; stroke: var(--c-green); stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+.hub__label { fill: var(--c-on-night-2); font: 500 12px var(--font-data); letter-spacing: .04em; }
+.hub__node { transition: transform var(--dur) var(--ease); }
+.hub:hover .hub__nodebg { stroke: color-mix(in srgb, var(--c-green) 60%, transparent); }
+
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
 }
