@@ -100,33 +100,52 @@
 </section>
 
 <!-- ===================== SERVICES ===================== -->
-<section class="section" id="services" style="padding-top:0">
-  <div class="container">
-    <div class="head" data-reveal>
+<section class="section svc" id="services">
+  <div class="container svc__grid">
+    <div class="svc__left">
       <span class="eyebrow">Our services</span>
-      <h2>Explore our services.</h2>
+      <h2>Explore our <span class="accent">services.</span></h2>
+      <div class="svc__list">
+      <div class="svc__item is-active" data-svc="0">
+        <button class="svc__btn" type="button" aria-expanded="true" aria-controls="svc-body-0" id="svc-btn-0">
+          <span class="svc__icon"><svg  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 17l5-5 4 3 7-8"/><path d="M15 7h4v4"/><path d="M3 21h18"/></svg></span>
+          <span class="svc__title">Revenue Generation</span>
+          <span class="svc__chev" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span>
+        </button>
+        <div class="svc__body" id="svc-body-0" role="region" aria-labelledby="svc-btn-0">
+          <div><p>Operate across spot, intraday, and ancillary markets as one coordinated system.</p><a class="b-link" href="#contact">Start a conversation <span aria-hidden="true">→</span></a></div>
+        </div>
+        <span class="svc__bar" aria-hidden="true"></span>
+      </div>
+      <div class="svc__item" data-svc="1">
+        <button class="svc__btn" type="button" aria-expanded="false" aria-controls="svc-body-1" id="svc-btn-1">
+          <span class="svc__icon"><svg  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 16c3 0 4-8 7-8s3 6 5 6 2-3 4-3 2 2 4 2"/><path d="M2 6h20" stroke-dasharray="2 3"/></svg></span>
+          <span class="svc__title">Peak &amp; Demand Management</span>
+          <span class="svc__chev" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span>
+        </button>
+        <div class="svc__body" id="svc-body-1" role="region" aria-labelledby="svc-btn-1">
+          <div><p>Reduce peaks, manage demand, and limit grid exposure through real time control.</p><a class="b-link" href="#contact">Start a conversation <span aria-hidden="true">→</span></a></div>
+        </div>
+        <span class="svc__bar" aria-hidden="true"></span>
+      </div>
+      <div class="svc__item" data-svc="2">
+        <button class="svc__btn" type="button" aria-expanded="false" aria-controls="svc-body-2" id="svc-btn-2">
+          <span class="svc__icon"><svg  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M4.9 19.1 7 17M17 7l2.1-2.1"/></svg></span>
+          <span class="svc__title">Asset Optimization</span>
+          <span class="svc__chev" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span>
+        </button>
+        <div class="svc__body" id="svc-body-2" role="region" aria-labelledby="svc-btn-2">
+          <div><p>Balancing cost, revenue, and asset health within defined limits.</p><a class="b-link" href="#contact">Start a conversation <span aria-hidden="true">→</span></a></div>
+        </div>
+        <span class="svc__bar" aria-hidden="true"></span>
+      </div>
+      </div>
     </div>
-    <div class="services">
-      <a class="service service--card spot" href="#contact" data-reveal>
-        <svg class="service__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 17l5-5 4 3 7-8"/><path d="M15 7h4v4"/><path d="M3 21h18"/></svg>
-        <h3>Revenue Generation</h3>
-        <p>Operate across spot, intraday, and ancillary markets as one coordinated system.</p>
-        <svg class="service__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg>
-      </a>
-      <a class="service service--card spot" href="#contact" data-reveal>
-        <svg class="service__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 16c3 0 4-8 7-8s3 6 5 6 2-3 4-3 2 2 4 2"/><path d="M2 6h20" stroke-dasharray="2 3"/></svg>
-        <h3>Peak &amp; Demand Management</h3>
-        <p>Reduce peaks, manage demand, and limit grid exposure through real time control.</p>
-        <svg class="service__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg>
-      </a>
-      <a class="service service--card spot" href="#contact" data-reveal>
-        <svg class="service__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M4.9 19.1 7 17M17 7l2.1-2.1"/></svg>
-        <h3>Asset Optimization</h3>
-        <p>Balancing cost, revenue, and asset health within defined limits.</p>
-        <svg class="service__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg>
-      </a>
+    <div class="svc__media spot" data-reveal>
+      <img class="svc__img is-active" data-svc="0" src="assets/img/energy-wave.jpg" alt="Abstract wave of blue light representing energy markets" loading="lazy"><img class="svc__img" data-svc="1" src="assets/img/ev-depot.jpg" alt="Electric bus depot with chargers and battery storage containers" loading="lazy"><img class="svc__img" data-svc="2" src="assets/img/solar-field.jpg" alt="Solar farm on a green hillside" loading="lazy">
+      <span class="svc__caption"><span class="b-tag__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 3 6 13h5l-1 8 7-10h-5z"/></svg></span><span id="svcCaption">Revenue Generation</span></span>
+      <a class="svc__cta" href="#contact" aria-label="Start a conversation"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M3.5 10.5l7-7M5 3.5h5.5V9"/></svg></a>
     </div>
-    <div class="actions"><a class="btn btn--light" href="#contact">Start a conversation <span class="btn__icon"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M3.5 10.5l7-7M5 3.5h5.5V9"/></svg></span></a></div>
   </div>
 </section>
 

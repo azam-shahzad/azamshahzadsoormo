@@ -103,3 +103,24 @@
     el.style.setProperty("--my", (e.clientY - r.top) + "px");
   }, { passive: true });
 })();
+
+/* Services: expand one row and swap the photo */
+(function () {
+  var items = Array.prototype.slice.call(document.querySelectorAll(".svc__item"));
+  if (!items.length) return;
+  var imgs = document.querySelectorAll(".svc__img");
+  var cap = document.getElementById("svcCaption");
+  function activate(i) {
+    items.forEach(function (it, k) {
+      var on = k === i;
+      it.classList.toggle("is-active", on);
+      it.querySelector(".svc__btn").setAttribute("aria-expanded", String(on));
+    });
+    Array.prototype.forEach.call(imgs, function (im, k) { im.classList.toggle("is-active", k === i); });
+    if (cap) cap.textContent = items[i].querySelector(".svc__title").textContent;
+  }
+  items.forEach(function (it, i) {
+    it.querySelector(".svc__btn").addEventListener("click", function () { activate(i); });
+    it.addEventListener("mouseenter", function () { if (window.matchMedia("(hover: hover)").matches) activate(i); });
+  });
+})();

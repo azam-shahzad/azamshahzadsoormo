@@ -539,6 +539,51 @@ a.b-card:hover, .b-card:hover { transform: translateY(-4px); box-shadow: var(--s
 
 .ticker__title { font-size: var(--fs-2xl); margin-inline: auto; max-width: none; }
 
+/* =====================================================================
+   v2.7 — Interactive services: expandable rows + cross-fading photo
+   ===================================================================== */
+.svc__grid { display: grid; gap: var(--sp-7); grid-template-columns: 1fr; align-items: stretch; }
+@media (min-width: 960px) { .svc__grid { grid-template-columns: 1fr 1.05fr; gap: var(--sp-9); } }
+.svc__grid > * { min-width: 0; }
+.svc__left { display: grid; gap: var(--sp-4); align-content: start; }
+.svc__left h2 { font-size: var(--fs-2xl); margin-bottom: var(--sp-5); }
+.svc__list { display: grid; border-top: 1px solid var(--c-line); }
+.svc__item { position: relative; border-bottom: 1px solid var(--c-line); }
+.svc__btn {
+  width: 100%; display: flex; align-items: center; gap: var(--sp-4); padding: var(--sp-5) 0;
+  background: none; border: 0; cursor: pointer; text-align: left; color: var(--c-ink); font: inherit;
+}
+.svc__icon { flex: none; width: 56px; height: 56px; border-radius: 16px; display: grid; place-items: center; background: var(--c-surface); border: 1px solid var(--c-line); color: var(--c-ink-2); transition: all var(--dur) var(--ease); }
+.svc__icon svg { width: 26px; height: 26px; }
+.svc__title { flex: 1; font-size: var(--fs-xl); font-weight: 500; letter-spacing: -0.02em; line-height: 1.2; color: var(--c-ink-3); transition: color var(--dur) var(--ease); }
+.svc__chev { flex: none; width: 40px; height: 40px; border-radius: 50%; display: grid; place-items: center; border: 1px solid var(--c-line); color: var(--c-ink-2); transition: transform var(--dur) var(--ease), background var(--dur) var(--ease), color var(--dur) var(--ease), border-color var(--dur) var(--ease); }
+.svc__chev svg { width: 16px; height: 16px; }
+.svc__btn:hover .svc__title { color: var(--c-ink); }
+.svc__btn:hover .svc__icon { border-color: var(--c-green-text); color: var(--c-green-text); }
+.svc__body { display: grid; grid-template-rows: 0fr; transition: grid-template-rows .45s var(--ease); }
+.svc__body > div { overflow: hidden; display: grid; gap: var(--sp-3); padding-left: calc(56px + var(--sp-4)); }
+.svc__body p { color: var(--c-ink-2); font-size: var(--fs-md); }
+.svc__body .b-link { color: var(--c-green-text); margin-bottom: var(--sp-5); }
+.svc__bar { position: absolute; left: 0; bottom: -1px; height: 2px; width: 0; background: var(--c-green-text); transition: width .6s var(--ease); }
+.svc__item.is-active .svc__body { grid-template-rows: 1fr; }
+.svc__item.is-active .svc__title { color: var(--c-ink); }
+.svc__item.is-active .svc__icon { background: var(--c-green); border-color: var(--c-green); color: var(--c-green-ink); transform: rotate(-6deg); }
+.svc__item.is-active .svc__chev { transform: rotate(45deg); background: var(--c-ink); border-color: var(--c-ink); color: var(--c-bg); }
+.svc__item.is-active .svc__bar { width: 100%; }
+.svc__media { position: relative; min-height: 420px; border-radius: var(--r-lg); overflow: hidden; background: var(--c-night); box-shadow: var(--shadow-card); }
+@media (min-width: 960px) { .svc__media { min-height: 560px; } }
+.svc__img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transform: scale(1.08); transition: opacity .7s var(--ease), transform 1.4s var(--ease); }
+.svc__img.is-active { opacity: 1; transform: scale(1); }
+.svc__media::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 55%, rgba(6, 29, 39, .65)); pointer-events: none; z-index: 1; }
+.svc__caption {
+  position: absolute; z-index: 3; left: var(--sp-5); bottom: var(--sp-5); display: inline-flex; align-items: center; gap: var(--sp-3);
+  padding: 8px 18px 8px 8px; border-radius: var(--r-pill); font-weight: 500; color: var(--c-ink);
+  background: color-mix(in srgb, var(--c-surface) 75%, transparent); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+}
+.svc__cta { position: absolute; z-index: 3; right: var(--sp-5); bottom: var(--sp-5); width: 56px; height: 56px; border-radius: 50%; display: grid; place-items: center; background: var(--c-green); color: var(--c-green-ink); transition: transform var(--dur) var(--ease); }
+.svc__cta svg { width: 18px; height: 18px; }
+.svc__cta:hover { transform: rotate(45deg) scale(1.06); }
+
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
 }
