@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Truxel Style Guide</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="css/tokens.css">
+<link rel="stylesheet" href="css/components.css">
+<style>
+  /* Style-guide-only layout helpers (not part of the locked system) */
+  .sg-block { display: grid; gap: var(--sp-5); padding-block: var(--sp-8); border-bottom: 1px solid var(--c-line); }
+  .sg-swatches { display: grid; gap: var(--sp-4); grid-template-columns: repeat(auto-fill, minmax(min(100%, 170px), 1fr)); }
+  .sg-swatch { border: 1px solid var(--c-line); border-radius: var(--r-md); overflow: hidden; background: var(--c-surface); }
+  .sg-swatch__chip { height: 88px; }
+  .sg-swatch__meta { padding: var(--sp-3); display: grid; gap: 2px; font-size: var(--fs-xs); }
+  .sg-swatch__meta b { font-size: var(--fs-sm); }
+  .sg-swatch__meta code { font-family: var(--font-data); color: var(--c-ink-2); }
+  .sg-type { display: grid; gap: var(--sp-5); }
+  .sg-type__row { display: grid; gap: var(--sp-2); grid-template-columns: 1fr; padding-bottom: var(--sp-4); border-bottom: 1px dashed var(--c-line); }
+  @media (min-width: 760px) { .sg-type__row { grid-template-columns: 180px 1fr; align-items: baseline; } }
+  .sg-type__row > * { min-width: 0; }
+  .sg-type__spec { font: 400 var(--fs-xs)/1.5 var(--font-data); color: var(--c-ink-2); }
+  .sg-fonts { display: grid; gap: var(--sp-4); grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); }
+  .sg-font { border: 1px solid var(--c-line); border-radius: var(--r-md); padding: var(--sp-5); background: var(--c-surface); display: grid; gap: var(--sp-3); }
+  .sg-font__aa { font-size: 4rem; line-height: 1; }
+  .sg-row { display: flex; flex-wrap: wrap; gap: var(--sp-3); align-items: center; }
+  .sg-dark { background: var(--c-grid); border-radius: var(--r-lg); padding: var(--sp-6); }
+  .sg-spacing { display: grid; gap: var(--sp-2); }
+  .sg-spacing div { display: flex; align-items: center; gap: var(--sp-4); font: 400 var(--fs-xs)/1 var(--font-data); color: var(--c-ink-2); }
+  .sg-spacing span { height: 12px; background: var(--c-volt); border-radius: 2px; }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="container nav__inner">
+    <a class="logo" href="index.html">
+      <svg class="logo__mark" viewBox="0 0 28 28" aria-hidden="true"><rect x="1" y="1" width="26" height="26" rx="6" fill="none" stroke="currentColor" stroke-width="2"/><path d="M15.5 5 8 15.5h5.5L12 23l8-11h-5.6z" fill="var(--c-volt)"/></svg>
+      <span class="logo__word">truxel<span>.</span>ai</span>
+    </a>
+    <a class="btn btn--ghost btn--sm nav__cta" href="index.html" style="--btn-fg:var(--c-grid-ink);--btn-bd:var(--c-grid-line)">View website</a>
+  </div>
+</header>
+
+<main class="container">
+
+  <section class="sg-block">
+    <span class="eyebrow">Design system v1.0 · locked</span>
+    <h1>Truxel style guide</h1>
+    <p class="lead">The colours, type and components every Truxel page is built from. Values live in <code class="data">css/tokens.css</code>. New pages reuse these pieces; they never redefine them.</p>
+  </section>
+
+  <!-- COLOUR -->
+  <section class="sg-block">
+    <span class="eyebrow">01 · Colour</span>
+    <h2>Palette</h2>
+    <p class="lead">Grid Blue carries the brand. Volt Amber marks live power and the main action, and appears at most once or twice per screen. Copper is for storage.</p>
+    <h3>Brand</h3>
+    <div class="sg-swatches">
+      <div class="sg-swatch"><div class="sg-swatch__chip" style="background:var(--c-grid)"></div><div class="sg-swatch__meta"><b>Grid Blue</b><code>--c-grid · #0F3344</code><span>Hero, bands, footer</span></div></div>
+      <div class="sg-swatch"><div class="sg-swatch__chip" style="background:var(--c-volt)"></div><div class="sg-swatch__meta"><b>Volt Amber</b><code>--c-volt · #E8A317</code><span>Primary CTA, live data</span></div></div>
+      <div class="sg-swatch"><div class="sg-swatch__chip" style="background:var(--c-copper)"></div><div class="sg-swatch__meta"><b>Copper</b><code>--c-copper · #B05A2B</code><span>Storage, icons, figures</span></div></div>
+      <div class="sg-swatch"><div class="sg-swatch__chip" style="background:var(--c-solar)"></div><div class="sg-swatch__meta"><b>Solar</b><code>--c-solar · #D9B44A</code><span>Charts only</span></div></div>
+      <div class="sg-swatch"><div class="sg-swatch__chip" style="background:var(--c-volt-soft)"></div><div class="sg-swatch__meta"><b>Volt Soft</b><code>--c-volt-soft · #FBEFD2</code><span>Icon tiles, highlights</span></div></div>
+    </div>
+    <h3>Neutrals</h3>
+    <div class="sg-swatches">
+      <div class="sg-swatch"><div class="sg-swatch__chip" style="background:var(--c-paper)"></div><div class="sg-swatch__meta"><b>Paper</b><code>--c-paper · #F3F5F1</code><span>Page background</span></div></div>
+      <div class="sg-swatch"><div class="sg-swatch__chip" style="background:var(--c-surface)"></div><div class="sg-swatch__meta"><b>Surface</b><code>--c-surface · #FFFFFF</code><span>Cards, inputs</span></div></div>
+      <div class="sg-swatch"><div class="sg-swatch__chip" style="background:var(--c-surface-2)"></div><div class="sg-swatch__meta"><b>Surface 2</b><code>--c-surface-2 · #E8ECE6</code><span>Tinted sections</span></div></div>
+      <div class="sg-swatch"><div class="sg-swatch__chip" style="background:var(--c-line)"></div><div class="sg-swatch__meta"><b>Line</b><code>--c-line · #D3DBD5</code><span>Borders, rules</span></div></div>
+      <div class="sg-swatch"><div class="sg-swatch__chip" style="background:var(--c-ink-2)"></div><div class="sg-swatch__meta"><b>Ink 2</b><code>--c-ink-2 · #4C5E64</code><span>Secondary text</span></div></div>
+      <div class="sg-swatch"><div class="sg-swatch__chip" style="background:var(--c-ink)"></div><div class="sg-swatch__meta"><b>Ink</b><code>--c-ink · #0D1E28</code><span>Primary text</span></div></div>
+    </div>
+    <h3>Status</h3>
+    <div class="sg-swatches">
+      <div class="sg-swatch"><div class="sg-swatch__chip" style="background:var(--c-ok)"></div><div class="sg-swatch__meta"><b>Nominal</b><code>--c-ok · #2E7D5B</code></div></div>
+      <div class="sg-swatch"><div class="sg-swatch__chip" style="background:var(--c-warn)"></div><div class="sg-swatch__meta"><b>Warning</b><code>--c-warn · #B7791F</code></div></div>
+      <div class="sg-swatch"><div class="sg-swatch__chip" style="background:var(--c-crit)"></div><div class="sg-swatch__meta"><b>Critical</b><code>--c-crit · #B3392F</code></div></div>
+    </div>
+  </section>
+
+  <!-- TYPE -->
+  <section class="sg-block">
+    <span class="eyebrow">02 · Typography</span>
+    <h2>Typefaces</h2>
+    <div class="sg-fonts">
+      <div class="sg-font"><span class="sg-font__aa" style="font-family:var(--font-display);font-stretch:118%;font-weight:800">Aa</span><b>Archivo Expanded</b><span class="sg-type__spec">Display · headings · 700–800 · width 112–125%</span></div>
+      <div class="sg-font"><span class="sg-font__aa" style="font-family:var(--font-body)">Aa</span><b>IBM Plex Sans</b><span class="sg-type__spec">Body · UI · 400 / 500 / 600</span></div>
+      <div class="sg-font"><span class="sg-font__aa" style="font-family:var(--font-data)">50.00</span><b>IBM Plex Mono</b><span class="sg-type__spec">Data · labels · readouts · 400 / 500</span></div>
+    </div>
+    <h3>Type scale</h3>
+    <div class="sg-type">
+      <div class="sg-type__row"><span class="sg-type__spec">H1 · --fs-3xl<br>42–84px / 1.04</span><h1>Power that thinks ahead</h1></div>
+      <div class="sg-type__row"><span class="sg-type__spec">H2 · --fs-2xl<br>32–52px / 1.04</span><h2>One control layer</h2></div>
+      <div class="sg-type__row"><span class="sg-type__spec">H3 · --fs-lg<br>22px / 1.25</span><h3>Storage dispatch</h3></div>
+      <div class="sg-type__row"><span class="sg-type__spec">Lead · --fs-md<br>18px / 1.6</span><p class="lead">Truxel forecasts demand and balances renewables in real time.</p></div>
+      <div class="sg-type__row"><span class="sg-type__spec">Body · --fs-base<br>16px / 1.6</span><p>Charge and discharge schedules that stack arbitrage, peak shaving and frequency response without breaking warranty limits.</p></div>
+      <div class="sg-type__row"><span class="sg-type__spec">Label · --fs-xs<br>12px mono caps</span><span class="eyebrow">Section label</span></div>
+      <div class="sg-type__row"><span class="sg-type__spec">Data · mono tabular</span><span class="data" style="font-size:var(--fs-lg)">412.6 MW · 50.01 Hz · 68 %</span></div>
+    </div>
+  </section>
+
+  <!-- SPACING / RADIUS -->
+  <section class="sg-block">
+    <span class="eyebrow">03 · Spacing &amp; shape</span>
+    <h2>Spacing scale</h2>
+    <div class="sg-spacing">
+      <div><span style="width:4px"></span>--sp-1 · 4</div>
+      <div><span style="width:8px"></span>--sp-2 · 8</div>
+      <div><span style="width:12px"></span>--sp-3 · 12</div>
+      <div><span style="width:16px"></span>--sp-4 · 16</div>
+      <div><span style="width:24px"></span>--sp-5 · 24</div>
+      <div><span style="width:32px"></span>--sp-6 · 32</div>
+      <div><span style="width:48px"></span>--sp-7 · 48</div>
+      <div><span style="width:64px"></span>--sp-8 · 64</div>
+      <div><span style="width:96px"></span>--sp-9 · 96</div>
+      <div><span style="width:128px"></span>--sp-10 · 128</div>
+    </div>
+    <p class="lead">Radius: 4px inputs and badges, 8px buttons and cards, 16px feature panels, pill for tabs.</p>
+  </section>
+
+  <!-- COMPONENTS -->
+  <section class="sg-block">
+    <span class="eyebrow">04 · Components</span>
+    <h2>Buttons &amp; links</h2>
+    <div class="sg-row">
+      <a class="btn btn--volt" href="#">Primary · Volt <span class="arrow" aria-hidden="true">→</span></a>
+      <a class="btn" href="#">Secondary · Ink</a>
+      <a class="btn btn--ghost" href="#">Ghost</a>
+      <a class="btn btn--volt btn--sm" href="#">Small</a>
+      <a class="link" href="#">Text link <span aria-hidden="true">→</span></a>
+    </div>
+    <div class="sg-dark sg-row section--band">
+      <a class="btn btn--volt" href="#">Primary on band</a>
+      <a class="btn btn--ghost" href="#">Ghost on band</a>
+    </div>
+
+    <h2>Badges</h2>
+    <div class="sg-row">
+      <span class="badge badge--live">Live</span>
+      <span class="badge badge--ok">Nominal</span>
+      <span class="badge badge--warn">Warning</span>
+      <span class="badge badge--crit">Critical</span>
+      <span class="badge">Neutral</span>
+    </div>
+
+    <h2>Form fields</h2>
+    <div style="display:grid;gap:var(--sp-4);max-width:420px">
+      <div class="field"><label for="sgName">Full name</label><input class="input" id="sgName" placeholder="Sara Khan"></div>
+      <div class="field"><label for="sgMw">Managed capacity (MW)</label><input class="input data" id="sgMw" value="420"></div>
+    </div>
+
+    <h2>Cards</h2>
+    <div class="cards">
+      <article class="card">
+        <div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l5-6 4 3 4-7 5 5"/><path d="M3 21h18"/></svg></div>
+        <h3>Feature card</h3>
+        <p>Icon tile, title, one or two sentences, then a data line.</p>
+        <div class="card__meta data">MAPE 1.8% day-ahead</div>
+      </article>
+      <div class="case">
+        <div class="panel__head"><h3>Result card</h3><span class="badge badge--ok">Verified</span></div>
+        <div class="case__row">
+          <div><span class="case__num">−64</span><span class="case__lbl">MW avoided</span></div>
+          <div><span class="case__num">$1.9M</span><span class="case__lbl">Saved</span></div>
+          <div><span class="case__num">0</span><span class="case__lbl">Outages</span></div>
+        </div>
+        <div class="bar"><span style="width:87%"></span></div>
+      </div>
+    </div>
+
+    <h2>Stats</h2>
+    <div class="stats">
+      <div class="stat"><span class="stat__value">18<small>%</small></span><span class="stat__label">Lower peak-demand charges</span></div>
+      <div class="stat"><span class="stat__value">2.4<small>TWh</small></span><span class="stat__label">Energy dispatched per year</span></div>
+      <div class="stat"><span class="stat__value">6<small>wks</small></span><span class="stat__label">Contract to live</span></div>
+    </div>
+
+    <h2>Telemetry readouts</h2>
+    <div class="sg-dark">
+      <div class="panel__readouts">
+        <div class="readout"><span class="readout__label">Grid frequency</span><span class="readout__value">50.00<small>Hz</small></span></div>
+        <div class="readout readout--volt"><span class="readout__label">Net load</span><span class="readout__value">412.6<small>MW</small></span></div>
+        <div class="readout"><span class="readout__label">Battery SoC</span><span class="readout__value">68<small>%</small></span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sg-block" style="border-bottom:0">
+    <span class="eyebrow">05 · Page sections</span>
+    <h2>Homepage order</h2>
+    <dl class="kv">
+      <div><dt>Navigation</dt><dd>.nav</dd></div>
+      <div><dt>Hero with live telemetry panel</dt><dd>.hero · .panel</dd></div>
+      <div><dt>Trust strip</dt><dd>.strip</dd></div>
+      <div><dt>Platform features</dt><dd>.cards · .card</dd></div>
+      <div><dt>How it works (band)</dt><dd>.section--band · .steps</dd></div>
+      <div><dt>Results</dt><dd>.stats</dd></div>
+      <div><dt>Solutions by sector</dt><dd>.tabs · .tabpanel</dd></div>
+      <div><dt>Case study</dt><dd>.quote · .case</dd></div>
+      <div><dt>FAQ</dt><dd>.faq</dd></div>
+      <div><dt>Demo request (band)</dt><dd>.cta</dd></div>
+      <div><dt>Footer</dt><dd>.footer</dd></div>
+    </dl>
+  </section>
+</main>
+</body>
+</html>

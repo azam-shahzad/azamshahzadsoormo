@@ -1,0 +1,107 @@
+/* =====================================================================
+   TRUXEL ENERGY — DESIGN TOKENS  (LOCKED · v1.0)
+   ---------------------------------------------------------------------
+   This file is the single source of truth for colour, type, spacing,
+   radius, elevation and motion. Every component reads from here.
+   Do NOT edit values in this file during a redesign or modification.
+   Add new tokens only at the bottom of a group, never rename or remove.
+   See ../DESIGN_SYSTEM.md for the rules.
+   Layout concept: a 12-column "switchboard" grid, wide calm margins,
+   one deep "grid-blue" band per page and amber used only for live power.
+   ===================================================================== */
+
+:root {
+  /* ---- Colour · core palette (light) ---- */
+  --c-paper:      #F3F5F1;  /* page background, mineral white            */
+  --c-surface:    #FFFFFF;  /* cards, inputs                             */
+  --c-surface-2:  #E8ECE6;  /* subtle fills, table stripes               */
+  --c-ink:        #0D1E28;  /* primary text                              */
+  --c-ink-2:      #4C5E64;  /* secondary text                            */
+  --c-line:       #D3DBD5;  /* hairlines and borders                     */
+
+  /* ---- Colour · brand ---- */
+  --c-grid:       #0F3344;  /* "Grid Blue"  – brand, dark bands          */
+  --c-grid-ink:   #EAF2EF;  /* text on Grid Blue                         */
+  --c-grid-mute:  #93AEB3;  /* secondary text on Grid Blue               */
+  --c-grid-line:  #22495A;  /* hairlines on Grid Blue                    */
+  --c-volt:       #E8A317;  /* "Volt Amber" – primary accent, live power */
+  --c-volt-ink:   #1C1400;  /* text on Volt Amber                        */
+  --c-volt-soft:  #FBEFD2;  /* amber tint backgrounds                    */
+  --c-copper:     #B05A2B;  /* "Copper" – secondary accent, storage      */
+  --c-solar:      #D9B44A;  /* chart: solar generation                   */
+
+  /* ---- Colour · semantic (status only, never decoration) ---- */
+  --c-ok:         #2E7D5B;
+  --c-warn:       #B7791F;
+  --c-crit:       #B3392F;
+  --c-focus:      #E8A317;
+
+  /* ---- Typography ---- */
+  --font-display: "Archivo", "Helvetica Neue", Arial, sans-serif;  /* use with font-stretch 112–125% */
+  --font-body:    "IBM Plex Sans", "Segoe UI", Roboto, Arial, sans-serif;
+  --font-data:    "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+
+  /* Type scale (1.250 major third, fluid at the top end) */
+  --fs-xs:   0.75rem;    /* 12 – captions, legal         */
+  --fs-sm:   0.875rem;   /* 14 – labels, meta            */
+  --fs-base: 1rem;       /* 16 – body                    */
+  --fs-md:   1.125rem;   /* 18 – lead body               */
+  --fs-lg:   1.375rem;   /* 22 – card titles             */
+  --fs-xl:   clamp(1.6rem, 1.2rem + 1.6vw, 2.25rem);   /* H3  */
+  --fs-2xl:  clamp(2rem, 1.4rem + 2.6vw, 3.25rem);     /* H2  */
+  --fs-3xl:  clamp(2.6rem, 1.6rem + 4.6vw, 5.25rem);   /* H1  */
+
+  --lh-tight: 1.04;
+  --lh-snug:  1.25;
+  --lh-body:  1.6;
+  --tracking-label: 0.12em;
+  --measure: 65ch;
+
+  /* ---- Spacing (4px base) ---- */
+  --sp-1: 0.25rem;  --sp-2: 0.5rem;  --sp-3: 0.75rem; --sp-4: 1rem;
+  --sp-5: 1.5rem;   --sp-6: 2rem;    --sp-7: 3rem;    --sp-8: 4rem;
+  --sp-9: 6rem;     --sp-10: 8rem;
+  --section-y: clamp(4rem, 3rem + 5vw, 8rem);
+  --container: 1200px;
+  --gutter: max(16px, env(safe-area-inset-left, 0px));
+  --gutter-r: max(16px, env(safe-area-inset-right, 0px));
+
+  /* ---- Radius ---- */
+  --r-sm: 4px;   /* inputs, badges   */
+  --r-md: 8px;   /* buttons, cards   */
+  --r-lg: 16px;  /* feature panels   */
+  --r-pill: 999px;
+
+  /* ---- Elevation ---- */
+  --shadow-1: 0 1px 2px rgba(13, 30, 40, .06), 0 1px 1px rgba(13, 30, 40, .04);
+  --shadow-2: 0 10px 30px -12px rgba(13, 30, 40, .22);
+
+  /* ---- Motion ---- */
+  --ease: cubic-bezier(.2, .7, .2, 1);
+  --dur-fast: 140ms;
+  --dur: 260ms;
+}
+
+/* ---- Dark theme: only token values change, never component rules ---- */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --c-paper: #0A151B; --c-surface: #0F1F27; --c-surface-2: #142832;
+    --c-ink: #E6EEEA; --c-ink-2: #98ABAE; --c-line: #213843;
+    --c-grid: #071016; --c-grid-ink: #EAF2EF; --c-grid-mute: #8BA4A9; --c-grid-line: #1C3440;
+    --c-volt: #F2B23A; --c-volt-ink: #1C1400; --c-volt-soft: #2B2410;
+    --c-copper: #D9814F; --c-solar: #E3C463;
+    --c-ok: #4FB389; --c-warn: #E0A84A; --c-crit: #E36B5F;
+    --shadow-1: 0 1px 2px rgba(0,0,0,.4); --shadow-2: 0 14px 34px -14px rgba(0,0,0,.6);
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --c-paper: #0A151B; --c-surface: #0F1F27; --c-surface-2: #142832;
+  --c-ink: #E6EEEA; --c-ink-2: #98ABAE; --c-line: #213843;
+  --c-grid: #071016; --c-grid-ink: #EAF2EF; --c-grid-mute: #8BA4A9; --c-grid-line: #1C3440;
+  --c-volt: #F2B23A; --c-volt-ink: #1C1400; --c-volt-soft: #2B2410;
+  --c-copper: #D9814F; --c-solar: #E3C463;
+  --c-ok: #4FB389; --c-warn: #E0A84A; --c-crit: #E36B5F;
+  --shadow-1: 0 1px 2px rgba(0,0,0,.4); --shadow-2: 0 14px 34px -14px rgba(0,0,0,.6);
+  color-scheme: dark;
+}
