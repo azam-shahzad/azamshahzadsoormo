@@ -537,6 +537,8 @@ a.b-card:hover, .b-card:hover { transform: translateY(-4px); box-shadow: var(--s
 .stat, .hstat { transition: background var(--dur) var(--ease); }
 .hstat:hover { background: color-mix(in srgb, var(--c-surface) 40%, transparent); }
 
+.ticker__title { font-size: var(--fs-2xl); margin-inline: auto; max-width: none; }
+
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
 }
