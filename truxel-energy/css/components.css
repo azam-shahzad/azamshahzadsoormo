@@ -277,6 +277,82 @@ body::after {
 .service { transition: transform var(--dur) var(--ease); }
 .service:hover { transform: translateY(-3px); }
 
+/* =====================================================================
+   v2.3 — Energy contact section (power lines, live trace, console form)
+   ===================================================================== */
+.energy {
+  position: relative; overflow: hidden; color: var(--c-on-night);
+  background:
+    radial-gradient(ellipse 55% 50% at 85% 15%, color-mix(in srgb, var(--c-green) 16%, transparent), transparent 70%),
+    radial-gradient(ellipse 50% 55% at 5% 100%, color-mix(in srgb, var(--c-green) 10%, transparent), transparent 70%),
+    var(--c-night);
+}
+.energy__lines { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
+.energy__line { fill: none; stroke: var(--c-night-line); stroke-width: 1; }
+.energy__pulse {
+  fill: none; stroke: var(--c-green); stroke-width: 1.8; stroke-linecap: round;
+  stroke-dasharray: 80 1600; animation: current 7s linear infinite;
+  filter: drop-shadow(0 0 6px var(--c-green));
+}
+.energy__pulse.p2 { animation-duration: 9s; animation-delay: -3s; }
+.energy__pulse.p3 { animation-duration: 6s; animation-delay: -1.5s; }
+.energy__pulse.p4 { animation-duration: 11s; animation-delay: -6s; }
+@keyframes current { from { stroke-dashoffset: 1680; } to { stroke-dashoffset: 0; } }
+.energy__inner { position: relative; display: grid; gap: var(--sp-8); grid-template-columns: 1fr; align-items: center; }
+@media (min-width: 960px) { .energy__inner { grid-template-columns: 1.1fr 1fr; gap: var(--sp-9); } }
+.energy__inner > * { min-width: 0; }
+.energy__intro { display: grid; gap: var(--sp-5); }
+.energy__intro h2 { font-size: var(--fs-2xl); line-height: 1.12; color: var(--c-on-night); max-width: 19ch; }
+.energy__intro h2 .accent { color: var(--c-green); }
+.energy .eyebrow { color: var(--c-green); }
+.energy .lead { color: var(--c-on-night-2); }
+.trace { height: 76px; color: var(--c-green); }
+.trace svg { width: 100%; height: 100%; overflow: visible; }
+.trace__base { fill: none; stroke: var(--c-night-line); stroke-width: 1.5; }
+.trace__ghost { fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; opacity: .28; }
+.trace__line {
+  fill: none; stroke: currentColor; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round;
+  stroke-dasharray: 1000; stroke-dashoffset: 0; filter: drop-shadow(0 0 8px currentColor);
+  animation: trace 5s var(--ease) infinite;
+}
+@keyframes trace { 0% { stroke-dashoffset: 1000; } 55% { stroke-dashoffset: 0; } 100% { stroke-dashoffset: -1000; } }
+.energy__tiles { display: grid; gap: var(--sp-3); grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr)); }
+.etile {
+  display: flex; gap: var(--sp-3); align-items: center; padding: var(--sp-4);
+  border: 1px solid var(--c-night-line); border-radius: var(--r-md);
+  background: color-mix(in srgb, var(--c-night-2) 60%, transparent);
+  transition: border-color var(--dur) var(--ease), transform var(--dur) var(--ease);
+}
+.etile:hover { border-color: color-mix(in srgb, var(--c-green) 45%, transparent); transform: translateY(-2px); }
+.etile__icon { flex: none; width: 42px; height: 42px; border-radius: 12px; display: grid; place-items: center; background: color-mix(in srgb, var(--c-green) 14%, transparent); color: var(--c-green); }
+.etile__icon svg { width: 18px; height: 18px; }
+.etile small { display: block; font: 500 var(--fs-xs)/1.3 var(--font-data); text-transform: uppercase; letter-spacing: .1em; color: var(--c-on-night-2); }
+.etile b { font-weight: 500; color: var(--c-on-night); }
+.console {
+  position: relative; display: grid; gap: var(--sp-4); padding: var(--sp-6); border-radius: var(--r-lg);
+  border: 1px solid transparent;
+  background:
+    linear-gradient(var(--c-night-2), var(--c-night-2)) padding-box,
+    linear-gradient(140deg, color-mix(in srgb, var(--c-green) 75%, transparent), transparent 38%, transparent 62%, color-mix(in srgb, var(--c-green) 35%, transparent)) border-box;
+  box-shadow: 0 40px 90px -40px rgba(0, 0, 0, .75), 0 0 60px -30px color-mix(in srgb, var(--c-green) 50%, transparent);
+}
+@media (min-width: 720px) { .console { padding: var(--sp-7); } }
+.console__head { display: flex; align-items: center; justify-content: space-between; gap: var(--sp-3); margin-bottom: var(--sp-2); }
+.console__title { display: flex; align-items: center; gap: var(--sp-3); font-size: var(--fs-lg); font-weight: 500; color: var(--c-on-night); }
+.console__dot { width: 9px; height: 9px; border-radius: 50%; background: var(--c-green); box-shadow: 0 0 0 4px color-mix(in srgb, var(--c-green) 22%, transparent); animation: blink 2s ease-in-out infinite; }
+@keyframes blink { 50% { box-shadow: 0 0 0 9px transparent; } }
+.console__bolt { width: 34px; height: 34px; color: var(--c-green); opacity: .9; }
+.ffield { position: relative; }
+.ffield .input { min-height: 58px; padding: 24px var(--sp-4) 8px; background: color-mix(in srgb, var(--c-night) 65%, transparent); }
+.ffield textarea.input { min-height: 132px; }
+.ffield label { position: absolute; left: var(--sp-4); top: 18px; font-size: var(--fs-base); color: var(--c-on-night-2); pointer-events: none; transition: top var(--dur) var(--ease), font-size var(--dur) var(--ease), color var(--dur) var(--ease); }
+.ffield .input:focus + label, .ffield .input:not(:placeholder-shown) + label { top: 8px; font-size: var(--fs-xs); color: var(--c-green); }
+.ffield .input:focus { box-shadow: 0 0 0 4px color-mix(in srgb, var(--c-green) 14%, transparent); }
+.btn--block { width: 100%; justify-content: space-between; min-height: 56px; padding-left: var(--sp-6); }
+.btn--charge { position: relative; overflow: hidden; }
+.btn--charge::after { content: ""; position: absolute; inset: 0; background: linear-gradient(100deg, transparent 30%, rgba(255, 255, 255, .55) 50%, transparent 70%); transform: translateX(-120%); animation: charge 3.4s var(--ease) infinite; }
+@keyframes charge { 55%, 100% { transform: translateX(120%); } }
+
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
 }
