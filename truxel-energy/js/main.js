@@ -77,3 +77,17 @@
     }, { passive: true });
   }
 })();
+
+/* Frosted nav: firm up the glass once the page scrolls */
+(function () {
+  var nav = document.querySelector(".nav");
+  if (!nav) return;
+  var darkSel = ".night, .energy, .footer";
+  function update() {
+    nav.classList.toggle("is-scrolled", window.scrollY > 8);
+    var probe = document.elementFromPoint(window.innerWidth / 2, nav.offsetHeight + 2);
+    nav.classList.toggle("nav--dark", !!(probe && probe.closest(darkSel)));
+  }
+  update();
+  window.addEventListener("scroll", update, { passive: true });
+})();
