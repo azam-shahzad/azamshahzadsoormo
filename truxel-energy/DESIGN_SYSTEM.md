@@ -4,6 +4,9 @@ This folder holds the Truxel website and the design system it is built on.
 The system is **locked**: future redesigns, new pages and edits must reuse it
 as-is. Visual consistency comes from never changing the base.
 
+Figma file (variables, text styles, components, homepage):
+https://www.figma.com/design/qeWV8gGHR6OTqX4PJRvtwV
+
 ## Files
 
 | File | Role | May it change? |
