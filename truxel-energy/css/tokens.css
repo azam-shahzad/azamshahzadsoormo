@@ -35,6 +35,16 @@
 
   --c-focus:       #1E9A44;
 
+  /* ---- Hero landscape (v2.1) ---- */
+  --c-sky-top:     #E6F6EC;
+  --c-sky-mid:     #F6F8F7;
+  --c-sky-horizon: #F4EBDD;
+  --c-sun:         rgba(255, 205, 140, .55);
+  --c-hill-1:      #CFE0D8;
+  --c-hill-2:      #A9C4B9;
+  --c-hill-3:      #7FA295;
+  --c-turbine:     #FFFFFF;
+
   /* ---- Typography ---- */
   --font-sans:   "IBM Plex Sans", "Segoe UI", Roboto, Arial, sans-serif;
   --font-accent: "Instrument Serif", Georgia, "Times New Roman", serif;  /* italic accent words only */
@@ -84,6 +94,7 @@
     --c-night: #03121A; --c-night-2: #0A2430; --c-night-line: #1A3946;
     --c-focus: #6BEE82;
     --shadow-nav: 0 8px 30px -12px rgba(0,0,0,.6); --shadow-card: 0 18px 40px -24px rgba(0,0,0,.7);
+    --c-sky-top: #071A23; --c-sky-mid: #0B2630; --c-sky-horizon: #143A3E; --c-sun: rgba(93, 233, 117, .14); --c-hill-1: #12343D; --c-hill-2: #0E2B34; --c-hill-3: #0A2129; --c-turbine: #B9CBC6;
     color-scheme: dark;
   }
 }
@@ -94,5 +105,6 @@
   --c-night: #03121A; --c-night-2: #0A2430; --c-night-line: #1A3946;
   --c-focus: #6BEE82;
   --shadow-nav: 0 8px 30px -12px rgba(0,0,0,.6); --shadow-card: 0 18px 40px -24px rgba(0,0,0,.7);
+  --c-sky-top: #071A23; --c-sky-mid: #0B2630; --c-sky-horizon: #143A3E; --c-sun: rgba(93, 233, 117, .14); --c-hill-1: #12343D; --c-hill-2: #0E2B34; --c-hill-3: #0A2129; --c-turbine: #B9CBC6;
   color-scheme: dark;
 }

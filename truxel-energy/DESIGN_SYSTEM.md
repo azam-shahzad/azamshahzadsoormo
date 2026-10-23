@@ -44,11 +44,11 @@ Truxel (truxel.ai). The system is **locked**: new pages and edits reuse it as-is
 
 ## Components
 
-`.nav` (floating pill) · `.hero` + `.chip` + `.hero__card` · `.marquee` · `.about` + `.mega` · `.illustration` ·
+`.nav` (floating pill) · `.hero` + `.chip` + `.hero__card` · `.marquee` · `.about` + `.mega` ·
 `.services` + `.service` · `.gallery` + `.tile` · `.stats` + `.stat` · `.night` · `.why-grid` + `.why-card` · `.network` ·
 `.ready` · `.contact` + `.form` + `.field` + `.input` · `.footer` · `.btn` (`--green`, `--light`) · `.eyebrow` · `.accent` · `.muted`
 
 ## Homepage sections (in order)
 
-Floating nav → Hero → Marquee → About → Services → Gallery → Who we work with (impact + stats) →
+Floating nav → Hero (sky, hills, wind turbines) → Marquee → About → Services → Gallery → Who we work with (impact + stats) →
 Why Nebula (night) → Ready to start → Contact (night) → Footer
