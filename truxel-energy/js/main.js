@@ -142,3 +142,37 @@
     });
   });
 })();
+
+
+/* About dashboard: chart curves per range tab */
+(function () {
+  Array.prototype.forEach.call(document.querySelectorAll(".dash__chart"), function (box) { var svg = box.querySelector("svg"); var root = box.parentNode.closest("section");
+  var line = svg.querySelector(".dash__line"), area = svg.querySelector(".dash__area"), dot = svg.querySelector(".dash__dot");
+  var sets = [
+    [150,140,152,120,128,96,104,80,92,70,84,62],
+    [168,150,156,128,110,122,92,74,96,70,60,48],
+    [176,160,138,146,118,100,108,84,66,76,52,40],
+    [182,170,150,128,120,98,86,90,70,58,46,30]
+  ];
+  function path(v) {
+    var step = 520 / (v.length - 1), d = "M0 " + v[0];
+    for (var i = 1; i < v.length; i++) {
+      var x0 = (i - 1) * step, x1 = i * step, cx = (x0 + x1) / 2;
+      d += " C" + cx + " " + v[i - 1] + " " + cx + " " + v[i] + " " + x1 + " " + v[i];
+    }
+    return d;
+  }
+  function draw(i) {
+    var v = sets[i], d = path(v);
+    line.setAttribute("d", d); area.setAttribute("d", d + " L520 200 L0 200 Z");
+    dot.setAttribute("cx", 520 * 8 / 11); dot.setAttribute("cy", v[8]);
+  }
+  var tabs = root.querySelectorAll(".dash__tabs button");
+  Array.prototype.forEach.call(tabs, function (b) {
+    b.addEventListener("click", function () {
+      Array.prototype.forEach.call(tabs, function (t) { t.setAttribute("aria-selected", String(t === b)); });
+      draw(+b.getAttribute("data-range"));
+    });
+  });
+  draw(1);
+}); })();
