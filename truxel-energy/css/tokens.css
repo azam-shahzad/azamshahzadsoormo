@@ -1,107 +1,98 @@
 /* =====================================================================
-   TRUXEL ENERGY — DESIGN TOKENS  (LOCKED · v1.0)
+   TRUXEL — DESIGN TOKENS  (LOCKED · v2.0)
    ---------------------------------------------------------------------
-   This file is the single source of truth for colour, type, spacing,
-   radius, elevation and motion. Every component reads from here.
-   Do NOT edit values in this file during a redesign or modification.
-   Add new tokens only at the bottom of a group, never rename or remove.
-   See ../DESIGN_SYSTEM.md for the rules.
-   Layout concept: a 12-column "switchboard" grid, wide calm margins,
-   one deep "grid-blue" band per page and amber used only for live power.
+   Single source of truth for colour, type, spacing, radius, elevation
+   and motion. Brand colours come from the Truxel logo.
+   Do NOT edit or rename existing values. Append new tokens only.
+   See ../DESIGN_SYSTEM.md.
+   Layout concept: light, airy pages with a floating pill navigation,
+   full-bleed photo hero, and deep-navy "night" bands for emphasis.
    ===================================================================== */
 
 :root {
-  /* ---- Colour · core palette (light) ---- */
-  --c-paper:      #F3F5F1;  /* page background, mineral white            */
-  --c-surface:    #FFFFFF;  /* cards, inputs                             */
-  --c-surface-2:  #E8ECE6;  /* subtle fills, table stripes               */
-  --c-ink:        #0D1E28;  /* primary text                              */
-  --c-ink-2:      #4C5E64;  /* secondary text                            */
-  --c-line:       #D3DBD5;  /* hairlines and borders                     */
+  /* ---- Brand (from logo) ---- */
+  --c-navy:        #0B3142;  /* Truxel Navy — logo, headings          */
+  --c-green:       #5DE975;  /* Truxel Green — logo bar, primary CTA  */
+  --c-green-ink:   #0B3142;  /* text on green                         */
+  --c-green-text:  #1E9A44;  /* green used as text on light surfaces  */
+  --c-green-soft:  #E3FAE8;  /* green tint fills                      */
 
-  /* ---- Colour · brand ---- */
-  --c-grid:       #0B3142;  /* "Truxel Navy" – brand, dark bands (logo)  */
-  --c-grid-ink:   #EAF2EF;  /* text on Truxel Navy                       */
-  --c-grid-mute:  #93AEB3;  /* secondary text on Truxel Navy             */
-  --c-grid-line:  #22495A;  /* hairlines on Truxel Navy                  */
-  --c-volt:       #5DE975;  /* "Signal Green" – primary accent (logo)    */
-  --c-volt-ink:   #0B3142;  /* text on Signal Green                      */
-  --c-volt-soft:  #DDF8E2;  /* green tint backgrounds                    */
-  --c-copper:     #B05A2B;  /* "Copper" – secondary accent, storage      */
-  --c-solar:      #D9B44A;  /* chart: solar generation                   */
+  /* ---- Neutrals (light) ---- */
+  --c-bg:          #F6F8F7;  /* page                                  */
+  --c-surface:     #FFFFFF;  /* cards, inputs, nav pill               */
+  --c-surface-2:   #EDF2EF;  /* subtle fills                          */
+  --c-ink:         #0B3142;  /* primary text (navy)                   */
+  --c-ink-2:       #557079;  /* secondary text                        */
+  --c-ink-3:       #9AABB1;  /* muted tail of headings                */
+  --c-line:        #DAE2DE;  /* hairlines                             */
 
-  /* ---- Colour · semantic (status only, never decoration) ---- */
-  --c-ok:         #2E7D5B;
-  --c-warn:       #B7791F;
-  --c-crit:       #B3392F;
-  --c-focus:      #2FBF4F;
+  /* ---- Night bands (always dark) ---- */
+  --c-night:       #061D27;  /* dark section background               */
+  --c-night-2:     #0C2A37;  /* dark cards                            */
+  --c-night-line:  #1B3F4E;  /* hairlines on dark                     */
+  --c-on-night:    #EAF2EF;  /* text on dark                          */
+  --c-on-night-2:  #93AAB1;  /* secondary text on dark                */
+
+  --c-focus:       #1E9A44;
 
   /* ---- Typography ---- */
-  --font-display: "Archivo", "Helvetica Neue", Arial, sans-serif;  /* use with font-stretch 112–125% */
-  --font-body:    "IBM Plex Sans", "Segoe UI", Roboto, Arial, sans-serif;
-  --font-data:    "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+  --font-sans:   "IBM Plex Sans", "Segoe UI", Roboto, Arial, sans-serif;
+  --font-accent: "Instrument Serif", Georgia, "Times New Roman", serif;  /* italic accent words only */
+  --font-data:   "IBM Plex Mono", ui-monospace, Menlo, monospace;
 
-  /* Type scale (1.250 major third, fluid at the top end) */
-  --fs-xs:   0.75rem;    /* 12 – captions, legal         */
-  --fs-sm:   0.875rem;   /* 14 – labels, meta            */
-  --fs-base: 1rem;       /* 16 – body                    */
-  --fs-md:   1.125rem;   /* 18 – lead body               */
-  --fs-lg:   1.375rem;   /* 22 – card titles             */
-  --fs-xl:   clamp(1.6rem, 1.2rem + 1.6vw, 2.25rem);   /* H3  */
-  --fs-2xl:  clamp(2rem, 1.4rem + 2.6vw, 3.25rem);     /* H2  */
-  --fs-3xl:  clamp(2.6rem, 1.6rem + 4.6vw, 5.25rem);   /* H1  */
+  --fs-xs:   0.75rem;   /* 12 */
+  --fs-sm:   0.875rem;  /* 14 */
+  --fs-base: 1rem;      /* 16 */
+  --fs-md:   1.125rem;  /* 18 */
+  --fs-lg:   1.375rem;  /* 22 */
+  --fs-xl:   clamp(1.5rem, 1.2rem + 1.2vw, 2rem);        /* 24–32  */
+  --fs-2xl:  clamp(1.9rem, 1.3rem + 2.4vw, 3rem);        /* 30–48  */
+  --fs-3xl:  clamp(2.5rem, 1.4rem + 4.6vw, 4.75rem);     /* 40–76  */
+  --fs-mega: clamp(4rem, 2rem + 9vw, 10rem);             /* 64–160 */
 
-  --lh-tight: 1.04;
+  --lh-tight: 1.06;
   --lh-snug:  1.25;
   --lh-body:  1.6;
-  --tracking-label: 0.12em;
-  --measure: 65ch;
+  --tracking-tight: -0.025em;
+  --measure: 62ch;
 
   /* ---- Spacing (4px base) ---- */
-  --sp-1: 0.25rem;  --sp-2: 0.5rem;  --sp-3: 0.75rem; --sp-4: 1rem;
-  --sp-5: 1.5rem;   --sp-6: 2rem;    --sp-7: 3rem;    --sp-8: 4rem;
-  --sp-9: 6rem;     --sp-10: 8rem;
-  --section-y: clamp(4rem, 3rem + 5vw, 8rem);
+  --sp-1: .25rem; --sp-2: .5rem; --sp-3: .75rem; --sp-4: 1rem; --sp-5: 1.5rem;
+  --sp-6: 2rem;   --sp-7: 3rem;  --sp-8: 4rem;   --sp-9: 6rem; --sp-10: 8rem;
+  --section-y: clamp(4.5rem, 3rem + 6vw, 9rem);
   --container: 1200px;
-  --gutter: max(16px, env(safe-area-inset-left, 0px));
-  --gutter-r: max(16px, env(safe-area-inset-right, 0px));
 
   /* ---- Radius ---- */
-  --r-sm: 4px;   /* inputs, badges   */
-  --r-md: 8px;   /* buttons, cards   */
-  --r-lg: 16px;  /* feature panels   */
-  --r-pill: 999px;
+  --r-sm: 8px; --r-md: 14px; --r-lg: 24px; --r-pill: 999px;
 
   /* ---- Elevation ---- */
-  --shadow-1: 0 1px 2px rgba(13, 30, 40, .06), 0 1px 1px rgba(13, 30, 40, .04);
-  --shadow-2: 0 10px 30px -12px rgba(13, 30, 40, .22);
+  --shadow-nav:  0 8px 30px -12px rgba(11, 49, 66, .25);
+  --shadow-card: 0 18px 40px -24px rgba(11, 49, 66, .35);
 
   /* ---- Motion ---- */
   --ease: cubic-bezier(.2, .7, .2, 1);
-  --dur-fast: 140ms;
-  --dur: 260ms;
+  --dur-fast: 160ms;
+  --dur: 300ms;
 }
 
-/* ---- Dark theme: only token values change, never component rules ---- */
+/* Dark theme: token values only */
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
-    --c-paper: #0A151B; --c-surface: #0F1F27; --c-surface-2: #142832;
-    --c-ink: #E6EEEA; --c-ink-2: #98ABAE; --c-line: #213843;
-    --c-grid: #071016; --c-grid-ink: #EAF2EF; --c-grid-mute: #8BA4A9; --c-grid-line: #1C3440;
-    --c-volt: #6BEE82; --c-volt-ink: #0B3142; --c-volt-soft: #10301C;
-    --c-copper: #D9814F; --c-solar: #E3C463;
-    --c-ok: #4FB389; --c-warn: #E0A84A; --c-crit: #E36B5F;
-    --shadow-1: 0 1px 2px rgba(0,0,0,.4); --shadow-2: 0 14px 34px -14px rgba(0,0,0,.6);
+    --c-green-text: #6BEE82; --c-green-soft: #0F3324;
+    --c-bg: #071A23; --c-surface: #0C2530; --c-surface-2: #10303D;
+    --c-ink: #E8F1EE; --c-ink-2: #9DB3B9; --c-ink-3: #5F7A82; --c-line: #1C3B48;
+    --c-night: #03121A; --c-night-2: #0A2430; --c-night-line: #1A3946;
+    --c-focus: #6BEE82;
+    --shadow-nav: 0 8px 30px -12px rgba(0,0,0,.6); --shadow-card: 0 18px 40px -24px rgba(0,0,0,.7);
     color-scheme: dark;
   }
 }
 :root[data-theme="dark"] {
-  --c-paper: #0A151B; --c-surface: #0F1F27; --c-surface-2: #142832;
-  --c-ink: #E6EEEA; --c-ink-2: #98ABAE; --c-line: #213843;
-  --c-grid: #071016; --c-grid-ink: #EAF2EF; --c-grid-mute: #8BA4A9; --c-grid-line: #1C3440;
-  --c-volt: #6BEE82; --c-volt-ink: #0B3142; --c-volt-soft: #10301C;
-  --c-copper: #D9814F; --c-solar: #E3C463;
-  --c-ok: #4FB389; --c-warn: #E0A84A; --c-crit: #E36B5F;
-  --shadow-1: 0 1px 2px rgba(0,0,0,.4); --shadow-2: 0 14px 34px -14px rgba(0,0,0,.6);
+  --c-green-text: #6BEE82; --c-green-soft: #0F3324;
+  --c-bg: #071A23; --c-surface: #0C2530; --c-surface-2: #10303D;
+  --c-ink: #E8F1EE; --c-ink-2: #9DB3B9; --c-ink-3: #5F7A82; --c-line: #1C3B48;
+  --c-night: #03121A; --c-night-2: #0A2430; --c-night-line: #1A3946;
+  --c-focus: #6BEE82;
+  --shadow-nav: 0 8px 30px -12px rgba(0,0,0,.6); --shadow-card: 0 18px 40px -24px rgba(0,0,0,.7);
   color-scheme: dark;
 }
