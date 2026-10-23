@@ -20,13 +20,13 @@
   --c-line:       #D3DBD5;  /* hairlines and borders                     */
 
   /* ---- Colour · brand ---- */
-  --c-grid:       #0F3344;  /* "Grid Blue"  – brand, dark bands          */
-  --c-grid-ink:   #EAF2EF;  /* text on Grid Blue                         */
-  --c-grid-mute:  #93AEB3;  /* secondary text on Grid Blue               */
-  --c-grid-line:  #22495A;  /* hairlines on Grid Blue                    */
-  --c-volt:       #E8A317;  /* "Volt Amber" – primary accent, live power */
-  --c-volt-ink:   #1C1400;  /* text on Volt Amber                        */
-  --c-volt-soft:  #FBEFD2;  /* amber tint backgrounds                    */
+  --c-grid:       #0B3142;  /* "Truxel Navy" – brand, dark bands (logo)  */
+  --c-grid-ink:   #EAF2EF;  /* text on Truxel Navy                       */
+  --c-grid-mute:  #93AEB3;  /* secondary text on Truxel Navy             */
+  --c-grid-line:  #22495A;  /* hairlines on Truxel Navy                  */
+  --c-volt:       #5DE975;  /* "Signal Green" – primary accent (logo)    */
+  --c-volt-ink:   #0B3142;  /* text on Signal Green                      */
+  --c-volt-soft:  #DDF8E2;  /* green tint backgrounds                    */
   --c-copper:     #B05A2B;  /* "Copper" – secondary accent, storage      */
   --c-solar:      #D9B44A;  /* chart: solar generation                   */
 
@@ -34,7 +34,7 @@
   --c-ok:         #2E7D5B;
   --c-warn:       #B7791F;
   --c-crit:       #B3392F;
-  --c-focus:      #E8A317;
+  --c-focus:      #2FBF4F;
 
   /* ---- Typography ---- */
   --font-display: "Archivo", "Helvetica Neue", Arial, sans-serif;  /* use with font-stretch 112–125% */
@@ -88,7 +88,7 @@
     --c-paper: #0A151B; --c-surface: #0F1F27; --c-surface-2: #142832;
     --c-ink: #E6EEEA; --c-ink-2: #98ABAE; --c-line: #213843;
     --c-grid: #071016; --c-grid-ink: #EAF2EF; --c-grid-mute: #8BA4A9; --c-grid-line: #1C3440;
-    --c-volt: #F2B23A; --c-volt-ink: #1C1400; --c-volt-soft: #2B2410;
+    --c-volt: #6BEE82; --c-volt-ink: #0B3142; --c-volt-soft: #10301C;
     --c-copper: #D9814F; --c-solar: #E3C463;
     --c-ok: #4FB389; --c-warn: #E0A84A; --c-crit: #E36B5F;
     --shadow-1: 0 1px 2px rgba(0,0,0,.4); --shadow-2: 0 14px 34px -14px rgba(0,0,0,.6);
@@ -99,7 +99,7 @@
   --c-paper: #0A151B; --c-surface: #0F1F27; --c-surface-2: #142832;
   --c-ink: #E6EEEA; --c-ink-2: #98ABAE; --c-line: #213843;
   --c-grid: #071016; --c-grid-ink: #EAF2EF; --c-grid-mute: #8BA4A9; --c-grid-line: #1C3440;
-  --c-volt: #F2B23A; --c-volt-ink: #1C1400; --c-volt-soft: #2B2410;
+  --c-volt: #6BEE82; --c-volt-ink: #0B3142; --c-volt-soft: #10301C;
   --c-copper: #D9814F; --c-solar: #E3C463;
   --c-ok: #4FB389; --c-warn: #E0A84A; --c-crit: #E36B5F;
   --shadow-1: 0 1px 2px rgba(0,0,0,.4); --shadow-2: 0 14px 34px -14px rgba(0,0,0,.6);

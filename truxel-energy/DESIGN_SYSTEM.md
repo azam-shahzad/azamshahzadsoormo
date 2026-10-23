@@ -4,6 +4,8 @@ This folder holds the Truxel website and the design system it is built on.
 The system is **locked**: future redesigns, new pages and edits must reuse it
 as-is. Visual consistency comes from never changing the base.
 
+Logo: `assets/truxel-logo.svg` (navy `#0B3142` + green `#5DE975`). Brand colours come from the logo.
+
 Figma file (variables, text styles, components, homepage):
 https://www.figma.com/design/qeWV8gGHR6OTqX4PJRvtwV
 
@@ -22,8 +24,8 @@ https://www.figma.com/design/qeWV8gGHR6OTqX4PJRvtwV
 1. **Never edit an existing token value or name** in `tokens.css`.
 2. **Never edit an existing component rule** in `components.css`. To add a variant, append a new modifier class (for example `.btn--outline`) at the end of the file.
 3. **No literal colours, font sizes or spacing in HTML or new CSS.** Use `var(--c-*)`, `var(--fs-*)`, `var(--sp-*)`.
-4. **Volt Amber is for live power and the main action only.** At most one Volt button per screen.
-5. **One Grid Blue band at a time.** Never place two `.section--band` sections next to each other.
+4. **Signal Green (`--c-volt`) is for live power and the main action only.** At most one green button per screen.
+5. **One navy band at a time.** Never place two `.section--band` sections next to each other.
 6. **Three typefaces only**: Archivo (display, width 104–125%), IBM Plex Sans (body), IBM Plex Mono (numbers and labels).
 7. **Numbers always use the mono face with units** (`412.6 MW`, `50.00 Hz`, `68 %`).
 8. **Dark mode is automatic.** It changes token values only; never write dark-mode rules inside components.
@@ -33,8 +35,8 @@ https://www.figma.com/design/qeWV8gGHR6OTqX4PJRvtwV
 
 | Token | Light | Dark | Use |
 |---|---|---|---|
-| `--c-grid` Grid Blue | `#0F3344` | `#071016` | Brand, hero, bands, footer |
-| `--c-volt` Volt Amber | `#E8A317` | `#F2B23A` | Primary CTA, live data |
+| `--c-grid` Truxel Navy | `#0B3142` | `#071016` | Brand, hero, bands, footer |
+| `--c-volt` Signal Green | `#5DE975` | `#6BEE82` | Primary CTA, live data |
 | `--c-copper` Copper | `#B05A2B` | `#D9814F` | Storage, icons, figures |
 | `--c-solar` Solar | `#D9B44A` | `#E3C463` | Charts |
 | `--c-paper` Paper | `#F3F5F1` | `#0A151B` | Page background |

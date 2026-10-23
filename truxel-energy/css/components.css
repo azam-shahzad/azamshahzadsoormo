@@ -124,9 +124,7 @@ body::before {
 }
 .nav__inner { display: flex; align-items: center; gap: var(--sp-5); min-height: 68px; }
 .logo { display: inline-flex; align-items: center; gap: 10px; text-decoration: none; color: inherit; }
-.logo__mark { width: 28px; height: 28px; }
-.logo__word { font: 800 1.15rem/1 var(--font-display); font-stretch: 125%; letter-spacing: -.01em; }
-.logo__word span { color: var(--c-volt); }
+.logo__svg { height: 22px; width: auto; display: block; }
 .nav__links { display: none; gap: var(--sp-5); margin-left: auto; list-style: none; padding: 0; margin-block: 0; }
 .nav__links a { text-decoration: none; font-size: var(--fs-sm); color: var(--c-grid-mute); transition: color var(--dur) var(--ease); }
 .nav__links a:hover { color: var(--c-grid-ink); }
@@ -199,7 +197,7 @@ body::before {
   transition: border-color var(--dur) var(--ease), transform var(--dur) var(--ease), box-shadow var(--dur) var(--ease);
 }
 .card:hover { border-color: var(--c-ink-2); transform: translateY(-2px); box-shadow: var(--shadow-2); }
-.card__icon { width: 44px; height: 44px; border-radius: var(--r-md); display: grid; place-items: center; background: var(--c-volt-soft); color: var(--c-copper); }
+.card__icon { width: 44px; height: 44px; border-radius: var(--r-md); display: grid; place-items: center; background: var(--c-volt-soft); color: var(--c-ink); }
 .card__icon svg { width: 22px; height: 22px; }
 .card p { color: var(--c-ink-2); font-size: var(--fs-sm); }
 .card__meta { margin-top: var(--sp-2); padding-top: var(--sp-3); border-top: 1px solid var(--c-line); font: 500 var(--fs-xs)/1.4 var(--font-data); color: var(--c-ink); }
@@ -294,6 +292,80 @@ body::before {
 .footer a:hover { color: var(--c-grid-ink); }
 .footer .logo { color: var(--c-grid-ink); margin-bottom: var(--sp-3); }
 .footer__base { margin-top: var(--sp-7); padding-top: var(--sp-5); border-top: 1px solid var(--c-grid-line); display: flex; flex-wrap: wrap; justify-content: space-between; gap: var(--sp-3); font-size: var(--fs-xs); }
+
+/* =====================================================================
+   v1.1 — appended for the truxel.ai content (new blocks only)
+   ===================================================================== */
+
+/* ---------- Achievements ---------- */
+.achievements { display: grid; gap: var(--sp-6); grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr)); }
+.achievement { display: grid; gap: var(--sp-2); padding-top: var(--sp-5); border-top: 1px solid var(--c-line); align-content: start; }
+.achievement__icon { width: 36px; height: 36px; color: var(--c-ink); margin-bottom: var(--sp-2); }
+.achievement__value { font: 800 var(--fs-2xl)/1 var(--font-display); font-stretch: 112%; letter-spacing: -.02em; font-variant-numeric: tabular-nums; }
+.achievement__label { font-size: var(--fs-sm); color: var(--c-ink-2); max-width: 24ch; }
+
+/* ---------- Statement with inline icon pills ---------- */
+.statement { display: grid; gap: var(--sp-6); justify-items: center; text-align: center; }
+.statement__text {
+  font: 600 var(--fs-2xl)/1.25 var(--font-display); font-stretch: 104%; letter-spacing: -.02em;
+  max-width: 980px; margin: 0; text-wrap: balance;
+}
+.pill-icon {
+  display: inline-grid; place-items: center; width: 1.15em; height: 1.15em; border-radius: 50%;
+  vertical-align: -0.18em; margin-inline: .08em;
+}
+.pill-icon svg { width: 52%; height: 52%; }
+.pill-icon--green { background: var(--c-volt); color: var(--c-volt-ink); }
+.pill-icon--navy { background: var(--c-grid); color: var(--c-volt); }
+
+/* ---------- Services ---------- */
+.services { display: grid; gap: var(--sp-4); grid-template-columns: 1fr; }
+@media (min-width: 860px) { .services { grid-template-columns: 1fr 1fr; } }
+.service {
+  background: var(--c-surface); border: 1px solid var(--c-line); border-radius: var(--r-lg);
+  padding: var(--sp-6); display: grid; gap: var(--sp-4); align-content: start; min-width: 0;
+}
+.service--media { grid-template-columns: 1fr auto; align-items: start; }
+.service--media > div { display: grid; gap: var(--sp-4); min-width: 0; }
+.service h3 { font-size: var(--fs-xl); }
+.service p { color: var(--c-ink-2); }
+.service__thumb { width: clamp(96px, 14vw, 150px); aspect-ratio: 1; border-radius: var(--r-lg); object-fit: cover; max-width: 100%; }
+.banner {
+  grid-column: 1 / -1; position: relative; overflow: hidden; border-radius: var(--r-lg);
+  min-height: clamp(240px, 30vw, 360px); display: flex; align-items: flex-end; justify-content: flex-end;
+  padding: var(--sp-5); background: var(--c-grid);
+}
+.banner img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.banner__caption {
+  position: relative; margin: 0; background: var(--c-surface); color: var(--c-ink);
+  border-radius: var(--r-md); padding: var(--sp-3) var(--sp-5); font-size: var(--fs-md); max-width: 62ch; box-shadow: var(--shadow-2);
+}
+.services__more { display: flex; justify-content: center; margin-top: var(--sp-6); }
+
+/* ---------- Photo ---------- */
+.photo { display: block; width: 100%; max-width: 100%; aspect-ratio: 3 / 2; object-fit: cover; border-radius: var(--r-lg); }
+
+/* ---------- Why Nebula ---------- */
+.why { display: grid; gap: var(--sp-7); grid-template-columns: 1fr; }
+@media (min-width: 960px) { .why { grid-template-columns: 1fr 2fr; } }
+.why > * { min-width: 0; }
+.why__cards { display: grid; gap: var(--sp-4); grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); }
+.why-card { border: 1px solid var(--c-grid-line); border-radius: var(--r-lg); padding: var(--sp-6); display: grid; gap: var(--sp-4); align-content: start; }
+.why-card__num { font: 500 var(--fs-xs)/1 var(--font-data); letter-spacing: var(--tracking-label); color: var(--c-volt); }
+.why-card__icon { width: 56px; height: 56px; color: var(--c-volt); }
+.why-card h3 { font-size: var(--fs-xl); color: var(--c-grid-ink); }
+
+/* ---------- Centered call to action ---------- */
+.cta-center { display: grid; gap: var(--sp-5); justify-items: center; text-align: center; }
+.cta-center p { margin-inline: auto; }
+
+/* ---------- Footer additions ---------- */
+.footer__thumb { width: 128px; max-width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border-radius: var(--r-lg); }
+.footer address { font-style: normal; color: var(--c-grid-ink); }
+.footer__legal { display: flex; flex-wrap: wrap; gap: var(--sp-2) var(--sp-4); }
+
+/* ---------- Illustration note ---------- */
+.panel__note { font: 400 var(--fs-xs)/1.4 var(--font-data); color: var(--c-grid-mute); }
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
