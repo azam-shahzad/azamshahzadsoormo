@@ -85,8 +85,12 @@
   var darkSel = ".night, .energy, .footer, .impact__panel, .svc__media, .reel";
   function update() {
     nav.classList.toggle("is-scrolled", window.scrollY > 8);
-    var probe = document.elementFromPoint(window.innerWidth / 2, nav.offsetHeight + 2);
-    nav.classList.toggle("nav--dark", !!(probe && probe.closest(darkSel)));
+    var mid = nav.offsetHeight / 2, dark = false;
+    Array.prototype.forEach.call(document.querySelectorAll(darkSel), function (el) {
+      var r = el.getBoundingClientRect();
+      if (r.top <= mid && r.bottom >= mid && r.left <= window.innerWidth / 2 && r.right >= window.innerWidth / 2) dark = true;
+    });
+    nav.classList.toggle("nav--dark", dark);
   }
   update();
   window.addEventListener("scroll", update, { passive: true });

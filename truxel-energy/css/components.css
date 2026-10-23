@@ -709,6 +709,62 @@ a.b-card:hover, .b-card:hover { transform: translateY(-4px); box-shadow: var(--s
 .hub__node { transition: transform var(--dur) var(--ease); }
 .hub:hover .hub__nodebg { stroke: color-mix(in srgb, var(--c-green) 60%, transparent); }
 
+/* =====================================================================
+   v2.11 — Ready to start: power-on CTA card
+   ===================================================================== */
+.ready2__card {
+  position: relative; overflow: hidden; isolation: isolate; display: grid; justify-items: center; text-align: center; gap: var(--sp-5);
+  padding: clamp(3.5rem, 2rem + 6vw, 7rem) var(--sp-5); border-radius: calc(var(--r-lg) + 8px);
+  background: var(--c-surface); border: 1px solid var(--c-line); box-shadow: var(--shadow-card);
+}
+.ready2__card::before {
+  content: ""; position: absolute; inset: 0; z-index: -2;
+  background-image: radial-gradient(color-mix(in srgb, var(--c-ink) 14%, transparent) 1.2px, transparent 1.3px);
+  background-size: 22px 22px;
+  mask-image: radial-gradient(ellipse 70% 70% at 50% 50%, #000 20%, transparent 75%);
+  -webkit-mask-image: radial-gradient(ellipse 70% 70% at 50% 50%, #000 20%, transparent 75%);
+}
+.ready2__card::after {
+  content: ""; position: absolute; left: 50%; top: 62%; width: 640px; height: 420px; transform: translate(-50%, -50%); z-index: -1;
+  background: radial-gradient(closest-side, color-mix(in srgb, var(--c-green) 26%, transparent), transparent);
+}
+.ready2__chip {
+  display: inline-flex; align-items: center; gap: var(--sp-2); padding: 7px 16px 7px 10px; border-radius: var(--r-pill);
+  font-size: var(--fs-sm); font-weight: 500; color: var(--c-green-text); background: var(--c-green-soft);
+}
+.ready2__dot { width: 8px; height: 8px; border-radius: 50%; background: var(--c-green-text); animation: blink 2s ease-in-out infinite; box-shadow: 0 0 0 3px color-mix(in srgb, var(--c-green-text) 25%, transparent); }
+.ready2__card h2 { font-size: clamp(2.4rem, 1.4rem + 4vw, 4.5rem); line-height: 1.04; letter-spacing: -0.035em; max-width: 14ch; }
+.ready2__card .lead { margin: 0 auto var(--sp-5); }
+.power { position: relative; width: 132px; height: 132px; display: grid; place-items: center; text-decoration: none; }
+.power__btn {
+  position: relative; z-index: 2; width: 104px; height: 104px; border-radius: 50%; display: grid; place-items: center;
+  background: var(--c-green); color: var(--c-green-ink);
+  box-shadow: 0 18px 40px -14px color-mix(in srgb, var(--c-green) 80%, transparent), inset 0 -6px 14px rgba(11, 49, 66, .18);
+  transition: transform var(--dur) var(--ease), box-shadow var(--dur) var(--ease);
+}
+.power__btn svg { width: 40px; height: 40px; transition: transform var(--dur) var(--ease); }
+.power:hover .power__btn { transform: scale(1.06); box-shadow: 0 24px 60px -12px color-mix(in srgb, var(--c-green) 95%, transparent), inset 0 -6px 14px rgba(11, 49, 66, .18); }
+.power:hover .power__btn svg { transform: scale(1.12) rotate(-8deg); }
+.power:active .power__btn { transform: scale(.96); }
+.power__ring { position: absolute; inset: 0; width: 100%; height: 100%; transform: rotate(-90deg); z-index: 1; }
+.power__ring circle { fill: none; stroke: var(--c-green-text); stroke-width: 3; stroke-linecap: round; stroke-dasharray: 352; stroke-dashoffset: 352; transition: stroke-dashoffset .9s var(--ease); }
+.power:hover .power__ring circle, .power:focus-visible .power__ring circle { stroke-dashoffset: 0; }
+.power__ripple { position: absolute; inset: 14px; border-radius: 50%; border: 2px solid color-mix(in srgb, var(--c-green) 70%, transparent); animation: ripple 2.6s var(--ease) infinite; }
+.power__ripple--2 { animation-delay: 1.3s; }
+@keyframes ripple { from { transform: scale(1); opacity: .9; } to { transform: scale(1.9); opacity: 0; } }
+.power__label { font-weight: 500; color: var(--c-ink); }
+.ready2__float {
+  display: none; position: absolute; z-index: -1; width: 220px; aspect-ratio: 4 / 5; object-fit: cover; border-radius: var(--r-lg);
+  border: 6px solid var(--c-surface); box-shadow: var(--shadow-card); transition: transform .8s var(--ease);
+}
+@media (min-width: 1000px) {
+  .ready2__float { display: block; }
+  .ready2__float--l { left: 6%; top: 18%; transform: rotate(-8deg); }
+  .ready2__float--r { right: 6%; bottom: 14%; transform: rotate(7deg); }
+  .ready2__card:hover .ready2__float--l { transform: rotate(-4deg) translateY(-8px); }
+  .ready2__card:hover .ready2__float--r { transform: rotate(3deg) translateY(-8px); }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
 }
