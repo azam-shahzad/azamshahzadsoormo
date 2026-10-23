@@ -6,7 +6,7 @@ Truxel (truxel.ai). The system is **locked**: new pages and edits reuse it as-is
 
 - Logo: `assets/truxel-logo.svg` (navy `#0B3142` + green `#5DE975`)
 - Photos: `assets/img/` (hero-landscape.jpg supplied by Truxel; the rest from the truxel.ai page export)
-- Figma (v2 pages: "v2 · Design System", "v2 · Homepage"; v1 kept as archive): https://www.figma.com/design/qeWV8gGHR6OTqX4PJRvtwV
+- Figma (current page: "v3 · Homepage"; components on "v2 · Design System"; older pages kept as archive): https://www.figma.com/design/qeWV8gGHR6OTqX4PJRvtwV
 
 ## Files
 
