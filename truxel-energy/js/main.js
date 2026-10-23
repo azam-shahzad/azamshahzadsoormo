@@ -82,7 +82,7 @@
 (function () {
   var nav = document.querySelector(".nav");
   if (!nav) return;
-  var darkSel = ".night, .energy, .footer, .impact__panel, .svc__media, .reel";
+  var darkSel = ".night, .energy, .footer, .foot, .impact__panel, .svc__media, .reel";
   function update() {
     nav.classList.toggle("is-scrolled", window.scrollY > 8);
     var mid = nav.offsetHeight / 2, dark = false;
