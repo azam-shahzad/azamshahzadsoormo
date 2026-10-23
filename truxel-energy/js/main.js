@@ -124,3 +124,17 @@
     it.addEventListener("mouseenter", function () { if (window.matchMedia("(hover: hover)").matches) activate(i); });
   });
 })();
+
+/* Gallery: expand the hovered / focused / tapped panel */
+(function () {
+  var items = Array.prototype.slice.call(document.querySelectorAll(".reel__item"));
+  if (!items.length) return;
+  function activate(el) { items.forEach(function (it) { it.classList.toggle("is-active", it === el); }); }
+  items.forEach(function (it) {
+    it.addEventListener("mouseenter", function () { activate(it); });
+    it.addEventListener("focus", function () { activate(it); });
+    it.addEventListener("click", function (e) {
+      if (!it.classList.contains("is-active")) { e.preventDefault(); activate(it); }
+    });
+  });
+})();
