@@ -91,3 +91,15 @@
   update();
   window.addEventListener("scroll", update, { passive: true });
 })();
+
+/* Spotlight hover: feed pointer position to .spot cards */
+(function () {
+  if (window.matchMedia("(hover: none)").matches) return;
+  document.addEventListener("pointermove", function (e) {
+    var el = e.target.closest && e.target.closest(".spot");
+    if (!el) return;
+    var r = el.getBoundingClientRect();
+    el.style.setProperty("--mx", (e.clientX - r.left) + "px");
+    el.style.setProperty("--my", (e.clientY - r.top) + "px");
+  }, { passive: true });
+})();
