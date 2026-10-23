@@ -31,4 +31,49 @@
       form.reset();
     });
   }
+
+  var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (reduce || !("IntersectionObserver" in window)) return;
+
+  /* Reveal sections as they scroll in. Content is visible by default;
+     the animation starts just before an element enters the screen. */
+  var revealIO = new IntersectionObserver(function (entries) {
+    entries.forEach(function (en) {
+      if (en.isIntersecting) { en.target.classList.add("is-in"); revealIO.unobserve(en.target); }
+    });
+  }, { rootMargin: "0px 0px 12% 0px" });
+  Array.prototype.forEach.call(document.querySelectorAll("[data-reveal]"), function (el, i) {
+    var r = el.getBoundingClientRect();
+    if (r.top > window.innerHeight) { el.style.animationDelay = (i % 3) * 0.08 + "s"; revealIO.observe(el); }
+  });
+
+  /* Count numbers up when they come into view (final value is in the HTML) */
+  var countIO = new IntersectionObserver(function (entries) {
+    entries.forEach(function (en) {
+      if (!en.isIntersecting) return;
+      var el = en.target, end = parseFloat(el.getAttribute("data-count")), t0 = null;
+      countIO.unobserve(el);
+      function step(ts) {
+        if (!t0) t0 = ts;
+        var p = Math.min(1, (ts - t0) / 1400), e = 1 - Math.pow(1 - p, 3);
+        el.textContent = Math.round(end * e);
+        if (p < 1) requestAnimationFrame(step);
+      }
+      requestAnimationFrame(step);
+    });
+  }, { threshold: 0.6 });
+  Array.prototype.forEach.call(document.querySelectorAll("[data-count]"), function (el) { countIO.observe(el); });
+
+  /* Gentle parallax on the hero photo */
+  var bg = document.querySelector(".hero__bg"), ticking = false;
+  if (bg) {
+    window.addEventListener("scroll", function () {
+      if (ticking) return; ticking = true;
+      requestAnimationFrame(function () {
+        var y = Math.min(window.scrollY, window.innerHeight * 1.2);
+        bg.style.transform = "translate3d(0," + (y * -0.12).toFixed(1) + "px,0)";
+        ticking = false;
+      });
+    }, { passive: true });
+  }
 })();
