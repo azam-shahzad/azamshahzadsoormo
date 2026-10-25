@@ -176,3 +176,25 @@
   });
   draw(1);
 }); })();
+
+/* Why Nebula slider: arrows, dots, keyboard */
+(function () {
+  var root = document.querySelector(".wslider"); if (!root) return;
+  var vp = root.querySelector(".wslider__viewport"), slides = root.querySelectorAll(".wslider__slide");
+  var prev = root.querySelector(".wslider__arrow--prev"), next = root.querySelector(".wslider__arrow--next");
+  var dotsBox = root.querySelector(".wslider__dots");
+  function step() { return slides.length > 1 ? slides[1].offsetLeft - slides[0].offsetLeft : vp.clientWidth; }
+  function pages() { return Math.max(1, Math.round((vp.scrollWidth - vp.clientWidth) / step()) + 1); }
+  function render() {
+    var n = pages(), i = Math.round(vp.scrollLeft / step());
+    if (dotsBox.children.length !== n) { dotsBox.innerHTML = ""; for (var k = 0; k < n; k++) dotsBox.appendChild(document.createElement("i")); }
+    Array.prototype.forEach.call(dotsBox.children, function (d, k) { d.classList.toggle("is-on", k === i); });
+    prev.disabled = vp.scrollLeft <= 2; next.disabled = vp.scrollLeft >= vp.scrollWidth - vp.clientWidth - 2;
+  }
+  prev.addEventListener("click", function () { vp.scrollBy({ left: -step(), behavior: "smooth" }); });
+  next.addEventListener("click", function () { vp.scrollBy({ left: step(), behavior: "smooth" }); });
+  vp.addEventListener("keydown", function (e) { if (e.key === "ArrowRight") { e.preventDefault(); next.click(); } if (e.key === "ArrowLeft") { e.preventDefault(); prev.click(); } });
+  vp.addEventListener("scroll", function () { window.requestAnimationFrame(render); }, { passive: true });
+  window.addEventListener("resize", render);
+  render();
+})();

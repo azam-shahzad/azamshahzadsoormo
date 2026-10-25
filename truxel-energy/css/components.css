@@ -842,6 +842,39 @@ a.b-card:hover, .b-card:hover { transform: translateY(-4px); box-shadow: var(--s
 
 .aboutc__copy .about2__hl { padding-inline: 2px; }
 
+/* =====================================================================
+   v2.14 — Why Nebula slider (4 cards, side arrows, dots)
+   ===================================================================== */
+.wslider { display: grid; grid-template-columns: 1fr; gap: var(--sp-5); max-width: 1200px; margin-inline: auto; position: relative; }
+@media (min-width: 900px) { .wslider { grid-template-columns: auto 1fr auto; align-items: center; gap: var(--sp-5); } }
+.wslider__viewport { overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; scroll-behavior: smooth; outline: none; min-width: 0; }
+.wslider__viewport::-webkit-scrollbar { display: none; }
+.wslider__track { display: flex; gap: var(--sp-5); }
+.wslider__slide { flex: 0 0 86%; scroll-snap-align: start; display: flex; }
+@media (min-width: 900px) { .wslider__slide { flex-basis: calc((100% - var(--sp-5)) / 2); } }
+.wslider__slide .why-card { flex: 1; padding: var(--sp-8) var(--sp-7); gap: var(--sp-5); border-radius: var(--r-lg); min-height: 340px; align-content: start; }
+.wslider__slide .why-card__icon { width: 64px; height: 64px; padding: 12px; border-radius: 18px; background: color-mix(in srgb, var(--c-green) 12%, transparent); }
+.wslider__slide .why-card__num { font: 400 var(--fs-2xl)/1 var(--font-sans); letter-spacing: -0.04em; color: transparent; -webkit-text-stroke: 1px color-mix(in srgb, var(--c-green) 60%, transparent); }
+.wslider__slide .why-card h3 { font-size: var(--fs-xl); }
+.wslider__slide .why-card p { font-size: var(--fs-md); }
+.wslider__arrow {
+  width: 60px; height: 60px; border-radius: 50%; display: grid; place-items: center; cursor: pointer;
+  color: var(--c-on-night); background: rgba(255, 255, 255, .05); border: 1px solid var(--c-night-line);
+  transition: background var(--dur) var(--ease), color var(--dur) var(--ease), transform var(--dur) var(--ease), opacity var(--dur) var(--ease), border-color var(--dur) var(--ease);
+}
+.wslider__arrow svg { width: 22px; height: 22px; }
+.wslider__arrow:hover:not(:disabled) { background: var(--c-green); color: var(--c-green-ink); border-color: var(--c-green); transform: scale(1.06); }
+.wslider__arrow:disabled { opacity: .35; cursor: default; }
+@media (max-width: 899px) {
+  .wslider__arrow { position: static; order: 3; width: 52px; height: 52px; }
+  .wslider { grid-template-columns: auto auto 1fr; } .wslider__viewport { grid-column: 1 / -1; order: 1; }
+  .wslider__arrow--prev { order: 2; } .wslider__arrow--next { order: 3; } .wslider__dots { order: 4; justify-self: end; }
+}
+.wslider__dots { display: flex; gap: 8px; justify-content: center; grid-column: 1 / -1; }
+@media (max-width: 899px) { .wslider__dots { grid-column: auto; } }
+.wslider__dots i { width: 8px; height: 8px; border-radius: 999px; background: var(--c-night-line); transition: width var(--dur) var(--ease), background var(--dur) var(--ease); }
+.wslider__dots i.is-on { width: 28px; background: var(--c-green); }
+
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
 }
