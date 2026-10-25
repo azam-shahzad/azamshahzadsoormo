@@ -875,6 +875,8 @@ a.b-card:hover, .b-card:hover { transform: translateY(-4px); box-shadow: var(--s
 .wslider__dots i { width: 8px; height: 8px; border-radius: 999px; background: var(--c-night-line); transition: width var(--dur) var(--ease), background var(--dur) var(--ease); }
 .wslider__dots i.is-on { width: 28px; background: var(--c-green); }
 
+.foot { padding-top: var(--sp-6); }
+
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
 }
