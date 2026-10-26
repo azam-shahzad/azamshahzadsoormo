@@ -1,0 +1,637 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Truxco — Buy and sell buses in Europe</title>
+<meta name="description" content="Truxco is the simple way to buy and sell used buses in Europe. City buses, interurban, coaches and minibuses from Staffanstorp, Sweden.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+/* ---------- Brand tokens (swap --brand values for the exact logo colours) ---------- */
+:root{
+  --brand:#1652F0;          /* primary – logo colour */
+  --brand-ink:#0B1B33;      /* logo dark / headings */
+  --brand-soft:#EAF0FF;
+  --bg:#FFFFFF;
+  --bg-alt:#F5F7FB;
+  --line:#E3E8F1;
+  --text:#0B1B33;
+  --muted:#5A6780;
+  --radius:16px;
+  --radius-lg:28px;
+  --shadow:0 1px 2px rgba(11,27,51,.06),0 8px 24px rgba(11,27,51,.06);
+  --shadow-lg:0 2px 4px rgba(11,27,51,.06),0 24px 48px rgba(11,27,51,.12);
+  --ease:cubic-bezier(.2,.7,.2,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color:var(--text);background:var(--bg);line-height:1.6;-webkit-font-smoothing:antialiased}
+img,svg{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button,input,select,textarea{font:inherit;color:inherit}
+.container{width:min(1200px,100% - 32px);margin-inline:auto}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--brand)}
+.eyebrow::before{content:"";width:18px;height:2px;background:currentColor;border-radius:2px}
+h1,h2,h3{color:var(--brand-ink);letter-spacing:-.02em;line-height:1.12}
+h2{font-size:clamp(28px,4vw,44px);font-weight:800}
+.lead{font-size:18px;color:var(--muted);max-width:56ch}
+section{padding:clamp(64px,9vw,120px) 0}
+.section-head{display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap;margin-bottom:48px}
+.section-head h2{margin-top:12px;max-width:18ch}
+
+/* ---------- Buttons ---------- */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;height:52px;padding:0 24px;border-radius:999px;font-weight:600;font-size:15px;border:1px solid transparent;cursor:pointer;transition:transform .2s var(--ease),background .2s,box-shadow .2s,color .2s}
+.btn svg{width:18px;height:18px;transition:transform .2s var(--ease)}
+.btn:hover svg{transform:translateX(3px)}
+.btn-primary{background:var(--brand);color:#fff;box-shadow:0 8px 20px rgba(22,82,240,.28)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 28px rgba(22,82,240,.36)}
+.btn-ghost{border-color:var(--line);background:#fff}
+.btn-ghost:hover{border-color:var(--brand-ink)}
+.btn-light{background:#fff;color:var(--brand-ink)}
+.btn-light:hover{transform:translateY(-2px)}
+:focus-visible{outline:3px solid var(--brand);outline-offset:3px;border-radius:8px}
+
+/* ---------- Header ---------- */
+.topbar{background:var(--brand-ink);color:#C9D3E6;font-size:13px}
+.topbar .container{display:flex;justify-content:space-between;align-items:center;height:40px;gap:16px}
+.topbar a:hover{color:#fff}
+.topbar .tb-left{display:flex;gap:24px}
+.lang{display:flex;gap:4px}
+.lang a{padding:2px 8px;border-radius:6px}
+.lang a[aria-current]{background:rgba(255,255,255,.12);color:#fff}
+header.nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.88);backdrop-filter:saturate(180%) blur(14px);border-bottom:1px solid transparent;transition:border-color .2s,box-shadow .2s}
+header.nav.scrolled{border-color:var(--line);box-shadow:0 4px 20px rgba(11,27,51,.05)}
+.nav .container{display:flex;align-items:center;justify-content:space-between;height:76px;gap:24px}
+.logo img{height:32px;width:auto}
+.menu{display:flex;gap:4px;list-style:none}
+.menu a{display:block;padding:10px 14px;border-radius:10px;font-weight:500;font-size:15px;color:var(--muted);transition:color .2s,background .2s}
+.menu a:hover{color:var(--brand-ink);background:var(--bg-alt)}
+.nav-cta{display:flex;gap:10px;align-items:center}
+.nav-cta .btn{height:44px;padding:0 20px}
+.burger{display:none;width:44px;height:44px;border-radius:12px;border:1px solid var(--line);background:#fff;cursor:pointer;align-items:center;justify-content:center}
+.burger span,.burger span::before,.burger span::after{display:block;width:18px;height:2px;background:var(--brand-ink);border-radius:2px;position:relative;transition:transform .25s var(--ease),background .2s}
+.burger span::before,.burger span::after{content:"";position:absolute;left:0}
+.burger span::before{top:-6px}.burger span::after{top:6px}
+.nav.open .burger span{background:transparent}
+.nav.open .burger span::before{transform:translateY(6px) rotate(45deg)}
+.nav.open .burger span::after{transform:translateY(-6px) rotate(-45deg)}
+
+/* ---------- Hero ---------- */
+.hero{padding:clamp(40px,6vw,72px) 0 clamp(64px,8vw,100px);position:relative;overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1.05fr 1fr;gap:56px;align-items:center}
+.hero h1{font-size:clamp(40px,6.2vw,76px);font-weight:800;letter-spacing:-.035em;margin:18px 0 22px}
+.hero h1 em{font-style:normal;color:var(--brand)}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:32px}
+.trust{display:flex;align-items:center;gap:14px;margin-top:36px;color:var(--muted);font-size:14px}
+.trust .flags{display:flex}
+.trust .flags span{width:30px;height:30px;border-radius:50%;border:2px solid #fff;display:grid;place-items:center;font-size:11px;font-weight:700;color:#fff;margin-left:-8px}
+.trust .flags span:first-child{margin-left:0}
+.hero-visual{position:relative;aspect-ratio:1/1;border-radius:var(--radius-lg);background:radial-gradient(120% 90% at 80% 10%,#2C6BFF 0%,var(--brand) 40%,#0B2A86 100%);overflow:hidden;box-shadow:var(--shadow-lg)}
+.hero-visual .road{position:absolute;inset:auto 0 0 0;height:30%;background:linear-gradient(180deg,rgba(11,27,51,.0),rgba(11,27,51,.35))}
+.hero-visual .lines{position:absolute;left:0;right:0;bottom:12%;height:4px;background:repeating-linear-gradient(90deg,rgba(255,255,255,.55) 0 40px,transparent 40px 80px);animation:road 1.6s linear infinite}
+@keyframes road{to{background-position:-80px 0}}
+.hero-visual .bus{position:absolute;left:6%;right:6%;bottom:14%;color:#fff;filter:drop-shadow(0 20px 30px rgba(0,0,0,.25))}
+.hero-visual .grid-bg{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.07) 1px,transparent 1px);background-size:44px 44px;mask-image:linear-gradient(180deg,#000 30%,transparent 80%)}
+.float-card{position:absolute;background:#fff;border-radius:16px;padding:14px 16px;box-shadow:var(--shadow-lg);display:flex;gap:12px;align-items:center;font-size:14px;animation:float 6s ease-in-out infinite}
+.float-card b{display:block;color:var(--brand-ink);font-size:15px}
+.float-card small{color:var(--muted)}
+.float-card .ic{width:40px;height:40px;border-radius:12px;background:var(--brand-soft);color:var(--brand);display:grid;place-items:center}
+.float-card .ic svg{width:20px;height:20px}
+.fc-1{top:8%;left:-4%}
+.fc-2{top:34%;right:-3%;animation-delay:-3s}
+@keyframes float{50%{transform:translateY(-10px)}}
+
+/* ---------- Search ---------- */
+.search{margin-top:-48px;position:relative;z-index:5}
+.search form{background:#fff;border:1px solid var(--line);border-radius:22px;box-shadow:var(--shadow-lg);padding:10px;display:grid;grid-template-columns:repeat(4,1fr) auto;gap:6px}
+.field{padding:10px 18px;border-radius:14px;transition:background .2s}
+.field:hover{background:var(--bg-alt)}
+.field label{display:block;font-size:12px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+.field select{width:100%;border:0;background:transparent;font-weight:600;font-size:15px;padding:4px 0;cursor:pointer;outline:none;appearance:none}
+.search .btn{height:auto;min-height:60px;border-radius:16px;padding:0 28px}
+
+/* ---------- Stats ---------- */
+.stats{padding:72px 0 0}
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--line);border-radius:var(--radius-lg)}
+.stat{padding:32px 28px}
+.stat+.stat{border-left:1px solid var(--line)}
+.stat strong{display:block;font-size:clamp(32px,4vw,44px);font-weight:800;letter-spacing:-.03em;color:var(--brand-ink)}
+.stat strong span{color:var(--brand)}
+.stat p{color:var(--muted);font-size:15px}
+
+/* ---------- Categories ---------- */
+.cats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.cat{position:relative;border-radius:var(--radius);background:var(--bg-alt);padding:28px 24px 0;overflow:hidden;transition:transform .3s var(--ease),box-shadow .3s,background .3s;border:1px solid transparent}
+.cat:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg);background:#fff;border-color:var(--line)}
+.cat h3{font-size:20px}
+.cat p{color:var(--muted);font-size:14px;margin:4px 0 18px}
+.cat .count{position:absolute;top:24px;right:24px;width:36px;height:36px;border-radius:50%;display:grid;place-items:center;background:#fff;color:var(--brand);transition:background .3s,color .3s}
+.cat:hover .count{background:var(--brand);color:#fff}
+.cat .count svg{width:16px;height:16px}
+.cat .art{color:var(--brand-ink);opacity:.9;margin:0 -8px -6px;transition:transform .5s var(--ease)}
+.cat:hover .art{transform:translateX(10px)}
+
+/* ---------- Listings ---------- */
+.listings{background:var(--bg-alt)}
+.chips{display:flex;gap:8px;flex-wrap:wrap}
+.chip{height:40px;padding:0 18px;border-radius:999px;border:1px solid var(--line);background:#fff;font-weight:500;font-size:14px;cursor:pointer;transition:all .2s}
+.chip:hover{border-color:var(--brand-ink)}
+.chip[aria-pressed="true"]{background:var(--brand-ink);color:#fff;border-color:var(--brand-ink)}
+.grid-list{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.card{background:#fff;border-radius:var(--radius-lg);overflow:hidden;border:1px solid var(--line);transition:transform .3s var(--ease),box-shadow .3s;display:flex;flex-direction:column}
+.card:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg)}
+.card.hide{display:none}
+.card-media{position:relative;aspect-ratio:16/10;display:grid;place-items:end center;padding:0 8% 8%;overflow:hidden}
+.card-media::after{content:"";position:absolute;left:0;right:0;bottom:0;height:22%;background:rgba(11,27,51,.08)}
+.card-media svg{position:relative;z-index:1;width:100%;transition:transform .6s var(--ease)}
+.card:hover .card-media svg{transform:scale(1.05) translateX(8px)}
+.t1{background:linear-gradient(135deg,#E7EEFF,#CFDDFF);color:var(--brand)}
+.t2{background:linear-gradient(135deg,#E9F7F1,#C7EBDC);color:#0E8A5F}
+.t3{background:linear-gradient(135deg,#F1F2F6,#DCE0EA);color:var(--brand-ink)}
+.t4{background:linear-gradient(135deg,#FFF3E6,#FFE0BF);color:#C25E00}
+.badges{position:absolute;top:16px;left:16px;right:16px;display:flex;justify-content:space-between;z-index:2}
+.badge{background:#fff;border-radius:999px;padding:6px 12px;font-size:12px;font-weight:600;color:var(--brand-ink);box-shadow:var(--shadow)}
+.badge.accent{background:var(--brand-ink);color:#fff}
+.card-body{padding:22px 24px 24px;display:flex;flex-direction:column;flex:1}
+.card-body .type{font-size:13px;font-weight:600;color:var(--brand)}
+.card-body h3{font-size:19px;margin:6px 0 14px}
+.specs{display:flex;gap:16px;flex-wrap:wrap;color:var(--muted);font-size:14px;padding-bottom:18px;border-bottom:1px dashed var(--line)}
+.specs span{display:inline-flex;align-items:center;gap:6px}
+.specs svg{width:16px;height:16px;opacity:.7}
+.card-foot{display:flex;justify-content:space-between;align-items:center;padding-top:18px;margin-top:auto}
+.price{font-size:22px;font-weight:800;color:var(--brand-ink);letter-spacing:-.02em}
+.price small{display:block;font-size:12px;font-weight:500;color:var(--muted);letter-spacing:0}
+.arrow{width:44px;height:44px;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center;transition:all .25s var(--ease)}
+.arrow svg{width:18px;height:18px}
+.card:hover .arrow{background:var(--brand);border-color:var(--brand);color:#fff;transform:rotate(-45deg)}
+.center{text-align:center;margin-top:48px}
+
+/* ---------- Sell steps ---------- */
+.sell-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:64px;align-items:start}
+.sell-grid .sticky{position:sticky;top:120px}
+.steps{display:grid;gap:16px;counter-reset:s}
+.step{display:grid;grid-template-columns:auto 1fr;gap:24px;padding:28px;border-radius:var(--radius-lg);border:1px solid var(--line);transition:border-color .3s,box-shadow .3s,transform .3s var(--ease)}
+.step:hover{border-color:var(--brand);box-shadow:var(--shadow);transform:translateX(6px)}
+.step .n{width:52px;height:52px;border-radius:16px;background:var(--brand-soft);color:var(--brand);display:grid;place-items:center;font-weight:800;font-size:18px}
+.step h3{font-size:20px;margin-bottom:6px}
+.step p{color:var(--muted)}
+
+/* ---------- Services ---------- */
+.services{background:var(--brand-ink);color:#C9D3E6;position:relative;overflow:hidden}
+.services h2,.services h3{color:#fff}
+.services .eyebrow{color:#7FA4FF}
+.services .lead{color:#9AA8C2}
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.svc{padding:36px 32px;border-radius:var(--radius-lg);background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);transition:background .3s,transform .3s var(--ease),border-color .3s}
+.svc:hover{background:rgba(255,255,255,.07);transform:translateY(-6px);border-color:rgba(127,164,255,.4)}
+.svc .ic{width:56px;height:56px;border-radius:16px;background:var(--brand);display:grid;place-items:center;color:#fff;margin-bottom:28px}
+.svc .ic svg{width:26px;height:26px}
+.svc h3{font-size:22px;margin-bottom:10px}
+.svc ul{list-style:none;margin-top:20px;display:grid;gap:10px;font-size:15px}
+.svc li{display:flex;gap:10px;align-items:center}
+.svc li::before{content:"";width:6px;height:6px;border-radius:50%;background:#7FA4FF;flex:none}
+
+/* ---------- Brands ---------- */
+.brands{padding:56px 0;border-bottom:1px solid var(--line)}
+.brands p{text-align:center;color:var(--muted);font-size:14px;margin-bottom:28px}
+.marquee{overflow:hidden;mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent)}
+.track{display:flex;gap:72px;width:max-content;animation:marq 32s linear infinite}
+.track span{font-size:24px;font-weight:800;letter-spacing:-.02em;color:#A3AEC2;white-space:nowrap;transition:color .2s}
+.track span:hover{color:var(--brand-ink)}
+@keyframes marq{to{transform:translateX(-50%)}}
+
+/* ---------- About ---------- */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.about-visual{position:relative;border-radius:var(--radius-lg);background:var(--bg-alt);aspect-ratio:5/4;padding:32px;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:16px}
+.tile{border-radius:20px;background:#fff;padding:22px;box-shadow:var(--shadow);display:flex;flex-direction:column;justify-content:space-between}
+.tile b{font-size:30px;color:var(--brand-ink);letter-spacing:-.02em}
+.tile small{color:var(--muted);font-size:14px}
+.tile.dark{background:var(--brand);color:#fff}
+.tile.dark b,.tile.dark small{color:#fff}
+.checks{list-style:none;display:grid;gap:14px;margin:28px 0 36px}
+.checks li{display:flex;gap:12px;align-items:flex-start}
+.checks svg{width:22px;height:22px;flex:none;color:var(--brand);margin-top:2px}
+.group{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+.group span{font-size:13px;font-weight:500;padding:6px 12px;border-radius:999px;background:var(--bg-alt);color:var(--muted)}
+
+/* ---------- CTA + contact ---------- */
+.cta{padding-top:0}
+.cta-box{border-radius:32px;background:radial-gradient(100% 140% at 100% 0%,#2C6BFF 0%,var(--brand) 45%,#0B2A86 100%);color:#DCE6FF;padding:clamp(40px,6vw,72px);display:grid;grid-template-columns:1.1fr 1fr;gap:48px;position:relative;overflow:hidden}
+.cta-box h2{color:#fff}
+.cta-box .lead{color:#C9D7FF;margin:16px 0 28px}
+.contact-list{display:grid;gap:12px}
+.contact-list a,.contact-list div{display:flex;align-items:center;gap:14px;font-weight:500;color:#fff}
+.contact-list .ic{width:42px;height:42px;border-radius:12px;background:rgba(255,255,255,.12);display:grid;place-items:center}
+.contact-list svg{width:18px;height:18px}
+.form{background:#fff;border-radius:24px;padding:28px;color:var(--text);display:grid;gap:14px;box-shadow:var(--shadow-lg);position:relative;z-index:1}
+.form h3{font-size:20px}
+.form .row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.form label{display:grid;gap:6px;font-size:13px;font-weight:600;color:var(--muted)}
+.form input,.form select,.form textarea{border:1px solid var(--line);border-radius:12px;padding:12px 14px;font-size:15px;font-weight:500;color:var(--text);background:#fff;transition:border-color .2s,box-shadow .2s;outline:none}
+.form input:focus,.form select:focus,.form textarea:focus{border-color:var(--brand);box-shadow:0 0 0 4px var(--brand-soft)}
+.form textarea{resize:vertical;min-height:90px}
+.seg{display:flex;background:var(--bg-alt);border-radius:12px;padding:4px}
+.seg button{flex:1;border:0;background:transparent;padding:10px;border-radius:9px;font-weight:600;font-size:14px;color:var(--muted);cursor:pointer;transition:all .2s}
+.seg button[aria-pressed="true"]{background:#fff;color:var(--brand-ink);box-shadow:var(--shadow)}
+.form .ok{display:none;padding:12px 14px;border-radius:12px;background:#E9F7F1;color:#0E6B4A;font-weight:600;font-size:14px}
+.form.sent .ok{display:block}
+
+/* ---------- Footer ---------- */
+footer{padding:72px 0 32px;border-top:1px solid var(--line);margin-top:clamp(64px,9vw,120px)}
+.foot{display:grid;grid-template-columns:1.4fr repeat(3,1fr);gap:40px}
+.foot p{color:var(--muted);font-size:15px;margin-top:16px;max-width:34ch}
+.foot h4{font-size:14px;margin-bottom:16px;color:var(--brand-ink)}
+.foot ul{list-style:none;display:grid;gap:10px;font-size:15px;color:var(--muted)}
+.foot a:hover{color:var(--brand)}
+.legal{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-top:56px;padding-top:24px;border-top:1px solid var(--line);color:var(--muted);font-size:14px}
+
+/* ---------- Reveal ---------- */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+.reveal.in{opacity:1;transform:none}
+
+/* ---------- Responsive ---------- */
+@media (max-width:1024px){
+  .menu{display:none}
+  .burger{display:flex}
+  .nav.open .menu{display:flex;flex-direction:column;position:absolute;top:76px;left:0;right:0;background:#fff;padding:12px 16px 20px;border-bottom:1px solid var(--line);box-shadow:var(--shadow-lg)}
+  .nav.open .menu a{padding:14px}
+  .hero-grid,.sell-grid,.about-grid,.cta-box{grid-template-columns:1fr}
+  .hero-visual{aspect-ratio:4/3}
+  .sell-grid .sticky{position:static}
+  .search form{grid-template-columns:1fr 1fr}
+  .search .btn{grid-column:1/-1;min-height:56px}
+  .cats,.grid-list,.svc-grid{grid-template-columns:repeat(2,1fr)}
+  .stats-grid{grid-template-columns:repeat(2,1fr)}
+  .stat:nth-child(3){border-left:0}
+  .stat:nth-child(n+3){border-top:1px solid var(--line)}
+  .foot{grid-template-columns:1fr 1fr}
+}
+@media (max-width:640px){
+  .topbar .tb-left a:nth-child(2),.nav-cta .btn-ghost{display:none}
+  .nav-cta .btn-primary{display:none}
+  .fc-1{left:4%;top:6%}.fc-2{display:none}
+  .search{margin-top:-32px}
+  .search form,.cats,.grid-list,.svc-grid,.form .row,.foot{grid-template-columns:1fr}
+  .stats-grid{grid-template-columns:1fr 1fr}
+  .stat{padding:22px 18px}
+  .about-visual{padding:16px;gap:10px}
+  .tile{padding:16px}.tile b{font-size:24px}
+  .step{padding:22px;gap:16px}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  .reveal{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+
+<!-- Shared SVG symbols -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="bus-city" viewBox="0 0 320 110"><rect x="4" y="8" width="312" height="82" rx="14" fill="currentColor"/><rect x="18" y="20" width="44" height="34" rx="4" fill="#fff" opacity=".85"/><rect x="70" y="20" width="44" height="34" rx="4" fill="#fff" opacity=".85"/><rect x="122" y="20" width="26" height="62" rx="3" fill="#fff" opacity=".55"/><rect x="156" y="20" width="44" height="34" rx="4" fill="#fff" opacity=".85"/><rect x="208" y="20" width="44" height="34" rx="4" fill="#fff" opacity=".85"/><rect x="260" y="20" width="26" height="62" rx="3" fill="#fff" opacity=".55"/><path d="M294 20h12a6 6 0 0 1 6 6v28h-18z" fill="#fff" opacity=".85"/><circle cx="72" cy="92" r="15" fill="#0B1B33"/><circle cx="72" cy="92" r="6" fill="#D5DCE8"/><circle cx="250" cy="92" r="15" fill="#0B1B33"/><circle cx="250" cy="92" r="6" fill="#D5DCE8"/><rect x="306" y="66" width="10" height="8" rx="2" fill="#FFD66B"/></symbol>
+  <symbol id="bus-coach" viewBox="0 0 320 110"><path d="M10 26c0-12 8-20 20-20h250c14 0 26 10 30 24l6 30v28a4 4 0 0 1-4 4H14a4 4 0 0 1-4-4z" fill="currentColor"/><path d="M24 22h230v28H24z" fill="#fff" opacity=".85"/><path d="M262 22h22c8 0 14 6 16 14l4 14h-42z" fill="#fff" opacity=".85"/><rect x="10" y="62" width="306" height="4" fill="#fff" opacity=".35"/><circle cx="66" cy="92" r="15" fill="#0B1B33"/><circle cx="66" cy="92" r="6" fill="#D5DCE8"/><circle cx="104" cy="92" r="15" fill="#0B1B33"/><circle cx="104" cy="92" r="6" fill="#D5DCE8"/><circle cx="262" cy="92" r="15" fill="#0B1B33"/><circle cx="262" cy="92" r="6" fill="#D5DCE8"/><rect x="306" y="70" width="10" height="8" rx="2" fill="#FFD66B"/></symbol>
+  <symbol id="bus-mini" viewBox="0 0 320 110"><path d="M40 30c0-12 8-20 20-20h150c12 0 20 4 28 12l40 36c8 2 12 8 12 14v18a4 4 0 0 1-4 4H44a4 4 0 0 1-4-4z" fill="currentColor"/><rect x="56" y="22" width="44" height="30" rx="4" fill="#fff" opacity=".85"/><rect x="108" y="22" width="44" height="30" rx="4" fill="#fff" opacity=".85"/><rect x="160" y="22" width="40" height="30" rx="4" fill="#fff" opacity=".85"/><path d="M208 22h6c6 0 10 2 14 6l26 24h-46z" fill="#fff" opacity=".85"/><circle cx="96" cy="92" r="15" fill="#0B1B33"/><circle cx="96" cy="92" r="6" fill="#D5DCE8"/><circle cx="240" cy="92" r="15" fill="#0B1B33"/><circle cx="240" cy="92" r="6" fill="#D5DCE8"/><rect x="280" y="70" width="10" height="8" rx="2" fill="#FFD66B"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-cal" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><path d="M3 10h18M8 3v4M16 3v4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+  <symbol id="i-road" viewBox="0 0 24 24"><path d="M12 3a9 9 0 1 0 9 9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M12 12l5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+  <symbol id="i-seat" viewBox="0 0 24 24"><path d="M7 4v9a3 3 0 0 0 3 3h7M7 20h10M16 16v4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="currentColor" opacity=".12"/><path d="M7.5 12.5l3 3 6-6.5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><path d="M4 7l8 6 8-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12z" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="9" r="2.5" fill="currentColor"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M8.5 12l2.5 2.5 4.5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+  <symbol id="i-tag" viewBox="0 0 24 24"><path d="M3 12V4a1 1 0 0 1 1-1h8l9 9-9 9z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><circle cx="8" cy="8" r="1.8" fill="currentColor"/></symbol>
+  <symbol id="i-key" viewBox="0 0 24 24"><circle cx="8" cy="15" r="4" fill="none" stroke="currentColor" stroke-width="2"/><path d="M11 12l9-9M17 6l3 3M15 8l2 2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+  <symbol id="i-chat" viewBox="0 0 24 24"><path d="M4 5h16v11H9l-5 4z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M8 10h8M8 13h5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+</svg>
+
+<div class="topbar">
+  <div class="container">
+    <div class="tb-left">
+      <a href="tel:+46102070444">+46 (0) 10 207 04 44</a>
+      <a href="mailto:info@truxco.se">info@truxco.se</a>
+    </div>
+    <nav class="lang" aria-label="Language">
+      <a href="#" aria-current="true">EN</a><a href="#">SV</a>
+    </nav>
+  </div>
+</div>
+
+<header class="nav" id="nav">
+  <div class="container">
+    <a href="#top" class="logo" aria-label="Truxco home"><img src="assets/logo.svg" alt="Truxco"></a>
+    <ul class="menu" id="menu">
+      <li><a href="#buses">Buses for sale</a></li>
+      <li><a href="#sell">Sell your bus</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#about">About us</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="nav-cta">
+      <a href="#sell" class="btn btn-ghost">Sell a bus</a>
+      <a href="#buses" class="btn btn-primary">Browse buses</a>
+      <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="menu"><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div class="reveal">
+        <span class="eyebrow">Used buses · Sweden → Europe</span>
+        <h1>The simple way to <em>buy and sell</em> buses in Europe.</h1>
+        <p class="lead">City buses, interurban buses, coaches and minibuses. We source them, inspect them and deliver them to operators across Europe, from single vehicles to whole fleets.</p>
+        <div class="hero-actions">
+          <a href="#buses" class="btn btn-primary">Browse buses for sale <svg><use href="#i-arrow"/></svg></a>
+          <a href="#sell" class="btn btn-ghost">Get an offer for your bus</a>
+        </div>
+        <div class="trust">
+          <div class="flags" aria-hidden="true">
+            <span style="background:#006AA7">SE</span><span style="background:#C8102E">NO</span><span style="background:#000">DE</span><span style="background:#1652F0">+20</span>
+          </div>
+          Trusted by bus operators in over 20 European countries
+        </div>
+      </div>
+      <div class="hero-visual reveal" aria-hidden="true">
+        <div class="grid-bg"></div>
+        <div class="road"></div>
+        <div class="lines"></div>
+        <svg class="bus" viewBox="0 0 320 110"><use href="#bus-coach" style="color:#0B1B33"/></svg>
+        <div class="float-card fc-1"><div class="ic"><svg><use href="#i-shield"/></svg></div><div><b>Inspected & documented</b><small>Every bus, every time</small></div></div>
+        <div class="float-card fc-2"><div class="ic"><svg><use href="#i-tag"/></svg></div><div><b>600–700 buses</b><small>delivered every year</small></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Search -->
+  <div class="search container reveal">
+    <form onsubmit="event.preventDefault();document.getElementById('buses').scrollIntoView()">
+      <div class="field"><label for="s-type">Bus type</label><select id="s-type"><option>All types</option><option>City bus</option><option>Interurban</option><option>Coach</option><option>Minibus</option></select></div>
+      <div class="field"><label for="s-brand">Brand</label><select id="s-brand"><option>All brands</option><option>Mercedes-Benz</option><option>Volvo</option><option>Setra</option><option>MAN</option><option>Scania</option><option>Solaris</option></select></div>
+      <div class="field"><label for="s-year">Year from</label><select id="s-year"><option>Any year</option><option>2022</option><option>2020</option><option>2018</option><option>2015</option><option>2010</option></select></div>
+      <div class="field"><label for="s-fuel">Fuel</label><select id="s-fuel"><option>Any fuel</option><option>Diesel</option><option>Hybrid</option><option>Electric</option><option>Hydrogen</option><option>Biogas (CNG)</option></select></div>
+      <button class="btn btn-primary" type="submit">Search buses <svg><use href="#i-arrow"/></svg></button>
+    </form>
+  </div>
+
+  <!-- Stats -->
+  <section class="stats">
+    <div class="container">
+      <div class="stats-grid reveal">
+        <div class="stat"><strong data-count="700">0<span>+</span></strong><p>Buses delivered per year</p></div>
+        <div class="stat"><strong data-count="450">0<span>M</span></strong><p>SEK annual bus turnover</p></div>
+        <div class="stat"><strong data-count="20">0<span>+</span></strong><p>Countries we deliver to</p></div>
+        <div class="stat"><strong data-count="48">0<span>h</span></strong><p>To receive an offer on your bus</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Categories -->
+  <section>
+    <div class="container">
+      <div class="section-head reveal">
+        <div><span class="eyebrow">Browse by type</span><h2>Find the right bus for your route.</h2></div>
+        <p class="lead">From compact minibuses to long-distance coaches, all checked and ready to drive.</p>
+      </div>
+      <div class="cats">
+        <a href="#buses" class="cat reveal" data-go="city"><h3>City buses</h3><p>Low-floor, high capacity</p><span class="count"><svg><use href="#i-arrow"/></svg></span><svg class="art" viewBox="0 0 320 110"><use href="#bus-city"/></svg></a>
+        <a href="#buses" class="cat reveal" data-go="interurban"><h3>Interurban</h3><p>Regional & commuter lines</p><span class="count"><svg><use href="#i-arrow"/></svg></span><svg class="art" viewBox="0 0 320 110"><use href="#bus-city"/></svg></a>
+        <a href="#buses" class="cat reveal" data-go="coach"><h3>Coaches</h3><p>Touring & long distance</p><span class="count"><svg><use href="#i-arrow"/></svg></span><svg class="art" viewBox="0 0 320 110"><use href="#bus-coach"/></svg></a>
+        <a href="#buses" class="cat reveal" data-go="mini"><h3>Minibuses</h3><p>Shuttle & passenger vans</p><span class="count"><svg><use href="#i-arrow"/></svg></span><svg class="art" viewBox="0 0 320 110"><use href="#bus-mini"/></svg></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Listings -->
+  <section class="listings" id="buses">
+    <div class="container">
+      <div class="section-head reveal">
+        <div><span class="eyebrow">Buses for sale</span><h2>Featured buses in stock.</h2></div>
+        <div class="chips" role="group" aria-label="Filter buses">
+          <button class="chip" aria-pressed="true" data-filter="all">All</button>
+          <button class="chip" aria-pressed="false" data-filter="city">City</button>
+          <button class="chip" aria-pressed="false" data-filter="interurban">Interurban</button>
+          <button class="chip" aria-pressed="false" data-filter="coach">Coach</button>
+          <button class="chip" aria-pressed="false" data-filter="mini">Minibus</button>
+        </div>
+      </div>
+      <div class="grid-list" id="grid">
+        <article class="card reveal" data-type="interurban">
+          <div class="card-media t1"><div class="badges"><span class="badge accent">Fleet · 14 units</span><span class="badge">Euro 6</span></div><svg viewBox="0 0 320 110"><use href="#bus-city"/></svg></div>
+          <div class="card-body"><span class="type">Interurban bus</span><h3>Mercedes-Benz Citaro LE</h3>
+            <div class="specs"><span><svg><use href="#i-cal"/></svg>2015</span><span><svg><use href="#i-road"/></svg>Diesel</span><span><svg><use href="#i-seat"/></svg>44 seats</span></div>
+            <div class="card-foot"><div class="price"><small>Price per unit</small>€65,000</div><a href="#contact" class="arrow" aria-label="Request details on Mercedes-Benz Citaro LE"><svg><use href="#i-arrow"/></svg></a></div></div>
+        </article>
+        <article class="card reveal" data-type="coach">
+          <div class="card-media t3"><div class="badges"><span class="badge accent">Premium</span><span class="badge">Euro 6</span></div><svg viewBox="0 0 320 110"><use href="#bus-coach"/></svg></div>
+          <div class="card-body"><span class="type">Coach</span><h3>Volvo 9900</h3>
+            <div class="specs"><span><svg><use href="#i-cal"/></svg>2021</span><span><svg><use href="#i-road"/></svg>Diesel</span><span><svg><use href="#i-seat"/></svg>53 seats</span></div>
+            <div class="card-foot"><div class="price"><small>Price</small>€280,000</div><a href="#contact" class="arrow" aria-label="Request details on Volvo 9900"><svg><use href="#i-arrow"/></svg></a></div></div>
+        </article>
+        <article class="card reveal" data-type="city">
+          <div class="card-media t2"><div class="badges"><span class="badge accent">Fleet · 2 units</span><span class="badge">Zero emission</span></div><svg viewBox="0 0 320 110"><use href="#bus-city"/></svg></div>
+          <div class="card-body"><span class="type">City bus</span><h3>Solaris Urbino 12 Hydrogen</h3>
+            <div class="specs"><span><svg><use href="#i-cal"/></svg>2020</span><span><svg><use href="#i-road"/></svg>Hydrogen</span><span><svg><use href="#i-seat"/></svg>32 seats</span></div>
+            <div class="card-foot"><div class="price"><small>Price</small>On request</div><a href="#contact" class="arrow" aria-label="Request details on Solaris Urbino 12 Hydrogen"><svg><use href="#i-arrow"/></svg></a></div></div>
+        </article>
+        <article class="card reveal" data-type="city">
+          <div class="card-media t2"><div class="badges"><span class="badge accent">Fleet · 4 units</span><span class="badge">Hybrid</span></div><svg viewBox="0 0 320 110"><use href="#bus-city"/></svg></div>
+          <div class="card-body"><span class="type">City bus</span><h3>Volvo 7900 Hybrid</h3>
+            <div class="specs"><span><svg><use href="#i-cal"/></svg>2016</span><span><svg><use href="#i-road"/></svg>Hybrid</span><span><svg><use href="#i-seat"/></svg>35 seats</span></div>
+            <div class="card-foot"><div class="price"><small>Price</small>On request</div><a href="#contact" class="arrow" aria-label="Request details on Volvo 7900 Hybrid"><svg><use href="#i-arrow"/></svg></a></div></div>
+        </article>
+        <article class="card reveal" data-type="coach">
+          <div class="card-media t1"><div class="badges"><span class="badge accent">New in</span><span class="badge">Euro 6</span></div><svg viewBox="0 0 320 110"><use href="#bus-coach"/></svg></div>
+          <div class="card-body"><span class="type">Coach</span><h3>Setra S 516 HD</h3>
+            <div class="specs"><span><svg><use href="#i-cal"/></svg>2018</span><span><svg><use href="#i-road"/></svg>Diesel</span><span><svg><use href="#i-seat"/></svg>49 seats</span></div>
+            <div class="card-foot"><div class="price"><small>Price</small>On request</div><a href="#contact" class="arrow" aria-label="Request details on Setra S 516 HD"><svg><use href="#i-arrow"/></svg></a></div></div>
+        </article>
+        <article class="card reveal" data-type="mini">
+          <div class="card-media t4"><div class="badges"><span class="badge accent">Ready to drive</span><span class="badge">Euro 6</span></div><svg viewBox="0 0 320 110"><use href="#bus-mini"/></svg></div>
+          <div class="card-body"><span class="type">Minibus</span><h3>Mercedes-Benz Sprinter</h3>
+            <div class="specs"><span><svg><use href="#i-cal"/></svg>2019</span><span><svg><use href="#i-road"/></svg>Diesel</span><span><svg><use href="#i-seat"/></svg>19 seats</span></div>
+            <div class="card-foot"><div class="price"><small>Price</small>On request</div><a href="#contact" class="arrow" aria-label="Request details on Mercedes-Benz Sprinter"><svg><use href="#i-arrow"/></svg></a></div></div>
+        </article>
+      </div>
+      <div class="center reveal"><a href="#contact" class="btn btn-ghost">View all buses in stock <svg><use href="#i-arrow"/></svg></a></div>
+    </div>
+  </section>
+
+  <!-- Brands -->
+  <div class="brands">
+    <p>We buy and sell all major brands</p>
+    <div class="marquee" aria-label="Mercedes-Benz, Volvo, Setra, MAN, Scania, Solaris, Iveco, VDL">
+      <div class="track" aria-hidden="true">
+        <span>Mercedes-Benz</span><span>Volvo</span><span>Setra</span><span>MAN</span><span>Scania</span><span>Solaris</span><span>Iveco</span><span>VDL</span>
+        <span>Mercedes-Benz</span><span>Volvo</span><span>Setra</span><span>MAN</span><span>Scania</span><span>Solaris</span><span>Iveco</span><span>VDL</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sell -->
+  <section id="sell">
+    <div class="container sell-grid">
+      <div class="sticky reveal">
+        <span class="eyebrow">Sell your bus</span>
+        <h2 style="margin:12px 0 18px">Sell one bus or a whole fleet, without the hassle.</h2>
+        <p class="lead">We buy used buses from operators all over Europe. You get a fair price, fast payment and no paperwork headaches. We handle pickup, export and documentation.</p>
+        <div class="hero-actions"><a href="#contact" class="btn btn-primary">Get a free valuation <svg><use href="#i-arrow"/></svg></a></div>
+      </div>
+      <div class="steps">
+        <div class="step reveal"><div class="n">01</div><div><h3>Tell us about your bus</h3><p>Send the make, model, year, mileage and a few photos. It takes about two minutes.</p></div></div>
+        <div class="step reveal"><div class="n">02</div><div><h3>Receive an offer</h3><p>Our bus specialists assess the vehicle and come back with a clear, fixed offer.</p></div></div>
+        <div class="step reveal"><div class="n">03</div><div><h3>We collect, you get paid</h3><p>We arrange pickup, export and paperwork. Payment is made securely on handover.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section class="services" id="services">
+    <div class="container">
+      <div class="section-head reveal">
+        <div><span class="eyebrow">What we do</span><h2>Everything around the bus, under one roof.</h2></div>
+        <p class="lead">Sales, rental and expert advice for bus and truck operators.</p>
+      </div>
+      <div class="svc-grid">
+        <div class="svc reveal"><div class="ic"><svg><use href="#i-tag"/></svg></div><h3>Bus sales</h3><p>New and used buses, from single vehicles to complete fleets, delivered across Europe.</p>
+          <ul><li>City, interurban, coach & minibus</li><li>Fleet deals & trade-ins</li><li>Export & registration support</li></ul></div>
+        <div class="svc reveal"><div class="ic"><svg><use href="#i-key"/></svg></div><h3>Bus rental</h3><p>Flexible short and long-term rental when you need extra capacity or a replacement vehicle.</p>
+          <ul><li>Short & long-term contracts</li><li>Peak season capacity</li><li>Replacement vehicles</li></ul></div>
+        <div class="svc reveal"><div class="ic"><svg><use href="#i-chat"/></svg></div><h3>Consulting</h3><p>Industry expertise for bus and truck operators planning procurement or fleet renewal.</p>
+          <ul><li>Fleet renewal strategy</li><li>Valuation & remarketing</li><li>Electric & hydrogen transition</li></ul></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about">
+    <div class="container about-grid">
+      <div class="about-visual reveal" aria-hidden="true">
+        <div class="tile dark"><small>Bus division turnover</small><b>450 MSEK</b></div>
+        <div class="tile"><small>Delivered per year</small><b>600–700</b></div>
+        <div class="tile"><small>Founded in</small><b>Lund</b></div>
+        <div class="tile"><small>Headquarters</small><b>Staffanstorp</b></div>
+      </div>
+      <div class="reveal">
+        <span class="eyebrow">About Truxco</span>
+        <h2 style="margin:12px 0 18px">A Swedish bus partner for all of Europe.</h2>
+        <p class="lead">Founded in Lund and run by owners Malika and Matin Haidari, Truxco has grown into one of the leading used bus dealers in the Nordics. From our base in Staffanstorp we deliver hundreds of buses every year to operators across Europe.</p>
+        <ul class="checks">
+          <li><svg><use href="#i-check"/></svg><span><b>Honest, transparent deals:</b> clear condition reports and fixed prices.</span></li>
+          <li><svg><use href="#i-check"/></svg><span><b>Pan-European logistics:</b> we handle export, transport and paperwork.</span></li>
+          <li><svg><use href="#i-check"/></svg><span><b>Personal service:</b> one contact person from first call to delivery.</span></li>
+        </ul>
+        <span class="eyebrow" style="font-size:12px">Part of the Truxco group</span>
+        <div class="group"><span>Thells Bussar</span><span>Truxco Energi</span><span>Truxel AB</span><span>Autowash</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA / Contact -->
+  <section class="cta" id="contact">
+    <div class="container">
+      <div class="cta-box reveal">
+        <div>
+          <span class="eyebrow" style="color:#BFD0FF">Contact</span>
+          <h2 style="margin-top:12px">Looking for a bus, or selling one?</h2>
+          <p class="lead">Our team answers within one business day. Call, email or send a request.</p>
+          <div class="contact-list">
+            <a href="tel:+46102070444"><span class="ic"><svg><use href="#i-phone"/></svg></span>+46 (0) 10 207 04 44</a>
+            <a href="mailto:info@truxco.se"><span class="ic"><svg><use href="#i-mail"/></svg></span>info@truxco.se</a>
+            <div><span class="ic"><svg><use href="#i-pin"/></svg></span>Önsvala Allé 3, Staffanstorp, Sweden</div>
+          </div>
+        </div>
+        <form class="form" id="form" novalidate>
+          <h3>Send a request</h3>
+          <div class="seg" role="group" aria-label="I want to">
+            <button type="button" aria-pressed="true">Buy a bus</button>
+            <button type="button" aria-pressed="false">Sell a bus</button>
+            <button type="button" aria-pressed="false">Rent</button>
+          </div>
+          <div class="row">
+            <label>Name<input required name="name" autocomplete="name"></label>
+            <label>Company<input name="company" autocomplete="organization"></label>
+          </div>
+          <div class="row">
+            <label>Email<input required type="email" name="email" autocomplete="email"></label>
+            <label>Phone<input type="tel" name="phone" autocomplete="tel"></label>
+          </div>
+          <label>Message<textarea name="msg" placeholder="e.g. 3 × Euro 6 interurban buses, 2016 or newer"></textarea></label>
+          <button class="btn btn-primary" type="submit">Send request <svg><use href="#i-arrow"/></svg></button>
+          <p class="ok" role="status">Thanks! We'll get back to you within one business day.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="foot">
+      <div><img src="assets/logo.svg" alt="Truxco" style="height:30px;width:auto"><p>The simple way to buy and sell buses in Europe. Bus sales, rental and consulting from Staffanstorp, Sweden.</p></div>
+      <div><h4>Buses</h4><ul><li><a href="#buses">City buses</a></li><li><a href="#buses">Interurban</a></li><li><a href="#buses">Coaches</a></li><li><a href="#buses">Minibuses</a></li></ul></div>
+      <div><h4>Company</h4><ul><li><a href="#about">About us</a></li><li><a href="#services">Services</a></li><li><a href="#sell">Sell your bus</a></li><li><a href="#contact">Contact</a></li></ul></div>
+      <div><h4>Contact</h4><ul><li><a href="tel:+46102070444">+46 (0) 10 207 04 44</a></li><li><a href="mailto:info@truxco.se">info@truxco.se</a></li><li>Önsvala Allé 3<br>Staffanstorp, Sweden</li></ul></div>
+    </div>
+    <div class="legal"><span>© <span id="yr"></span> Truxco AB · Org.nr 559002-5127</span><span><a href="#">Privacy policy</a> · <a href="#">Cookies</a></span></div>
+  </div>
+</footer>
+
+<script>
+(() => {
+  const nav = document.getElementById('nav'), burger = document.getElementById('burger');
+  document.getElementById('yr').textContent = new Date().getFullYear();
+  addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 8), {passive:true});
+  burger.addEventListener('click', () => {
+    const open = nav.classList.toggle('open');
+    burger.setAttribute('aria-expanded', open);
+  });
+  document.querySelectorAll('#menu a').forEach(a => a.addEventListener('click', () => {
+    nav.classList.remove('open'); burger.setAttribute('aria-expanded', false);
+  }));
+
+  // Reveal on scroll + staggered siblings
+  const io = new IntersectionObserver(es => es.forEach(e => {
+    if (!e.isIntersecting) return;
+    const sibs = [...e.target.parentElement.children].filter(c => c.classList.contains('reveal'));
+    e.target.style.transitionDelay = Math.max(0, sibs.indexOf(e.target)) * 80 + 'ms';
+    e.target.classList.add('in'); io.unobserve(e.target);
+  }), {threshold:.12});
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // Count-up stats
+  const cio = new IntersectionObserver(es => es.forEach(e => {
+    if (!e.isIntersecting) return;
+    const el = e.target, end = +el.dataset.count, suf = el.querySelector('span').outerHTML, t0 = performance.now();
+    const tick = t => { const p = Math.min(1, (t - t0) / 1400), v = Math.round(end * (1 - Math.pow(1 - p, 3)));
+      el.innerHTML = v + suf; if (p < 1) requestAnimationFrame(tick); };
+    requestAnimationFrame(tick); cio.unobserve(el);
+  }), {threshold:.6});
+  document.querySelectorAll('[data-count]').forEach(el => cio.observe(el));
+
+  // Listing filters
+  const chips = document.querySelectorAll('.chip'), cards = document.querySelectorAll('.card');
+  const filter = f => {
+    chips.forEach(c => c.setAttribute('aria-pressed', c.dataset.filter === f));
+    cards.forEach(c => c.classList.toggle('hide', f !== 'all' && c.dataset.type !== f));
+  };
+  chips.forEach(c => c.addEventListener('click', () => filter(c.dataset.filter)));
+  document.querySelectorAll('[data-go]').forEach(a => a.addEventListener('click', () => filter(a.dataset.go)));
+
+  // Form segmented control + fake submit
+  const seg = document.querySelectorAll('.seg button');
+  seg.forEach(b => b.addEventListener('click', () => seg.forEach(x => x.setAttribute('aria-pressed', x === b))));
+  document.getElementById('form').addEventListener('submit', e => {
+    e.preventDefault();
+    const f = e.target;
+    if (!f.checkValidity()) { f.reportValidity(); return; }
+    f.classList.add('sent'); f.reset();
+  });
+})();
+</script>
+</body>
+</html>
