@@ -38,16 +38,44 @@ export type SceneOptions = {
   print: PrintCopy & PropCopy;
   onReady: () => void;
   onOpenChange: (open: boolean) => void;
+  onError: (err: unknown) => void;
 };
 
 // 0-based case i: even cases lie on a right page, odd ones on a left page.
-const caseSpread = (i: number) => (i % 2 === 0 ? i / 2 + 1 : (i + 3) / 2);
+export const caseSpread = (i: number) => (i % 2 === 0 ? i / 2 + 1 : (i + 3) / 2);
 
 function disposeMaterial(m: THREE.Material) {
   for (const v of Object.values(m as unknown as Record<string, unknown>)) {
     if (v instanceof THREE.Texture) v.dispose();
   }
   m.dispose();
+}
+
+// Keys typed into a field, or Space / Enter on a focused control, belong to that element.
+function ownsKey(target: EventTarget | null, key: string) {
+  if (!(target instanceof HTMLElement)) return false;
+  if (target.isContentEditable || target.closest("input, textarea, select, [contenteditable]")) return true;
+  return (key === " " || key === "Enter") && !!target.closest("a, button, [role='button'], summary");
+}
+
+// Shown on a case page whose poster failed to load (the failure is logged with its URL).
+function unavailableTexture(title: string) {
+  const c = document.createElement("canvas");
+  c.width = 1280;
+  c.height = 800;
+  const ctx = c.getContext("2d");
+  if (ctx) {
+    ctx.fillStyle = "#f3f2ee";
+    ctx.fillRect(0, 0, c.width, c.height);
+    ctx.textAlign = "center";
+    ctx.fillStyle = "#111111";
+    ctx.font = '500 64px Inter, system-ui, sans-serif';
+    ctx.fillText(title, c.width / 2, c.height / 2 - 10);
+    ctx.fillStyle = "#8a8984";
+    ctx.font = '500 24px "JetBrains Mono", ui-monospace, monospace';
+    ctx.fillText("PREVIEW UNAVAILABLE", c.width / 2, c.height / 2 + 56);
+  }
+  return new THREE.CanvasTexture(c);
 }
 
 export function startScene(o: SceneOptions) {
@@ -58,7 +86,10 @@ export function startScene(o: SceneOptions) {
       if (stopped) c();
       else cleanup = c;
     })
-    .catch((err: unknown) => console.error(err));
+    .catch((err: unknown) => {
+      console.error("Lamplit: the scene failed to load.", err);
+      if (!stopped) o.onError(err);
+    });
   return () => {
     stopped = true;
     cleanup?.();
@@ -134,8 +165,14 @@ async function init(o: SceneOptions, isStopped: () => boolean): Promise<() => vo
   let loaded: [Awaited<ReturnType<typeof loadBrand>>, THREE.Texture[], void];
   try {
     loaded = await Promise.all([
-      loadBrand(o.brand),
-      Promise.all(o.cases.map((c) => loader.loadAsync(c.poster))),
+      loadBrand(o.brand).catch(() => {
+        throw new Error(`Logo or mark failed to load: ${o.brand.logo}, ${o.brand.mark}`);
+      }),
+      // A missing poster costs its page, not the whole book.
+      Promise.all(o.cases.map((c) => loader.loadAsync(c.poster).catch(() => {
+        console.warn(`Poster failed to load: ${c.poster}`);
+        return unavailableTexture(c.title);
+      }))),
       loadFonts(),
     ]);
   } catch (err) {
@@ -289,7 +326,7 @@ async function init(o: SceneOptions, isStopped: () => boolean): Promise<() => vo
   };
 
   const onKey = (e: KeyboardEvent) => {
-    if (e.metaKey || e.ctrlKey || e.altKey) return;
+    if (e.metaKey || e.ctrlKey || e.altKey || e.defaultPrevented || ownsKey(e.target, e.key)) return;
     let n: number;
     switch (e.key) {
       case "ArrowRight":

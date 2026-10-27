@@ -4,3 +4,14 @@
   inset: 0;
   pointer-events: none;
 }
+
+/* Shown when the scene's assets fail to load. */
+.error {
+  position: absolute;
+  left: var(--edge);
+  right: var(--edge);
+  bottom: 48px;
+  font: 400 var(--p-size) / 1.25 var(--font-head);
+  letter-spacing: var(--tracking);
+  opacity: var(--muted);
+}

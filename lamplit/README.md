@@ -1,32 +1,45 @@
-# React + TypeScript + Vite
+# Lamplit — Quillon interactive portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+A real-time three.js scene of a hardcover book on a lamp-lit desk. Each page holds one case: a
+16:10 screen recording that rests on its poster frame and plays while hovered (on touch screens,
+visible pages play by themselves). Click or drag pages to turn them; use → / ← / Space / Page Up /
+Page Down / Home / End, or deep links such as `#7`.
 
-Currently, two official plugins are available:
+## Commands
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
-
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the Oxlint configuration
-
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
-
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+```bash
+npm ci          # install from the lockfile
+npm run dev     # local dev server (StrictMode)
+npm run lint    # oxlint
+npm run build   # strict type-check (tsc -b) + production build into dist/
+npm run preview # serve dist/
 ```
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+`?q=low` / `?q=high` forces the phone / desktop rendering budget.
+
+## Assets
+
+Every image and video is loaded at runtime from `https://assets.uberdesigner.ai/lamplit/`
+(`ASSETS` in `src/data/cases.ts`), with `crossOrigin="anonymous"`; the host must send CORS headers.
+Fonts are self-hosted through @fontsource and bundled into `dist/`.
+
+- If the logo or mark fails to load, the scene does not start: the headline stays and a message
+  asks the visitor to reload. The console names both URLs.
+- If a case poster fails to load, that page shows "Preview unavailable" with the case title and the
+  console names the poster URL; the rest of the book works.
+- If a case video fails to load, its page keeps showing the poster.
+
+## Deployment
+
+The build uses a relative base (`base: './'` in `vite.config.ts`), so `dist/` works from any
+sub-path. `.github/workflows/deploy-pages.yml` (at the repository root) builds this project and
+publishes it to GitHub Pages at `/lamplit/`, alongside the existing root site copied unchanged.
+It runs on pushes to `main` and needs **Settings → Pages → Source: GitHub Actions**.
+
+## Accessibility
+
+- Arrow / Page / Space / Home / End keys are ignored while typing in a field, and Space / Enter on a
+  focused link or button are left to that control.
+- A case index (all 21 cases, the contents, the back cover and "close the book") is reachable with
+  Tab; it stays visually hidden until one of its links has focus.
+- With `prefers-reduced-motion: reduce` the camera does not tilt toward the pointer.

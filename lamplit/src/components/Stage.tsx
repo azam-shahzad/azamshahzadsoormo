@@ -15,15 +15,16 @@ type Props = {
   headerRef: RefObject<HTMLElement | null>;
   onReady: () => void;
   onOpenChange: (open: boolean) => void;
+  onError: (err: unknown) => void;
 };
 
-export default function Stage({ heroRef, headerRef, onReady, onOpenChange }: Props) {
+export default function Stage({ heroRef, headerRef, onReady, onOpenChange, onError }: Props) {
   const hostRef = useRef<HTMLDivElement>(null);
   const [ready, setReady] = useState(false);
   // Callbacks live in a ref so the scene doesn't restart when they change.
-  const callbacks = useRef({ onReady, onOpenChange });
+  const callbacks = useRef({ onReady, onOpenChange, onError });
   useEffect(() => {
-    callbacks.current = { onReady, onOpenChange };
+    callbacks.current = { onReady, onOpenChange, onError };
   });
 
   useEffect(() => {
@@ -44,6 +45,7 @@ export default function Stage({ heroRef, headerRef, onReady, onOpenChange }: Pro
         callbacks.current.onReady();
       },
       onOpenChange: (open) => callbacks.current.onOpenChange(open),
+      onError: (err) => callbacks.current.onError(err),
     });
   }, [heroRef, headerRef]);
 
