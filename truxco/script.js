@@ -24,6 +24,30 @@
     }
   });
 
+  // Featured listings carousel
+  const track = document.getElementById('listings-track');
+  const [prev, next] = document.querySelectorAll('.carousel__btn');
+  const bar = document.querySelector('.carousel__progress span');
+
+  function updateCarousel() {
+    const max = track.scrollWidth - track.clientWidth;
+    prev.disabled = track.scrollLeft <= 2;
+    next.disabled = track.scrollLeft >= max - 2;
+    const visible = track.clientWidth / track.scrollWidth;
+    bar.style.width = (visible * 100) + '%';
+    bar.style.transform = 'translateX(' + (max > 0 ? (track.scrollLeft / max) * (1 / visible - 1) * 100 : 0) + '%)';
+  }
+
+  document.querySelectorAll('.carousel__btn').forEach((b) => {
+    b.addEventListener('click', () => {
+      const step = track.querySelector('.listing').offsetWidth + 24;
+      track.scrollBy({ left: step * Number(b.dataset.dir), behavior: 'smooth' });
+    });
+  });
+  track.addEventListener('scroll', updateCarousel, { passive: true });
+  window.addEventListener('resize', updateCarousel);
+  updateCarousel();
+
   const form = document.getElementById('valuation-form');
   const email = form.elements.email;
   const error = document.getElementById('email-error');

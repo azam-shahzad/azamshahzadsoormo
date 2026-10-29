@@ -210,46 +210,59 @@
       </div>
     </section>
 
-    <!-- Featured listings (Figma 1:259) -->
-    <section class="listings" id="listings">
+    <!-- Featured listings (Figma 137:2, Option 04 · Carousel) -->
+    <section class="listings" id="listings" aria-labelledby="listings-title">
       <div class="container">
         <div class="listings__head">
           <div>
             <p class="eyebrow">Featured listings</p>
-            <h2 class="h2">Latest added used buses</h2>
+            <h2 class="h2" id="listings-title">Latest added used buses</h2>
           </div>
-          <p class="body">Refurbished and inspected in our own workshop, ready for delivery across Europe.</p>
-          <a href="#" class="btn">View all buses</a>
+          <div class="carousel__controls">
+            <a href="#" class="carousel__all">View all buses →</a>
+            <button type="button" class="carousel__btn" data-dir="-1" aria-label="Previous buses" aria-controls="listings-track"><img src="assets/icon-arrow-right.svg" width="20" height="20" alt="" class="is-flipped"></button>
+            <button type="button" class="carousel__btn" data-dir="1" aria-label="Next buses" aria-controls="listings-track"><img src="assets/icon-arrow-right.svg" width="20" height="20" alt=""></button>
+          </div>
         </div>
-        <div class="listings__grid">
+        <div class="carousel__track" id="listings-track" tabindex="0" role="region" aria-label="Latest added used buses">
           <article class="listing">
             <div class="listing__photo"><span class="tag">Coach</span></div>
             <div class="listing__body">
-              <h3>[Make &amp; Model]</h3>
-              <p class="listing__price">[Price] €</p>
-              <ul class="listing__specs"><li>[Year] · [Mileage] km</li><li>[Seats] seats · [Euro class]</li><li>Inspected · [Location]</li></ul>
+              <div class="listing__top"><h3>[Make &amp; Model]</h3><p class="listing__price">[Price] €</p></div>
+              <ul class="listing__specs"><li>[Year]</li><li>[Mileage] km</li><li>[Seats] seats</li><li>[Euro class]</li></ul>
+              <p class="listing__inspected"><img src="assets/ic-check.svg" width="16" height="16" alt="">Inspected · [Location]</p>
               <div class="listing__actions"><a href="#sell" class="btn btn--sm">Make enquiry</a><a href="#" class="link-dark">View details →</a></div>
             </div>
           </article>
           <article class="listing">
             <div class="listing__photo"><span class="tag">City bus</span></div>
             <div class="listing__body">
-              <h3>[Make &amp; Model]</h3>
-              <p class="listing__price">[Price] €</p>
-              <ul class="listing__specs"><li>[Year] · [Mileage] km</li><li>[Seats] seats · [Euro class]</li><li>Inspected · [Location]</li></ul>
+              <div class="listing__top"><h3>[Make &amp; Model]</h3><p class="listing__price">[Price] €</p></div>
+              <ul class="listing__specs"><li>[Year]</li><li>[Mileage] km</li><li>[Seats] seats</li><li>[Euro class]</li></ul>
+              <p class="listing__inspected"><img src="assets/ic-check.svg" width="16" height="16" alt="">Inspected · [Location]</p>
               <div class="listing__actions"><a href="#sell" class="btn btn--sm">Make enquiry</a><a href="#" class="link-dark">View details →</a></div>
             </div>
           </article>
           <article class="listing">
             <div class="listing__photo"><span class="tag">Electric</span></div>
             <div class="listing__body">
-              <h3>[Make &amp; Model]</h3>
-              <p class="listing__price">[Price] €</p>
-              <ul class="listing__specs"><li>[Year] · [Mileage] km</li><li>[Seats] seats · [Euro class]</li><li>Inspected · [Location]</li></ul>
+              <div class="listing__top"><h3>[Make &amp; Model]</h3><p class="listing__price">[Price] €</p></div>
+              <ul class="listing__specs"><li>[Year]</li><li>[Mileage] km</li><li>[Seats] seats</li><li>[Euro class]</li></ul>
+              <p class="listing__inspected"><img src="assets/ic-check.svg" width="16" height="16" alt="">Inspected · [Location]</p>
+              <div class="listing__actions"><a href="#sell" class="btn btn--sm">Make enquiry</a><a href="#" class="link-dark">View details →</a></div>
+            </div>
+          </article>
+          <article class="listing">
+            <div class="listing__photo"><span class="tag">Minibus</span></div>
+            <div class="listing__body">
+              <div class="listing__top"><h3>[Make &amp; Model]</h3><p class="listing__price">[Price] €</p></div>
+              <ul class="listing__specs"><li>[Year]</li><li>[Mileage] km</li><li>[Seats] seats</li><li>[Euro class]</li></ul>
+              <p class="listing__inspected"><img src="assets/ic-check.svg" width="16" height="16" alt="">Inspected · [Location]</p>
               <div class="listing__actions"><a href="#sell" class="btn btn--sm">Make enquiry</a><a href="#" class="link-dark">View details →</a></div>
             </div>
           </article>
         </div>
+        <div class="carousel__progress" aria-hidden="true"><span></span></div>
       </div>
     </section>
 
