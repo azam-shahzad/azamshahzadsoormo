@@ -301,33 +301,46 @@ ul { list-style: none; }
 
 
 /* ---------- Why choose ---------- */
-.why { display: grid; grid-template-columns: 45fr 55fr; }
-.why__photo { position: relative; min-height: 600px; padding: 24px; background: var(--surface); }
-.sell-card {
-  position: absolute;
-  left: clamp(24px, 7vw, 100px);
-  right: clamp(24px, 7vw, 100px);
-  bottom: 96px;
-  max-width: 440px;
+.why .section-head { margin-bottom: 48px; }
+.stat-cards { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 24px; margin: 0; }
+.stat-card {
   display: flex;
-  flex-direction: column;
-  gap: 10px;
-  padding: 30px;
-  border-radius: var(--radius);
+  flex-direction: column-reverse;
+  align-items: center;
+  gap: 2px;
+  padding: 32px 28px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--white);
+  text-align: center;
+}
+.stat-card img { order: 1; margin-bottom: 10px; }
+.stat-card dd { margin: 0; font-family: var(--font-display); font-weight: 700; font-size: 40px; line-height: 1.2; color: var(--ink); }
+.stat-card dt { font-size: 14px; color: var(--muted); }
+.sell-bar {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  margin-top: 48px;
+  padding: 30px 40px;
+  border-radius: 10px;
   background: var(--blue);
   color: var(--white);
 }
-.sell-card h3 { font-family: var(--font-display); font-size: 26px; }
-.sell-card p { font-size: 15px; line-height: 1.6; }
-.sell-card a { display: inline-flex; align-items: center; gap: 8px; padding-top: 8px; font-size: 14px; font-weight: 700; }
-.sell-card a img { transition: transform .2s ease; }
-.sell-card a:hover img { transform: translateX(3px); }
-.why__copy { display: flex; flex-direction: column; justify-content: center; gap: 22px; padding: 96px clamp(24px, 7vw, 96px); }
-.stats { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; padding-top: 16px; max-width: 600px; }
-.stat { display: flex; align-items: center; gap: 16px; }
-.stat > div { display: flex; flex-direction: column-reverse; }
-.stat dd { font-family: var(--font-display); font-weight: 700; font-size: 34px; line-height: 1.2; color: var(--ink); }
-.stat dt { font-size: 14px; color: var(--muted); }
+.sell-bar > div { display: flex; flex-direction: column; gap: 8px; flex: 1; }
+.sell-bar h3 { font-family: var(--font-display); font-size: 26px; }
+.sell-bar p { font-size: 15px; line-height: 1.6; }
+.sell-bar__btn {
+  flex-shrink: 0;
+  padding: 15px 24px;
+  border-radius: 999px;
+  background: var(--white);
+  color: var(--blue);
+  font-size: 15px;
+  font-weight: 600;
+  transition: background-color .2s ease;
+}
+.sell-bar__btn:hover { background: #e8f2ff; }
 
 /* ---------- Services ---------- */
 .services { padding-top: var(--section); }
@@ -559,9 +572,10 @@ ul { list-style: none; }
   .nav__links { flex-direction: column; margin: 0; }
   .nav__links a { padding: 12px 14px; }
   .nav__actions { flex-wrap: wrap; justify-content: space-between; padding-top: 12px; border-top: 1px solid var(--line); }
-  .sell__inner, .why, .about-bento__top { grid-template-columns: 1fr; }
+  .sell__inner, .about-bento__top { grid-template-columns: 1fr; }
+  .stat-cards { grid-template-columns: 1fr 1fr; }
+  .sell-bar { flex-direction: column; align-items: flex-start; }
   .about-bento__row { grid-template-columns: 1fr 1fr; }
-  .why__photo { min-height: 480px; }
   .testimonials__grid { grid-template-columns: 1fr 1fr; }
   .svc-groups { grid-template-columns: 1fr; }
   .listings__head { flex-wrap: wrap; }
@@ -573,11 +587,14 @@ ul { list-style: none; }
   .hero { --hero-gap: 56px; }
   .sbar { grid-template-columns: 1fr; padding: 20px; }
   .about { padding-bottom: 72px; }
+  .stat-card { padding: 24px 12px; }
+  .stat-card dd { font-size: 30px; white-space: nowrap; }
+  .sell-bar { padding: 28px 24px; }
   .about-bento__intro { padding: 28px; }
   .listing { flex-basis: 85%; }
   .carousel__controls { width: 100%; }
   .about-bento__row { grid-template-columns: 1fr; }
-  .testimonials__grid, .categories, .stats, .valuation__row { grid-template-columns: 1fr; }
+  .testimonials__grid, .categories, .valuation__row { grid-template-columns: 1fr; }
   .valuation { padding: 24px; }
   .footer__top { grid-template-columns: 1fr 1fr; }
   .footer__mid { flex-direction: column; align-items: flex-start; }
