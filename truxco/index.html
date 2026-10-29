@@ -1,0 +1,356 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Truxco — The simple way to buy and sell buses in Europe</title>
+  <meta name="description" content="Truxco connects professional buyers with high-quality, road-ready buses across Europe. Every unit inspected, paperwork handled.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Hero + Search (Figma 1:3) -->
+  <header class="hero">
+    <div class="hero__bg" aria-hidden="true">
+      <img src="assets/hero.png" alt="">
+    </div>
+
+    <nav class="nav container" aria-label="Main">
+      <a class="logo-placeholder" href="#top">TRUXCO LOGO</a>
+      <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="nav-menu" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="nav__menu" id="nav-menu">
+        <ul class="nav__links">
+          <li><a href="#top" class="is-active" aria-current="page">Home</a></li>
+          <li><a href="#listings">Buses</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="nav__actions">
+          <span class="nav__lang">SV / <span>EN</span></span>
+          <a href="#" class="nav__login">Login</a>
+          <a href="tel:+46102070444" class="btn-contact">
+            <span class="btn-contact__icon"><img src="assets/icon-phone.svg" width="18" height="18" alt=""></span>
+            <span class="btn-contact__text">
+              <strong>Contact us now</strong>
+              <span>+46 (0) 10 207 04 44</span>
+            </span>
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="hero__copy container" id="top">
+      <p class="hero__kicker"><span class="hero__line"></span>Trusted across 24 European countries</p>
+      <h1 class="hero__title">THE SIMPLE WAY<br>to Buy and Sell Buses in Europe</h1>
+      <p class="hero__lead">We connect professional buyers with high-quality, road-ready buses — every unit verified for condition, compliance and immediate deployment.</p>
+      <div class="hero__ctas">
+        <a href="#listings" class="btn btn--lg">Browse buses</a>
+        <a href="#sell" class="hero__sell">
+          <span class="hero__sell-icon"><img src="assets/icon-arrow-right.svg" width="20" height="20" alt=""></span>
+          Sell your bus
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <form class="search container" action="#listings" aria-label="Search buses">
+      <div class="search__grid">
+        <label class="field">
+          <span class="field__label">Bus type</span>
+          <select name="type">
+            <option>All types</option><option>Coach</option><option>City bus</option><option>Minibus</option><option>Electric</option>
+          </select>
+        </label>
+        <label class="field">
+          <span class="field__label">Make</span>
+          <select name="make">
+            <option>Any make</option><option>Mercedes-Benz</option><option>Volvo</option><option>Scania</option><option>MAN</option><option>Setra</option><option>Iveco</option>
+          </select>
+        </label>
+        <label class="field">
+          <span class="field__label">Year from</span>
+          <select name="year">
+            <option>Any year</option><option>2024</option><option>2022</option><option>2020</option><option>2018</option><option>2015</option><option>2010</option>
+          </select>
+        </label>
+        <label class="field">
+          <span class="field__label">Country</span>
+          <select name="country">
+            <option>All of Europe</option><option>Sweden</option><option>Denmark</option><option>Norway</option><option>Finland</option><option>Germany</option><option>Poland</option>
+          </select>
+        </label>
+        <label class="field">
+          <span class="field__label">Seats</span>
+          <select name="seats">
+            <option>Any capacity</option><option>Up to 20</option><option>21–40</option><option>41–60</option><option>60+</option>
+          </select>
+        </label>
+        <div class="search__submit">
+          <button type="submit" class="btn btn--block">Search 200+ buses</button>
+        </div>
+      </div>
+    </form>
+
+    <!-- About (Figma 1:87) -->
+    <section class="about" id="about">
+      <div class="container about__inner">
+        <div class="stack">
+          <p class="eyebrow">About Truxco</p>
+          <h2 class="h2">Buying a bus <em class="accent">shouldn’t be</em> hard work.</h2>
+          <p class="body">We’ve built Truxco to take the guesswork out of bus procurement. Honest inspections, clear pricing, and a real person on the phone when you need one.</p>
+          <ul class="checklist">
+            <li><span class="checklist__dot"><img src="assets/icon-check.svg" width="12" height="12" alt=""></span>No broker chains — buy direct from professional and trusted sellers</li>
+            <li><span class="checklist__dot"><img src="assets/icon-check.svg" width="12" height="12" alt=""></span>Every bus inspected against clear quality standards</li>
+            <li><span class="checklist__dot"><img src="assets/icon-check.svg" width="12" height="12" alt=""></span>Cross-border transport and paperwork handled for you</li>
+          </ul>
+          <a href="#" class="btn">More about us</a>
+        </div>
+        <div class="collage">
+          <div class="collage__main photo-ph"><span class="ph-label">PHOTO · Technician inspecting a bus</span></div>
+          <div class="collage__side photo-ph"><span class="ph-label ph-label--sm">PHOTO · Driver</span></div>
+          <div class="collage__badge">
+            <span class="collage__badge-icon"><img src="assets/icon-shield-badge.svg" width="22" height="22" alt=""></span>
+            <span>
+              <strong>10+ yrs</strong>
+              <small>In business</small>
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why choose Truxco (Figma 1:125) -->
+    <section class="why">
+      <div class="why__photo">
+        <span class="ph-label">PHOTO · Fleet manager with a coach</span>
+        <div class="sell-card">
+          <h3>Got a bus to sell?</h3>
+          <p>We’ll come back with an estimate and an offer for your bus. Simple, fast and with no obligations.</p>
+          <a href="#sell">Get free valuation <img src="assets/icon-arrow-white.svg" width="20" height="20" alt=""></a>
+        </div>
+      </div>
+      <div class="why__copy">
+        <p class="eyebrow">Why choose Truxco</p>
+        <h2 class="h2 h2--light">Find the right bus <em class="accent">for your business</em></h2>
+        <p class="body body--muted">From city routes to long-distance touring — choose from 200+ inspected vehicles across Europe.</p>
+        <dl class="stats">
+          <div class="stat"><img src="assets/stat-bus.svg" width="44" height="44" alt=""><div><dt>Buses listed</dt><dd>200+</dd></div></div>
+          <div class="stat"><img src="assets/stat-globe.svg" width="44" height="44" alt=""><div><dt>Countries</dt><dd>20+</dd></div></div>
+          <div class="stat"><img src="assets/stat-users.svg" width="44" height="44" alt=""><div><dt>Happy buyers</dt><dd>1,400+</dd></div></div>
+          <div class="stat"><img src="assets/stat-shield.svg" width="44" height="44" alt=""><div><dt>In business</dt><dd>10+ yrs</dd></div></div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- Services (Figma 1:171) -->
+    <section class="services">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Our services</p>
+          <h2 class="h2">How we make it <em class="accent">simple</em> for you</h2>
+          <p class="body">Honest inspections, clear pricing, and a real person on the phone when you need one.</p>
+        </div>
+        <div class="services__grid">
+          <article class="service">
+            <img src="assets/service-inspected.svg" width="40" height="40" alt="">
+            <h3>Every bus inspected</h3>
+            <p>Each unit is checked against clear quality standards before it is listed.</p>
+            <a href="#">Read more →</a>
+          </article>
+          <article class="service service--accent">
+            <img src="assets/service-broker.svg" width="40" height="40" alt="">
+            <h3>No broker chains</h3>
+            <p>Buy direct from professional and trusted sellers — no middlemen.</p>
+            <a href="#">Read more →</a>
+          </article>
+          <article class="service">
+            <img src="assets/service-technician.svg" width="40" height="40" alt="">
+            <h3>Certified technicians</h3>
+            <p>Every unit is verified on-site. View full reports before you decide.</p>
+            <a href="#">Read more →</a>
+          </article>
+          <article class="service">
+            <img src="assets/service-clock.svg" width="40" height="40" alt="">
+            <h3>Matched in 48 hours</h3>
+            <p>Share capacity, route, budget and timing — we match suitable units fast.</p>
+            <a href="#">Read more →</a>
+          </article>
+          <article class="service">
+            <img src="assets/service-compare.svg" width="40" height="40" alt="">
+            <h3>Compare side by side</h3>
+            <p>Compare specs and inspection reports across buses before buying.</p>
+            <a href="#">Read more →</a>
+          </article>
+          <article class="service">
+            <img src="assets/service-paperwork.svg" width="40" height="40" alt="">
+            <h3>Paperwork handled</h3>
+            <p>Cross-border transport, paperwork and compliance — taken care of.</p>
+            <a href="#">Read more →</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- What we offer (Figma 1:228) -->
+    <section class="offer">
+      <div class="container offer__inner">
+        <div class="stack">
+          <p class="eyebrow">What we offer</p>
+          <h2 class="h2 h2--light">From city routes to <em class="accent">long-distance</em> touring</h2>
+          <p class="body body--muted">Choose from 200+ inspected vehicles across Europe — coaches, city buses, minibuses and electric.</p>
+          <a href="#listings" class="btn">Browse buses</a>
+        </div>
+        <div class="categories">
+          <a href="#listings" class="category"><h3>Coaches</h3><p>Long-distance, touring, premium</p><span>Browse →</span></a>
+          <a href="#listings" class="category"><h3>City buses</h3><p>Urban, low-floor, articulated</p><span>Browse →</span></a>
+          <a href="#listings" class="category"><h3>Minibuses</h3><p>Shuttle, school</p><span>Browse →</span></a>
+          <a href="#listings" class="category category--accent"><h3>Electric</h3><p>Battery-electric &amp; hydrogen</p><span>Browse →</span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured listings (Figma 1:259) -->
+    <section class="listings" id="listings">
+      <div class="container">
+        <div class="listings__head">
+          <div>
+            <p class="eyebrow">Featured listings</p>
+            <h2 class="h2">Latest added <em class="accent">used</em> buses</h2>
+          </div>
+          <p class="body">Every unit verified on-site by a certified technician, with full reports to compare.</p>
+          <a href="#" class="btn">View all buses</a>
+        </div>
+        <div class="listings__grid">
+          <article class="listing">
+            <div class="listing__photo"><span class="tag">Coach</span></div>
+            <div class="listing__body">
+              <h3>[Make &amp; Model]</h3>
+              <p class="listing__price">[Price] €</p>
+              <ul class="listing__specs"><li>[Year] · [Mileage] km</li><li>[Seats] seats · [Euro class]</li><li>Inspected · [Location]</li></ul>
+              <div class="listing__actions"><a href="#sell" class="btn btn--sm">Make enquiry</a><a href="#" class="link-dark">View details →</a></div>
+            </div>
+          </article>
+          <article class="listing">
+            <div class="listing__photo"><span class="tag">City bus</span></div>
+            <div class="listing__body">
+              <h3>[Make &amp; Model]</h3>
+              <p class="listing__price">[Price] €</p>
+              <ul class="listing__specs"><li>[Year] · [Mileage] km</li><li>[Seats] seats · [Euro class]</li><li>Inspected · [Location]</li></ul>
+              <div class="listing__actions"><a href="#sell" class="btn btn--sm">Make enquiry</a><a href="#" class="link-dark">View details →</a></div>
+            </div>
+          </article>
+          <article class="listing">
+            <div class="listing__photo"><span class="tag">Electric</span></div>
+            <div class="listing__body">
+              <h3>[Make &amp; Model]</h3>
+              <p class="listing__price">[Price] €</p>
+              <ul class="listing__specs"><li>[Year] · [Mileage] km</li><li>[Seats] seats · [Euro class]</li><li>Inspected · [Location]</li></ul>
+              <div class="listing__actions"><a href="#sell" class="btn btn--sm">Make enquiry</a><a href="#" class="link-dark">View details →</a></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials (Figma 1:314) -->
+    <section class="testimonials">
+      <div class="testimonials__band">
+        <p class="eyebrow">Trusted by operators</p>
+        <h2 class="h2 h2--light">What our <em class="accent">customers</em> say</h2>
+      </div>
+      <div class="container testimonials__grid">
+        <figure class="quote">
+          <blockquote>“Truxco found us three coaches in two weeks and handled the cross-border paperwork. Saved us a month of broker calls.”</blockquote>
+          <figcaption><span class="avatar">HL</span><span><strong>Henrik Larsson</strong><small>Fleet manager, Skånetrafiken Partners</small></span></figcaption>
+        </figure>
+        <figure class="quote">
+          <blockquote>“The inspection report was honest about wear and we knew exactly what we were buying. No surprises on delivery.”</blockquote>
+          <figcaption><span class="avatar">MK</span><span><strong>Marta Kowalski</strong><small>Director, GdanskBus</small></span></figcaption>
+        </figure>
+        <figure class="quote">
+          <blockquote>“Sold two retired coaches through Truxco — they handled photos, listings and buyers. Cheque arrived 18 days later.”</blockquote>
+          <figcaption><span class="avatar">LN</span><span><strong>Lars Nilsson</strong><small>Owner, Nilsson Resor</small></span></figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- Sell with us (Figma 1:343) -->
+    <section class="sell" id="sell">
+      <div class="container sell__inner">
+        <div class="stack">
+          <p class="eyebrow">Sell with us</p>
+          <h2 class="h2">Got a bus to sell? We’ll handle <em class="accent">everything.</em></h2>
+          <p class="body">Fill in your details and we’ll come back with an estimate and an offer for your bus. Simple, fast and with no obligations.</p>
+          <div class="quick">
+            <span class="quick__icon"><img src="assets/icon-clock-white.svg" width="22" height="22" alt=""></span>
+            <span><strong>Quick valuation</strong><small>Get an estimate in 24 hours</small></span>
+          </div>
+        </div>
+        <form class="valuation" id="valuation-form" novalidate>
+          <label class="field">
+            <span class="field__label">Make &amp; model</span>
+            <input type="text" name="model" autocomplete="off">
+          </label>
+          <div class="valuation__row">
+            <label class="field">
+              <span class="field__label">Year</span>
+              <input type="text" name="year" inputmode="numeric">
+            </label>
+            <label class="field">
+              <span class="field__label">Mileage</span>
+              <input type="text" name="mileage" inputmode="numeric">
+            </label>
+          </div>
+          <div class="valuation__row">
+            <label class="field">
+              <span class="field__label">Email *</span>
+              <input type="email" name="email" required autocomplete="email" aria-describedby="email-error">
+              <span class="field__error" id="email-error"></span>
+            </label>
+            <label class="field">
+              <span class="field__label">Phone</span>
+              <input type="tel" name="phone" autocomplete="tel">
+            </label>
+          </div>
+          <button type="submit" class="btn btn--block btn--tall">Get free valuation</button>
+          <p class="valuation__status" role="status"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer (Figma 12:723) -->
+  <footer class="footer" id="contact">
+    <div class="container">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <span class="logo-placeholder logo-placeholder--dark">TRUXCO LOGO</span>
+          <p>Truxco AB · Bus sales and rental. Based in Staffanstorp, Sweden — serving operators across Europe.</p>
+        </div>
+        <nav class="footer__col" aria-label="Browse"><h4>BROWSE</h4><a href="#listings">Coaches</a><a href="#listings">City buses</a><a href="#listings">Minibuses</a><a href="#listings">Electric</a></nav>
+        <nav class="footer__col" aria-label="Company"><h4>COMPANY</h4><a href="#about">About us</a><a href="#">How it works</a><a href="#contact">Contact</a><a href="#">Careers</a></nav>
+        <nav class="footer__col" aria-label="Resources"><h4>RESOURCES</h4><a href="#sell">Sell with us</a><a href="#">Inspections</a><a href="#">FAQ</a><a href="#">Press</a></nav>
+      </div>
+      <div class="footer__mid">
+        <p class="footer__slogan">Buy. Sell. <em>Drive away.</em></p>
+        <div class="footer__contact">
+          <a href="tel:+46102070444">+46 (0) 10 207 04 44</a>
+          <a href="mailto:info@truxco.se" class="is-accent">info@truxco.se</a>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <div class="footer__legal"><span class="seal-placeholder">SEAL</span>© 2026 Truxco AB · Org. 559123-4567</div>
+        <div class="footer__links"><a href="#">Privacy</a><a href="#">Terms</a><a href="#">Cookies</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
