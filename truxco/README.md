@@ -9,7 +9,7 @@ Open `index.html` in a browser. No build step. `hero-options.html` shows the fou
 - One page background (`#F5F4F2`) for every section except the footer.
 - Single-color headings, no underlines.
 - Two fonts: Barlow (headings) and Inter (body).
-- Sections follow the options picked in Figma: hero with search inside, About as a bento grid, Services grouped by customer need, What we offer as photo cards, Featured listings as a carousel.
+- Sections follow the options picked in Figma: split hero with search and coach render, About as a bento grid, Services grouped by customer need, What we offer as photo cards, Featured listings as a carousel.
 - Responsive down to 375px, mobile menu, email validation on the valuation form.
 
 ## Assets
@@ -17,6 +17,6 @@ All icons in `assets/` are local SVGs (no download step):
 - `il-*.svg` — illustrated spot icons (outline, Truxco blue, mint accent, sparkle), in the style of timeedit.com.
 - `ic-check.svg`, `icon-*.svg` — small UI icons (check, phone, chevron, arrows).
 
-- `bus-*.jpg` — 3D bus renders (generated in Figma, frame "3D bus renders (source)"), used in What we offer and Featured listings.
+- `bus-*.webp` — 3D bus renders with the background removed (transparent, soft ground shadow), used in the hero, What we offer and Featured listings. Source renders live in Figma ("3D bus renders (source)").
 
 Still placeholders, as in Figma: the About / Why photos, listing data (`[Make & Model]` etc.), testimonials, the logo and the trust seal.

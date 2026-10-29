@@ -12,7 +12,7 @@
 </head>
 <body>
 
-  <!-- Hero + Search (Figma 85:3, Option 01: search inside hero, #F5F4F2 background) -->
+  <!-- Hero + Search (Figma Hero v2 · Option 01: split, coach render right) -->
   <header class="hero">
     <nav class="nav container" aria-label="Main">
       <a class="logo-placeholder" href="#top">TRUXCO LOGO</a>
@@ -40,11 +40,12 @@
       </div>
     </nav>
 
-    <div class="hero__copy container" id="top">
+    <div class="hero__split container" id="top">
+      <div class="hero__copy">
       <p class="hero__kicker"><span class="hero__line"></span>Trusted across 24 European countries</p>
       <h1 class="hero__title">THE SIMPLE WAY<br>to Buy and Sell Buses in Europe</h1>
       <p class="hero__lead">We buy used buses, refurbish them in our own workshop in Sweden and deliver them road-ready to operators across Europe.</p>
-      <form class="sbar" action="#listings" aria-label="Search buses">
+      <form class="sbar sbar--grid" action="#listings" aria-label="Search buses">
         <label class="field sbar__field">
           <span class="field__label">Bus type</span>
           <select name="type">
@@ -69,14 +70,10 @@
             <option>All of Europe</option><option>Sweden</option><option>Denmark</option><option>Norway</option><option>Finland</option><option>Germany</option><option>Poland</option>
           </select>
         </label>
-        <label class="field sbar__field">
-          <span class="field__label">Seats</span>
-          <select name="seats">
-            <option>Any capacity</option><option>Up to 20</option><option>21–40</option><option>41–60</option><option>60+</option>
-          </select>
-        </label>
         <button type="submit" class="btn sbar__btn">Search 200+ buses</button>
       </form>
+      </div>
+      <img class="hero__bus" src="assets/bus-coach.webp" width="900" height="469" alt="White touring coach">
     </div>
   </header>
 
@@ -204,19 +201,19 @@
         </div>
         <div class="categories">
           <a href="#listings" class="category">
-            <img class="category__img" src="assets/bus-coach.jpg" width="960" height="720" alt="Touring coach" loading="lazy">
+            <img class="category__img" src="assets/bus-coach.webp" width="900" height="470" alt="Touring coach" loading="lazy">
             <span class="category__text"><h3>Coaches</h3><p>Long-distance, touring, premium</p><span>Browse →</span></span>
           </a>
           <a href="#listings" class="category">
-            <img class="category__img" src="assets/bus-city-bus.jpg" width="960" height="720" alt="Low-floor city bus" loading="lazy">
+            <img class="category__img" src="assets/bus-city-bus.webp" width="900" height="470" alt="Low-floor city bus" loading="lazy">
             <span class="category__text"><h3>City buses</h3><p>Urban, low-floor, articulated</p><span>Browse →</span></span>
           </a>
           <a href="#listings" class="category">
-            <img class="category__img" src="assets/bus-minibus.jpg" width="960" height="720" alt="Minibus" loading="lazy">
+            <img class="category__img" src="assets/bus-minibus.webp" width="900" height="470" alt="Minibus" loading="lazy">
             <span class="category__text"><h3>Minibuses</h3><p>Shuttle, school</p><span>Browse →</span></span>
           </a>
           <a href="#listings" class="category">
-            <img class="category__img" src="assets/bus-electric.jpg" width="960" height="720" alt="Electric city bus" loading="lazy">
+            <img class="category__img" src="assets/bus-electric.webp" width="900" height="470" alt="Electric city bus" loading="lazy">
             <span class="category__text"><h3>Electric</h3><p>Battery-electric &amp; hydrogen</p><span>Browse →</span></span>
           </a>
         </div>
@@ -239,7 +236,7 @@
         </div>
         <div class="carousel__track" id="listings-track" tabindex="0" role="region" aria-label="Latest added used buses">
           <article class="listing">
-            <div class="listing__photo"><img src="assets/bus-coach.jpg" width="960" height="720" alt="" loading="lazy"><span class="tag">Coach</span></div>
+            <div class="listing__photo"><img src="assets/bus-coach.webp" width="900" height="470" alt="" loading="lazy"><span class="tag">Coach</span></div>
             <div class="listing__body">
               <div class="listing__top"><h3>[Make &amp; Model]</h3><p class="listing__price">[Price] €</p></div>
               <ul class="listing__specs"><li>[Year]</li><li>[Mileage] km</li><li>[Seats] seats</li><li>[Euro class]</li></ul>
@@ -248,7 +245,7 @@
             </div>
           </article>
           <article class="listing">
-            <div class="listing__photo"><img src="assets/bus-city-bus.jpg" width="960" height="720" alt="" loading="lazy"><span class="tag">City bus</span></div>
+            <div class="listing__photo"><img src="assets/bus-city-bus.webp" width="900" height="470" alt="" loading="lazy"><span class="tag">City bus</span></div>
             <div class="listing__body">
               <div class="listing__top"><h3>[Make &amp; Model]</h3><p class="listing__price">[Price] €</p></div>
               <ul class="listing__specs"><li>[Year]</li><li>[Mileage] km</li><li>[Seats] seats</li><li>[Euro class]</li></ul>
@@ -257,7 +254,7 @@
             </div>
           </article>
           <article class="listing">
-            <div class="listing__photo"><img src="assets/bus-electric.jpg" width="960" height="720" alt="" loading="lazy"><span class="tag">Electric</span></div>
+            <div class="listing__photo"><img src="assets/bus-electric.webp" width="900" height="470" alt="" loading="lazy"><span class="tag">Electric</span></div>
             <div class="listing__body">
               <div class="listing__top"><h3>[Make &amp; Model]</h3><p class="listing__price">[Price] €</p></div>
               <ul class="listing__specs"><li>[Year]</li><li>[Mileage] km</li><li>[Seats] seats</li><li>[Euro class]</li></ul>
@@ -266,7 +263,7 @@
             </div>
           </article>
           <article class="listing">
-            <div class="listing__photo"><img src="assets/bus-minibus.jpg" width="960" height="720" alt="" loading="lazy"><span class="tag">Minibus</span></div>
+            <div class="listing__photo"><img src="assets/bus-minibus.webp" width="900" height="470" alt="" loading="lazy"><span class="tag">Minibus</span></div>
             <div class="listing__body">
               <div class="listing__top"><h3>[Make &amp; Model]</h3><p class="listing__price">[Price] €</p></div>
               <ul class="listing__specs"><li>[Year]</li><li>[Mileage] km</li><li>[Seats] seats</li><li>[Euro class]</li></ul>
