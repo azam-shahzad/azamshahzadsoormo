@@ -19,6 +19,6 @@ All icons in `assets/` are local SVGs (no download step):
 
 - `bus-*.webp` — 3D bus renders with the background removed (transparent, soft ground shadow), used in the hero, What we offer and Featured listings. Source renders live in Figma ("3D bus renders (source)").
 
-- `about-technician.webp` — AI-generated workshop image for the About section (Figma "3D render / Technician").
+- `about-technician.webp` — AI-generated, photo-realistic workshop image for the About section (Figma "3D render / Technician (realistic)").
 
 Still placeholders, as in Figma: listing data (`[Make & Model]` etc.), testimonials, the logo and the trust seal.
