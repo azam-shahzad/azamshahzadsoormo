@@ -51,7 +51,7 @@
   const form = document.getElementById('valuation-form');
   const email = form.elements.email;
   const error = document.getElementById('email-error');
-  const status = form.querySelector('.valuation__status');
+  const status = document.querySelector('.valuation__status');
 
   function validateEmail() {
     if (!email.value.trim()) return 'Enter your email so we can send the estimate.';

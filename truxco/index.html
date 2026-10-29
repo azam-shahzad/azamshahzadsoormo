@@ -312,48 +312,31 @@
       </div>
     </section>
 
-    <!-- Sell with us (Figma 150:2, Option 02 · Steps + form) -->
+    <!-- Sell with us (Figma 176:2, Option 03 · Blue band) -->
     <section class="sell" id="sell">
-      <div class="container sell__inner">
-        <div class="stack">
-          <p class="eyebrow">Sell with us</p>
-          <h2 class="h2">Got a bus to sell? We’ll handle everything.</h2>
-          <p class="body">We buy used buses directly. Fill in your details and we’ll come back with an offer for your bus — simple, fast and with no obligations.</p>
-          <ol class="steps">
-            <li><span class="steps__num" aria-hidden="true">1</span><span><strong>Send your details</strong><small>Make, model, year and mileage — takes a minute.</small></span></li>
-            <li><span class="steps__num" aria-hidden="true">2</span><span><strong>Get an offer</strong><small>We come back with an estimate within 24 hours.</small></span></li>
-            <li><span class="steps__num" aria-hidden="true">3</span><span><strong>We collect the bus</strong><small>No obligations until you accept the offer.</small></span></li>
+      <div class="container">
+        <div class="sell-band">
+          <div class="sell-band__top">
+            <div>
+              <p class="sell-band__eyebrow">Sell with us</p>
+              <h2 class="sell-band__title">Got a bus to sell? We’ll handle everything.</h2>
+            </div>
+            <p class="sell-band__body">We buy used buses directly. Fill in your details and we’ll come back with an offer for your bus — simple, fast and with no obligations.</p>
+          </div>
+          <form class="sell-form" id="valuation-form" novalidate>
+            <label class="sell-form__field"><span class="visually-hidden">Make &amp; model</span><input type="text" name="model" placeholder="Make &amp; model" autocomplete="off"></label>
+            <label class="sell-form__field"><span class="visually-hidden">Year</span><input type="text" name="year" placeholder="Year" inputmode="numeric"></label>
+            <label class="sell-form__field"><span class="visually-hidden">Email (required)</span><input type="email" name="email" placeholder="Email *" required autocomplete="email" aria-describedby="email-error"></label>
+            <button type="submit" class="btn sell-form__btn">Get free valuation</button>
+          </form>
+          <p class="sell-band__msg field__error" id="email-error"></p>
+          <p class="sell-band__msg valuation__status" role="status"></p>
+          <ol class="sell-steps">
+            <li><span aria-hidden="true">1</span>Send your details</li>
+            <li><span aria-hidden="true">2</span>Get an offer within 24 hours</li>
+            <li><span aria-hidden="true">3</span>We collect the bus</li>
           </ol>
         </div>
-        <form class="valuation" id="valuation-form" novalidate>
-          <label class="field">
-            <span class="field__label">Make &amp; model</span>
-            <input type="text" name="model" autocomplete="off">
-          </label>
-          <div class="valuation__row">
-            <label class="field">
-              <span class="field__label">Year</span>
-              <input type="text" name="year" inputmode="numeric">
-            </label>
-            <label class="field">
-              <span class="field__label">Mileage</span>
-              <input type="text" name="mileage" inputmode="numeric">
-            </label>
-          </div>
-          <div class="valuation__row">
-            <label class="field">
-              <span class="field__label">Email *</span>
-              <input type="email" name="email" required autocomplete="email" aria-describedby="email-error">
-              <span class="field__error" id="email-error"></span>
-            </label>
-            <label class="field">
-              <span class="field__label">Phone</span>
-              <input type="tel" name="phone" autocomplete="tel">
-            </label>
-          </div>
-          <button type="submit" class="btn btn--block btn--tall">Get free valuation</button>
-          <p class="valuation__status" role="status"></p>
-        </form>
       </div>
     </section>
   </main>
