@@ -1,21 +1,21 @@
-# Truxco.se — Option 01 · Classic (clean/modern pass)
+# Truxco.se — homepage
 
 Static HTML/CSS/JS build of the Figma design
 [Truxco.se Prototype → Option 01 · Truxco.se Classic](https://www.figma.com/design/sEz3FfAcZMI8zpIhCkqxlY/Truxco.se-Prototype?node-id=0-1).
 
-Open `index.html` in a browser. No build step.
+Open `index.html` in a browser. No build step. `hero-options.html` shows the four hero + search variants.
 
-## Changes from the Figma file
-- Heading highlights use blue text without underline.
-- One radius (12px), light borders instead of heavy shadows, more white space.
-- Two fonts only: Barlow (headings) + Inter (body). Footer slogan uses Barlow instead of Instrument Serif.
-- Hero kicker is a pill badge; hero copy is centered.
+## Design
+- One page background (`#F5F4F2`) for every section except the footer.
+- Single-color headings, no underlines.
+- Two fonts: Barlow (headings) and Inter (body).
+- Sections follow the options picked in Figma: hero with search inside, About as a bento grid, Services grouped by customer need.
 - Responsive down to 375px, mobile menu, email validation on the valuation form.
 
 ## Assets
-Icons and the hero photo come from Figma. Download them into `assets/`:
+All icons in `assets/` are local SVGs (no download step):
+- `il-*.svg` — illustrated spot icons (outline, Truxco blue, mint accent, sparkle), in the style of timeedit.com.
+- `ic-check.svg`, `icon-*.svg` — small UI icons (check, phone, chevron, arrows).
 
-    bash download-assets.sh
-
-The Figma asset URLs expire about 7 days after 2026-10-29.
-Photo placeholders, listing data (`[Make & Model]` etc.) and the logo/seal are still placeholders, as in Figma.
+Still placeholders, as in Figma: photos, listing data (`[Make & Model]` etc.), testimonials, the logo and the trust seal.
+The 3D bus renders for "What we offer" live in the Figma file ("3D bus renders (source)").

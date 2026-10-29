@@ -298,15 +298,6 @@ ul { list-style: none; }
 }
 .ph-label--sm { padding: 4px 8px; font-size: 11px; }
 
-.stat-icon {
-  display: grid;
-  place-items: center;
-  flex-shrink: 0;
-  width: 48px;
-  height: 48px;
-  border: 2px solid var(--blue);
-  border-radius: 50%;
-}
 
 
 /* ---------- Why choose ---------- */
@@ -459,7 +450,6 @@ ul { list-style: none; }
 .sell { padding: var(--section) 0; }
 .sell__inner { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
 .quick { display: flex; align-items: center; gap: 14px; }
-.quick__icon { display: grid; place-items: center; width: 52px; height: 52px; border-radius: 50%; background: var(--blue); flex-shrink: 0; }
 .quick > span:last-child { display: flex; flex-direction: column; }
 .quick strong { font-family: var(--font-display); font-size: 20px; }
 .quick small { font-size: 14px; color: var(--muted); }
