@@ -435,28 +435,21 @@ ul { list-style: none; }
 
 /* ---------- Testimonials ---------- */
 .testimonials { padding-top: var(--section); }
-.testimonials__band {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 12px;
-  padding: 0 var(--gutter) 40px;
-  text-align: center;
-}
+.testimonials .section-head { margin-bottom: 48px; }
 .testimonials__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
 .quote {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   gap: 24px;
-  padding: 32px;
-  border-radius: var(--radius);
+  padding: 32px 32px 36px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
   background: var(--white);
-  box-shadow: var(--shadow-lg);
 }
-.quote blockquote { font-size: 16px; line-height: 1.7; color: var(--ink-2); }
-.quote figcaption { display: flex; align-items: center; gap: 14px; padding-top: 22px; border-top: 1px solid var(--line); }
-.quote figcaption > span:last-child { display: flex; flex-direction: column; }
+.quote figcaption { display: flex; align-items: center; gap: 14px; }
+.quote__who { display: flex; flex-direction: column; flex: 1; min-width: 0; }
+.quote__icon { flex-shrink: 0; }
+.quote blockquote { margin: 0; font-size: 17px; font-weight: 500; line-height: 1.65; color: var(--ink); }
 .quote strong { font-family: var(--font-display); font-size: 17px; }
 .quote small { font-size: 13px; color: var(--muted); }
 .avatar {
