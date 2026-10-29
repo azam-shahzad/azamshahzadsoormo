@@ -271,11 +271,24 @@ ul { list-style: none; }
 .field__error { min-height: 0; font-size: 13px; color: #d93025; }
 .field__error:empty { display: none; }
 
-/* ---------- About ---------- */
-.about { padding-top: var(--section); }
-.about__inner { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
-.checklist { display: flex; flex-direction: column; gap: 14px; }
-.checklist li { display: flex; align-items: center; gap: 12px; font-size: 15px; color: var(--ink-2); }
+/* ---------- About (Option 04 · Bento) ---------- */
+.about { padding-bottom: 96px; }
+.about-bento { display: flex; flex-direction: column; gap: 24px; }
+.about-bento__top { display: grid; grid-template-columns: minmax(0, 1fr) 480px; gap: 24px; }
+.about-bento__row { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 24px; }
+.tile {
+  padding: 28px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--white);
+}
+.about-bento__intro { display: flex; flex-direction: column; align-items: flex-start; gap: 22px; padding: 48px; }
+.photo-ph.about-bento__photo { min-height: 320px; padding: 16px; border-radius: 10px; }
+.tile--stat { display: flex; align-items: center; gap: 14px; }
+.tile--stat strong { display: block; font-family: var(--font-display); font-size: 30px; line-height: 1.1; }
+.tile--stat small { font-size: 14px; color: var(--muted); }
+.tile--benefit { display: flex; flex-direction: column; gap: 16px; font-size: 15px; line-height: 1.5; color: var(--ink-2); }
+.btn--6 { border-radius: 6px; }
 .checklist__dot {
   display: grid;
   place-items: center;
@@ -297,46 +310,18 @@ ul { list-style: none; }
 }
 .ph-label--sm { padding: 4px 8px; font-size: 11px; }
 
-.collage { position: relative; height: 520px; }
-.collage__main { position: absolute; inset: 0 auto 0 0; width: 75%; padding: 16px; }
-.collage__side {
-  position: absolute;
-  top: 40px;
-  right: 0;
-  width: 42%;
-  height: 240px;
-  display: flex;
-  align-items: flex-end;
-  padding: 16px;
-  background: #e6e9ed;
-  border: 8px solid var(--white);
-  box-sizing: border-box;
-}
-.collage__badge {
-  position: absolute;
-  left: 24px;
-  bottom: 24px;
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  padding: 18px 22px;
-  background: var(--white);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow-lg);
-}
-.collage__badge-icon {
+.stat-icon {
   display: grid;
   place-items: center;
+  flex-shrink: 0;
   width: 48px;
   height: 48px;
   border: 2px solid var(--blue);
   border-radius: 50%;
 }
-.collage__badge strong { display: block; font-family: var(--font-display); font-size: 30px; line-height: 1.1; }
-.collage__badge small { font-size: 14px; color: var(--muted); }
 
 /* ---------- Why choose ---------- */
-.why { display: grid; grid-template-columns: 45fr 55fr; margin-top: var(--section); background: var(--dark); }
+.why { display: grid; grid-template-columns: 45fr 55fr; background: var(--dark); }
 .why__photo { position: relative; min-height: 600px; padding: 24px; background: var(--dark-3); }
 .sell-card {
   position: absolute;
@@ -564,8 +549,8 @@ ul { list-style: none; }
   .nav__links { flex-direction: column; margin: 0; }
   .nav__links a { padding: 12px 14px; }
   .nav__actions { flex-wrap: wrap; justify-content: space-between; padding-top: 12px; border-top: 1px solid var(--line); }
-  .about__inner, .sell__inner, .why { grid-template-columns: 1fr; }
-  .why { margin-top: var(--section); }
+  .sell__inner, .why, .about-bento__top { grid-template-columns: 1fr; }
+  .about-bento__row { grid-template-columns: 1fr 1fr; }
   .why__photo { min-height: 480px; }
   .services__grid, .listings__grid, .testimonials__grid { grid-template-columns: 1fr 1fr; }
   .listings__head { flex-wrap: wrap; }
@@ -575,9 +560,9 @@ ul { list-style: none; }
   :root { --section: 72px; --gutter: 16px; }
   .hero { --hero-gap: 56px; }
   .sbar { grid-template-columns: 1fr; padding: 20px; }
-  .collage { height: 420px; }
-  .collage__main { width: 80%; }
-  .collage__side { width: 50%; height: 180px; }
+  .about { padding-bottom: 72px; }
+  .about-bento__intro { padding: 28px; }
+  .about-bento__row { grid-template-columns: 1fr; }
   .services__grid, .listings__grid, .testimonials__grid, .categories, .stats, .valuation__row { grid-template-columns: 1fr; }
   .valuation { padding: 24px; }
   .testimonials__band { padding-bottom: 136px; }
