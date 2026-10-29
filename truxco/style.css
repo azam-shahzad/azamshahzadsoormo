@@ -308,9 +308,6 @@ ul { list-style: none; }
   border-radius: 50%;
 }
 
-/* Filled glossy icons (assets/fx-*.svg) with a soft glow */
-.icon-fx { filter: drop-shadow(0 4px 10px rgba(21, 130, 255, .35)); }
-.icon-fx--light { filter: drop-shadow(0 4px 10px rgba(0, 51, 128, .25)); }
 
 /* ---------- Why choose ---------- */
 .why { display: grid; grid-template-columns: 45fr 55fr; }
@@ -344,25 +341,24 @@ ul { list-style: none; }
 /* ---------- Services ---------- */
 .services { padding-top: var(--section); }
 .section-head { display: flex; flex-direction: column; align-items: center; gap: 12px; max-width: 640px; margin: 0 auto 56px; text-align: center; }
-.services__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-.service {
+.svc-groups { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+.svc-group {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  gap: 12px;
-  padding: 40px 32px;
+  gap: 24px;
+  padding: 36px 32px;
   border: 1px solid var(--line);
-  border-radius: var(--radius);
+  border-radius: 10px;
   background: var(--white);
-  transition: border-color .2s ease, box-shadow .2s ease, transform .2s ease;
 }
-.service:hover { border-color: transparent; box-shadow: var(--shadow-lg); transform: translateY(-2px); }
-.service img { margin-bottom: 12px; }
-.service h3 { font-family: var(--font-display); font-size: 24px; }
-.service p { font-size: 15px; line-height: 1.65; color: var(--muted); }
-.service a { padding-top: 10px; font-size: 14px; font-weight: 700; color: var(--blue); }
-.service--accent { border-color: var(--blue); background: var(--blue); color: var(--white); box-shadow: 0 16px 40px rgba(21, 130, 255, .25); }
-.service--accent p, .service--accent a { color: var(--white); }
+.svc-group__label { margin-bottom: -18px; font-size: 12px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--blue); }
+.svc-group h3 { font-family: var(--font-display); font-size: 28px; }
+.svc-group ul { display: flex; flex-direction: column; gap: 20px; flex: 1; }
+.svc { display: flex; flex-direction: column; gap: 8px; padding-top: 20px; border-top: 1px solid var(--line); }
+.svc h4 { font-family: var(--font-display); font-size: 20px; }
+.svc p { font-size: 15px; line-height: 1.65; color: var(--muted); }
+.svc-group__cta { font-size: 15px; font-weight: 700; color: var(--blue); }
+.svc-group__cta:hover { color: var(--blue-dark); }
 
 /* ---------- What we offer ---------- */
 .offer { padding-top: var(--section); }
@@ -544,7 +540,8 @@ ul { list-style: none; }
   .sell__inner, .why, .about-bento__top { grid-template-columns: 1fr; }
   .about-bento__row { grid-template-columns: 1fr 1fr; }
   .why__photo { min-height: 480px; }
-  .services__grid, .listings__grid, .testimonials__grid { grid-template-columns: 1fr 1fr; }
+  .listings__grid, .testimonials__grid { grid-template-columns: 1fr 1fr; }
+  .svc-groups { grid-template-columns: 1fr; }
   .listings__head { flex-wrap: wrap; }
 }
 
@@ -555,7 +552,7 @@ ul { list-style: none; }
   .about { padding-bottom: 72px; }
   .about-bento__intro { padding: 28px; }
   .about-bento__row { grid-template-columns: 1fr; }
-  .services__grid, .listings__grid, .testimonials__grid, .categories, .stats, .valuation__row { grid-template-columns: 1fr; }
+  .listings__grid, .testimonials__grid, .categories, .stats, .valuation__row { grid-template-columns: 1fr; }
   .valuation { padding: 24px; }
   .footer__top { grid-template-columns: 1fr 1fr; }
   .footer__mid { flex-direction: column; align-items: flex-start; }

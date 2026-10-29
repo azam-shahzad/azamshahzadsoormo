@@ -95,12 +95,12 @@
         </div>
         <ul class="about-bento__row">
           <li class="tile tile--stat">
-            <span class="stat-icon"><img class="icon-fx" src="assets/fx-shield.svg" width="22" height="22" alt=""></span>
+            <span class="stat-icon"><img src="assets/fx-shield.svg" width="22" height="22" alt=""></span>
             <span><strong>10+ yrs</strong><small>In business</small></span>
           </li>
-          <li class="tile tile--benefit"><img class="icon-fx" src="assets/fx-check.svg" width="22" height="22" alt="">No middlemen — we own every bus we sell</li>
-          <li class="tile tile--benefit"><img class="icon-fx" src="assets/fx-check.svg" width="22" height="22" alt="">Refurbished and inspected in our own workshop</li>
-          <li class="tile tile--benefit"><img class="icon-fx" src="assets/fx-check.svg" width="22" height="22" alt="">Export, transport and paperwork handled for you</li>
+          <li class="tile tile--benefit"><img src="assets/fx-check.svg" width="22" height="22" alt="">No middlemen — we own every bus we sell</li>
+          <li class="tile tile--benefit"><img src="assets/fx-check.svg" width="22" height="22" alt="">Refurbished and inspected in our own workshop</li>
+          <li class="tile tile--benefit"><img src="assets/fx-check.svg" width="22" height="22" alt="">Export, transport and paperwork handled for you</li>
         </ul>
       </div>
     </section>
@@ -120,15 +120,15 @@
         <h2 class="h2">Find the right bus for your business</h2>
         <p class="body">From city routes to long-distance touring — refurbished buses, checked in our own workshop and ready for the road.</p>
         <dl class="stats">
-          <div class="stat"><img class="icon-fx" src="assets/fx-bus.svg" width="44" height="44" alt=""><div><dt>Buses listed</dt><dd>200+</dd></div></div>
-          <div class="stat"><img class="icon-fx" src="assets/fx-globe.svg" width="44" height="44" alt=""><div><dt>Countries</dt><dd>20+</dd></div></div>
-          <div class="stat"><img class="icon-fx" src="assets/fx-group.svg" width="44" height="44" alt=""><div><dt>Happy buyers</dt><dd>1,400+</dd></div></div>
-          <div class="stat"><img class="icon-fx" src="assets/fx-shield.svg" width="44" height="44" alt=""><div><dt>In business</dt><dd>10+ yrs</dd></div></div>
+          <div class="stat"><img src="assets/fx-bus.svg" width="44" height="44" alt=""><div><dt>Buses listed</dt><dd>200+</dd></div></div>
+          <div class="stat"><img src="assets/fx-globe.svg" width="44" height="44" alt=""><div><dt>Countries</dt><dd>20+</dd></div></div>
+          <div class="stat"><img src="assets/fx-group.svg" width="44" height="44" alt=""><div><dt>Happy buyers</dt><dd>1,400+</dd></div></div>
+          <div class="stat"><img src="assets/fx-shield.svg" width="44" height="44" alt=""><div><dt>In business</dt><dd>10+ yrs</dd></div></div>
         </dl>
       </div>
     </section>
 
-    <!-- Services (Figma 1:171) -->
+    <!-- Services (Figma 118:2, Option 04 · Grouped by customer need) -->
     <section class="services">
       <div class="container">
         <div class="section-head">
@@ -136,43 +136,58 @@
           <h2 class="h2">How we make it simple for you</h2>
           <p class="body">Buying, selling, renting and servicing buses — all under one roof in Staffanstorp.</p>
         </div>
-        <div class="services__grid">
-          <article class="service">
-            <img class="icon-fx" src="assets/fx-shield.svg" width="40" height="40" alt="">
-            <h3>Own workshop</h3>
-            <p>Every bus is refurbished and inspected in Staffanstorp before delivery.</p>
-            <a href="#">Read more →</a>
-          </article>
-          <article class="service service--accent">
-            <img class="icon-fx icon-fx--light" src="assets/fx-tag-light.svg" width="40" height="40" alt="">
-            <h3>We buy your bus</h3>
-            <p>We buy used buses directly from operators and fleets — no middlemen.</p>
-            <a href="#">Read more →</a>
-          </article>
-          <article class="service">
-            <img class="icon-fx" src="assets/fx-wrench.svg" width="40" height="40" alt="">
-            <h3>Service &amp; repairs</h3>
-            <p>Workshop service and repairs to keep your fleet on the road.</p>
-            <a href="#">Read more →</a>
-          </article>
-          <article class="service">
-            <img class="icon-fx" src="assets/fx-key.svg" width="40" height="40" alt="">
-            <h3>Bus rental</h3>
-            <p>Short- or long-term rental when you need extra capacity.</p>
-            <a href="#">Read more →</a>
-          </article>
-          <article class="service">
-            <img class="icon-fx" src="assets/fx-bus.svg" width="40" height="40" alt="">
-            <h3>New &amp; used sales</h3>
-            <p>Coaches, city buses and minibuses — ready to deliver.</p>
-            <a href="#">Read more →</a>
-          </article>
-          <article class="service">
-            <img class="icon-fx" src="assets/fx-doc.svg" width="40" height="40" alt="">
-            <h3>Export &amp; delivery</h3>
-            <p>Cross-border transport, export documents and compliance — taken care of.</p>
-            <a href="#">Read more →</a>
-          </article>
+        <div class="svc-groups">
+        <article class="svc-group">
+          <p class="svc-group__label">For buyers</p>
+          <h3>Buy a bus</h3>
+          <ul>
+            <li class="svc">
+              <img src="assets/fx-bus.svg" width="32" height="32" alt="">
+              <h4>New &amp; used sales</h4>
+              <p>Coaches, city buses and minibuses — ready to deliver.</p>
+            </li>
+            <li class="svc">
+              <img src="assets/fx-doc.svg" width="32" height="32" alt="">
+              <h4>Export &amp; delivery</h4>
+              <p>Cross-border transport, export documents and compliance — taken care of.</p>
+            </li>
+          </ul>
+          <a href="#listings" class="svc-group__cta">Browse buses →</a>
+        </article>
+        <article class="svc-group">
+          <p class="svc-group__label">For operators</p>
+          <h3>Run your fleet</h3>
+          <ul>
+            <li class="svc">
+              <img src="assets/fx-key.svg" width="32" height="32" alt="">
+              <h4>Bus rental</h4>
+              <p>Short- or long-term rental when you need extra capacity.</p>
+            </li>
+            <li class="svc">
+              <img src="assets/fx-wrench.svg" width="32" height="32" alt="">
+              <h4>Service &amp; repairs</h4>
+              <p>Workshop service and repairs to keep your fleet on the road.</p>
+            </li>
+          </ul>
+          <a href="#contact" class="svc-group__cta">Talk to us →</a>
+        </article>
+        <article class="svc-group">
+          <p class="svc-group__label">For sellers</p>
+          <h3>Sell your bus</h3>
+          <ul>
+            <li class="svc">
+              <img src="assets/fx-tag.svg" width="32" height="32" alt="">
+              <h4>We buy your bus</h4>
+              <p>We buy used buses directly from operators and fleets — no middlemen.</p>
+            </li>
+            <li class="svc">
+              <img src="assets/fx-shield.svg" width="32" height="32" alt="">
+              <h4>Own workshop</h4>
+              <p>Every bus is refurbished and inspected in Staffanstorp before delivery.</p>
+            </li>
+          </ul>
+          <a href="#sell" class="svc-group__cta">Get free valuation →</a>
+        </article>
         </div>
       </div>
     </section>
@@ -268,7 +283,7 @@
           <h2 class="h2">Got a bus to sell? We’ll handle everything.</h2>
           <p class="body">We buy used buses directly. Fill in your details and we’ll come back with an offer for your bus — simple, fast and with no obligations.</p>
           <div class="quick">
-            <span class="quick__icon"><img class="icon-fx icon-fx--light" src="assets/fx-clock-light.svg" width="22" height="22" alt=""></span>
+            <span class="quick__icon"><img src="assets/fx-clock-light.svg" width="22" height="22" alt=""></span>
             <span><strong>Quick valuation</strong><small>Get an estimate in 24 hours</small></span>
           </div>
         </div>
