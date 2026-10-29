@@ -467,20 +467,33 @@ ul { list-style: none; }
 
 /* ---------- Sell ---------- */
 .sell { padding: var(--section) 0; }
-.sell__inner { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
-.quick { display: flex; align-items: center; gap: 14px; }
-.quick > span:last-child { display: flex; flex-direction: column; }
-.quick strong { font-family: var(--font-display); font-size: 20px; }
-.quick small { font-size: 14px; color: var(--muted); }
+.sell__inner { display: grid; grid-template-columns: minmax(0, 1fr) 560px; gap: 64px; align-items: center; }
+.steps { display: flex; flex-direction: column; width: 100%; margin: 0; padding: 0; list-style: none; }
+.steps li { display: flex; gap: 16px; padding: 16px 0; border-bottom: 1px solid var(--line); }
+.steps li:last-child { border-bottom: 0; }
+.steps__num {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--blue);
+  color: var(--white);
+  font-size: 15px;
+  font-weight: 700;
+}
+.steps li > span:last-child { display: flex; flex-direction: column; gap: 2px; }
+.steps strong { font-family: var(--font-display); font-size: 18px; }
+.steps small { font-size: 14px; color: var(--muted); }
 .valuation {
   display: flex;
   flex-direction: column;
   gap: 18px;
   padding: 36px;
   border: 1px solid var(--line);
-  border-radius: var(--radius);
+  border-radius: 10px;
   background: var(--white);
-  box-shadow: var(--shadow-lg);
 }
 .valuation .field { gap: 8px; }
 .valuation__row { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
