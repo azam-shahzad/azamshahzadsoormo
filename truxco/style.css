@@ -445,9 +445,9 @@ ul { list-style: none; }
 .listing__photo { position: relative; height: 200px; padding: 14px; }
 .listing__photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 .listing__photo .tag { position: relative; }
-.tag { display: inline-block; padding: 6px 12px; border-radius: 999px; background: var(--blue); color: var(--white); font-size: 12px; font-weight: 600; }
+.tag { display: inline-block; padding: 6px 12px; border-radius: 999px; background: rgba(255, 255, 255, .92); box-shadow: 0 2px 6px rgba(0, 0, 0, .12); color: var(--ink); font-size: 12px; font-weight: 600; }
 .listing__body { display: flex; flex-direction: column; gap: 14px; padding: 24px; }
-.listing__top { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.listing__top { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; }
 .listing__top h3, .listing__price { font-family: var(--font-display); font-size: 22px; font-weight: 700; }
 .listing__price { color: var(--blue); white-space: nowrap; }
 .listing__specs { display: flex; flex-wrap: wrap; gap: 8px; }
