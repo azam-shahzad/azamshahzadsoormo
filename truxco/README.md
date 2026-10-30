@@ -14,6 +14,7 @@ Open `index.html` in a browser. No build step. `hero-options.html` shows the fou
 
 ## Assets
 All icons in `assets/` are local SVGs (no download step):
+- `svc-*.webp` — glossy illustrated Services icons in the TimeEdit style, Truxco blue + mint (Figma "Services Opt 05", sprite "Icons / Services (TimeEdit style, sprite)").
 - `il-*.svg` — illustrated spot icons (outline, Truxco blue, mint accent, sparkle), in the style of timeedit.com.
 - `ic-check.svg`, `icon-*.svg` — small UI icons (check, phone, chevron, arrows).
 
