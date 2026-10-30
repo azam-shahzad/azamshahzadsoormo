@@ -17,7 +17,7 @@
   --white: #fff;
 
   --radius: 12px;
-  --radius-sm: 8px;
+  --radius-sm: 6px;
   --shadow: 0 1px 2px rgba(20, 22, 26, .04), 0 8px 24px rgba(20, 22, 26, .06);
   --shadow-lg: 0 2px 4px rgba(20, 22, 26, .04), 0 16px 40px rgba(20, 22, 26, .10);
 
@@ -78,7 +78,7 @@ ul { list-style: none; }
   gap: 8px;
   padding: 15px 28px;
   border: 0;
-  border-radius: 999px;
+  border-radius: 6px;
   background: var(--blue);
   color: var(--white);
   font: 600 15px/1 var(--font-body);
@@ -135,7 +135,7 @@ ul { list-style: none; }
 .nav__links a {
   display: block;
   padding: 10px 14px;
-  border-radius: 999px;
+  border-radius: 6px;
   font-size: 15px;
   font-weight: 500;
   transition: color .2s ease, background-color .2s ease;
@@ -152,7 +152,7 @@ ul { list-style: none; }
   align-items: center;
   gap: 12px;
   padding: 8px 18px 8px 8px;
-  border-radius: 999px;
+  border-radius: 6px;
   background: var(--blue);
   color: var(--white);
   transition: background-color .2s ease;
@@ -163,7 +163,7 @@ ul { list-style: none; }
   place-items: center;
   width: 40px;
   height: 40px;
-  border-radius: 50%;
+  border-radius: 4px;
   background: var(--white);
 }
 .btn-contact__text { display: flex; flex-direction: column; gap: 4px; font-size: 13px; font-weight: 500; }
@@ -344,7 +344,7 @@ ul { list-style: none; }
 .sell-bar__btn {
   flex-shrink: 0;
   padding: 15px 24px;
-  border-radius: 999px;
+  border-radius: 6px;
   background: var(--white);
   color: var(--blue);
   font-size: 15px;
@@ -410,7 +410,7 @@ ul { list-style: none; }
   width: 48px;
   height: 48px;
   border: 1px solid var(--line);
-  border-radius: 50%;
+  border-radius: 6px;
   background: var(--white);
   cursor: pointer;
   transition: border-color .2s ease, opacity .2s ease;
@@ -447,7 +447,7 @@ ul { list-style: none; }
 .listing__photo { position: relative; height: 200px; padding: 14px; }
 .listing__photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 .listing__photo .tag { position: relative; }
-.tag { display: inline-block; padding: 6px 12px; border-radius: 999px; background: rgba(255, 255, 255, .92); box-shadow: 0 2px 6px rgba(0, 0, 0, .12); color: var(--ink); font-size: 12px; font-weight: 600; }
+.tag { display: inline-block; padding: 6px 12px; border-radius: 6px; background: rgba(255, 255, 255, .92); box-shadow: 0 2px 6px rgba(0, 0, 0, .12); color: var(--ink); font-size: 12px; font-weight: 600; }
 .listing__body { display: flex; flex: 1; flex-direction: column; gap: 14px; padding: 24px; }
 .listing__top { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; }
 .listing__top h3, .listing__price { font-family: var(--font-display); font-size: 22px; font-weight: 700; line-height: 1.2; }
@@ -500,14 +500,14 @@ ul { list-style: none; }
 .sell-band__eyebrow { margin-bottom: 14px; font-size: 15px; font-weight: 600; }
 .sell-band__title { font-family: var(--font-display); font-size: clamp(32px, 3.4vw, 44px); line-height: 1.1; }
 .sell-band__body { max-width: 420px; font-size: 16px; line-height: 1.65; opacity: .9; }
-.sell-form { display: flex; align-items: center; gap: 12px; padding: 12px; border-radius: 999px; background: var(--white); }
+.sell-form { display: flex; align-items: center; gap: 12px; padding: 12px; border-radius: 10px; background: var(--white); }
 .sell-form__field { flex: 1; min-width: 0; }
 .sell-form input {
   width: 100%;
   height: 52px;
   padding: 0 20px;
   border: 1px solid transparent;
-  border-radius: 999px;
+  border-radius: 6px;
   background: var(--page);
   font: 400 15px var(--font-body);
   color: var(--ink);

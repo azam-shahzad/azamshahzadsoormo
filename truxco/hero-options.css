@@ -95,7 +95,7 @@
   max-width: 820px;
   margin-top: 12px;
   padding: 8px;
-  border-radius: 999px;
+  border-radius: 10px;
   background: var(--white);
   box-shadow: 0 12px 20px rgba(20, 22, 26, .12);
 }
@@ -109,7 +109,7 @@
   font: 400 16px var(--font-body);
   color: var(--ink);
 }
-.ksearch input { padding: 0 20px; border-radius: 999px; }
+.ksearch input { padding: 0 20px; border-radius: 6px; }
 .ksearch input::placeholder { color: #8a9099; }
 .ksearch input:focus, .ksearch select:focus { outline: none; }
 .ksearch:focus-within { box-shadow: 0 0 0 3px rgba(21, 130, 255, .4), 0 12px 20px rgba(20, 22, 26, .12); }
@@ -131,7 +131,7 @@
 .chip {
   padding: 10px 16px;
   border: 1px solid rgba(20, 22, 26, .2);
-  border-radius: 999px;
+  border-radius: 6px;
   background: transparent;
   color: var(--ink);
   font: 500 14px var(--font-body);
