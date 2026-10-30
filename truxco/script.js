@@ -1,4 +1,4 @@
-// Truxco — mobile nav, hero tabs, listings carousel + valuation form validation
+// Truxco — mobile nav, hero tabs, listings carousel, testimonials switcher + valuation form validation
 (function () {
   const toggle = document.querySelector('.nav__toggle');
   const menu = document.getElementById('nav-menu');
@@ -66,6 +66,20 @@
   track.addEventListener('scroll', updateCarousel, { passive: true });
   window.addEventListener('resize', updateCarousel);
   updateCarousel();
+
+  // Testimonials: one quote at a time, switch by author or arrows
+  const slides = [...document.querySelectorAll('.tq__slide')];
+  const whos = [...document.querySelectorAll('.tq__who')];
+  let current = 0;
+  function showQuote(i) {
+    current = (i + slides.length) % slides.length;
+    slides.forEach((s, n) => { s.hidden = n !== current; });
+    whos.forEach((w, n) => w.setAttribute('aria-pressed', String(n === current)));
+  }
+  whos.forEach((w) => w.addEventListener('click', () => showQuote(Number(w.dataset.go))));
+  document.querySelectorAll('.tq__arrow').forEach((a) => {
+    a.addEventListener('click', () => showQuote(current + Number(a.dataset.step)));
+  });
 
   const form = document.getElementById('valuation-form');
   const email = form.elements.email;
