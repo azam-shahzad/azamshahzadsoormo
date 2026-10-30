@@ -15,7 +15,8 @@ Open `index.html` in a browser. No build step. `hero-options.html` shows the fou
 ## Assets
 All icons in `assets/` are local SVGs (no download step):
 - `svc-*.webp` — glossy illustrated Services icons in the TimeEdit style, Truxco blue + mint (Figma "Services Opt 05", sprite "Icons / Services (TimeEdit style, sprite)").
-- `il-*.svg` — illustrated spot icons (outline, Truxco blue, mint accent, sparkle), in the style of timeedit.com.
+- `ic-*.webp` — glossy illustrated icons in the TimeEdit style for About, Why choose Truxco, Featured listings and Testimonials (Figma sprite "Icons / General (TimeEdit style, sprite)").
+- `il-*.svg` — earlier outline spot icons (no longer used on the page) (outline, Truxco blue, mint accent, sparkle), in the style of timeedit.com.
 - `ic-check.svg`, `icon-*.svg` — small UI icons (check, phone, chevron, arrows).
 
 - `bus-*.webp` — 3D bus renders with the background removed (transparent, soft ground shadow), used in the hero, What we offer and Featured listings. Source renders live in Figma ("3D bus renders (source)").
