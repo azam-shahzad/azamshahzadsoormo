@@ -26,7 +26,7 @@
 
   --container: 1240px;
   --gutter: 24px;
-  --section: 128px;
+  --section: 120px;
 }
 
 *, *::before, *::after { box-sizing: border-box; }
@@ -96,7 +96,7 @@ ul { list-style: none; }
 /* Hero sits on the page background (#F5F4F2); nav→copy gap equals the gap below the search (96px) */
 .hero {
   position: relative;
-  padding: 28px 0 var(--hero-gap);
+  padding: 28px 0 0;
   color: var(--ink);
   --hero-gap: 96px;
 }
@@ -296,7 +296,7 @@ ul { list-style: none; }
 .field__error:empty { display: none; }
 
 /* ---------- About (Option 04 · Bento) ---------- */
-.about { padding-bottom: 96px; }
+main > section { padding-top: var(--section); }
 .about-bento { display: flex; flex-direction: column; gap: 24px; }
 .about-bento__top { display: grid; grid-template-columns: minmax(0, 1fr) 480px; gap: 24px; }
 .about-bento__row { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 24px; }
@@ -370,7 +370,6 @@ ul { list-style: none; }
 .sell-bar__btn:hover { background: #e8f2ff; }
 
 /* ---------- Services ---------- */
-.services { padding-top: var(--section); }
 .section-head { display: flex; flex-direction: column; align-items: center; gap: 12px; max-width: 640px; margin: 0 auto 56px; text-align: center; }
 .svc-groups { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
 .svc-group {
@@ -392,7 +391,6 @@ ul { list-style: none; }
 .svc-group__cta:hover { color: var(--blue-dark); }
 
 /* ---------- What we offer ---------- */
-.offer { padding-top: var(--section); }
 .offer .section-head { max-width: 720px; margin-bottom: 48px; }
 .offer .section-head .btn { margin-top: 12px; }
 .categories { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 24px; }
@@ -414,7 +412,6 @@ ul { list-style: none; }
 .category__text > span { padding-top: 4px; font-size: 14px; font-weight: 700; color: var(--blue); }
 
 /* ---------- Listings (carousel) ---------- */
-.listings { padding-top: var(--section); }
 .listings__head { display: flex; align-items: flex-end; justify-content: space-between; gap: 32px; margin-bottom: 44px; }
 .listings__head > div:first-child { display: flex; flex-direction: column; gap: 10px; }
 .carousel__controls { display: flex; align-items: center; gap: 12px; }
@@ -477,7 +474,6 @@ ul { list-style: none; }
 .link-dark:hover { color: var(--blue); }
 
 /* ---------- Testimonials ---------- */
-.testimonials { padding-top: var(--section); }
 .testimonials .section-head { margin-bottom: 48px; }
 .testimonials__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
 .quote {
@@ -617,7 +613,6 @@ ul { list-style: none; }
   .tabs__list { display: flex; }
   .tabs__list [role="tab"] { flex: 1; padding-inline: 12px; }
   .tabs__panel { grid-template-columns: 1fr; padding: 20px; }
-  .about { padding-bottom: 72px; }
   .sell-band { padding: 32px 20px; }
   .sell-form { flex-direction: column; align-items: stretch; border-radius: 16px; }
   .sell-form__btn { width: 100%; }

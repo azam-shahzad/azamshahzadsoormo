@@ -85,30 +85,6 @@
   </header>
 
   <main>
-    <!-- About (Figma 105:2, Option 04 · Bento) -->
-    <section class="about" id="about">
-      <div class="container about-bento">
-        <div class="about-bento__top">
-          <div class="tile about-bento__intro">
-            <p class="eyebrow">About Truxco</p>
-            <h2 class="h2">Buying a bus shouldn’t be hard work.</h2>
-            <p class="body">Truxco buys, refurbishes and sells new and used buses — and rents them out too. Every bus goes through our own workshop in Staffanstorp, and you always get a real person on the phone.</p>
-            <a href="#" class="btn btn--6">More about us</a>
-          </div>
-          <img class="about-bento__photo" src="assets/about-technician.png" width="386" height="329" alt="Truxco technician tightening the wheel nuts of a coach in the workshop" loading="lazy">
-        </div>
-        <ul class="about-bento__row">
-          <li class="tile tile--stat">
-            <img src="assets/ic-shield.webp" width="48" height="48" alt="">
-            <span><strong>10+ yrs</strong><small>In business</small></span>
-          </li>
-          <li class="tile tile--benefit"><img src="assets/ic-badge-check.webp" width="22" height="22" alt="">No middlemen — we own every bus we sell</li>
-          <li class="tile tile--benefit"><img src="assets/ic-badge-check.webp" width="22" height="22" alt="">Refurbished and inspected in our own workshop</li>
-          <li class="tile tile--benefit"><img src="assets/ic-badge-check.webp" width="22" height="22" alt="">Export, transport and paperwork handled for you</li>
-        </ul>
-      </div>
-    </section>
-
     <!-- Why choose Truxco (Figma 156:2, Option 01 · Stat cards) -->
     <section class="why">
       <div class="container">
@@ -133,7 +109,87 @@
       </div>
     </section>
 
-    <!-- Services (Figma 118:2, Option 04 · Grouped by customer need) -->
+    <!-- Featured listings (Figma 137:2, Option 04 · Carousel) -->
+    <section class="listings" id="listings" aria-labelledby="listings-title">
+      <div class="container">
+        <div class="listings__head">
+          <div>
+            <p class="eyebrow">Featured listings</p>
+            <h2 class="h2" id="listings-title">Latest added used buses</h2>
+          </div>
+          <div class="carousel__controls">
+            <a href="#" class="carousel__all">View all buses →</a>
+            <button type="button" class="carousel__btn" data-dir="-1" aria-label="Previous buses" aria-controls="listings-track"><img src="assets/icon-arrow-right.svg" width="20" height="20" alt="" class="is-flipped"></button>
+            <button type="button" class="carousel__btn" data-dir="1" aria-label="Next buses" aria-controls="listings-track"><img src="assets/icon-arrow-right.svg" width="20" height="20" alt=""></button>
+          </div>
+        </div>
+        <div class="carousel__track" id="listings-track" tabindex="0" role="region" aria-label="Latest added used buses">
+          <article class="listing">
+            <div class="listing__photo"><img src="assets/listing-coach.webp" width="800" height="537" alt="White touring coach on the Truxco yard" loading="lazy"><span class="tag">Coach</span></div>
+            <div class="listing__body">
+              <div class="listing__top"><h3>Volvo 9700 HD</h3><p class="listing__price">129 000 €</p></div>
+              <ul class="listing__specs"><li>2017</li><li>512 000 km</li><li>53 seats</li><li>Euro 6</li></ul>
+              <p class="listing__inspected"><img src="assets/ic-badge-check.webp" width="16" height="16" alt="">Inspected · Staffanstorp, SE</p>
+              <div class="listing__actions"><a href="#sell" class="btn btn--sm">Make enquiry</a><a href="#" class="link-dark">View details →</a></div>
+            </div>
+          </article>
+          <article class="listing">
+            <div class="listing__photo"><img src="assets/listing-city-bus.webp" width="800" height="537" alt="White city bus with a blue stripe on the Truxco yard" loading="lazy"><span class="tag">City bus</span></div>
+            <div class="listing__body">
+              <div class="listing__top"><h3>Volvo 8900 LE</h3><p class="listing__price">59 000 €</p></div>
+              <ul class="listing__specs"><li>2016</li><li>640 000 km</li><li>41 seats</li><li>Euro 6</li></ul>
+              <p class="listing__inspected"><img src="assets/ic-badge-check.webp" width="16" height="16" alt="">Inspected · Staffanstorp, SE</p>
+              <div class="listing__actions"><a href="#sell" class="btn btn--sm">Make enquiry</a><a href="#" class="link-dark">View details →</a></div>
+            </div>
+          </article>
+          <article class="listing">
+            <div class="listing__photo"><img src="assets/listing-electric.webp" width="800" height="537" alt="Electric city bus on the Truxco yard" loading="lazy"><span class="tag">Electric</span></div>
+            <div class="listing__body">
+              <div class="listing__top"><h3>Volvo 7900 Electric</h3><p class="listing__price">189 000 €</p></div>
+              <ul class="listing__specs"><li>2019</li><li>310 000 km</li><li>33 seats</li><li>Zero emission</li></ul>
+              <p class="listing__inspected"><img src="assets/ic-badge-check.webp" width="16" height="16" alt="">Inspected · Staffanstorp, SE</p>
+              <div class="listing__actions"><a href="#sell" class="btn btn--sm">Make enquiry</a><a href="#" class="link-dark">View details →</a></div>
+            </div>
+          </article>
+          <article class="listing">
+            <div class="listing__photo"><img src="assets/listing-minibus.webp" width="800" height="537" alt="White minibus on the Truxco yard" loading="lazy"><span class="tag">Minibus</span></div>
+            <div class="listing__body">
+              <div class="listing__top"><h3>Mercedes Sprinter 516</h3><p class="listing__price">54 900 €</p></div>
+              <ul class="listing__specs"><li>2020</li><li>148 000 km</li><li>19 seats</li><li>Euro 6</li></ul>
+              <p class="listing__inspected"><img src="assets/ic-badge-check.webp" width="16" height="16" alt="">Inspected · Staffanstorp, SE</p>
+              <div class="listing__actions"><a href="#sell" class="btn btn--sm">Make enquiry</a><a href="#" class="link-dark">View details →</a></div>
+            </div>
+          </article>
+        </div>
+        <div class="carousel__progress" aria-hidden="true"><span></span></div>
+      </div>
+    </section>
+
+    <!-- About (Figma 105:2, Option 04 · Bento) -->
+    <section class="about" id="about">
+      <div class="container about-bento">
+        <div class="about-bento__top">
+          <div class="tile about-bento__intro">
+            <p class="eyebrow">About Truxco</p>
+            <h2 class="h2">Buying a bus shouldn’t be hard work.</h2>
+            <p class="body">Truxco buys, refurbishes and sells new and used buses — and rents them out too. Every bus goes through our own workshop in Staffanstorp, and you always get a real person on the phone.</p>
+            <a href="#" class="btn btn--6">More about us</a>
+          </div>
+          <img class="about-bento__photo" src="assets/about-technician.png" width="386" height="329" alt="Truxco technician tightening the wheel nuts of a coach in the workshop" loading="lazy">
+        </div>
+        <ul class="about-bento__row">
+          <li class="tile tile--stat">
+            <img src="assets/ic-shield.webp" width="48" height="48" alt="">
+            <span><strong>10+ yrs</strong><small>In business</small></span>
+          </li>
+          <li class="tile tile--benefit"><img src="assets/ic-badge-check.webp" width="22" height="22" alt="">No middlemen — we own every bus we sell</li>
+          <li class="tile tile--benefit"><img src="assets/ic-badge-check.webp" width="22" height="22" alt="">Refurbished and inspected in our own workshop</li>
+          <li class="tile tile--benefit"><img src="assets/ic-badge-check.webp" width="22" height="22" alt="">Export, transport and paperwork handled for you</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Services (Figma 223:2, Option 05 · TimeEdit-style icons) -->
     <section class="services">
       <div class="container">
         <div class="section-head">
@@ -224,62 +280,6 @@
             <span class="category__text"><h3>Electric</h3><p>Battery-electric &amp; hydrogen</p><span>Browse →</span></span>
           </a>
         </div>
-      </div>
-    </section>
-
-    <!-- Featured listings (Figma 137:2, Option 04 · Carousel) -->
-    <section class="listings" id="listings" aria-labelledby="listings-title">
-      <div class="container">
-        <div class="listings__head">
-          <div>
-            <p class="eyebrow">Featured listings</p>
-            <h2 class="h2" id="listings-title">Latest added used buses</h2>
-          </div>
-          <div class="carousel__controls">
-            <a href="#" class="carousel__all">View all buses →</a>
-            <button type="button" class="carousel__btn" data-dir="-1" aria-label="Previous buses" aria-controls="listings-track"><img src="assets/icon-arrow-right.svg" width="20" height="20" alt="" class="is-flipped"></button>
-            <button type="button" class="carousel__btn" data-dir="1" aria-label="Next buses" aria-controls="listings-track"><img src="assets/icon-arrow-right.svg" width="20" height="20" alt=""></button>
-          </div>
-        </div>
-        <div class="carousel__track" id="listings-track" tabindex="0" role="region" aria-label="Latest added used buses">
-          <article class="listing">
-            <div class="listing__photo"><img src="assets/listing-coach.webp" width="800" height="537" alt="White touring coach on the Truxco yard" loading="lazy"><span class="tag">Coach</span></div>
-            <div class="listing__body">
-              <div class="listing__top"><h3>Volvo 9700 HD</h3><p class="listing__price">129 000 €</p></div>
-              <ul class="listing__specs"><li>2017</li><li>512 000 km</li><li>53 seats</li><li>Euro 6</li></ul>
-              <p class="listing__inspected"><img src="assets/ic-badge-check.webp" width="16" height="16" alt="">Inspected · Staffanstorp, SE</p>
-              <div class="listing__actions"><a href="#sell" class="btn btn--sm">Make enquiry</a><a href="#" class="link-dark">View details →</a></div>
-            </div>
-          </article>
-          <article class="listing">
-            <div class="listing__photo"><img src="assets/listing-city-bus.webp" width="800" height="537" alt="White city bus with a blue stripe on the Truxco yard" loading="lazy"><span class="tag">City bus</span></div>
-            <div class="listing__body">
-              <div class="listing__top"><h3>Volvo 8900 LE</h3><p class="listing__price">59 000 €</p></div>
-              <ul class="listing__specs"><li>2016</li><li>640 000 km</li><li>41 seats</li><li>Euro 6</li></ul>
-              <p class="listing__inspected"><img src="assets/ic-badge-check.webp" width="16" height="16" alt="">Inspected · Staffanstorp, SE</p>
-              <div class="listing__actions"><a href="#sell" class="btn btn--sm">Make enquiry</a><a href="#" class="link-dark">View details →</a></div>
-            </div>
-          </article>
-          <article class="listing">
-            <div class="listing__photo"><img src="assets/listing-electric.webp" width="800" height="537" alt="Electric city bus on the Truxco yard" loading="lazy"><span class="tag">Electric</span></div>
-            <div class="listing__body">
-              <div class="listing__top"><h3>Volvo 7900 Electric</h3><p class="listing__price">189 000 €</p></div>
-              <ul class="listing__specs"><li>2019</li><li>310 000 km</li><li>33 seats</li><li>Zero emission</li></ul>
-              <p class="listing__inspected"><img src="assets/ic-badge-check.webp" width="16" height="16" alt="">Inspected · Staffanstorp, SE</p>
-              <div class="listing__actions"><a href="#sell" class="btn btn--sm">Make enquiry</a><a href="#" class="link-dark">View details →</a></div>
-            </div>
-          </article>
-          <article class="listing">
-            <div class="listing__photo"><img src="assets/listing-minibus.webp" width="800" height="537" alt="White minibus on the Truxco yard" loading="lazy"><span class="tag">Minibus</span></div>
-            <div class="listing__body">
-              <div class="listing__top"><h3>Mercedes Sprinter 516</h3><p class="listing__price">54 900 €</p></div>
-              <ul class="listing__specs"><li>2020</li><li>148 000 km</li><li>19 seats</li><li>Euro 6</li></ul>
-              <p class="listing__inspected"><img src="assets/ic-badge-check.webp" width="16" height="16" alt="">Inspected · Staffanstorp, SE</p>
-              <div class="listing__actions"><a href="#sell" class="btn btn--sm">Make enquiry</a><a href="#" class="link-dark">View details →</a></div>
-            </div>
-          </article>
-        </div>
-        <div class="carousel__progress" aria-hidden="true"><span></span></div>
       </div>
     </section>
 
