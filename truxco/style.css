@@ -443,7 +443,7 @@ ul { list-style: none; }
   background: var(--white);
 }
 .listing__photo { position: relative; height: 200px; padding: 14px; }
-.listing__photo img { position: absolute; inset: 24px 16px 0; width: calc(100% - 32px); height: calc(100% - 24px); object-fit: contain; }
+.listing__photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 .listing__photo .tag { position: relative; }
 .tag { display: inline-block; padding: 6px 12px; border-radius: 999px; background: var(--blue); color: var(--white); font-size: 12px; font-weight: 600; }
 .listing__body { display: flex; flex-direction: column; gap: 14px; padding: 24px; }
