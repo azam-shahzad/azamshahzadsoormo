@@ -1,4 +1,4 @@
-// Truxco — mobile nav + valuation form validation
+// Truxco — mobile nav, hero tabs, listings carousel + valuation form validation
 (function () {
   const toggle = document.querySelector('.nav__toggle');
   const menu = document.getElementById('nav-menu');
@@ -22,6 +22,25 @@
       toggle.setAttribute('aria-expanded', 'false');
       toggle.focus();
     }
+  });
+
+  // Hero Buy / Sell tabs
+  const tabs = [...document.querySelectorAll('.tabs__list [role="tab"]')];
+  function selectTab(tab) {
+    tabs.forEach((t) => {
+      const on = t === tab;
+      t.setAttribute('aria-selected', String(on));
+      t.tabIndex = on ? 0 : -1;
+      document.getElementById(t.getAttribute('aria-controls')).hidden = !on;
+    });
+    tab.focus();
+  }
+  tabs.forEach((tab, i) => {
+    tab.addEventListener('click', () => selectTab(tab));
+    tab.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight') selectTab(tabs[(i + 1) % tabs.length]);
+      if (e.key === 'ArrowLeft') selectTab(tabs[(i - 1 + tabs.length) % tabs.length]);
+    });
   });
 
   // Featured listings carousel
