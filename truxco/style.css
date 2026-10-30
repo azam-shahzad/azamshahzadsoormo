@@ -115,20 +115,9 @@ ul { list-style: none; }
   border-radius: var(--radius);
   color: var(--ink);
 }
-.logo-placeholder {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 140px;
-  height: 40px;
-  border: 1.5px dashed #a9aeb6;
-  border-radius: 6px;
-  font-size: 11px;
-  letter-spacing: .08em;
-  color: var(--muted);
-  flex-shrink: 0;
-}
-.logo-placeholder--dark { width: 124px; height: 34px; border-color: #5a616d; color: #a3a9b3; }
+.logo { display: inline-flex; flex-shrink: 0; padding-left: 10px; }
+.logo img, .logo--footer { display: block; width: 130px; height: auto; }
+.logo--footer { padding-left: 0; }
 .nav__menu { display: flex; align-items: center; justify-content: space-between; flex: 1; gap: 24px; }
 .nav__links { display: flex; gap: 4px; margin-inline: auto; }
 .nav__links a {

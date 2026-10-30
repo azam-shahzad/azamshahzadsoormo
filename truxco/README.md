@@ -15,6 +15,7 @@ Open `index.html` in a browser. No build step. `hero-options.html` shows the fou
 ## Assets
 All icons in `assets/` are local SVGs (no download step):
 - `svc-*.webp` — glossy illustrated Services icons in the TimeEdit style, Truxco blue + mint (Figma "Services Opt 05", sprite "Icons / Services (TimeEdit style, sprite)").
+- `logo-truxco-dark.svg` / `logo-truxco-light.svg` — original Truxco logo (from truxco.se) for light and dark backgrounds.
 - `ic-*.webp` — glossy illustrated icons in the TimeEdit style for About, Why choose Truxco, Featured listings and Testimonials (Figma sprite "Icons / General (TimeEdit style, sprite)").
 - `il-*.svg` — earlier outline spot icons (no longer used on the page) (outline, Truxco blue, mint accent, sparkle), in the style of timeedit.com.
 - `icon-*.svg` — small UI icons (check, phone, chevron, arrows).
@@ -24,4 +25,4 @@ All icons in `assets/` are local SVGs (no download step):
 - `about-technician.png` — AI-generated, photo-realistic workshop image for the About section, with the Truxco logo printed on the uniform (Figma "3D render / Technician (realistic)").
 - `listing-*.webp` — AI-generated, photo-realistic dealer-yard photos used in Featured listings (Figma "Photo / … (real)").
 
-Listing details are sample data (make, price, year, mileage, seats, Euro class) and should be replaced with real stock. Still placeholders, as in Figma: testimonials, the logo and the trust seal.
+Listing details are sample data (make, price, year, mileage, seats, Euro class) and should be replaced with real stock. Still placeholders, as in Figma: testimonials and the trust seal.
