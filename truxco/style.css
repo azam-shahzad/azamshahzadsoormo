@@ -341,7 +341,7 @@ ul { list-style: none; }
   background: var(--white);
   text-align: center;
 }
-.stat-card img { order: 1; margin-bottom: 10px; }
+.stat-card img { order: 1; width: auto; height: 64px; margin-bottom: 10px; }
 .stat-card dd { margin: 0; font-family: var(--font-display); font-weight: 700; font-size: 40px; line-height: 1.2; color: var(--ink); }
 .stat-card dt { font-size: 14px; color: var(--muted); }
 .sell-bar {
