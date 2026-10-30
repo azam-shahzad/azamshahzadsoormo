@@ -587,6 +587,35 @@ main > section { padding-top: var(--section); }
 }
 
 /* ---------- Responsive ---------- */
+/* ---------- Icon motion ---------- */
+/* Entrance: icons pop in once when they scroll into view (only when JS is running) */
+.js-anim .anim-icon { opacity: 0; transform: translateY(14px) scale(.6) rotate(-8deg); }
+.js-anim .anim-icon.is-in { animation: icon-pop .7s cubic-bezier(.34, 1.56, .64, 1) var(--d, 0s) both; }
+@keyframes icon-pop {
+  0%   { opacity: 0; transform: translateY(14px) scale(.6) rotate(-8deg); }
+  60%  { opacity: 1; transform: translateY(-4px) scale(1.08) rotate(3deg); }
+  100% { opacity: 1; transform: none; }
+}
+/* After the entrance: lift and tilt smoothly while the card is hovered */
+.js-anim .anim-icon.is-done { opacity: 1; transform: none; animation: none; transition: transform .45s cubic-bezier(.34, 1.56, .64, 1); }
+:is(.stat-card, .svc, .tile):hover .anim-icon.is-done { transform: translateY(-6px) rotate(-5deg) scale(1.06); }
+/* Quote icon keeps a gentle float */
+.js-anim .tq__icon.is-done { animation: icon-float 3.2s ease-in-out infinite alternate; }
+@keyframes icon-float { from { transform: none; } to { transform: translateY(-6px); } }
+/* Phone in the Contact button rings every few seconds, and on hover */
+.btn-contact__icon img { transform-origin: 50% 60%; animation: icon-ring 4.5s ease-in-out 1.5s infinite; }
+.btn-contact:hover .btn-contact__icon img { animation: icon-ring-now .6s ease-in-out; }
+@keyframes icon-ring {
+  0%, 12%, 100% { transform: none; }
+  2%, 6%, 10% { transform: rotate(-12deg); }
+  4%, 8%      { transform: rotate(12deg); }
+}
+@keyframes icon-ring-now {
+  0%, 100% { transform: none; }
+  20%, 60% { transform: rotate(-14deg); }
+  40%, 80% { transform: rotate(14deg); }
+}
+
 @media (max-width: 1180px) {
   .sbar { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 }
@@ -658,5 +687,6 @@ main > section { padding-top: var(--section); }
 
 @media (prefers-reduced-motion: reduce) {
   html, .carousel__track { scroll-behavior: auto; }
-  *, *::before, *::after { transition: none !important; }
+  *, *::before, *::after { transition: none !important; animation: none !important; }
+  .js-anim .anim-icon { opacity: 1; transform: none; }
 }

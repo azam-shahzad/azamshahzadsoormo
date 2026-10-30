@@ -24,6 +24,30 @@
     }
   });
 
+  // Icon motion: pop icons in as they scroll into view, staggered per group
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const iconGroups = ['.stat-cards', '.about-bento', '.svc-group', '.tq'];
+  if (!reduce && 'IntersectionObserver' in window) {
+    document.documentElement.classList.add('js-anim');
+    const seen = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (!e.isIntersecting) return;
+        e.target.classList.add('is-in');
+        seen.unobserve(e.target);
+      });
+    }, { threshold: 0.4 });
+    iconGroups.forEach((sel) => {
+      document.querySelectorAll(sel).forEach((group) => {
+        group.querySelectorAll('.stat-card img, .tile img, .svc img, .tq__icon').forEach((img, i) => {
+          img.classList.add('anim-icon');
+          img.style.setProperty('--d', (i * 0.12) + 's');
+          img.addEventListener('animationend', () => img.classList.add('is-done'), { once: true });
+          seen.observe(img);
+        });
+      });
+    });
+  }
+
   // Hero Buy / Sell tabs
   const tabs = [...document.querySelectorAll('.tabs__list [role="tab"]')];
   function selectTab(tab) {
