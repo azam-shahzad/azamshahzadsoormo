@@ -21,7 +21,7 @@ All icons in `assets/` are local SVGs (no download step):
 
 - `bus-*.webp` — 3D bus renders with the background removed (transparent, soft ground shadow), used in the hero, What we offer and Featured listings. Source renders live in Figma ("3D bus renders (source)").
 
-- `about-technician.webp` — AI-generated, photo-realistic workshop image for the About section, with the Truxco logo printed on the uniform (Figma "3D render / Technician (realistic)").
+- `about-technician.png` — AI-generated, photo-realistic workshop image for the About section, with the Truxco logo printed on the uniform (Figma "3D render / Technician (realistic)").
 - `listing-*.webp` — AI-generated, photo-realistic dealer-yard photos used in Featured listings (Figma "Photo / … (real)").
 
 Listing details are sample data (make, price, year, mileage, seats, Euro class) and should be replaced with real stock. Still placeholders, as in Figma: testimonials, the logo and the trust seal.
