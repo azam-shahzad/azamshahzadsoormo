@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Light Beam Logo Reveal</title>
+<style>
+  :root { --bg:#040507; --blue:#1652f0; }
+  html,body { margin:0; height:100%; background:var(--bg); overflow:hidden; }
+  body { display:grid; place-items:center; font-family:system-ui,sans-serif; }
+  svg { width:100vmin; height:100vmin; display:block; }
+  #replay { position:fixed; right:16px; bottom:16px; padding:10px 16px; border:1px solid #ffffff33;
+            border-radius:999px; background:#ffffff14; color:#fff; font-size:14px; cursor:pointer; }
+  #replay:hover { background:#ffffff26; }
+  body.render #replay { display:none; }
+</style>
+</head>
+<body>
+<svg id="stage" viewBox="0 0 1000 1000" aria-label="Animated logo">
+  <defs>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="18"/>
+    </filter>
+    <filter id="soft" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="5"/>
+    </filter>
+    <radialGradient id="halo">
+      <stop offset="0" stop-color="#2fd3ff" stop-opacity=".55"/>
+      <stop offset=".45" stop-color="#0a6c9c" stop-opacity=".18"/>
+      <stop offset="1" stop-color="#03202e" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="beamFill" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#bff3ff" stop-opacity=".30"/>
+      <stop offset=".5" stop-color="#7fd8ff" stop-opacity=".10"/>
+      <stop offset="1" stop-color="#bff3ff" stop-opacity=".30"/>
+    </linearGradient>
+    <!-- ============ LOGO PIECES (swap these paths for your own mark) ============ -->
+    <path id="pLeft"  d="M352 700 L498 330 Q510 302 540 302 L594 302 L452 700 Z"/>
+    <path id="pRight" d="M560 302 L586 302 Q612 302 618 330 L664 548 L598 566 Z"/>
+    <path id="pSwoosh" d="M430 664 L470 604 L560 586 L724 492 L742 488 L736 500 L612 618 Z"/>
+    <clipPath id="cLeft"><polygon id="wLeft"/></clipPath>
+    <clipPath id="cRight"><polygon id="wRight"/></clipPath>
+    <clipPath id="cSwoosh"><polygon id="wSwoosh"/></clipPath>
+  </defs>
+
+  <rect id="bg" width="1000" height="1000" fill="#040507"/>
+  <circle id="halo" cx="540" cy="420" r="420" fill="url(#halo)" opacity="0"/>
+
+  <g id="camera">
+    <g id="beams"></g>
+    <!-- spark -->
+    <g id="spark" opacity="0">
+      <rect x="-14" y="-22" width="28" height="44" rx="4" fill="#3fe0ff" filter="url(#glow)"/>
+      <rect x="-9" y="-16" width="18" height="32" rx="3" fill="#b8f6ff"/>
+    </g>
+    <!-- logo -->
+    <g id="logo">
+      <g id="logoGlow" filter="url(#glow)" opacity="0" fill="#7fe3ff">
+        <use href="#pLeft"/><use href="#pRight"/><use href="#pSwoosh"/>
+      </g>
+      <g fill="#f4f6fa">
+        <use href="#pLeft" clip-path="url(#cLeft)"/>
+        <use href="#pRight" clip-path="url(#cRight)"/>
+        <use href="#pSwoosh" clip-path="url(#cSwoosh)"/>
+      </g>
+    </g>
+  </g>
+  <rect id="flash" width="1000" height="1000" fill="#fff" opacity="0"/>
+</svg>
+<button id="replay" type="button">Replay</button>
+
+<script>
+const DURATION = 4.6; // seconds
+const NS = 'http://www.w3.org/2000/svg';
+const $ = id => document.getElementById(id);
+
+// ---------- easing helpers ----------
+const clamp = (v, a = 0, b = 1) => Math.min(b, Math.max(a, v));
+const seg = (t, a, b) => clamp((t - a) / (b - a));          // 0..1 progress in window [a,b]
+const easeOut = x => 1 - Math.pow(1 - x, 3);
+const easeInOut = x => x < .5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2;
+const backOut = x => { const c = 1.7; return 1 + (c + 1) * Math.pow(x - 1, 3) + c * Math.pow(x - 1, 2); };
+const lerp = (a, b, x) => a + (b - a) * x;
+const mixHex = (a, b, x) => {
+  const p = h => [1, 3, 5].map(i => parseInt(h.slice(i, i + 2), 16));
+  const A = p(a), B = p(b);
+  return '#' + A.map((v, i) => Math.round(lerp(v, B[i], x)).toString(16).padStart(2, '0')).join('');
+};
+
+// ---------- beams: each aligned with a logo stroke ----------
+// p = a point on the beam axis, ang = axis angle (deg), w = width,
+// in = [start,end] fly-in window, out = [start,end] thin-out window, from = side it enters from (+1/-1)
+const BEAMS = [
+  { p: [475, 500], ang: -68.5, w: 104, in: [0.95, 1.45], out: [2.9, 3.7], from: -1 },
+  { p: [610, 430], ang: 78,    w: 66,  in: [1.45, 1.85], out: [3.0, 3.8], from: -1 },
+  { p: [590, 575], ang: -28,   w: 58,  in: [1.70, 2.05], out: [3.05, 3.85], from: 1 },
+  { p: [505, 470], ang: -62,   w: 22,  in: [1.85, 2.25], out: [2.7, 3.5],  from: 1 },
+];
+const beamEls = BEAMS.map(b => {
+  const g = document.createElementNS(NS, 'g');
+  g.innerHTML =
+    `<rect class="body" x="-1400" width="2800" fill="url(#beamFill)"/>
+     <rect class="e1" x="-1400" width="2800" height="2" fill="#d9f8ff"/>
+     <rect class="e2" x="-1400" width="2800" height="2" fill="#d9f8ff"/>`;
+  $('beams').appendChild(g);
+  return g;
+});
+
+// ---------- logo reveal wipes (run along each stroke's direction) ----------
+const WIPES = [
+  { el: 'wLeft',   from: [400, 720], to: [560, 290], win: [1.35, 1.95] },
+  { el: 'wRight',  from: [570, 290], to: [650, 580], win: [1.95, 2.35] },
+  { el: 'wSwoosh', from: [420, 690], to: [750, 480], win: [2.15, 2.6] },
+];
+function setWipe(w, x) {
+  const [ax, ay] = w.from, [bx, by] = w.to;
+  const dx = bx - ax, dy = by - ay, L = Math.hypot(dx, dy);
+  const ux = dx / L, uy = dy / L, nx = -uy, ny = ux, B = 900;
+  const ex = ax + dx * x, ey = ay + dy * x;           // leading edge
+  const sx = ax - ux * B, sy = ay - uy * B;           // far behind the start
+  const pts = [[sx + nx * B, sy + ny * B], [ex + nx * B, ey + ny * B],
+               [ex - nx * B, ey - ny * B], [sx - nx * B, sy - ny * B]];
+  $(w.el).setAttribute('points', x <= 0 ? '0,0 0,0 0,0' : pts.map(p => p.join(',')).join(' '));
+}
+
+// ---------- the timeline: draws the frame for time t (seconds) ----------
+function render(t) {
+  // 1) Spark: appears, blooms, flickers, then shoots off as the first beam arrives
+  const s1 = seg(t, 0.1, 0.45), s2 = 1 - seg(t, 0.55, 0.75), s3 = seg(t, 0.75, 0.82), s4 = 1 - seg(t, 1.0, 1.25);
+  const sparkOp = t < 0.75 ? easeOut(s1) * lerp(0.25, 1, s2) : lerp(0.25, 1, s3) * s4;
+  const spark = $('spark');
+  spark.setAttribute('opacity', sparkOp.toFixed(3));
+  const sx = lerp(455, 470, seg(t, 0, 1.2)), sy = lerp(440, 450, seg(t, 0, 1.2));
+  spark.setAttribute('transform', `translate(${sx} ${sy}) rotate(-20) scale(${lerp(.6, 1.15, easeOut(s1))})`);
+
+  // Halo pulse (spark bloom, then the completed logo glow)
+  const haloOp = 0.9 * easeOut(s1) * (t < 0.75 ? s2 * .8 + .2 : s4 * .5)
+               + 0.75 * Math.sin(Math.PI * seg(t, 2.35, 3.4));
+  $('halo').setAttribute('opacity', clamp(haloOp).toFixed(3));
+
+  // 2) Beams fly in along their axis, hold, then thin into hairlines and fade
+  BEAMS.forEach((b, i) => {
+    const kIn = easeOut(seg(t, b.in[0], b.in[1]));
+    const kOut = easeInOut(seg(t, b.out[0], b.out[1]));
+    const g = beamEls[i];
+    const slide = (1 - kIn) * 1600 * b.from;          // slides in along the beam axis
+    const w = b.w * lerp(1, 0.18, kOut);
+    const op = kIn * (1 - seg(t, b.out[1] - .25, b.out[1] + .2));
+    g.setAttribute('opacity', op.toFixed(3));
+    g.setAttribute('transform', `translate(${b.p[0]} ${b.p[1]}) rotate(${b.ang}) translate(${slide} 0)`);
+    const body = g.querySelector('.body');
+    body.setAttribute('y', -w / 2); body.setAttribute('height', w);
+    body.setAttribute('opacity', (1 - kOut * .85).toFixed(3));
+    g.querySelector('.e1').setAttribute('y', -w / 2 - 1);
+    g.querySelector('.e2').setAttribute('y', w / 2 - 1);
+  });
+
+  // 3) Logo strokes fill in where the beams cross
+  WIPES.forEach(w => setWipe(w, easeInOut(seg(t, w.win[0], w.win[1]))));
+  $('logoGlow').setAttribute('opacity',
+    (0.9 * Math.sin(Math.PI * seg(t, 2.3, 3.3)) + 0.9 * Math.sin(Math.PI * seg(t, 3.75, 4.3))).toFixed(3));
+
+  // 4) Blue background flash + logo settle
+  const k = seg(t, 3.82, 3.98);
+  $('bg').setAttribute('fill', mixHex('#040507', '#1652f0', easeOut(k)));
+  document.body.style.background = mixHex('#040507', '#1652f0', easeOut(k));
+  $('flash').setAttribute('opacity', (0.55 * Math.sin(Math.PI * seg(t, 3.78, 4.05))).toFixed(3));
+  const pop = t < 3.82 ? 1 : lerp(0.94, 1, backOut(seg(t, 3.82, 4.3)));
+
+  // Gentle push-in camera for the whole shot
+  const cam = lerp(1.12, 1.0, easeOut(seg(t, 0, 3.8))) * pop;
+  $('camera').setAttribute('transform', `translate(540 500) scale(${cam}) translate(-540 -500)`);
+}
+
+// ---------- playback ----------
+// ?t=2.5 renders a single frame (used for video export); otherwise it plays live.
+const qs = new URLSearchParams(location.search);
+if (qs.has('t')) {
+  document.body.classList.add('render');
+  render(parseFloat(qs.get('t')));
+  window.render = render;
+} else {
+  let start;
+  const tick = now => {
+    start ??= now;
+    const t = (now - start) / 1000;
+    render(Math.min(t, DURATION));
+    if (t < DURATION + 1.2) requestAnimationFrame(tick);
+    else { start = undefined; requestAnimationFrame(tick); } // loop
+  };
+  requestAnimationFrame(tick);
+  $('replay').onclick = () => { start = undefined; };
+}
+</script>
+</body>
+</html>
