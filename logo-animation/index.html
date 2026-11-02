@@ -3,177 +3,194 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Light Beam Logo Reveal</title>
+<title>TRUXCO Logo Reveal</title>
 <style>
-  :root { --bg:#040507; --blue:#1652f0; }
-  html,body { margin:0; height:100%; background:var(--bg); overflow:hidden; }
-  body { display:grid; place-items:center; font-family:system-ui,sans-serif; }
-  svg { width:100vmin; height:100vmin; display:block; }
+  html,body { margin:0; height:100%; background:#040507; overflow:hidden; }
+  svg { position:fixed; inset:0; width:100vw; height:100vh; display:block; }
   #replay { position:fixed; right:16px; bottom:16px; padding:10px 16px; border:1px solid #ffffff33;
-            border-radius:999px; background:#ffffff14; color:#fff; font-size:14px; cursor:pointer; }
+            border-radius:999px; background:#ffffff14; color:#fff; font:14px system-ui,sans-serif; cursor:pointer; }
   #replay:hover { background:#ffffff26; }
   body.render #replay { display:none; }
 </style>
 </head>
 <body>
-<svg id="stage" viewBox="0 0 1000 1000" aria-label="Animated logo">
+<svg id="stage" viewBox="0 0 1000 1000" preserveAspectRatio="xMidYMid meet" aria-label="TRUXCO animated logo">
   <defs>
-    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
-      <feGaussianBlur stdDeviation="18"/>
-    </filter>
-    <filter id="soft" x="-50%" y="-50%" width="200%" height="200%">
-      <feGaussianBlur stdDeviation="5"/>
-    </filter>
+    <filter id="glow" x="-100%" y="-100%" width="300%" height="300%"><feGaussianBlur stdDeviation="6"/></filter>
+    <filter id="sparkGlow" x="-200%" y="-200%" width="500%" height="500%"><feGaussianBlur stdDeviation="3"/></filter>
     <radialGradient id="halo">
-      <stop offset="0" stop-color="#2fd3ff" stop-opacity=".55"/>
-      <stop offset=".45" stop-color="#0a6c9c" stop-opacity=".18"/>
-      <stop offset="1" stop-color="#03202e" stop-opacity="0"/>
+      <stop offset="0" stop-color="#3aa0ff" stop-opacity=".6"/>
+      <stop offset=".45" stop-color="#0b4f9c" stop-opacity=".2"/>
+      <stop offset="1" stop-color="#021530" stop-opacity="0"/>
     </radialGradient>
-    <linearGradient id="beamFill" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0" stop-color="#bff3ff" stop-opacity=".30"/>
-      <stop offset=".5" stop-color="#7fd8ff" stop-opacity=".10"/>
-      <stop offset="1" stop-color="#bff3ff" stop-opacity=".30"/>
+    <linearGradient id="beamFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#cfe6ff" stop-opacity=".32"/>
+      <stop offset=".5" stop-color="#5fb0ff" stop-opacity=".10"/>
+      <stop offset="1" stop-color="#cfe6ff" stop-opacity=".32"/>
     </linearGradient>
-    <!-- ============ LOGO PIECES (swap these paths for your own mark) ============ -->
-    <path id="pLeft"  d="M352 700 L498 330 Q510 302 540 302 L594 302 L452 700 Z"/>
-    <path id="pRight" d="M560 302 L586 302 Q612 302 618 330 L664 548 L598 566 Z"/>
-    <path id="pSwoosh" d="M430 664 L470 604 L560 586 L724 492 L742 488 L736 500 L612 618 Z"/>
-    <clipPath id="cLeft"><polygon id="wLeft"/></clipPath>
-    <clipPath id="cRight"><polygon id="wRight"/></clipPath>
-    <clipPath id="cSwoosh"><polygon id="wSwoosh"/></clipPath>
+
+    <!-- ===== TRUXCO logo (from truxco-socials.svg, original coordinates) ===== -->
+    <polygon id="xDiag" points="310.97 222.41 303.69 233.26 298.59 240.86 286.62 258.68 270.05 283.38 262.69 294.33 286.62 294.33 293.98 283.38 298.59 276.51 310.55 258.68 327.62 233.26 334.9 222.41 310.97 222.41"/>
+    <polygon id="xUpper" points="297.07 238.6 293.49 233.26 269.56 233.26 285.11 256.42 297.07 238.6"/>
+    <polygon id="xLower" points="298.59 276.5 303.2 283.38 327.13 283.38 310.55 258.68 298.59 276.5"/>
+    <g id="wordLeft">
+      <path d="M135.73,245.95v37.13h-16.03v-37.13h-16.39v-12.76h48.74v12.76h-16.32Z"/>
+      <path d="M204.27,256.76c-1.65,2.47-4.04,4.28-7.18,5.44l11.1,20.89h-17.99l-8.85-18.21h-5.95v18.21h-16.03v-49.9h30.53c3.58,0,6.64.69,9.17,2.07,2.54,1.38,4.45,3.24,5.73,5.58,1.28,2.35,1.92,4.9,1.92,7.65,0,3.05-.83,5.8-2.47,8.27h0ZM189.11,245.88c-.87-.87-1.93-1.31-3.19-1.31h-10.52v9.21h10.52c1.26,0,2.32-.45,3.19-1.34s1.31-1.99,1.31-3.3-.44-2.39-1.31-3.26Z"/>
+      <path d="M257.79,278.59c-4.3,3.58-10.42,5.36-18.35,5.36s-14.06-1.79-18.39-5.36c-4.33-3.58-6.49-8.77-6.49-15.59v-29.81h16.03v29.59c0,2.81.75,5.04,2.25,6.71,1.5,1.67,3.67,2.5,6.53,2.5s5.04-.85,6.56-2.54,2.28-3.92,2.28-6.67v-29.59h16.03v29.81c0,6.82-2.15,12.02-6.46,15.59Z"/>
+    </g>
+    <g id="wordRight">
+      <path d="M370.29,237.86c4.3,3.7,6.46,8.98,6.46,15.85h-15.3c0-2.9-.76-5.2-2.28-6.89-1.52-1.69-3.69-2.54-6.49-2.54-3.24,0-5.62,1.02-7.14,3.05s-2.28,4.86-2.28,8.49v4.64c0,3.58.76,6.4,2.28,8.45,1.52,2.06,3.85,3.08,7,3.08s5.44-.8,7.04-2.39,2.39-3.84,2.39-6.74h14.8c0,6.82-2.09,12.04-6.27,15.67-4.18,3.63-10.09,5.44-17.74,5.44-8.51,0-14.95-2.17-19.33-6.53-4.38-4.35-6.56-10.78-6.56-19.29s2.19-14.94,6.56-19.29c4.37-4.35,10.82-6.53,19.33-6.53,7.4,0,13.25,1.85,17.55,5.55h0Z"/>
+      <path d="M430.13,238.91c4.69,4.4,7.04,10.81,7.04,19.22s-2.35,14.82-7.04,19.22c-4.69,4.4-11.34,6.6-19.94,6.6s-15.24-2.19-19.91-6.56-7-10.79-7-19.25,2.33-14.88,7-19.26c4.67-4.37,11.3-6.56,19.91-6.56s15.26,2.2,19.94,6.6h0ZM402.35,247.4c-1.79,2.08-2.68,4.88-2.68,8.42v4.64c0,3.53.89,6.33,2.68,8.42,1.79,2.08,4.4,3.12,7.83,3.12s6.05-1.04,7.87-3.12c1.82-2.08,2.72-4.88,2.72-8.42v-4.64c0-3.53-.91-6.33-2.72-8.42-1.82-2.08-4.44-3.12-7.87-3.12s-6.05,1.04-7.83,3.12Z"/>
+    </g>
+
+    <clipPath id="cDiag"><polygon id="wDiag"/></clipPath>
+    <clipPath id="cUpper"><polygon id="wUpper"/></clipPath>
+    <clipPath id="cLower"><polygon id="wLower"/></clipPath>
+    <clipPath id="cLeft"><rect id="rLeft" y="200" height="120"/></clipPath>
+    <clipPath id="cRight"><rect id="rRight" y="200" height="120"/></clipPath>
   </defs>
 
-  <rect id="bg" width="1000" height="1000" fill="#040507"/>
-  <circle id="halo" cx="540" cy="420" r="420" fill="url(#halo)" opacity="0"/>
+  <rect id="bg" x="-3000" y="-3000" width="7000" height="7000" fill="#040507"/>
 
+  <!-- camera, then logo space: wordmark centre (270,258) placed at stage centre, scaled 2.4x -->
   <g id="camera">
-    <g id="beams"></g>
-    <!-- spark -->
-    <g id="spark" opacity="0">
-      <rect x="-14" y="-22" width="28" height="44" rx="4" fill="#3fe0ff" filter="url(#glow)"/>
-      <rect x="-9" y="-16" width="18" height="32" rx="3" fill="#b8f6ff"/>
-    </g>
-    <!-- logo -->
-    <g id="logo">
-      <g id="logoGlow" filter="url(#glow)" opacity="0" fill="#7fe3ff">
-        <use href="#pLeft"/><use href="#pRight"/><use href="#pSwoosh"/>
+    <g transform="translate(500 500) scale(2.4) translate(-270 -258)">
+      <circle id="halo" cx="298.8" cy="258.4" r="190" fill="url(#halo)" opacity="0"/>
+      <g id="beams"></g>
+
+      <g id="spark" opacity="0">
+        <rect x="-4.5" y="-7" width="9" height="14" rx="1.5" fill="#4fb4ff" filter="url(#sparkGlow)"/>
+        <rect x="-2.8" y="-4.8" width="5.6" height="9.6" rx="1" fill="#d6ecff"/>
       </g>
-      <g fill="#f4f6fa">
-        <use href="#pLeft" clip-path="url(#cLeft)"/>
-        <use href="#pRight" clip-path="url(#cRight)"/>
-        <use href="#pSwoosh" clip-path="url(#cSwoosh)"/>
+
+      <g id="words">
+        <g clip-path="url(#cLeft)"><use id="uLeft" href="#wordLeft"/></g>
+        <g clip-path="url(#cRight)"><use id="uRight" href="#wordRight"/></g>
+      </g>
+
+      <g id="xGlow" filter="url(#glow)" opacity="0" fill="#58b2ff">
+        <use href="#xDiag"/><use href="#xUpper"/><use href="#xLower"/>
+      </g>
+      <g id="xMark" fill="#1582ff">
+        <use href="#xDiag" clip-path="url(#cDiag)"/>
+        <use href="#xUpper" clip-path="url(#cUpper)"/>
+        <use href="#xLower" clip-path="url(#cLower)"/>
       </g>
     </g>
   </g>
-  <rect id="flash" width="1000" height="1000" fill="#fff" opacity="0"/>
+  <rect id="flash" x="-3000" y="-3000" width="7000" height="7000" fill="#fff" opacity="0"/>
 </svg>
 <button id="replay" type="button">Replay</button>
 
 <script>
-const DURATION = 4.6; // seconds
+const DURATION = 4.8;                 // seconds
 const NS = 'http://www.w3.org/2000/svg';
 const $ = id => document.getElementById(id);
+const X_CENTER = [298.8, 258.4];      // centre of the blue X (logo units)
+const BRAND = { dark: '#040507', end: '#ffffff', text: '#231f20', blue: '#1582ff' };
 
-// ---------- easing helpers ----------
+// ---------- helpers ----------
 const clamp = (v, a = 0, b = 1) => Math.min(b, Math.max(a, v));
-const seg = (t, a, b) => clamp((t - a) / (b - a));          // 0..1 progress in window [a,b]
+const seg = (t, a, b) => clamp((t - a) / (b - a));
 const easeOut = x => 1 - Math.pow(1 - x, 3);
 const easeInOut = x => x < .5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2;
 const backOut = x => { const c = 1.7; return 1 + (c + 1) * Math.pow(x - 1, 3) + c * Math.pow(x - 1, 2); };
 const lerp = (a, b, x) => a + (b - a) * x;
+const bump = (t, a, b) => Math.sin(Math.PI * seg(t, a, b));
 const mixHex = (a, b, x) => {
   const p = h => [1, 3, 5].map(i => parseInt(h.slice(i, i + 2), 16));
   const A = p(a), B = p(b);
   return '#' + A.map((v, i) => Math.round(lerp(v, B[i], x)).toString(16).padStart(2, '0')).join('');
 };
 
-// ---------- beams: each aligned with a logo stroke ----------
-// p = a point on the beam axis, ang = axis angle (deg), w = width,
-// in = [start,end] fly-in window, out = [start,end] thin-out window, from = side it enters from (+1/-1)
+// ---------- light beams, aligned with the X strokes (angles from the logo geometry) ----------
+// off = sideways offset from X centre, w = width, in/out = timing windows, from = entry side
 const BEAMS = [
-  { p: [475, 500], ang: -68.5, w: 104, in: [0.95, 1.45], out: [2.9, 3.7], from: -1 },
-  { p: [610, 430], ang: 78,    w: 66,  in: [1.45, 1.85], out: [3.0, 3.8], from: -1 },
-  { p: [590, 575], ang: -28,   w: 58,  in: [1.70, 2.05], out: [3.05, 3.85], from: 1 },
-  { p: [505, 470], ang: -62,   w: 22,  in: [1.85, 2.25], out: [2.7, 3.5],  from: 1 },
+  { ang: -56.1, off: 0,    w: 24, in: [0.95, 1.45], out: [2.95, 3.75], from:  1 },  // long diagonal
+  { ang:  56.2, off: 0,    w: 17, in: [1.45, 1.85], out: [3.05, 3.85], from: -1 },  // the two short arms
+  { ang: -56.1, off: 15,   w: 5,  in: [1.75, 2.15], out: [2.75, 3.5],  from: -1 },  // thin accents
+  { ang:  56.2, off: -13,  w: 4,  in: [1.9, 2.3],   out: [2.85, 3.6],  from:  1 },
+  { ang:  0,    off: 22,   w: 3,  in: [2.15, 2.6],  out: [2.9, 3.6],   from: -1 },  // horizontal sweep under the word
 ];
-const beamEls = BEAMS.map(b => {
+const beamEls = BEAMS.map(() => {
   const g = document.createElementNS(NS, 'g');
-  g.innerHTML =
-    `<rect class="body" x="-1400" width="2800" fill="url(#beamFill)"/>
-     <rect class="e1" x="-1400" width="2800" height="2" fill="#d9f8ff"/>
-     <rect class="e2" x="-1400" width="2800" height="2" fill="#d9f8ff"/>`;
+  g.innerHTML = `<rect class="body" x="-700" width="1400" fill="url(#beamFill)"/>
+                 <rect class="e1" x="-700" width="1400" height=".7" fill="#e3f1ff"/>
+                 <rect class="e2" x="-700" width="1400" height=".7" fill="#e3f1ff"/>`;
   $('beams').appendChild(g);
   return g;
 });
 
-// ---------- logo reveal wipes (run along each stroke's direction) ----------
+// ---------- X reveal wipes (run along each stroke) ----------
 const WIPES = [
-  { el: 'wLeft',   from: [400, 720], to: [560, 290], win: [1.35, 1.95] },
-  { el: 'wRight',  from: [570, 290], to: [650, 580], win: [1.95, 2.35] },
-  { el: 'wSwoosh', from: [420, 690], to: [750, 480], win: [2.15, 2.6] },
+  { el: 'wDiag',  from: [327, 214], to: [268, 302], win: [1.35, 1.95] },  // top-right -> bottom-left
+  { el: 'wUpper', from: [298, 250], to: [274, 228], win: [1.85, 2.2] },   // centre -> upper-left
+  { el: 'wLower', from: [300, 266], to: [324, 290], win: [1.95, 2.3] },   // centre -> lower-right
 ];
 function setWipe(w, x) {
   const [ax, ay] = w.from, [bx, by] = w.to;
   const dx = bx - ax, dy = by - ay, L = Math.hypot(dx, dy);
-  const ux = dx / L, uy = dy / L, nx = -uy, ny = ux, B = 900;
-  const ex = ax + dx * x, ey = ay + dy * x;           // leading edge
-  const sx = ax - ux * B, sy = ay - uy * B;           // far behind the start
-  const pts = [[sx + nx * B, sy + ny * B], [ex + nx * B, ey + ny * B],
-               [ex - nx * B, ey - ny * B], [sx - nx * B, sy - ny * B]];
+  const ux = dx / L, uy = dy / L, nx = -uy, ny = ux, B = 400;
+  const ex = ax + dx * x, ey = ay + dy * x, sx = ax - ux * B, sy = ay - uy * B;
+  const pts = [[sx + nx * B, sy + ny * B], [ex + nx * B, ey + ny * B], [ex - nx * B, ey - ny * B], [sx - nx * B, sy - ny * B]];
   $(w.el).setAttribute('points', x <= 0 ? '0,0 0,0 0,0' : pts.map(p => p.join(',')).join(' '));
 }
 
-// ---------- the timeline: draws the frame for time t (seconds) ----------
+// ---------- timeline: draws the frame at time t ----------
 function render(t) {
-  // 1) Spark: appears, blooms, flickers, then shoots off as the first beam arrives
-  const s1 = seg(t, 0.1, 0.45), s2 = 1 - seg(t, 0.55, 0.75), s3 = seg(t, 0.75, 0.82), s4 = 1 - seg(t, 1.0, 1.25);
+  const [cx, cy] = X_CENTER;
+
+  // 1) Spark at the heart of the X: blooms, flickers, then gives way to the beams
+  const s1 = seg(t, 0.1, 0.45), s2 = 1 - seg(t, 0.55, 0.75), s3 = seg(t, 0.75, 0.82), s4 = 1 - seg(t, 1.0, 1.3);
   const sparkOp = t < 0.75 ? easeOut(s1) * lerp(0.25, 1, s2) : lerp(0.25, 1, s3) * s4;
-  const spark = $('spark');
-  spark.setAttribute('opacity', sparkOp.toFixed(3));
-  const sx = lerp(455, 470, seg(t, 0, 1.2)), sy = lerp(440, 450, seg(t, 0, 1.2));
-  spark.setAttribute('transform', `translate(${sx} ${sy}) rotate(-20) scale(${lerp(.6, 1.15, easeOut(s1))})`);
+  $('spark').setAttribute('opacity', sparkOp.toFixed(3));
+  $('spark').setAttribute('transform', `translate(${cx} ${cy}) rotate(34) scale(${lerp(.6, 1.15, easeOut(s1))})`);
+  const haloOp = 0.9 * easeOut(s1) * (t < 0.75 ? s2 * .8 + .2 : s4 * .5) + 0.8 * bump(t, 2.2, 3.4);
+  $('halo').setAttribute('opacity', clamp(haloOp * (1 - seg(t, 3.8, 3.95))).toFixed(3));
 
-  // Halo pulse (spark bloom, then the completed logo glow)
-  const haloOp = 0.9 * easeOut(s1) * (t < 0.75 ? s2 * .8 + .2 : s4 * .5)
-               + 0.75 * Math.sin(Math.PI * seg(t, 2.35, 3.4));
-  $('halo').setAttribute('opacity', clamp(haloOp).toFixed(3));
-
-  // 2) Beams fly in along their axis, hold, then thin into hairlines and fade
+  // 2) Beams slide in along their axis, hold, then thin into hairlines and fade
   BEAMS.forEach((b, i) => {
-    const kIn = easeOut(seg(t, b.in[0], b.in[1]));
-    const kOut = easeInOut(seg(t, b.out[0], b.out[1]));
+    const kIn = easeOut(seg(t, b.in[0], b.in[1])), kOut = easeInOut(seg(t, b.out[0], b.out[1]));
+    const w = b.w * lerp(1, 0.15, kOut);
     const g = beamEls[i];
-    const slide = (1 - kIn) * 1600 * b.from;          // slides in along the beam axis
-    const w = b.w * lerp(1, 0.18, kOut);
-    const op = kIn * (1 - seg(t, b.out[1] - .25, b.out[1] + .2));
-    g.setAttribute('opacity', op.toFixed(3));
-    g.setAttribute('transform', `translate(${b.p[0]} ${b.p[1]}) rotate(${b.ang}) translate(${slide} 0)`);
+    g.setAttribute('opacity', (kIn * (1 - seg(t, b.out[1] - .25, b.out[1] + .15))).toFixed(3));
+    g.setAttribute('transform', `translate(${cx} ${cy}) rotate(${b.ang}) translate(${(1 - kIn) * 800 * b.from} ${b.off})`);
     const body = g.querySelector('.body');
     body.setAttribute('y', -w / 2); body.setAttribute('height', w);
     body.setAttribute('opacity', (1 - kOut * .85).toFixed(3));
-    g.querySelector('.e1').setAttribute('y', -w / 2 - 1);
-    g.querySelector('.e2').setAttribute('y', w / 2 - 1);
+    g.querySelector('.e1').setAttribute('y', -w / 2 - .35);
+    g.querySelector('.e2').setAttribute('y', w / 2 - .35);
   });
 
-  // 3) Logo strokes fill in where the beams cross
+  // 3) The X fills in where the beams cross
   WIPES.forEach(w => setWipe(w, easeInOut(seg(t, w.win[0], w.win[1]))));
-  $('logoGlow').setAttribute('opacity',
-    (0.9 * Math.sin(Math.PI * seg(t, 2.3, 3.3)) + 0.9 * Math.sin(Math.PI * seg(t, 3.75, 4.3))).toFixed(3));
+  $('xGlow').setAttribute('opacity', clamp(1.0 * bump(t, 1.9, 3.1) + 0.7 * bump(t, 3.75, 4.35)).toFixed(3));
+  $('xMark').setAttribute('fill', mixHex('#e8f3ff', BRAND.blue, easeInOut(seg(t, 2.2, 3.0))));
 
-  // 4) Blue background flash + logo settle
-  const k = seg(t, 3.82, 3.98);
-  $('bg').setAttribute('fill', mixHex('#040507', '#1652f0', easeOut(k)));
-  document.body.style.background = mixHex('#040507', '#1652f0', easeOut(k));
-  $('flash').setAttribute('opacity', (0.55 * Math.sin(Math.PI * seg(t, 3.78, 4.05))).toFixed(3));
-  const pop = t < 3.82 ? 1 : lerp(0.94, 1, backOut(seg(t, 3.82, 4.3)));
+  // 4) "TRU" and "CO" slide out from behind the X
+  const k = easeOut(seg(t, 2.35, 3.15));
+  $('rLeft').setAttribute('x', 263 - 170 * k);  $('rLeft').setAttribute('width', 170 * k);
+  $('rRight').setAttribute('x', 326);           $('rRight').setAttribute('width', 130 * k);
+  $('uLeft').setAttribute('transform', `translate(${28 * (1 - k)} 0)`);
+  $('uRight').setAttribute('transform', `translate(${-28 * (1 - k)} 0)`);
 
-  // Gentle push-in camera for the whole shot
-  const cam = lerp(1.12, 1.0, easeOut(seg(t, 0, 3.8))) * pop;
-  $('camera').setAttribute('transform', `translate(540 500) scale(${cam}) translate(-540 -500)`);
+  // 5) Flash to the brand's light background, text turns to brand charcoal, logo settles
+  const f = easeOut(seg(t, 3.82, 3.98));
+  const bg = mixHex(BRAND.dark, BRAND.end, f);
+  $('bg').setAttribute('fill', bg);
+  document.body.style.background = bg;
+  $('words').setAttribute('fill', mixHex('#f2f4f8', BRAND.text, f));
+  $('flash').setAttribute('opacity', (0.6 * bump(t, 3.76, 4.05)).toFixed(3));
+  const pop = t < 3.82 ? 1 : lerp(0.94, 1, backOut(seg(t, 3.82, 4.35)));
+
+  // Camera: starts tight on the X while it is built, then pulls back to reveal the wordmark
+  const pull = easeInOut(seg(t, 2.2, 3.5));
+  const cam = lerp(lerp(2.9, 2.6, seg(t, 0, 2.2)), 1.0, pull) * pop;
+  const fx = lerp(500 + 2.4 * (cx - 270), 500, pull), fy = lerp(500 + 2.4 * (cy - 258), 500, pull);
+  $('camera').setAttribute('transform', `translate(500 500) scale(${cam}) translate(${-fx} ${-fy})`);
 }
 
-// ---------- playback ----------
-// ?t=2.5 renders a single frame (used for video export); otherwise it plays live.
+// ---------- playback: ?t=2.5 renders one frame (video export); otherwise loops live ----------
 const qs = new URLSearchParams(location.search);
 if (qs.has('t')) {
   document.body.classList.add('render');
@@ -185,8 +202,8 @@ if (qs.has('t')) {
     start ??= now;
     const t = (now - start) / 1000;
     render(Math.min(t, DURATION));
-    if (t < DURATION + 1.2) requestAnimationFrame(tick);
-    else { start = undefined; requestAnimationFrame(tick); } // loop
+    if (t > DURATION + 1.5) start = undefined;
+    requestAnimationFrame(tick);
   };
   requestAnimationFrame(tick);
   $('replay').onclick = () => { start = undefined; };
