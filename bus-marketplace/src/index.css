@@ -1,0 +1,85 @@
+@import 'tailwindcss';
+
+/*
+ * Fleetmark design tokens — premium European B2B.
+ * 60% warm paper surfaces, 30% ink, 10% accent (signal blue) + brass for trust marks.
+ */
+@theme {
+  --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  --font-display: 'Inter Tight', 'Inter', ui-sans-serif, system-ui, sans-serif;
+
+  --color-paper: #f6f5f1;
+  --color-surface: #ffffff;
+  --color-sunken: #efede7;
+  --color-line: #e3e0d8;
+  --color-line-strong: #cfcbc0;
+
+  --color-ink: #0e1726;
+  --color-ink-2: #2b3445;
+  --color-muted: #5d6676;
+  --color-faint: #8a92a0;
+
+  --color-accent: #1d4ed8;
+  --color-accent-hover: #1a43bb;
+  --color-accent-soft: #e8eefc;
+
+  --color-brass: #b08a3e;
+  --color-brass-soft: #f5eedd;
+
+  --color-ok: #15803d;
+  --color-ok-soft: #e6f4ea;
+  --color-warn: #a16207;
+  --color-warn-soft: #fbf1dc;
+
+  --shadow-card: 0 1px 2px rgb(14 23 38 / 0.04), 0 1px 1px rgb(14 23 38 / 0.03);
+  --shadow-lift: 0 12px 32px -12px rgb(14 23 38 / 0.18), 0 2px 6px rgb(14 23 38 / 0.06);
+  --shadow-pop: 0 16px 48px -16px rgb(14 23 38 / 0.28), 0 4px 12px rgb(14 23 38 / 0.08);
+}
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  body {
+    background: var(--color-paper);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    letter-spacing: -0.02em;
+  }
+  :focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+  }
+  ::selection {
+    background: var(--color-accent-soft);
+  }
+}
+
+@layer utilities {
+  .container-page {
+    width: 100%;
+    max-width: 80rem;
+    margin-inline: auto;
+    padding-inline: 1rem;
+  }
+  @media (min-width: 640px) {
+    .container-page {
+      padding-inline: 1.5rem;
+    }
+  }
+  @media (min-width: 1024px) {
+    .container-page {
+      padding-inline: 2rem;
+    }
+  }
+  .tabular {
+    font-variant-numeric: tabular-nums;
+  }
+}
