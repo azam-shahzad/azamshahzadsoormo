@@ -1,6 +1,7 @@
 # Truxco homepage — design record
 
 Saved snapshot of the agreed design (website + Figma), 4 Nov 2026.
+Figma screenshots: `figma/homepage.png`, `figma/components-and-controls.png`.
 
 - Website (Design canvas): https://claude.ai/artifact/QnxH1xVyvcQ8cYTejVcJ45 — source copy in `website/Main.dc.html`
 - Figma file "Truxco Website Option2": https://www.figma.com/design/dy5FgQjP3SIjBIkFOql3IF
@@ -26,6 +27,7 @@ Locked in Figma (layer "Hero band (FINAL — do not change)", node 58:263).
 
 ## Other agreed decisions
 - Corner system (option D): containers 16px, buttons inside 6px, 10px inset.
+- Services cards: links (Browse buses / Talk to our team / Get a free valuation) pinned to the bottom of each card so all three line up (Figma: ServiceCard › Points grows).
 - Shop by type: studio cards, bus cut-outs cropped to the wheels, no shadow (`assets/bus-*-shop.png`).
 - Fonts: Barlow Bold (headings), Inter (body). Keep fonts, spacing and alignment consistent site-wide.
 - Colour System in Figma: brand scales, light/dark tokens, tetradic scales (#45DE57, #4580DE, #DE45CC, #DEA345) and a Tetradic Light/Dark theme.
