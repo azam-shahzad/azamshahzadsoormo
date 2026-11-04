@@ -29,7 +29,7 @@ Locked in Figma (layer "Hero band (FINAL — do not change)", node 58:263).
 - Corner system (option D): containers 16px, buttons inside 6px, 10px inset.
 - Listings cards: radius 16, buttons radius 6 (also the prev/next arrows); specs Year | Mileage ("512,000 km") | Seats with Mileage taking the spare width; meta line "Inspected · Euro 6"; Mercedes Sprinter shows "Price on request" (no excl. VAT) until a real price is given.
 - Workshop section: photos taken from Figma — large top: handshake in the bus yard (`assets/workshop-handshake.jpg`), bottom left: technician at the wheel (`assets/workshop-wheel.jpg`), bottom right: papers and keys handover (`assets/workshop-papers.jpg`); photos radius 16; steps 01–03 in a fixed 28px number column (#9CB1E7) so all titles line up; 4px between step title and text; "More about Truxco" button radius 6.
-- Footer: "Buy. Sell. Drive away." wordmark sits between the link columns and the bottom bar, fully visible and exactly the 1240px content width (website: SVG text with textLength; Figma: Barlow Bold ~141px), dark gradient #2A3044 → #151923.
+- Footer: aerial bus-yard photo background (`assets/footer-yard.jpg`) under a dark overlay rgba(13,16,22,.86 → .94). Wordmark "Buy. Sell. Drive Away." between the link columns and the bottom bar, fully visible at the 1240px content width, colour #BCC3D7 at 16% opacity.
 - Services cards: links (Browse buses / Talk to our team / Get a free valuation) pinned to the bottom of each card so all three line up (Figma: ServiceCard › Points grows).
 - Shop by type: light grey #F4F4F4 image area, bus cut-outs cropped to the wheels, no shadow and no background (`assets/bus-*-clean.png`).
 - Fonts: Barlow Bold (headings), Inter (body). Keep fonts, spacing and alignment consistent site-wide.
