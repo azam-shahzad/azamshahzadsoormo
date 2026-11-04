@@ -22,6 +22,7 @@ a{color:#3050A6}a:hover{color:#151923}
 .hero-band{background-color:#0E162A;background-image:linear-gradient(135deg,#0E2A16 0%,#0E162A 50%,#2A0E25 100%)}
 .hero-bg{background:transparent}
 .hero-band::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background:url('/_blob/2b617ab74d3ba795d5ef774458f59060') center/cover no-repeat;opacity:.2}
+.hero-band::after{content:"";position:absolute;left:0;right:0;bottom:0;height:45%;z-index:-1;pointer-events:none;background:linear-gradient(180deg,rgba(13,16,22,0) 0%,rgba(13,16,22,.55) 100%)}
 .hero-band{position:relative;isolation:isolate;overflow:hidden;display:flex;flex-direction:column}
 .hero-band > #top{flex:1;display:flex;align-items:center;justify-content:center}
 .hero-band > #top > div{width:100%}
@@ -262,7 +263,7 @@ a{color:#3050A6}a:hover{color:#151923}
 </header>
 
 <!-- HERO -->
-<section id="top" class="hero-bg" style="color: #FFFFFF; padding: 56px 24px 36px; position: relative; z-index: 1">
+<section id="top" class="hero-bg" style="color: #FFFFFF; padding: 56px 24px 48px; position: relative; z-index: 1">
 <div style="max-width: 1240px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 20px">
 <h1 style="margin: 0; font-family: 'Barlow', sans-serif; font-weight: 700; font-size: clamp(38px, 4.6vw, 60px); line-height: 1.05; letter-spacing: -0.01em">Buy and sell buses across Europe</h1>
 <p style="margin: 0; font-size: 18px; line-height: 1.6; color: #D9DDE8">200+ inspected buses, ready for your fleet</p>

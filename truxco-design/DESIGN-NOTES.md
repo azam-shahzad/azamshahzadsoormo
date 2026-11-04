@@ -61,3 +61,4 @@ Kept as it was in Figma on request: the "Our own workshop" photos (Figma has its
 - Navigation (polish, client request): active page shows a 2px gold #DCC86F underline under the link (Home), marked aria-current="page"; on hover other links get a short gold underline (website). Hero lock was lifted only for this edit and re-applied.
 - Workshop (polish 2): step numbers 01–03 in gold #DCC86F and sitting on the title line; step titles 18px on both website and Figma (were 17 / 19).
 - Testimonials (polish): arrows show state — "previous" is dimmed (40%) at the start, "next" dims at the end; on the website both arrows hide when all cards already fit (e.g. 3 cards on desktop). Figma shows the start state.
+- Hero (polish, client request): soft dark shade over the bottom 45% of the banner (transparent → rgba(13,16,22,.55)) so the stats read clearly over the yard photo; bottom padding under the stats 48px (was 36). Lock re-applied.
