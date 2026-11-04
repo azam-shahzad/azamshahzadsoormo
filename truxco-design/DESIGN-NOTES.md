@@ -27,6 +27,7 @@ Locked in Figma (layer "Hero band (FINAL — do not change)", node 58:263).
 
 ## Other agreed decisions
 - Corner system (option D): containers 16px, buttons inside 6px, 10px inset.
+- Listings cards: radius 16, buttons radius 6 (also the prev/next arrows); specs Year | Mileage ("512,000 km") | Seats with Mileage taking the spare width; meta line "Inspected · Euro 6"; Mercedes Sprinter shows "Price on request" (no excl. VAT) until a real price is given.
 - Services cards: links (Browse buses / Talk to our team / Get a free valuation) pinned to the bottom of each card so all three line up (Figma: ServiceCard › Points grows).
 - Shop by type: plain white image area, bus cut-outs cropped to the wheels, no shadow and no background (`assets/bus-*-clean.png`).
 - Fonts: Barlow Bold (headings), Inter (body). Keep fonts, spacing and alignment consistent site-wide.
