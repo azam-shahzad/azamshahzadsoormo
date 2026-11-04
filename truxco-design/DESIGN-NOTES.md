@@ -56,3 +56,4 @@ Applied in Figma: sentence-case heading and subtitle, shorter hero (hugs content
 Kept as it was in Figma on request: the "Our own workshop" photos (Figma has its own pictures there; the website uses yard photos + a placeholder).
 - Client edits in Figma (synced to website): Testimonials padding 48px top and bottom; Sell section top padding 48px; Footer top padding 96px.
 - Shop by type (polish): heading on one line with a green "View all buses →" link on the right; cards radius 16; all four buses the same height (118px) standing on one shared ground line 40px above the image bottom; "Explore …" links and hover line in green #278641; tags stay blue.
+- Sell section (polish): intro text no longer runs past the column; steps list gets a top divider; inputs and button radius 6, button 52px high; placeholders for mileage, email and phone; required "*" in red #B42318 (was magenta); the two columns are vertically centred.
