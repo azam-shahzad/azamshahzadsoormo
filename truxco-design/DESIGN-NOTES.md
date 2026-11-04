@@ -39,3 +39,11 @@ Locked in Figma (layer "Hero band (FINAL — do not change)", node 58:263).
 ## Working rules from the client
 - Apply changes to both the website and Figma unless told otherwise.
 - When asked for options, show them first and do not apply until one is chosen.
+
+## Improvements applied to the website (not Figma), 4 Nov
+- Heading in sentence case: "Buy and sell buses across Europe"; subtitle "200+ inspected buses, ready for your fleet". Hero no longer forced to full screen, so listings show on a laptop.
+- Trust strip under the hero: Inspected in our own workshop · Export papers included · Delivery across Europe · Inspection report with every bus.
+- Listings: filter chips, "View all 200+ buses", photo count, location, New in (green) / Reserved (gold) badges, "Inspection report (PDF)" link.
+- Accent rules: green = actions, gold = small premium accents, services icons navy on #ECEEF4, green checks, dark links. No magenta.
+- Workshop: real yard drone photos (`assets/yard-a.jpg`, `assets/yard-b.jpg`) and a dashed slot for a real workshop photo from Truxco.
+- Testimonials: three cards. Only Henrik Larsson was in the original design; Marta Kowalska and Jan de Vries, locations and badges are PLACEHOLDERS to replace with real Truxco content.
