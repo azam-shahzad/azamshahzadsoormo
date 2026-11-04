@@ -28,7 +28,7 @@ Locked in Figma (layer "Hero band (FINAL — do not change)", node 58:263).
 ## Other agreed decisions
 - Corner system (option D): containers 16px, buttons inside 6px, 10px inset.
 - Services cards: links (Browse buses / Talk to our team / Get a free valuation) pinned to the bottom of each card so all three line up (Figma: ServiceCard › Points grows).
-- Shop by type: studio cards, bus cut-outs cropped to the wheels, no shadow (`assets/bus-*-shop.png`).
+- Shop by type: plain white image area, bus cut-outs cropped to the wheels, no shadow and no background (`assets/bus-*-clean.png`).
 - Fonts: Barlow Bold (headings), Inter (body). Keep fonts, spacing and alignment consistent site-wide.
 - Colour System in Figma: brand scales, light/dark tokens, tetradic scales (#45DE57, #4580DE, #DE45CC, #DEA345) and a Tetradic Light/Dark theme.
 - Components & Controls page: Button, Icon button, Toggle, Checkbox, Radio, Copy field, Loading button (motion: press 140ms, state 200ms, move 260ms, draw 320ms).
