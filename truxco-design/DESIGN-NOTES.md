@@ -54,3 +54,4 @@ Locked in Figma (layer "Hero band (FINAL — do not change)", node 58:263).
 ## Figma synced with the website (4 Nov)
 Applied in Figma: sentence-case heading and subtitle, shorter hero (hugs content, ~588px), trust strip, "View all 200+ buses", filter chips, card location + inspection report link + New in/Reserved badges + photo count, services (green tiles/icons/links, navy checks, blue labels), sell step circles #3050A6, new Testimonials section (TestimonialCard component, 3 cards, arrows), Sell section top padding 64.
 Kept as it was in Figma on request: the "Our own workshop" photos (Figma has its own pictures there; the website uses yard photos + a placeholder).
+- Client edits in Figma (synced to website): Testimonials padding 48px top and bottom; Sell section top padding 48px; Footer top padding 96px.
