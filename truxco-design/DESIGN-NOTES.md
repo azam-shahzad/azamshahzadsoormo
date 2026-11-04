@@ -1,7 +1,7 @@
 # Truxco homepage — design record
 
 Saved snapshot of the agreed design (website + Figma), 4 Nov 2026.
-Figma screenshots: `figma/homepage.png`, `figma/components-and-controls.png`.
+Figma saves itself automatically; the Figma file link below is the source of truth for the design.
 
 - Website (Design canvas): https://claude.ai/artifact/QnxH1xVyvcQ8cYTejVcJ45 — source copy in `website/Main.dc.html`
 - Figma file "Truxco Website Option2": https://www.figma.com/design/dy5FgQjP3SIjBIkFOql3IF
