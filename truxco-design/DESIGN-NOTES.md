@@ -15,7 +15,7 @@ Locked in Figma (layer "Hero band (FINAL — do not change)", node 58:263).
 - Navigation bar: 72px high, radius 16px, background rgba(255,255,255,.04), border rgba(255,255,255,.10).
   - Logo left · links centred: Home, Buses, About, Contact us (#BCC3D7, active #FFFFFF, Inter Semi Bold 15)
   - Right: "Talk to us →" gold gradient (#EAD98F → #DCC86F → #C4A24A), text #151923, 52px high, radius 6px, 10px inset.
-- Heading: "BUY and SELL Buses in Europe" — Barlow Bold 60, white.
+- Heading: "BUY & SELL BUSES IN EUROPE" — Barlow Bold 60, white.
 - Subtitle: "With 200+ inspected buses, we have just the right one for your fleet" — Inter 18, #D9DDE8.
 - Search box: white, 72px high, radius 16px, no inner padding, shadow 0 16 40 rgba(0,0,0,.25).
   - Fields: Bus make or model · All countries · Price range (dividers #D9DDE8)
@@ -29,7 +29,7 @@ Locked in Figma (layer "Hero band (FINAL — do not change)", node 58:263).
 - Corner system (option D): containers 16px, buttons inside 6px, 10px inset.
 - Listings cards: radius 16, buttons radius 6 (also the prev/next arrows); specs Year | Mileage ("512,000 km") | Seats with Mileage taking the spare width; meta line "Inspected · Euro 6"; Mercedes Sprinter shows "Price on request" (no excl. VAT) until a real price is given.
 - Services cards: links (Browse buses / Talk to our team / Get a free valuation) pinned to the bottom of each card so all three line up (Figma: ServiceCard › Points grows).
-- Shop by type: plain white image area, bus cut-outs cropped to the wheels, no shadow and no background (`assets/bus-*-clean.png`).
+- Shop by type: light grey #F4F4F4 image area, bus cut-outs cropped to the wheels, no shadow and no background (`assets/bus-*-clean.png`).
 - Fonts: Barlow Bold (headings), Inter (body). Keep fonts, spacing and alignment consistent site-wide.
 - Colour System in Figma: brand scales, light/dark tokens, tetradic scales (#45DE57, #4580DE, #DE45CC, #DEA345) and a Tetradic Light/Dark theme.
 - Components & Controls page: Button, Icon button, Toggle, Checkbox, Radio, Copy field, Loading button (motion: press 140ms, state 200ms, move 260ms, draw 320ms).
