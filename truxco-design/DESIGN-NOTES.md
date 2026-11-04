@@ -50,3 +50,7 @@ Locked in Figma (layer "Hero band (FINAL — do not change)", node 58:263).
 - Testimonial cards: green top border, gold quote mark and stars, name in green #278641, initials in a solid green #278641 circle (fill only, no ring). Prev/next arrows (44px, radius 6) scroll the row one card at a time; 3 cards visible on desktop, 2 on tablet, 1 on phone. Section padding 80px top; Sell section top padding 64px.
 - Services cards (final, client choice): light green tile #E2F8E8 with green #278641 icon, navy #0E162A checks, green #278641 link, "For buyers / operators / sellers" labels in blue #3050A6 like the "Our services" eyebrow — same on all three cards.
 - Sell section steps 1–3: number circles in blue #3050A6 (same blue as labels and eyebrows).
+
+## Figma synced with the website (4 Nov)
+Applied in Figma: sentence-case heading and subtitle, shorter hero (hugs content, ~588px), trust strip, "View all 200+ buses", filter chips, card location + inspection report link + New in/Reserved badges + photo count, services (green tiles/icons/links, navy checks, blue labels), sell step circles #3050A6, new Testimonials section (TestimonialCard component, 3 cards, arrows), Sell section top padding 64.
+Kept as it was in Figma on request: the "Our own workshop" photos (Figma has its own pictures there; the website uses yard photos + a placeholder).
