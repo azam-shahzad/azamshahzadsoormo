@@ -60,3 +60,4 @@ Kept as it was in Figma on request: the "Our own workshop" photos (Figma has its
 - Footer (polish): phone and email pills get gold line icons, radius 6, 44px tap height; link columns spaced 12px with 8px under the headings; gap above the wordmark 40px (was 56); links and legal links turn white on hover, pills brighten on hover.
 - Navigation (polish, client request): active page shows a 2px gold #DCC86F underline under the link (Home), marked aria-current="page"; on hover other links get a short gold underline (website). Hero lock was lifted only for this edit and re-applied.
 - Workshop (polish 2): step numbers 01–03 in gold #DCC86F and sitting on the title line; step titles 18px on both website and Figma (were 17 / 19).
+- Testimonials (polish): arrows show state — "previous" is dimmed (40%) at the start, "next" dims at the end; on the website both arrows hide when all cards already fit (e.g. 3 cards on desktop). Figma shows the start state.

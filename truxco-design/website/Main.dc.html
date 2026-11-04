@@ -26,7 +26,7 @@ a{color:#3050A6}a:hover{color:#151923}
 .hero-band > #top{flex:1;display:flex;align-items:center;justify-content:center}
 .hero-band > #top > div{width:100%}
 @media (max-width: 700px){.sb-btn{flex:1 1 100%!important}}
-.t-track{scrollbar-width:none}.t-track::-webkit-scrollbar{display:none}
+.t-track{scrollbar-width:none}.t-arrows button{transition:opacity .2s ease,background-color .2s ease}.t-arrows button[aria-disabled="true"]{opacity:.4;cursor:default}.t-track::-webkit-scrollbar{display:none}
 @media (max-width: 960px){.t-card{flex-basis:calc((100% - 24px) / 2)!important}}
 @media (max-width: 640px){.t-card{flex-basis:88%!important}}
 @media (prefers-reduced-motion: reduce){.t-track{scroll-behavior:auto!important}}
@@ -439,9 +439,9 @@ a{color:#3050A6}a:hover{color:#151923}
 <div style="max-width: 1240px; margin: 0 auto; display: flex; flex-direction: column; gap: 32px">
 <div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 16px">
 <div style="display: flex; flex-direction: column; gap: 10px"><p style="margin: 0; font-size: 13px; font-weight: 600; color: #3050A6; letter-spacing: 0.08em; text-transform: uppercase">Trusted by operators</p><h2 id="t-h" style="margin: 0; font-family: 'Barlow', sans-serif; font-weight: 700; font-size: 44px; line-height: 1.08; letter-spacing: -0.01em">What our buyers say</h2></div>
-<div style="display: flex; gap: 8px">
-<button type="button" aria-label="Previous reviews" aria-controls="t-track" onClick="{{tPrev}}" style="width: 44px; height: 44px; border-radius: 6px; border: 1px solid #BCC3D7; background: #FFFFFF; color: #475476; display: flex; align-items: center; justify-content: center; cursor: pointer"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 6l-6 6 6 6"></path></svg></button>
-<button type="button" aria-label="Next reviews" aria-controls="t-track" onClick="{{tNext}}" style="width: 44px; height: 44px; border-radius: 6px; border: 0; background: #0E162A; color: #FFFFFF; display: flex; align-items: center; justify-content: center; cursor: pointer"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></button>
+<div class="t-arrows" style="gap: 8px; {{tArrowsStyle}}">
+<button type="button" aria-label="Previous reviews" aria-disabled="{{tPrevDis}}" aria-controls="t-track" onClick="{{tPrev}}" style="width: 44px; height: 44px; border-radius: 6px; border: 1px solid #BCC3D7; background: #FFFFFF; color: #475476; display: flex; align-items: center; justify-content: center; cursor: pointer"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 6l-6 6 6 6"></path></svg></button>
+<button type="button" aria-label="Next reviews" aria-disabled="{{tNextDis}}" aria-controls="t-track" onClick="{{tNext}}" style="width: 44px; height: 44px; border-radius: 6px; border: 0; background: #0E162A; color: #FFFFFF; display: flex; align-items: center; justify-content: center; cursor: pointer"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></button>
 </div>
 </div>
 <div id="t-track" class="t-track" style="display: flex; gap: 24px; overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth; padding-bottom: 4px"><figure class="t-card" style="margin: 0; flex: 0 0 calc((100% - 48px) / 3); scroll-snap-align: start; background: #FFFFFF; border: 1px solid #D9DDE8; border-top: 3px solid #278641; border-radius: 16px; padding: 28px; display: flex; flex-direction: column; gap: 18px; box-sizing: border-box"><div style="display: flex; justify-content: space-between; align-items: center"><svg aria-hidden="true" width="34" height="26" viewBox="0 0 34 26" fill="#DCC86F"><path d="M0 26V15.6C0 6.9 4.6 1.7 13 0l1.6 3.6C9.9 5 7.6 8 7.3 12.2H14V26H0zm20 0V15.6C20 6.9 24.6 1.7 33 0l1 3.6c-4.7 1.4-7 4.4-7.3 8.6H34V26H20z"/></svg><span aria-label="5 out of 5" style="color: #DCC86F; letter-spacing: 2px; font-size: 15px">★★★★★</span></div><blockquote style="margin: 0; font-size: 18px; line-height: 1.55; color: #151923">Truxco found us three coaches in two weeks and handled the cross‑border paperwork. Saved us a month of broker calls.</blockquote><figcaption style="margin-top: auto; padding-top: 18px; border-top: 1px solid #ECEEF4; display: flex; align-items: center; gap: 12px"><span aria-hidden="true" style="width: 46px; height: 46px; border-radius: 50%; background: #278641; color: #FFFFFF; font-family: 'Barlow', sans-serif; font-weight: 700; font-size: 16px; letter-spacing: 0.02em; display: flex; align-items: center; justify-content: center; flex: none">HL</span><span style="display: flex; flex-direction: column; gap: 2px"><strong style="font-size: 16px; color: #278641">Henrik Larsson</strong><span style="font-size: 13px; color: #475476">Fleet manager · Nordvästen Partners, SE</span></span></figcaption></figure><figure class="t-card" style="margin: 0; flex: 0 0 calc((100% - 48px) / 3); scroll-snap-align: start; background: #FFFFFF; border: 1px solid #D9DDE8; border-top: 3px solid #278641; border-radius: 16px; padding: 28px; display: flex; flex-direction: column; gap: 18px; box-sizing: border-box"><div style="display: flex; justify-content: space-between; align-items: center"><svg aria-hidden="true" width="34" height="26" viewBox="0 0 34 26" fill="#DCC86F"><path d="M0 26V15.6C0 6.9 4.6 1.7 13 0l1.6 3.6C9.9 5 7.6 8 7.3 12.2H14V26H0zm20 0V15.6C20 6.9 24.6 1.7 33 0l1 3.6c-4.7 1.4-7 4.4-7.3 8.6H34V26H20z"/></svg><span aria-label="5 out of 5" style="color: #DCC86F; letter-spacing: 2px; font-size: 15px">★★★★★</span></div><blockquote style="margin: 0; font-size: 18px; line-height: 1.55; color: #151923">The inspection report matched the bus exactly. No surprises on delivery to Poland.</blockquote><figcaption style="margin-top: auto; padding-top: 18px; border-top: 1px solid #ECEEF4; display: flex; align-items: center; gap: 12px"><span aria-hidden="true" style="width: 46px; height: 46px; border-radius: 50%; background: #278641; color: #FFFFFF; font-family: 'Barlow', sans-serif; font-weight: 700; font-size: 16px; letter-spacing: 0.02em; display: flex; align-items: center; justify-content: center; flex: none">MK</span><span style="display: flex; flex-direction: column; gap: 2px"><strong style="font-size: 16px; color: #278641">Marta Kowalska</strong><span style="font-size: 13px; color: #475476">Owner · Kowalski Transport, PL</span></span></figcaption></figure><figure class="t-card" style="margin: 0; flex: 0 0 calc((100% - 48px) / 3); scroll-snap-align: start; background: #FFFFFF; border: 1px solid #D9DDE8; border-top: 3px solid #278641; border-radius: 16px; padding: 28px; display: flex; flex-direction: column; gap: 18px; box-sizing: border-box"><div style="display: flex; justify-content: space-between; align-items: center"><svg aria-hidden="true" width="34" height="26" viewBox="0 0 34 26" fill="#DCC86F"><path d="M0 26V15.6C0 6.9 4.6 1.7 13 0l1.6 3.6C9.9 5 7.6 8 7.3 12.2H14V26H0zm20 0V15.6C20 6.9 24.6 1.7 33 0l1 3.6c-4.7 1.4-7 4.4-7.3 8.6H34V26H20z"/></svg><span aria-label="5 out of 5" style="color: #DCC86F; letter-spacing: 2px; font-size: 15px">★★★★★</span></div><blockquote style="margin: 0; font-size: 18px; line-height: 1.55; color: #151923">We sold four city buses in one week. Fair offer, paid on collection.</blockquote><figcaption style="margin-top: auto; padding-top: 18px; border-top: 1px solid #ECEEF4; display: flex; align-items: center; gap: 12px"><span aria-hidden="true" style="width: 46px; height: 46px; border-radius: 50%; background: #278641; color: #FFFFFF; font-family: 'Barlow', sans-serif; font-weight: 700; font-size: 16px; letter-spacing: 0.02em; display: flex; align-items: center; justify-content: center; flex: none">JV</span><span style="display: flex; flex-direction: column; gap: 2px"><strong style="font-size: 16px; color: #278641">Jan de Vries</strong><span style="font-size: 13px; color: #475476">Operations · Stadlijn BV, NL</span></span></figcaption></figure></div>
@@ -507,6 +507,21 @@ a{color:#3050A6}a:hover{color:#151923}
 <script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":6400}}'>
 class Component extends DCLogic {
   componentDidMount() {
+    // Testimonial arrows: reflect whether the row can scroll left / right
+    try {
+      const el = typeof document !== 'undefined' && document.getElementById('t-track');
+      if (el) {
+        this.tSync = () => {
+          const max = el.scrollWidth - el.clientWidth;
+          const next = { tStart: el.scrollLeft <= 2, tEnd: el.scrollLeft >= max - 2, tOver: max > 2 };
+          const cur = this.state || {};
+          if (cur.tStart !== next.tStart || cur.tEnd !== next.tEnd || cur.tOver !== next.tOver) this.setState(next);
+        };
+        el.addEventListener('scroll', this.tSync, { passive: true });
+        window.addEventListener('resize', this.tSync);
+        this.tSync();
+      }
+    } catch (e) {}
     this.busTimer = setInterval(() => {
       if (typeof document !== 'undefined' && document.hidden) return;
       this.setState({ busRun: ((this.state && this.state.busRun) || 0) + 1 });
@@ -526,6 +541,7 @@ class Component extends DCLogic {
     }
   }
   componentWillUnmount() {
+    try { const el = document.getElementById('t-track'); if (el && this.tSync) el.removeEventListener('scroll', this.tSync); if (this.tSync) window.removeEventListener('resize', this.tSync); } catch (e) {}
     clearInterval(this.busTimer);
   }
   navVals() {
@@ -590,6 +606,9 @@ class Component extends DCLogic {
       ...this.navVals(),
       tPrev: () => this.tScroll(-1),
       tNext: () => this.tScroll(1),
+      tPrevDis: (this.state && this.state.tStart !== false) ? 'true' : 'false',
+      tNextDis: (this.state && this.state.tEnd) ? 'true' : 'false',
+      tArrowsStyle: (this.state && this.state.tOver === false) ? 'display: none;' : 'display: flex;',
       busClass: busRun === 0 ? 'bus-drive-a bus-intro' : busRun % 2 === 0 ? 'bus-drive-a' : 'bus-drive-b',
       flyStyle: (this.state && this.state.fly)
         ? `--L: ${this.state.fly.l}px; --T: ${this.state.fly.t}px; --W: ${this.state.fly.w}px; --H: ${this.state.fly.h}px`
