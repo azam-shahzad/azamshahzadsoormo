@@ -403,22 +403,25 @@ a{color:#3050A6}a:hover{color:#151923}
 <!-- CATEGORIES -->
 <section aria-labelledby="cat-h" style="padding: 48px 24px">
 <div style="max-width: 1240px; margin: 0 auto; display: flex; flex-direction: column; gap: 40px">
-<div style="display: flex; flex-direction: column; gap: 10px; max-width: 640px">
+<div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 16px">
+<div style="display: flex; flex-direction: column; gap: 10px">
 <p style="margin: 0; font-size: 13px; font-weight: 600; color: #3050A6; letter-spacing: 0.08em; text-transform: uppercase">Shop by type</p>
 <h2 id="cat-h" style="margin: 0; font-family: 'Barlow', sans-serif; font-weight: 700; font-size: 44px; line-height: 1.08; letter-spacing: -0.01em">From city routes to long‑distance touring</h2>
 </div>
+<a href="#buses" style="display: inline-flex; align-items: center; gap: 6px; font-weight: 600; font-size: 15px; color: #278641; text-decoration: none; padding: 12px 4px">View all buses<svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+</div>
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px">
 <sc-for list="{{categories}}" as="c" hint-placeholder-count="4">
-<a href="#buses" class="sr-card" style="display: flex; flex-direction: column; border-radius: 12px; overflow: hidden; border: 1px solid #D9DDE8; background: #FFFFFF; text-decoration: none; color: #151923">
-<div class="sr-stage" style="position: relative; height: 210px; display: flex; align-items: center; justify-content: center">
-<img src="{{c.img}}" alt="" style="position: relative; width: {{c.w}}; height: auto; display: block">
+<a href="#buses" class="sr-card" style="display: flex; flex-direction: column; border-radius: 16px; overflow: hidden; border: 1px solid #D9DDE8; background: #FFFFFF; text-decoration: none; color: #151923">
+<div class="sr-stage" style="position: relative; height: 210px; display: flex; align-items: flex-end; justify-content: center; padding-bottom: 40px; box-sizing: border-box">
+<img src="{{c.img}}" alt="" style="position: relative; height: 118px; width: auto; max-width: 88%; object-fit: contain; display: block">
 </div>
 <div style="padding: 24px; display: flex; flex-direction: column; gap: 4px; flex: 1">
 <span style="font-size: 12px; font-weight: 600; color: #3050A6; letter-spacing: 0.08em; text-transform: uppercase">{{c.tag}}</span>
 <strong style="font-family: 'Barlow', sans-serif; font-weight: 700; font-size: 20px; margin-top: 4px">{{c.name}}</strong>
 <span style="font-size: 15px; color: #475476">{{c.desc}}</span>
-<span style="position: relative; height: 1px; background: #ECEEF4; margin: 16px 0 12px"><span class="sr-line" style="position: absolute; left: 0; top: 0; height: 1px; width: 28px; background: #3050A6"></span></span>
-<span class="sr-link" style="display: flex; justify-content: space-between; align-items: center; font-size: 15px; font-weight: 600; color: #3050A6">{{c.cta}}<svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span>
+<span style="position: relative; height: 1px; background: #ECEEF4; margin: 16px 0 12px"><span class="sr-line" style="position: absolute; left: 0; top: 0; height: 1px; width: 28px; background: #278641"></span></span>
+<span class="sr-link" style="display: flex; justify-content: space-between; align-items: center; font-size: 15px; font-weight: 600; color: #278641">{{c.cta}}<svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span>
 </div>
 </a>
 </sc-for>
