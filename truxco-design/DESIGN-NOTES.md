@@ -48,3 +48,4 @@ Locked in Figma (layer "Hero band (FINAL — do not change)", node 58:263).
 - Workshop: real yard drone photos (`assets/yard-a.jpg`, `assets/yard-b.jpg`) and a dashed slot for a real workshop photo from Truxco.
 - Testimonials: three cards. Only Henrik Larsson was in the original design; Marta Kowalska and Jan de Vries, locations and badges are PLACEHOLDERS to replace with real Truxco content.
 - Testimonial cards: green top border, gold quote mark and stars, name in green #278641, initials in a solid green #278641 circle (fill only, no ring). Prev/next arrows (44px, radius 6) scroll the row one card at a time; 3 cards visible on desktop, 2 on tablet, 1 on phone. Section padding 80px top; Sell section top padding 64px.
+- Services cards (later): one brand-blue accent — icon tiles #E2E8F8 with #3050A6 icons, blue checks and blue links (no green here, green stays for buttons).
