@@ -1,0 +1,270 @@
+<title>Truxco Motion Controls</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* Layout: one centred column of labelled specimen panels, each control live, one shared motion system */
+:root{
+  --bg:#F5F6F9; --surface:#FFFFFF; --subtle:#ECEEF4; --line:#D9DDE8;
+  --fg:#151923; --muted:#475476; --faint:#8693B6;
+  --primary:#3C64D0; --primary-hover:#3050A6; --on-primary:#FFFFFF;
+  --sell:#A63090; --sell-hover:#862774; --success:#278641; --ring:#9CB1E7;
+  --font-display:"Barlow", "Arial Narrow", system-ui, sans-serif;
+  --font-body:"Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  /* motion system: one set of curves and durations for every control */
+  --slow:1;
+  --ease-enter:cubic-bezier(.22,1,.36,1);
+  --ease-move:cubic-bezier(.25,1,.5,1);
+  --t-press:calc(140ms * var(--slow));
+  --t-ui:calc(200ms * var(--slow));
+  --t-move:calc(260ms * var(--slow));
+  --t-draw:calc(320ms * var(--slow));
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0D1016; --surface:#151923; --subtle:#212636; --line:#343D56;
+  --fg:#F5F6F9; --muted:#BCC3D7; --faint:#8693B6;
+  --primary:#6F8DDC; --primary-hover:#9CB1E7; --on-primary:#0D1016;
+  --sell:#DC6FC8; --sell-hover:#E79CD9; --success:#6FDC8D; --ring:#9CB1E7; color-scheme:dark }}
+:root[data-theme="dark"]{
+  --bg:#0D1016; --surface:#151923; --subtle:#212636; --line:#343D56;
+  --fg:#F5F6F9; --muted:#BCC3D7; --faint:#8693B6;
+  --primary:#6F8DDC; --primary-hover:#9CB1E7; --on-primary:#0D1016;
+  --sell:#DC6FC8; --sell-hover:#E79CD9; --success:#6FDC8D; --ring:#9CB1E7; color-scheme:dark }
+@media (prefers-reduced-motion: reduce){:root{--slow:0.01}}
+
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font-family:var(--font-body);font-size:15px;line-height:1.55;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:48px 72px}
+.wrap{max-width:980px;margin:0 auto;display:flex;flex-direction:column;gap:28px}
+header{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:16px}
+.eyebrow{margin:0;font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--primary-hover)}
+h1{margin:6px 0 0;font-family:var(--font-display);font-weight:700;font-size:clamp(32px,5vw,44px);line-height:1.05;text-wrap:balance}
+.lede{margin:8px 0 0;color:var(--muted);max-width:60ch}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:24px;display:grid;grid-template-columns:minmax(0,220px) minmax(0,1fr);gap:24px;align-items:center}
+.panel h2{margin:0;font-family:var(--font-display);font-weight:700;font-size:20px}
+.panel p{margin:4px 0 0;font-size:13px;color:var(--muted)}
+.spec{display:flex;flex-wrap:wrap;gap:12px;align-items:center;min-width:0}
+code{font-size:12px;color:var(--muted);background:var(--subtle);padding:2px 6px;border-radius:6px}
+@media (max-width:720px){.panel{grid-template-columns:minmax(0,1fr)}}
+
+/* focus: visible, never animated */
+:where(button,input,a):focus-visible{outline:2px solid var(--ring);outline-offset:3px}
+
+/* ---------- Buttons: press, hover ---------- */
+.btn{--h:44px;font:inherit;font-weight:600;font-size:15px;height:var(--h);padding:0 20px;border-radius:10px;border:1px solid transparent;cursor:pointer;
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;position:relative;
+  transition:background-color var(--t-ui) ease,border-color var(--t-ui) ease,color var(--t-ui) ease,transform var(--t-press) var(--ease-enter),box-shadow var(--t-ui) ease}
+.btn:active:not(:disabled){transform:scale(.97)}
+.btn-primary{background:var(--primary);color:var(--on-primary)}
+.btn-sell{background:var(--sell);color:var(--on-primary)}
+.btn-outline{background:var(--surface);color:var(--fg);border-color:var(--line)}
+.btn-ghost{background:transparent;color:var(--primary-hover)}
+.btn:disabled{opacity:.45;cursor:not-allowed}
+@media (hover:hover) and (pointer:fine){
+  .btn-primary:hover:not(:disabled){background:var(--primary-hover);transform:translateY(-1px);box-shadow:0 6px 16px rgba(60,100,208,.28)}
+  .btn-sell:hover:not(:disabled){background:var(--sell-hover);transform:translateY(-1px);box-shadow:0 6px 16px rgba(166,48,144,.28)}
+  .btn-outline:hover:not(:disabled){border-color:var(--faint);transform:translateY(-1px)}
+  .btn-ghost:hover:not(:disabled){background:var(--subtle)}
+  .btn:hover:active:not(:disabled){transform:scale(.97)}
+}
+.icon-btn{width:44px;padding:0}
+svg{flex:none}
+
+/* ---------- Toggle switch ---------- */
+.switch{display:inline-flex;align-items:center;gap:12px;font:inherit;background:none;border:0;padding:6px 0;cursor:pointer;color:var(--fg)}
+.track{width:46px;height:28px;border-radius:999px;background:var(--line);position:relative;transition:background-color var(--t-ui) ease}
+.knob{position:absolute;top:3px;left:3px;width:22px;height:22px;border-radius:999px;background:#FFFFFF;box-shadow:0 1px 3px rgba(13,16,22,.3);
+  transition:transform var(--t-move) var(--ease-move)}
+.switch:active .knob{transform:scaleX(1.15)}
+.switch[aria-checked="true"] .track{background:var(--success)}
+.switch[aria-checked="true"] .knob{transform:translateX(18px)}
+.switch[aria-checked="true"]:active .knob{transform:translateX(15px) scaleX(1.15)}
+
+/* ---------- Checkbox ---------- */
+.check,.radio{display:inline-flex;align-items:center;gap:10px;cursor:pointer;padding:6px 0;position:relative}
+.check input,.radio input{position:absolute;opacity:0;width:1px;height:1px}
+.box{width:22px;height:22px;border-radius:6px;border:1.5px solid var(--faint);background:var(--surface);display:grid;place-items:center;
+  transition:background-color var(--t-ui) ease,border-color var(--t-ui) ease,transform var(--t-press) var(--ease-enter)}
+.box path{stroke:var(--on-primary);stroke-dasharray:18;stroke-dashoffset:18;transition:stroke-dashoffset var(--t-draw) var(--ease-enter)}
+.check input:checked + .box{background:var(--primary);border-color:var(--primary)}
+.check input:checked + .box path{stroke-dashoffset:0}
+.check:active .box{transform:scale(.92)}
+.check input:focus-visible + .box,.radio input:focus-visible + .dot-ring{outline:2px solid var(--ring);outline-offset:3px}
+
+/* ---------- Radio ---------- */
+.dot-ring{width:22px;height:22px;border-radius:999px;border:1.5px solid var(--faint);background:var(--surface);display:grid;place-items:center;
+  transition:border-color var(--t-ui) ease,transform var(--t-press) var(--ease-enter)}
+.dot{width:10px;height:10px;border-radius:999px;background:var(--primary);opacity:0;transform:scale(.5);
+  transition:opacity var(--t-ui) ease,transform var(--t-move) var(--ease-enter)}
+.radio input:checked + .dot-ring{border-color:var(--primary)}
+.radio input:checked + .dot-ring .dot{opacity:1;transform:scale(1)}
+.radio:active .dot-ring{transform:scale(.92)}
+
+/* ---------- Copy → check icon swap ---------- */
+.copy-field{display:flex;align-items:center;gap:8px;background:var(--subtle);border-radius:10px;padding:4px 4px 4px 14px;min-width:0}
+.copy-field span{font-variant-numeric:tabular-nums;font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.swap{position:relative;width:18px;height:18px}
+.swap svg{position:absolute;inset:0;transition:opacity var(--t-ui) ease,transform var(--t-ui) var(--ease-enter),filter var(--t-ui) ease}
+.swap .ic-check{opacity:0;transform:scale(.6);filter:blur(2px);color:var(--success)}
+[data-copied="true"] .swap .ic-copy{opacity:0;transform:scale(.6);filter:blur(2px)}
+[data-copied="true"] .swap .ic-check{opacity:1;transform:scale(1);filter:blur(0)}
+
+/* ---------- Loading button ---------- */
+.btn-load{min-width:170px;overflow:hidden}
+.btn-load .lbl,.btn-load .spin,.btn-load .done{transition:opacity var(--t-ui) ease,transform var(--t-move) var(--ease-enter)}
+.btn-load .spin,.btn-load .done{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;gap:8px;opacity:0;transform:translateY(12px)}
+.btn-load[data-state="loading"] .lbl,.btn-load[data-state="done"] .lbl{opacity:0;transform:translateY(-12px)}
+.btn-load[data-state="loading"] .spin{opacity:1;transform:none}
+.btn-load[data-state="done"] .done{opacity:1;transform:none}
+.btn-load[data-state="done"]{background:var(--success)}
+.ring{width:18px;height:18px;border-radius:999px;border:2px solid currentColor;border-right-color:transparent;animation:spin 700ms linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+@media (prefers-reduced-motion: reduce){.ring{animation-duration:2s}}
+
+/* ---------- Tokens table ---------- */
+.tokens{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:13px;min-width:520px}
+th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line)}
+th{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--faint);font-weight:600}
+td{font-variant-numeric:tabular-nums}
+.slowbar{display:flex;align-items:center;gap:12px;font-size:14px;color:var(--muted)}
+</style>
+
+<div class="wrap">
+<header>
+  <div>
+    <p class="eyebrow">Truxco · Motion system</p>
+    <h1>Buttons &amp; controls</h1>
+    <p class="lede">Every control below shares one set of curves and timings: a quick press, a soft 200 ms state change and a 260 ms move. Try each one, or slow everything down to watch the motion.</p>
+  </div>
+  <button type="button" class="switch" role="switch" aria-checked="false" id="slow-switch">
+    <span class="track" aria-hidden="true"><span class="knob"></span></span><span>Slow motion ×5</span>
+  </button>
+</header>
+
+<section class="panel" aria-labelledby="h-press">
+  <div><h2 id="h-press">Press &amp; hover</h2><p>Hover lifts 1 px. Pressing scales to 97% in 140 ms, so the click feels physical.</p></div>
+  <div class="spec">
+    <button type="button" class="btn btn-primary" id="b-primary">Search buses</button>
+    <button type="button" class="btn btn-sell" id="b-sell"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>Post your bus</button>
+    <button type="button" class="btn btn-outline" id="b-outline">View details</button>
+    <button type="button" class="btn btn-ghost" id="b-ghost">View all buses</button>
+    <button type="button" class="btn btn-outline icon-btn" id="b-icon" aria-label="Next bus"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+    <button type="button" class="btn btn-primary" id="b-disabled" disabled>Sold out</button>
+  </div>
+</section>
+
+<section class="panel" aria-labelledby="h-toggle">
+  <div><h2 id="h-toggle">Toggle</h2><p>The knob slides in 260 ms and stretches slightly while held.</p></div>
+  <div class="spec" style="flex-direction:column;align-items:flex-start;gap:4px">
+    <button type="button" class="switch" role="switch" aria-checked="true" id="t-alerts"><span class="track" aria-hidden="true"><span class="knob"></span></span><span>Email me new coaches</span></button>
+    <button type="button" class="switch" role="switch" aria-checked="false" id="t-electric"><span class="track" aria-hidden="true"><span class="knob"></span></span><span>Electric buses only</span></button>
+  </div>
+</section>
+
+<section class="panel" aria-labelledby="h-check">
+  <div><h2 id="h-check">Checkbox</h2><p>The tick draws itself in 320 ms; the box dips to 92% while pressed.</p></div>
+  <div class="spec" style="flex-direction:column;align-items:flex-start;gap:2px">
+    <label class="check" for="c-1"><input type="checkbox" id="c-1" checked><span class="box" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7.5l3 3 6-7" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Workshop‑inspected</label>
+    <label class="check" for="c-2"><input type="checkbox" id="c-2"><span class="box" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7.5l3 3 6-7" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Euro 6 engine</label>
+    <label class="check" for="c-3"><input type="checkbox" id="c-3"><span class="box" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7.5l3 3 6-7" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Wheelchair lift</label>
+  </div>
+</section>
+
+<section class="panel" aria-labelledby="h-radio">
+  <div><h2 id="h-radio">Radio</h2><p>The dot grows from 50% with the same enter curve.</p></div>
+  <fieldset class="spec" style="border:0;margin:0;padding:0;flex-direction:column;align-items:flex-start;gap:2px">
+    <legend class="sr" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)">Bus type</legend>
+    <label class="radio" for="r-1"><input type="radio" name="type" id="r-1" checked><span class="dot-ring" aria-hidden="true"><span class="dot"></span></span>Coach</label>
+    <label class="radio" for="r-2"><input type="radio" name="type" id="r-2"><span class="dot-ring" aria-hidden="true"><span class="dot"></span></span>City bus</label>
+    <label class="radio" for="r-3"><input type="radio" name="type" id="r-3"><span class="dot-ring" aria-hidden="true"><span class="dot"></span></span>Minibus</label>
+  </fieldset>
+</section>
+
+<section class="panel" aria-labelledby="h-copy">
+  <div><h2 id="h-copy">Copy → check</h2><p>The icons cross‑fade with a slight scale and blur, then swap back after 1.6 s.</p></div>
+  <div class="spec">
+    <div class="copy-field" id="copy-wrap" data-copied="false">
+      <span id="copy-text">+46 10 207 04 44</span>
+      <button type="button" class="btn btn-ghost icon-btn" id="copy-btn" aria-label="Copy phone number">
+        <span class="swap" aria-hidden="true">
+          <svg class="ic-copy" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg>
+          <svg class="ic-check" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+        </span>
+      </button>
+    </div>
+    <span id="copy-status" role="status" style="font-size:13px;color:var(--muted)"></span>
+  </div>
+</section>
+
+<section class="panel" aria-labelledby="h-load">
+  <div><h2 id="h-load">Loading button</h2><p>The label slides up, a spinner slides in, then a check confirms. The width never jumps.</p></div>
+  <div class="spec">
+    <button type="button" class="btn btn-primary btn-load" id="load-btn" data-state="idle">
+      <span class="lbl">Send enquiry</span>
+      <span class="spin" aria-hidden="true"><span class="ring"></span>Sending</span>
+      <span class="done" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Sent</span>
+    </button>
+    <span id="load-status" role="status" style="font-size:13px;color:var(--muted)"></span>
+  </div>
+</section>
+
+<section class="panel" aria-labelledby="h-tokens" style="grid-template-columns:minmax(0,1fr)">
+  <div><h2 id="h-tokens">Motion tokens</h2><p>One system for every control. Users who choose reduced motion get instant state changes.</p></div>
+  <div class="tokens">
+    <table>
+      <thead><tr><th>Token</th><th>Value</th><th>Used for</th></tr></thead>
+      <tbody>
+        <tr><td><code>--t-press</code></td><td>140 ms · enter curve</td><td>Press scale on buttons, boxes and rings</td></tr>
+        <tr><td><code>--t-ui</code></td><td>200 ms · ease</td><td>Colour, border and icon cross‑fades</td></tr>
+        <tr><td><code>--t-move</code></td><td>260 ms · move curve</td><td>Toggle knob, radio dot, loading label</td></tr>
+        <tr><td><code>--t-draw</code></td><td>320 ms · enter curve</td><td>Checkbox tick drawing</td></tr>
+        <tr><td><code>--ease-enter</code></td><td>cubic-bezier(.22, 1, .36, 1)</td><td>Anything appearing or pressing</td></tr>
+        <tr><td><code>--ease-move</code></td><td>cubic-bezier(.25, 1, .5, 1)</td><td>Anything sliding from A to B</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+</div>
+
+<script>
+(function(){
+  // toggles
+  document.querySelectorAll('.switch').forEach(function(sw){
+    sw.addEventListener('click', function(){
+      var on = sw.getAttribute('aria-checked') !== 'true';
+      sw.setAttribute('aria-checked', on ? 'true' : 'false');
+      if (sw.id === 'slow-switch') document.documentElement.style.setProperty('--slow', on ? '5' : '1');
+    });
+  });
+
+  // copy → check
+  var wrap = document.getElementById('copy-wrap'), btn = document.getElementById('copy-btn');
+  var txt = document.getElementById('copy-text'), status = document.getElementById('copy-status'), timer;
+  function confirmCopy(msg){
+    wrap.setAttribute('data-copied','true'); status.textContent = msg;
+    clearTimeout(timer); timer = setTimeout(function(){ wrap.setAttribute('data-copied','false'); status.textContent=''; }, 1600);
+  }
+  btn.addEventListener('click', function(){
+    var value = txt.textContent;
+    try {
+      navigator.clipboard.writeText(value).then(function(){ confirmCopy('Copied'); }, function(){
+        var r = document.createRange(); r.selectNodeContents(txt); var s = getSelection(); s.removeAllRanges(); s.addRange(r);
+        confirmCopy('Selected, press Ctrl+C to copy');
+      });
+    } catch(e){ confirmCopy('Selected, press Ctrl+C to copy'); }
+  });
+
+  // loading button
+  var lb = document.getElementById('load-btn'), ls = document.getElementById('load-status');
+  lb.addEventListener('click', function(){
+    if (lb.dataset.state !== 'idle') return;
+    var slow = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--slow')) || 1;
+    lb.dataset.state = 'loading'; lb.setAttribute('aria-busy','true'); ls.textContent = 'Sending…';
+    setTimeout(function(){
+      lb.dataset.state = 'done'; lb.removeAttribute('aria-busy'); ls.textContent = 'Enquiry sent (demo)';
+      setTimeout(function(){ lb.dataset.state = 'idle'; ls.textContent=''; }, 1600 * Math.max(1, slow/2));
+    }, 1600 * Math.max(1, slow/2));
+  });
+})();
+</script>

@@ -1,0 +1,587 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Truxco — Buy and sell used buses</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@500;700;800&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#F5F6F9}
+a{color:#3050A6}a:hover{color:#151923}
+.bus-drive-a,.bus-drive-b{transform-origin:28% 92%;will-change:transform}
+.bus-drive-a{animation:busDriveA 1.9s cubic-bezier(.16,.84,.3,1) both}
+.bus-drive-b{animation:busDriveB 1.9s cubic-bezier(.16,.84,.3,1) both}
+@keyframes busDriveA{0%{transform:translateX(120%);filter:blur(3px);opacity:0}12%{opacity:1}58%{transform:translateX(-3%) rotate(-.9deg);filter:blur(0)}76%{transform:translateX(.8%) rotate(.35deg)}90%{transform:translateX(-.3%) rotate(-.1deg)}100%{transform:none;filter:none;opacity:1}}
+@keyframes busDriveB{0%{transform:translateX(120%);filter:blur(3px);opacity:0}12%{opacity:1}58%{transform:translateX(-3%) rotate(-.9deg);filter:blur(0)}76%{transform:translateX(.8%) rotate(.35deg)}90%{transform:translateX(-.3%) rotate(-.1deg)}100%{transform:none;filter:none;opacity:1}}
+@media (prefers-reduced-motion: reduce){.bus-drive-a,.bus-drive-b{animation:none}}
+.hero-band{background-color:#0E162A;background-image:linear-gradient(135deg,#0E2A16 0%,#0E162A 50%,#2A0E25 100%)}
+.hero-bg{background:transparent}
+.hero-band{position:relative;isolation:isolate;min-height:calc(100vh - 37px);min-height:calc(100svh - 37px);display:flex;flex-direction:column}
+.hero-band > #top{flex:1;display:flex;align-items:center;justify-content:center}
+.hero-band > #top > div{width:100%}
+@media (max-width: 700px){.sb-btn{flex:1 1 100%!important}}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.nv-desk{display:flex}.nv-burger{display:none}
+.nv-item{animation:nvFade .6s cubic-bezier(.16,1,.3,1) both}
+.nv-item:nth-child(2){animation-delay:.08s}.nv-item:nth-child(3){animation-delay:.14s}.nv-item:nth-child(4){animation-delay:.2s}.nv-item:nth-child(5){animation-delay:.26s}.nv-item:nth-child(6){animation-delay:.32s}
+.nv-btn{transition:color .35s cubic-bezier(.16,1,.3,1)}
+.nv-btn:focus-visible,.nv-burger:focus-visible{outline:2px solid #9CB1E7;outline-offset:2px}
+.nv-cta{position:relative;overflow:hidden;transition:transform .35s cubic-bezier(.34,1.56,.64,1),box-shadow .35s ease}
+.nv-cta:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(220,200,111,.35)}
+.nv-cta svg{transition:transform .3s cubic-bezier(.22,1,.36,1)}.nv-cta:hover svg{transform:translateX(3px)}
+.nv-btn:hover{color:#FFFFFF!important}
+.nv-bar-wrap{display:grid!important;grid-template-columns:1fr auto 1fr}
+@media (max-width: 1060px){.nv-bar-wrap{grid-template-columns:1fr auto}}
+.nv-cta::after{content:"";position:absolute;top:0;left:-60%;width:40%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.35),transparent);transform:skewX(-20deg)}
+.nv-cta:hover::after{animation:nvShine .9s ease}
+.nv-link{transition:background .25s ease,transform .35s cubic-bezier(.34,1.56,.64,1)}
+.nv-link:hover{background:rgba(21,25,35,.05);transform:translateX(4px)}
+.nv-link:hover .nv-arrow{transform:translateX(3px);opacity:1}
+.nv-arrow{transition:transform .3s ease,opacity .3s ease;opacity:.5}
+.nv-in{animation:nvIn .5s cubic-bezier(.16,1,.3,1) both}
+.nv-in:nth-child(2){animation-delay:.05s}.nv-in:nth-child(3){animation-delay:.1s}.nv-in:nth-child(4){animation-delay:.15s}
+.nv-bar{position:absolute;left:12px;width:20px;height:2px;border-radius:2px;background:#FFFFFF;transition:transform .5s cubic-bezier(.34,1.56,.64,1),opacity .25s ease,top .5s cubic-bezier(.34,1.56,.64,1)}
+.nv-overlay{display:none;transition:clip-path .7s cubic-bezier(.77,0,.18,1)}
+.nv-row,.nv-foot{opacity:0;transform:translateY(16px)}
+.nv-open .nv-row{animation:nvIn .55s cubic-bezier(.16,1,.3,1) both}
+.nv-open .nv-row:nth-child(1){animation-delay:.18s}.nv-open .nv-row:nth-child(2){animation-delay:.24s}.nv-open .nv-row:nth-child(3){animation-delay:.3s}.nv-open .nv-row:nth-child(4){animation-delay:.36s}.nv-open .nv-row:nth-child(5){animation-delay:.42s}
+.nv-open .nv-foot{animation:nvIn .55s .5s cubic-bezier(.16,1,.3,1) both}
+.nv-mlink{transition:padding-left .35s cubic-bezier(.34,1.56,.64,1),color .25s ease}.nv-mlink:hover{padding-left:8px;color:#DCC86F}
+@keyframes nvFade{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:none}}
+@keyframes nvIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+@keyframes nvShine{from{left:-60%}to{left:130%}}
+@media (max-width: 1060px){.nv-desk{display:none!important}.nv-burger{display:block}.nv-overlay{display:flex}.nv-menu{display:none}}
+@media (prefers-reduced-motion: reduce){.nv-item,.nv-in{animation:none}.nv-cta:hover::after{animation:none}.nv-pill,.nv-menu,.nv-bar,.nv-overlay{transition:none!important}.nv-row,.nv-foot{opacity:1;transform:none;animation:none!important}}
+.sr-card .sr-stage img{transform-origin:50% 100%}
+.sr-stage{background:radial-gradient(ellipse 80% 60% at 50% 38%,#FFFFFF 0%,#F5F6F9 55%,#ECEEF4 100%)}
+.sr-card{transition:transform .5s cubic-bezier(.16,1,.3,1),box-shadow .5s ease}
+.sr-card:hover{transform:translateY(-6px);box-shadow:0 28px 60px rgba(13,16,22,.10)}
+.sr-card img{transition:transform .8s cubic-bezier(.16,1,.3,1)}
+.sr-card:hover img{transform:scale(1.05)}
+.sr-link svg{transition:transform .4s cubic-bezier(.16,1,.3,1)}
+.sr-card:hover .sr-link svg{transform:translateX(6px)}
+.sr-line{transition:width .6s cubic-bezier(.16,1,.3,1)}
+.sr-card:hover .sr-line{width:100%}
+.sr-card:focus-visible{outline:2px solid #3050A6;outline-offset:4px}
+@media (prefers-reduced-motion: reduce){.sr-card,.sr-card img,.sr-link svg,.sr-line{transition:none}}
+/* ===== Intro: light beams build the X, then the logo rattles and flies to the header ===== */
+.bus-intro{animation-delay:1.3s}
+.tx-intro{position:absolute;top:0;left:0;width:100%;height:0;z-index:60;pointer-events:none;
+  --W:138px;--H:30px;--L:max(24px, calc(50vw - 596px));--T:56px;--S:4;
+  --dx:calc(50vw - var(--L) - var(--W) / 2);--dy:calc(50vh - var(--T) - var(--H) / 2)}
+/* Timeline (1.84s): 0 spark + bloom · .14 beams sweep in · .34 X fills along the beams · .64 TRU/CO wipe out
+   · .94 blue flash, logo white · 1.02 white slash splits the blue screen · 1.16 logo whips to the header
+   · 1.43 impact pop + shine · 1.8 header logo takes over */
+.tx-stage{position:absolute;top:0;left:0;width:100%;height:100vh;overflow:hidden;background:#0D1016;pointer-events:auto;animation:txStage 1.575s linear forwards}
+/* exit: blue screen is two halves split along the X diagonal; a white slash cuts it, the halves fly apart */
+.tx-panel{position:absolute;left:calc(50% + 0.084 * var(--W) * var(--S));top:50%;width:400vmax;height:200vmax;margin-left:-200vmax;background:#3C64D0;opacity:0}
+.tx-panel-a{margin-top:-200vmax;transform-origin:50% 100%;animation:txPanelA 1.575s linear both}
+.tx-panel-b{margin-top:0;transform-origin:50% 0;animation:txPanelB 1.575s linear both}
+.tx-slash{position:absolute;left:calc(50% + 0.084 * var(--W) * var(--S));top:50%;width:300vmax;height:4px;margin:-2px 0 0 -150vmax;background:#FFFFFF;box-shadow:0 0 14px 4px rgba(255,255,255,.9),0 0 40px 10px rgba(156,177,231,.7);opacity:0;animation:txSlash .285s 1.02s cubic-bezier(.2,.8,.2,1) both}
+.tx-glint{position:absolute;inset:0;background:linear-gradient(110deg,rgba(255,255,255,0) 38%,rgba(255,255,255,.95) 50%,rgba(255,255,255,0) 62%);background-size:300% 100%;background-repeat:no-repeat;-webkit-mask:url(/_blob/234f66d3c09dd54f314b1cd1db8aedff) center / 100% 100% no-repeat;mask:url(/_blob/234f66d3c09dd54f314b1cd1db8aedff) center / 100% 100% no-repeat;opacity:0;animation:txGlint .315s 1.485s ease-in-out both}
+.tx-halo{position:absolute;left:calc(50% + 0.084 * var(--W) * var(--S));top:50%;width:min(120vmin,980px);aspect-ratio:1;transform:translate(-50%,-50%);border-radius:50%;background:radial-gradient(closest-side,rgba(111,141,220,.42),rgba(48,80,166,.15) 48%,rgba(14,22,42,0));opacity:0;animation:txHalo .975s ease-out both}
+.tx-beam{position:absolute;left:calc(50% + 0.084 * var(--W) * var(--S));top:50%;width:300vmax;box-sizing:border-box;border-top:1px solid rgba(226,232,248,.8);border-bottom:1px solid rgba(226,232,248,.8);background:linear-gradient(to bottom,rgba(197,209,241,.24),rgba(156,177,231,.07),rgba(197,209,241,.24));opacity:0;animation:txBeam .75s cubic-bezier(.2,.8,.2,1) both}
+.tx-spark{position:absolute;left:calc(50% + 0.084 * var(--W) * var(--S));top:50%;width:12px;height:18px;margin:-9px 0 0 -6px;border-radius:3px;background:#C5D1F1;box-shadow:0 0 22px 8px rgba(111,141,220,.85);opacity:0;animation:txSpark .41s ease both}
+.tx-flash{position:absolute;inset:0;background:#FFFFFF;opacity:0;animation:txFlash .225s .86s ease-out both}
+.tx-fly{position:absolute;left:var(--L);top:var(--T);width:var(--W);height:var(--H);transform-origin:50% 50%;will-change:transform,filter;animation:txFly 1.84s linear both,txBlur 1.84s linear both,txGone .09s 1.84s forwards}
+.tx-fly svg{display:block;width:100%;height:100%;overflow:visible;animation:txGlow 1.05s .41s ease both}
+.tx-x{fill:#F3F5FC;animation-fill-mode:both}
+.tx-diag{animation:txWipeDiag .225s .34s cubic-bezier(.4,0,.2,1) both,txXCol .225s 1.215s ease both}
+.tx-up{animation:txWipeUp .15s .525s cubic-bezier(.4,0,.2,1) both,txXCol .225s 1.215s ease both}
+.tx-lo{animation:txWipeLo .15s .57s cubic-bezier(.4,0,.2,1) both,txXCol .225s 1.215s ease both}
+.tx-word{fill:#F5F6F9}
+.tx-tru{animation:txWipeTru .24s .64s cubic-bezier(.2,.8,.2,1) both,txWordCol .225s 1.215s ease both}
+.tx-co{animation:txWipeCo .24s .64s cubic-bezier(.2,.8,.2,1) both,txWordCol .225s 1.215s ease both}
+.tx-hdr{animation:txHdrIn .075s 1.8s both}
+@keyframes txStage{0%{background-color:#0D1016}59.4%{background-color:#0D1016}59.6%{background-color:rgba(13,16,22,0)}99%{visibility:visible}100%{background-color:rgba(13,16,22,0);visibility:hidden}}
+@keyframes txPanelA{0%{opacity:0;transform:rotate(-56.1deg) translateY(0)}59.4%{opacity:0;transform:rotate(-56.1deg) translateY(0)}59.6%{opacity:1;transform:rotate(-56.1deg) translateY(0)}71.4%{opacity:1;transform:rotate(-56.1deg) translateY(0);animation-timing-function:cubic-bezier(.7,0,.25,1)}95%{opacity:1;transform:rotate(-56.1deg) translateY(-75vmax)}100%{opacity:1;transform:rotate(-56.1deg) translateY(-75vmax)}}
+@keyframes txPanelB{0%{opacity:0;transform:rotate(-56.1deg) translateY(0)}59.4%{opacity:0;transform:rotate(-56.1deg) translateY(0)}59.6%{opacity:1;transform:rotate(-56.1deg) translateY(0)}71.4%{opacity:1;transform:rotate(-56.1deg) translateY(0);animation-timing-function:cubic-bezier(.7,0,.25,1)}95%{opacity:1;transform:rotate(-56.1deg) translateY(75vmax)}100%{opacity:1;transform:rotate(-56.1deg) translateY(75vmax)}}
+@keyframes txSlash{0%{opacity:0;transform:rotate(-56.1deg) scaleX(0)}45%{opacity:1;transform:rotate(-56.1deg) scaleX(1)}100%{opacity:0;transform:rotate(-56.1deg) scaleX(1) scaleY(.3)}}
+@keyframes txGlint{0%{opacity:1;background-position:120% 0}100%{opacity:1;background-position:-20% 0}}
+@keyframes txBlur{0%{filter:blur(0)}63.3%{filter:blur(0)}69%{filter:blur(3px)}73%{filter:blur(4px)}77.6%{filter:blur(0)}100%{filter:blur(0)}}
+@keyframes txFlash{0%{opacity:0}35%{opacity:.6}100%{opacity:0}}
+@keyframes txGone{to{opacity:0;visibility:hidden}}
+@keyframes txHdrIn{from{opacity:0}to{opacity:1}}
+@keyframes txHalo{0%{opacity:0}18%{opacity:1}35%{opacity:.35}62%{opacity:.2}80%{opacity:.75}100%{opacity:0}}
+@keyframes txSpark{0%{opacity:0;transform:rotate(34deg) scale(.5)}30%{opacity:1;transform:rotate(34deg) scale(1.15)}50%{opacity:.3}62%{opacity:1}100%{opacity:0;transform:rotate(34deg) scale(1.4)}}
+@keyframes txBeam{
+  0%{opacity:0;transform:translate(-50%,-50%) rotate(var(--a)) translateY(var(--off,0px)) translateX(var(--from)) scaleY(1)}
+  10%{opacity:1}
+  30%{transform:translate(-50%,-50%) rotate(var(--a)) translateY(var(--off,0px)) translateX(0) scaleY(1)}
+  58%{opacity:1;transform:translate(-50%,-50%) rotate(var(--a)) translateY(var(--off,0px)) translateX(0) scaleY(1)}
+  84%{opacity:.6;transform:translate(-50%,-50%) rotate(var(--a)) translateY(var(--off,0px)) translateX(0) scaleY(.15)}
+  100%{opacity:0;transform:translate(-50%,-50%) rotate(var(--a)) translateY(var(--off,0px)) translateX(0) scaleY(.08)}}
+/* the X fills in along each beam: a moving edge sweeps across each piece's box */
+@keyframes txWipeDiag{from{clip-path:polygon(200% 100%,0% -100%,200% -300%,400% -100%)}to{clip-path:polygon(95% 205%,-105% 5%,95% -195%,295% 5%)}}
+@keyframes txWipeUp{from{clip-path:polygon(200% 0%,0% 200%,200% 400%,400% 200%)}to{clip-path:polygon(95% -105%,-105% 95%,95% 295%,295% 95%)}}
+@keyframes txWipeLo{from{clip-path:polygon(100% -100%,-100% 100%,-300% -100%,-100% -300%)}to{clip-path:polygon(205% 5%,5% 205%,-195% 5%,5% -195%)}}
+@keyframes txWipeTru{from{clip-path:inset(-20% -20% -20% 100%);transform:translateX(14px)}to{clip-path:inset(-20% -20% -20% -20%);transform:none}}
+@keyframes txWipeCo{from{clip-path:inset(-20% 100% -20% -20%);transform:translateX(-14px)}to{clip-path:inset(-20% -20% -20% -20%);transform:none}}
+@keyframes txXCol{from{fill:#F3F5FC}to{fill:#3C64D0}}
+@keyframes txWordCol{from{fill:#F5F6F9}to{fill:#FFFFFF}}
+@keyframes txGlow{0%{filter:drop-shadow(0 0 0 rgba(111,141,220,0))}32%{filter:drop-shadow(0 0 5px rgba(111,141,220,.95))}50%{filter:drop-shadow(0 0 2px rgba(255,255,255,.6))}66%{filter:drop-shadow(0 0 8px rgba(255,255,255,1))}85%{filter:drop-shadow(0 0 0 rgba(255,255,255,0))}100%{filter:drop-shadow(0 0 0 rgba(255,255,255,0))}}
+/* fly: hold centred & big -> charge up -> pull back -> whip to the header with motion blur -> impact pop */
+@keyframes txFly{
+  0%{transform:translate(var(--dx),var(--dy)) scale(calc(var(--S) * 1.06)) rotate(0deg)}
+  51%{transform:translate(var(--dx),var(--dy)) scale(var(--S)) rotate(0deg)}
+  60.4%{transform:translate(var(--dx),var(--dy)) scale(calc(var(--S) * 1.1)) rotate(0deg)}
+  63.3%{transform:translate(calc(var(--dx) * 1.04),calc(var(--dy) * 1.04)) scale(calc(var(--S) * 1.13)) rotate(1deg);animation-timing-function:cubic-bezier(.5,0,.75,0)}
+  67.3%{transform:translate(calc(var(--dx) * .88),calc(var(--dy) * .88)) scale(calc(1 + (var(--S) - 1) * .88)) rotate(-3deg)}
+  71.4%{transform:translate(calc(var(--dx) * .48),calc(var(--dy) * .48)) scale(calc(1 + (var(--S) - 1) * .48)) rotate(-5deg)}
+  75.1%{transform:translate(calc(var(--dx) * .1),calc(var(--dy) * .1)) scale(calc(1 + (var(--S) - 1) * .1)) rotate(-2deg)}
+  77.6%{transform:translate(0px,0px) scale(1) rotate(0deg);animation-timing-function:cubic-bezier(.2,.8,.3,1)}
+  80.4%{transform:translate(0px,0px) scale(1.14) rotate(0deg);animation-timing-function:cubic-bezier(.3,0,.2,1)}
+  86%{transform:translate(0px,0px) scale(1) rotate(0deg)}
+  100%{transform:translate(0px,0px) scale(1) rotate(0deg)}}
+@media (max-width: 720px){.tx-intro{--T:104px;--S:2.2}}
+@media (prefers-reduced-motion: reduce){.tx-intro{display:none}.tx-hdr{animation:none}.bus-intro{animation-delay:0s}}
+</style>
+</helmet>
+<div id="tx-root" style="position: relative; font-family: Inter, system-ui, sans-serif; color: #151923; background: #F5F6F9; font-size: 16px; font-weight: 500; line-height: 1.55">
+
+<!-- INTRO: logo reveal, then the logo flies to the header -->
+<div class="tx-intro" aria-hidden="true" style="{{flyStyle}}">
+<div class="tx-stage">
+<div class="tx-halo"></div>
+<div class="tx-beam" style="--a: -56.1deg; --from: -120vmax; height: calc(10px * var(--S)); animation-delay: .135s"></div>
+<div class="tx-beam" style="--a: 56.2deg; --from: 120vmax; height: calc(7px * var(--S)); animation-delay: .24s"></div>
+<div class="tx-beam" style="--a: -56.1deg; --from: 120vmax; --off: calc(6px * var(--S)); height: 2px; animation-delay: .3s"></div>
+<div class="tx-beam" style="--a: 56.2deg; --from: -120vmax; --off: calc(-5px * var(--S)); height: 2px; animation-delay: .34s"></div>
+<div class="tx-beam" style="--a: 0deg; --from: -120vmax; --off: calc(9px * var(--S)); height: 1px; animation-delay: .375s"></div>
+<div class="tx-spark"></div>
+<div class="tx-panel tx-panel-a"></div>
+<div class="tx-panel tx-panel-b"></div>
+<div class="tx-slash"></div>
+<div class="tx-flash"></div>
+</div><div class="tx-fly">
+<svg viewBox="103 222 335 73" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+<g class="tx-word tx-tru">
+<path d="M135.73,245.95v37.13h-16.03v-37.13h-16.39v-12.76h48.74v12.76h-16.32Z"></path>
+<path d="M204.27,256.76c-1.65,2.47-4.04,4.28-7.18,5.44l11.1,20.89h-17.99l-8.85-18.21h-5.95v18.21h-16.03v-49.9h30.53c3.58,0,6.64.69,9.17,2.07,2.54,1.38,4.45,3.24,5.73,5.58,1.28,2.35,1.920,4.9,1.92,7.65,0,3.05-.83,5.8-2.47,8.27h0ZM189.11,245.88c-.87-.87-1.93-1.31-3.19-1.31h-10.52v9.21h10.52c1.26,0,2.32-.45,3.19-1.34s1.31-1.99,1.31-3.3-.44-2.39-1.31-3.26Z"></path>
+<path d="M257.79,278.59c-4.3,3.58-10.42,5.36-18.35,5.36s-14.06-1.79-18.39-5.36c-4.33-3.58-6.49-8.77-6.490-15.59v-29.81h16.03v29.59c0,2.81.75,5.04,2.25,6.71,1.5,1.67,3.67,2.5,6.53,2.5s5.04-.85,6.56-2.54,2.28-3.92,2.28-6.67v-29.59h16.03v29.81c0,6.82-2.15,12.02-6.46,15.59Z"></path>
+</g>
+<g class="tx-word tx-co">
+<path d="M370.29,237.86c4.3,3.7,6.46,8.98,6.46,15.85h-15.3c0-2.9-.76-5.2-2.28-6.89-1.52-1.69-3.69-2.54-6.49-2.54-3.24,0-5.62,1.02-7.14,3.05s-2.28,4.86-2.28,8.49v4.64c0,3.58.76,6.4,2.28,8.45,1.52,2.06,3.85,3.08,7,3.08s5.44-.8,7.04-2.39,2.39-3.84,2.39-6.74h14.8c0,6.82-2.09,12.04-6.27,15.67-4.18,3.63-10.09,5.44-17.74,5.44-8.51,0-14.95-2.17-19.33-6.53-4.38-4.35-6.56-10.78-6.56-19.29s2.19-14.94,6.56-19.29c4.37-4.35,10.82-6.53,19.33-6.53,7.4,0,13.25,1.85,17.55,5.55h0Z"></path>
+<path d="M430.13,238.91c4.69,4.4,7.04,10.81,7.04,19.22s-2.35,14.82-7.04,19.22c-4.69,4.4-11.34,6.6-19.94,6.6s-15.24-2.19-19.91-6.56-7-10.79-7-19.25,2.33-14.88,7-19.26c4.67-4.37,11.3-6.56,19.910-6.56s15.26,2.2,19.94,6.6h0ZM402.35,247.4c-1.79,2.08-2.68,4.88-2.68,8.42v4.64c0,3.53.89,6.33,2.68,8.42,1.79,2.08,4.4,3.12,7.83,3.12s6.05-1.04,7.87-3.12c1.82-2.08,2.72-4.88,2.72-8.42v-4.64c0-3.53-.91-6.330-2.72-8.42-1.82-2.08-4.44-3.12-7.87-3.12s-6.05,1.04-7.83,3.120Z"></path>
+</g>
+<polygon class="tx-x tx-diag" points="310.97 222.41 303.69 233.26 298.59 240.86 286.62 258.68 270.05 283.38 262.69 294.33 286.62 294.33 293.98 283.38 298.59 276.51 310.55 258.68 327.62 233.26 334.9 222.41 310.97 222.41"></polygon>
+<polygon class="tx-x tx-up" points="297.07 238.6 293.49 233.26 269.56 233.26 285.11 256.42 297.07 238.6"></polygon>
+<polygon class="tx-x tx-lo" points="298.59 276.5 303.2 283.38 327.13 283.38 310.55 258.68 298.59 276.5"></polygon>
+</svg>
+<div class="tx-glint"></div>
+</div>
+</div>
+
+<!-- UTILITY BAR -->
+<div style="background: #0D1016; color: #BCC3D7; font-size: 13px; border-bottom: 1px solid rgba(255,255,255,0.08)">
+<div style="max-width: 1240px; margin: 0 auto; padding: 8px 24px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 24px">
+<span style="display: flex; align-items: center; gap: 8px; color: #8693B6"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 256 256" fill="#8693B6"><path d="M128,64a40,40,0,1,0,40,40A40,40,0,0,0,128,64Zm0,64a24,24,0,1,1,24-24A24,24,0,0,1,128,128Zm0-112a88.1,88.1,0,0,0-88,88c0,31.4,14.51,64.68,42,96.25a254.19,254.19,0,0,0,41.45,38.3,8,8,0,0,0,9.18,0A254.19,254.19,0,0,0,174,200.25c27.45-31.57,42-64.85,42-96.25A88.1,88.1,0,0,0,128,16Zm0,206c-16.53-13-72-60.75-72-118a72,72,0,0,1,144,0C200,161.23,144.53,209,128,222Z"/></svg>Workshop &amp; showroom in Staffanstorp, Sweden — delivering across Europe</span>
+<span style="display: flex; gap: 20px"><a href="mailto:info@truxco.se" style="color: #BCC3D7; text-decoration: none">info@truxco.se</a><a href="#lang" aria-label="Language: English. Switch to Swedish" style="color: #FFFFFF; text-decoration: none; font-weight: 600">EN <span style="color: #8693B6; font-weight: 400">/ SV</span></a></span>
+</div>
+</div>
+
+<!-- HEADER + HERO BAND -->
+<div class="hero-band">
+<header style="background: transparent; position: relative; z-index: 10; padding: 16px 24px 0">
+<div onMouseLeave="{{navLeave}}" style="max-width: 1240px; margin: 0 auto; position: relative">
+<div class="nv-bar-wrap" style="height: 72px; box-sizing: border-box; padding: 0 10px 0 32px; align-items: center; gap: 24px; border-radius: 16px; border: 1px solid rgba(255,255,255,0.10); background: rgba(255,255,255,0.04)">
+<a href="#top" aria-label="Truxco home" style="display: flex; align-items: center; padding: 8px 0"><img id="tx-hdr-logo" class="tx-hdr" src="/_blob/ee05d97b25eaa4cdf0a9b1a60a956924" alt="Truxco" style="height: 28px; width: auto; display: block"></a>
+<nav aria-label="Main" class="nv-desk" style="position: relative">
+<sc-for list="{{items}}" as="it" hint-placeholder-count="5">
+<div class="nv-item" style="position: relative; display: flex; justify-content: center">
+<button type="button" class="nv-btn" aria-haspopup="{{it.popup}}" aria-expanded="{{it.expanded}}" onMouseEnter="{{it.enter}}" onFocus="{{it.enter}}" onClick="{{it.pick}}" style="font: inherit; font-size: 15px; font-weight: 600; height: 48px; padding: 0 22px; border: 0; background: transparent; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; gap: 6px; {{it.colorStyle}}">{{it.label}}<sc-if value="{{it.hasMenu}}" hint-placeholder-val="{{true}}"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="transition: transform .4s cubic-bezier(.34,1.56,.64,1); {{it.caretStyle}}"><path d="M6 9l6 6 6-6"></path></svg></sc-if></button>
+</div>
+</sc-for>
+</nav>
+<div style="display: flex; align-items: center; justify-content: flex-end; gap: 14px">
+<a href="#contact" class="nv-cta nv-desk" style="align-items: center; gap: 10px; background: linear-gradient(135deg, #EAD98F 0%, #DCC86F 45%, #C4A24A 100%); color: #151923; text-decoration: none; font-weight: 600; font-size: 15px; height: 52px; box-sizing: border-box; padding: 0 26px; border-radius: 6px">Talk to us<svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+<button type="button" class="nv-burger" aria-label="{{burgerLabel}}" aria-expanded="{{menuExpanded}}" onClick="{{toggleMenu}}" style="position: relative; z-index: 90; width: 44px; height: 44px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.16); background: rgba(13,16,22,0.5); cursor: pointer; padding: 0"><span class="nv-bar" style="{{bar1}}"></span><span class="nv-bar" style="{{bar2}}"></span><span class="nv-bar" style="{{bar3}}"></span></button>
+</div>
+</div>
+<div class="nv-menu" style="position: absolute; left: 24px; right: 24px; top: calc(100% + 4px); border-radius: 18px; background: #FFFFFF; color: #151923; box-shadow: 0 30px 70px rgba(0,0,0,0.45); transform-origin: top center; transition: opacity .35s ease, transform .5s cubic-bezier(.16,1,.3,1), visibility .35s; {{menuStyle}}">
+<sc-if value="{{show.used}}" hint-placeholder-val="{{true}}">
+<div style="padding: 28px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px">
+<div style="grid-column: span 2; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px">
+<a href="#coaches" class="nv-link nv-in" style="display: flex; gap: 14px; align-items: center; padding: 14px; border-radius: 12px; text-decoration: none; color: #151923"><span style="width: 44px; height: 44px; flex: none; border-radius: 12px; background: #E2E8F8; color: #3050A6; display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="13" rx="3"></rect><path d="M3 11h18M8 4v7M16 4v7"></path><circle cx="7.5" cy="19.5" r="1.5"></circle><circle cx="16.5" cy="19.5" r="1.5"></circle></svg></span><span style="flex: 1"><strong style="display: block; font-size: 15px">Coaches</strong><span style="font-size: 13px; color: #475476">Long‑distance and touring</span></span><svg class="nv-arrow" aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3050A6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+<a href="#city" class="nv-link nv-in" style="display: flex; gap: 14px; align-items: center; padding: 14px; border-radius: 12px; text-decoration: none; color: #151923"><span style="width: 44px; height: 44px; flex: none; border-radius: 12px; background: #E2E8F8; color: #3050A6; display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="15" rx="2"></rect><path d="M4 10h16M12 3v7"></path><circle cx="8" cy="20" r="1.5"></circle><circle cx="16" cy="20" r="1.5"></circle></svg></span><span style="flex: 1"><strong style="display: block; font-size: 15px">City buses</strong><span style="font-size: 13px; color: #475476">Urban, low‑floor, articulated</span></span><svg class="nv-arrow" aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3050A6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+<a href="#mini" class="nv-link nv-in" style="display: flex; gap: 14px; align-items: center; padding: 14px; border-radius: 12px; text-decoration: none; color: #151923"><span style="width: 44px; height: 44px; flex: none; border-radius: 12px; background: #E2E8F8; color: #3050A6; display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 15V8a2 2 0 0 1 2-2h10l5 5v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><path d="M3 11h17M9 6v5"></path><circle cx="7.5" cy="18.5" r="1.5"></circle><circle cx="16.5" cy="18.5" r="1.5"></circle></svg></span><span style="flex: 1"><strong style="display: block; font-size: 15px">Minibuses</strong><span style="font-size: 13px; color: #475476">Shuttle, school, small groups</span></span><svg class="nv-arrow" aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3050A6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+<a href="#electric" class="nv-link nv-in" style="display: flex; gap: 14px; align-items: center; padding: 14px; border-radius: 12px; text-decoration: none; color: #151923"><span style="width: 44px; height: 44px; flex: none; border-radius: 12px; background: #E2F8E8; color: #278641; display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L4 14h7l-1 8 9-12h-7l1-8z"></path></svg></span><span style="flex: 1"><strong style="display: block; font-size: 15px">Electric</strong><span style="font-size: 13px; color: #475476">Battery‑electric and hydrogen</span></span><svg class="nv-arrow" aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3050A6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+</div>
+<a href="#featured" class="nv-in" style="display: flex; flex-direction: column; justify-content: space-between; gap: 16px; padding: 20px; border-radius: 14px; text-decoration: none; color: #FFFFFF; background: #0E162A; min-height: 180px; animation-delay: .2s">
+<span style="font-size: 12px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: #DCC86F">Featured</span>
+<span style="display: flex; flex-direction: column; gap: 4px"><strong style="font-family: Barlow, sans-serif; font-size: 22px">Volvo 9700 HD</strong><span style="font-size: 14px; color: #BCC3D7">2017 · 512,000 km · 53 seats</span><span style="font-family: Barlow, sans-serif; font-weight: 700; font-size: 26px; margin-top: 6px">€129,000</span></span>
+<span style="display: inline-flex; align-items: center; gap: 6px; font-size: 14px; font-weight: 600; color: #9CB1E7">View all buses <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span>
+</a>
+</div>
+</sc-if>
+<sc-if value="{{show.electric}}" hint-placeholder-val="{{false}}">
+<div style="padding: 28px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px">
+<a href="#ebus" class="nv-link nv-in" style="display: flex; gap: 14px; align-items: center; padding: 14px; border-radius: 12px; text-decoration: none; color: #151923"><span style="width: 44px; height: 44px; flex: none; border-radius: 12px; background: #E2F8E8; color: #278641; display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L4 14h7l-1 8 9-12h-7l1-8z"></path></svg></span><span><strong style="display: block; font-size: 15px">Electric buses</strong><span style="font-size: 13px; color: #475476">Battery‑electric city and coach</span></span></a>
+<a href="#h2" class="nv-link nv-in" style="display: flex; gap: 14px; align-items: center; padding: 14px; border-radius: 12px; text-decoration: none; color: #151923"><span style="width: 44px; height: 44px; flex: none; border-radius: 12px; background: #E2F8E8; color: #278641; display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c3 4 6 7 6 11a6 6 0 0 1-12 0c0-4 3-7 6-11z"></path></svg></span><span><strong style="display: block; font-size: 15px">Hydrogen</strong><span style="font-size: 13px; color: #475476">Fuel‑cell buses</span></span></a>
+<a href="#charging" class="nv-link nv-in" style="display: flex; gap: 14px; align-items: center; padding: 14px; border-radius: 12px; text-decoration: none; color: #151923"><span style="width: 44px; height: 44px; flex: none; border-radius: 12px; background: #E2F8E8; color: #278641; display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="16" height="10" rx="2"></rect><path d="M22 11v2M6 10v4M10 10v4"></path></svg></span><span><strong style="display: block; font-size: 15px">Range &amp; charging</strong><span style="font-size: 13px; color: #475476">Advice before you buy</span></span></a>
+</div>
+</sc-if>
+<sc-if value="{{show.sell}}" hint-placeholder-val="{{false}}">
+<div style="padding: 28px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px">
+<a href="#valuation" class="nv-link nv-in" style="display: flex; gap: 14px; align-items: center; padding: 14px; border-radius: 12px; text-decoration: none; color: #151923"><span style="width: 44px; height: 44px; flex: none; border-radius: 12px; background: #F8E2F4; color: #A63090; display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12l-8 8-9-9V3h8z"></path><circle cx="7.5" cy="7.5" r="1.5"></circle></svg></span><span><strong style="display: block; font-size: 15px">Free valuation</strong><span style="font-size: 13px; color: #475476">An offer within 24 hours</span></span></a>
+<a href="#how" class="nv-link nv-in" style="display: flex; gap: 14px; align-items: center; padding: 14px; border-radius: 12px; text-decoration: none; color: #151923"><span style="width: 44px; height: 44px; flex: none; border-radius: 12px; background: #F8E2F4; color: #A63090; display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 3"></path></svg></span><span><strong style="display: block; font-size: 15px">How selling works</strong><span style="font-size: 13px; color: #475476">Three simple steps</span></span></a>
+<a href="#collect" class="nv-link nv-in" style="display: flex; gap: 14px; align-items: center; padding: 14px; border-radius: 12px; text-decoration: none; color: #151923"><span style="width: 44px; height: 44px; flex: none; border-radius: 12px; background: #F8E2F4; color: #A63090; display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7"></path><circle cx="7" cy="18" r="1.5"></circle><circle cx="17" cy="18" r="1.5"></circle></svg></span><span><strong style="display: block; font-size: 15px">We collect the bus</strong><span style="font-size: 13px; color: #475476">Anywhere in Europe</span></span></a>
+</div>
+</sc-if>
+<sc-if value="{{show.services}}" hint-placeholder-val="{{false}}">
+<div style="padding: 28px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px">
+<a href="#rental" class="nv-link nv-in" style="display: flex; gap: 14px; align-items: center; padding: 14px; border-radius: 12px; text-decoration: none; color: #151923"><span style="width: 44px; height: 44px; flex: none; border-radius: 12px; background: #F8F4E2; color: #635622; display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="15" r="4"></circle><path d="M10.8 12.2L21 2M18 5l3 3M15 8l2 2"></path></svg></span><span><strong style="display: block; font-size: 15px">Bus rental</strong><span style="font-size: 13px; color: #475476">Short‑ and long‑term</span></span></a>
+<a href="#workshop" class="nv-link nv-in" style="display: flex; gap: 14px; align-items: center; padding: 14px; border-radius: 12px; text-decoration: none; color: #151923"><span style="width: 44px; height: 44px; flex: none; border-radius: 12px; background: #F8F4E2; color: #635622; display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 0 0 5 5L22 14l-8 8-2.3-2.3a4 4 0 0 0-5-5L4 12l8-8z"></path></svg></span><span><strong style="display: block; font-size: 15px">Workshop &amp; repairs</strong><span style="font-size: 13px; color: #475476">In Staffanstorp, Sweden</span></span></a>
+<a href="#export" class="nv-link nv-in" style="display: flex; gap: 14px; align-items: center; padding: 14px; border-radius: 12px; text-decoration: none; color: #151923"><span style="width: 44px; height: 44px; flex: none; border-radius: 12px; background: #F8F4E2; color: #635622; display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"></path></svg></span><span><strong style="display: block; font-size: 15px">Export &amp; delivery</strong><span style="font-size: 13px; color: #475476">Paperwork handled for you</span></span></a>
+</div>
+</sc-if>
+</div>
+</div>
+<nav aria-label="Mobile" class="nv-overlay {{mobileOpenClass}}" style="position: fixed; inset: 0; z-index: 80; background: #0D1016; padding: 104px 24px 32px; box-sizing: border-box; display: flex; flex-direction: column; justify-content: space-between; {{overlayStyle}}">
+<ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column"><li class="nv-row" style="border-bottom: 1px solid rgba(255,255,255,0.1)"><a href="#top" onClick="{{closeMenu}}" class="nv-mlink" style="display: flex; justify-content: space-between; align-items: center; padding: 18px 0; text-decoration: none; color: #FFFFFF; font-family: Barlow, sans-serif; font-weight: 700; font-size: 30px">Home<svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#9CB1E7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a></li><li class="nv-row" style="border-bottom: 1px solid rgba(255,255,255,0.1)"><a href="#buses" onClick="{{closeMenu}}" class="nv-mlink" style="display: flex; justify-content: space-between; align-items: center; padding: 18px 0; text-decoration: none; color: #FFFFFF; font-family: Barlow, sans-serif; font-weight: 700; font-size: 30px">Buses<svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#9CB1E7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a></li><li class="nv-row" style="border-bottom: 1px solid rgba(255,255,255,0.1)"><a href="#workshop" onClick="{{closeMenu}}" class="nv-mlink" style="display: flex; justify-content: space-between; align-items: center; padding: 18px 0; text-decoration: none; color: #FFFFFF; font-family: Barlow, sans-serif; font-weight: 700; font-size: 30px">About<svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#9CB1E7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a></li><li class="nv-row" style="border-bottom: 1px solid rgba(255,255,255,0.1)"><a href="#contact" onClick="{{closeMenu}}" class="nv-mlink" style="display: flex; justify-content: space-between; align-items: center; padding: 18px 0; text-decoration: none; color: #FFFFFF; font-family: Barlow, sans-serif; font-weight: 700; font-size: 30px">Contact us<svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#9CB1E7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a></li></ul>
+<div class="nv-foot" style="display: flex; flex-direction: column; gap: 12px">
+<a href="#contact" onClick="{{closeMenu}}" style="display: flex; align-items: center; justify-content: center; gap: 8px; background: linear-gradient(135deg, #EAD98F 0%, #DCC86F 45%, #C4A24A 100%); color: #151923; text-decoration: none; font-weight: 600; font-size: 16px; padding: 16px; border-radius: 6px">Talk to us</a>
+<a href="tel:+46102070444" style="display: flex; align-items: center; justify-content: center; color: #FFFFFF; text-decoration: none; font-weight: 600; font-size: 15px; padding: 14px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.18)">Call +46 10 207 04 44</a>
+</div>
+</nav>
+</header>
+
+<!-- HERO -->
+<section id="top" class="hero-bg" style="color: #FFFFFF; padding: 64px 24px; position: relative; z-index: 1">
+<div style="max-width: 1240px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 20px">
+<h1 style="margin: 0; font-family: 'Barlow', sans-serif; font-weight: 700; font-size: clamp(38px, 4.6vw, 60px); line-height: 1.05; letter-spacing: -0.01em">BUY and SELL Buses in Europe</h1>
+<p style="margin: 0; font-size: 18px; line-height: 1.6; color: #D9DDE8">With 200+ inspected buses, we have just the right one for your fleet</p>
+<form role="search" aria-label="Search buses" style="margin-top: 12px; width: 100%; max-width: 860px; box-sizing: border-box; background: #FFFFFF; border-radius: 16px; padding: 0; overflow: hidden; display: flex; flex-wrap: wrap; align-items: stretch; gap: 0; box-shadow: 0 16px 40px rgba(0,0,0,0.25); text-align: left">
+<label for="q-make" class="sr-only">Bus make or model</label>
+<input id="q-make" type="text" placeholder="Bus make or model" style="flex: 1.2 1 220px; min-width: 0; height: 72px; box-sizing: border-box; font: inherit; font-size: 15px; font-weight: 400; color: #151923; padding: 0 16px 0 26px; border: 0; border-right: 1px solid #D9DDE8; border-radius: 0; background: #FFFFFF">
+<label for="q-country" class="sr-only">Country</label>
+<div style="flex: 1 1 180px; min-width: 0; position: relative; display: flex; align-items: center">
+<select id="q-country" style="font: inherit; font-size: 15px; font-weight: 400; height: 72px; width: 100%; padding: 0 40px 0 16px; border: 0; background: transparent; color: #475476; appearance: none; -webkit-appearance: none; cursor: pointer"><option>All countries</option><option>Sweden</option><option>Germany</option><option>Netherlands</option><option>Poland</option></select>
+<span style="position: absolute; right: 16px; color: #475476; pointer-events: none; display: flex"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 256 256" fill="currentColor" style="flex: none"><path d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"></path></svg></span>
+</div>
+<label for="q-price" class="sr-only">Price range</label>
+<div style="flex: 1 1 180px; min-width: 0; position: relative; display: flex; align-items: center; border-left: 1px solid #D9DDE8">
+<select id="q-price" style="font: inherit; font-size: 15px; font-weight: 400; height: 72px; width: 100%; padding: 0 40px 0 16px; border: 0; background: transparent; color: #475476; appearance: none; -webkit-appearance: none; cursor: pointer"><option>Price range</option><option>Up to €50,000</option><option>€50,000–€100,000</option><option>€100,000+</option></select>
+<span style="position: absolute; right: 16px; color: #475476; pointer-events: none; display: flex"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 256 256" fill="currentColor" style="flex: none"><path d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"></path></svg></span>
+</div>
+<button type="submit" class="sb-btn" aria-label="Search" style="flex: 0 0 88px; height: 72px; display: flex; align-items: center; justify-content: center; background: #278641; color: #FFFFFF; border: 0; border-radius: 0; cursor: pointer; padding: 0"><svg aria-hidden="true" width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"></circle><path d="M20 20l-3.6-3.6"></path></svg></button>
+</form>
+
+<div aria-label="Truxco in numbers" role="group" style="margin-top: 36px; width: 100%; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 32px; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 24px; text-align: left"><div style="display: flex; gap: 16px; align-items: flex-start"><svg aria-hidden="true" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#DCC86F" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="flex: none; margin-top: 8px"><path d="M6 4h12a2 2 0 0 1 2 2v10H4V6a2 2 0 0 1 2-2zM4 11h16M8 19v-3M16 19v-3M7.5 14h.01M16.5 14h.01"></path></svg><div style="display: flex; flex-direction: column; gap: 4px"><span style="font-family: 'Barlow', sans-serif; font-weight: 700; font-size: 40px; line-height: 1.05; letter-spacing: -0.01em; color: #FFFFFF">200+</span><span style="font-size: 15px; color: #BCC3D7">Buses in stock</span></div></div><div style="display: flex; gap: 16px; align-items: flex-start"><svg aria-hidden="true" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#DCC86F" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="flex: none; margin-top: 8px"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3c2.5 2.7 3.8 5.7 3.8 9s-1.3 6.3-3.8 9c-2.5-2.7-3.8-5.7-3.8-9S9.5 5.7 12 3z"></path></svg><div style="display: flex; flex-direction: column; gap: 4px"><span style="font-family: 'Barlow', sans-serif; font-weight: 700; font-size: 40px; line-height: 1.05; letter-spacing: -0.01em; color: #FFFFFF">24</span><span style="font-size: 15px; color: #BCC3D7">Countries delivered to</span></div></div><div style="display: flex; gap: 16px; align-items: flex-start"><svg aria-hidden="true" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#DCC86F" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="flex: none; margin-top: 8px"><circle cx="9" cy="8" r="3.2"></circle><path d="M3.5 19c.7-3 2.9-4.6 5.5-4.6s4.8 1.6 5.5 4.6"></path><circle cx="17" cy="9" r="2.6"></circle><path d="M15.5 14.6c2.3.2 4 1.7 4.8 4.4"></path></svg><div style="display: flex; flex-direction: column; gap: 4px"><span style="font-family: 'Barlow', sans-serif; font-weight: 700; font-size: 40px; line-height: 1.05; letter-spacing: -0.01em; color: #FFFFFF">1,400+</span><span style="font-size: 15px; color: #BCC3D7">Happy buyers</span></div></div><div style="display: flex; gap: 16px; align-items: flex-start"><svg aria-hidden="true" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#DCC86F" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="flex: none; margin-top: 8px"><rect x="4" y="5" width="16" height="15" rx="2"></rect><path d="M4 10h16M9 3v4M15 3v4M9 15l2 2 4-4"></path></svg><div style="display: flex; flex-direction: column; gap: 4px"><span style="font-family: 'Barlow', sans-serif; font-weight: 700; font-size: 40px; line-height: 1.05; letter-spacing: -0.01em; color: #FFFFFF">10+ years</span><span style="font-size: 15px; color: #BCC3D7">In the bus business</span></div></div></div>
+</div>
+</section>
+
+</div>
+
+
+<!-- LISTINGS -->
+<section id="buses" style="padding: 96px 24px 96px">
+<div style="max-width: 1240px; margin: 0 auto; display: flex; flex-direction: column; gap: 36px">
+<div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 16px">
+<div style="display: flex; flex-direction: column; gap: 10px">
+<p style="margin: 0; font-size: 13px; font-weight: 600; color: #3050A6; letter-spacing: 0.08em; text-transform: uppercase">Featured listings</p>
+<h2 style="margin: 0; font-family: 'Barlow', sans-serif; font-weight: 700; font-size: 44px; line-height: 1.08; letter-spacing: -0.01em">Latest buses in stock</h2>
+</div>
+<div style="display: flex; align-items: center; gap: 8px">
+<a href="#all" style="font-weight: 600; font-size: 15px; text-decoration: none; padding: 12px 10px">View all buses</a>
+<button type="button" aria-label="Previous buses" style="width: 44px; height: 44px; border-radius: 8px; border: 1px solid #BCC3D7; background: #FFFFFF; color: #8693B6; display: flex; align-items: center; justify-content: center; cursor: pointer"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 256 256" fill="currentColor"><path d="M224,128a8,8,0,0,1-8,8H59.31l58.35,58.34a8,8,0,0,1-11.32,11.32l-72-72a8,8,0,0,1,0-11.32l72-72a8,8,0,0,1,11.32,11.32L59.31,120H216A8,8,0,0,1,224,128Z"/></svg></button>
+<button type="button" aria-label="Next buses" style="width: 44px; height: 44px; border-radius: 8px; border: 0; background: #0E162A; color: #FFFFFF; display: flex; align-items: center; justify-content: center; cursor: pointer"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 256 256" fill="currentColor"><path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"/></svg></button>
+</div>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(270px, 1fr)); gap: 24px">
+<sc-for list="{{listings}}" as="bus" hint-placeholder-count="4">
+<article style="background: #FFFFFF; border: 1px solid #D9DDE8; border-radius: 12px; overflow: hidden; display: flex; flex-direction: column; box-shadow: 0 1px 2px rgba(13,16,22,0.04)">
+<div style="position: relative; background: #ECEEF4; aspect-ratio: 3 / 2; overflow: hidden">
+<img src="{{bus.img}}" alt="{{bus.alt}}" style="width: 100%; height: 100%; object-fit: cover; display: block">
+<span style="position: absolute; top: 12px; left: 12px; background: #FFFFFF; color: #151923; font-size: 12px; font-weight: 600; padding: 5px 10px; border-radius: 6px; box-shadow: 0 1px 3px rgba(13,16,22,0.18)">{{bus.type}}</span>
+</div>
+<div style="padding: 20px; display: flex; flex-direction: column; gap: 16px; flex: 1">
+<div style="display: flex; flex-direction: column; gap: 4px">
+<h3 style="margin: 0; font-family: 'Barlow', sans-serif; font-weight: 700; font-size: 18px; line-height: 1.3">{{bus.name}}</h3>
+<p style="margin: 0; font-family: 'Barlow', sans-serif; font-weight: 700; font-size: 24px; letter-spacing: -0.01em">{{bus.price}} <span style="font-family: Inter, sans-serif; font-size: 13px; font-weight: 400; color: #475476; letter-spacing: 0">excl. VAT</span></p>
+</div>
+<dl style="margin: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-top: 1px solid #D9DDE8; border-bottom: 1px solid #D9DDE8; padding: 12px 0">
+<div><dt style="font-size: 12px; color: #475476">Year</dt><dd style="margin: 0; font-size: 14px; font-weight: 600">{{bus.year}}</dd></div>
+<div style="border-left: 1px solid #D9DDE8; padding-left: 12px"><dt style="font-size: 12px; color: #475476">Mileage (km)</dt><dd style="margin: 0; font-size: 14px; font-weight: 600">{{bus.km}}</dd></div>
+<div style="border-left: 1px solid #D9DDE8; padding-left: 12px"><dt style="font-size: 12px; color: #475476">Seats</dt><dd style="margin: 0; font-size: 14px; font-weight: 600">{{bus.seats}}</dd></div>
+</dl>
+<p style="margin: 0; display: flex; align-items: center; gap: 6px; font-size: 13px; color: #475476">
+<svg aria-hidden="true" width="16" height="16" viewBox="0 0 256 256" fill="#278641" style="flex: none"><path d="M208,40H48A16,16,0,0,0,32,56v56c0,52.72,25.52,84.67,46.93,102.19,23.06,18.86,46,25.26,47,25.53a8,8,0,0,0,4.2,0c1-.27,23.91-6.67,47-25.53C198.48,196.67,224,164.72,224,112V56A16,16,0,0,0,208,40Zm0,72c0,37.07-13.66,67.16-40.6,89.42A129.3,129.3,0,0,1,128,223.62a128.25,128.25,0,0,1-38.92-21.81C61.82,179.51,48,149.3,48,112l0-56,160,0ZM82.34,141.66a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35a8,8,0,0,1,11.32,11.32l-56,56a8,8,0,0,1-11.32,0Z"/></svg>
+<span style="min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">Inspected · {{bus.euro}} · Staffanstorp</span></p>
+<div style="display: flex; gap: 8px; margin-top: auto">
+<a href="#enquire" style="flex: 1; text-align: center; background: #278641; color: #FFFFFF; text-decoration: none; font-weight: 600; font-size: 14px; padding: 12px; border-radius: 8px">Send enquiry</a>
+<a href="#details" style="flex: 1; text-align: center; background: #FFFFFF; color: #151923; text-decoration: none; font-weight: 600; font-size: 14px; padding: 11px; border-radius: 8px; border: 1px solid #BCC3D7">View details</a>
+</div>
+</div>
+</article>
+</sc-for>
+</div>
+</div>
+</section>
+
+<!-- WORKSHOP -->
+<section id="workshop" style="background: #0E162A; color: #FFFFFF; padding: 96px 24px">
+<div style="max-width: 1240px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 480px), 1fr)); gap: 64px; align-items: center">
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px">
+<img src="/_blob/0193772cb4b4317af6d3c05cecf893c7" alt="Technician kneeling to service a coach wheel" style="grid-column: 1 / -1; width: 100%; aspect-ratio: 16 / 10; object-fit: cover; border-radius: 12px; display: block">
+<img src="/_blob/03098c5ff2640a90b260b97b659f66b3" alt="Truxco dealer shaking hands with a bus operator in front of a white coach" style="width: 100%; aspect-ratio: 1 / 1; object-fit: cover; object-position: 50% 40%; border-radius: 12px; display: block">
+<img src="/_blob/b219334c5232952a5512e93e12d660d7" alt="Registration papers and keys handed over at delivery of a white coach" style="width: 100%; aspect-ratio: 1 / 1; object-fit: cover; border-radius: 12px; display: block">
+</div>
+<div style="display: flex; flex-direction: column; gap: 28px">
+<p style="margin: 0; font-size: 13px; font-weight: 600; color: #9CB1E7; letter-spacing: 0.08em; text-transform: uppercase">Our own workshop</p>
+<h2 style="margin: 0; font-family: 'Barlow', sans-serif; font-weight: 700; font-size: 44px; line-height: 1.08; letter-spacing: -0.01em">Buying a bus shouldn’t be hard work.</h2>
+<p style="margin: 0; font-size: 18px; color: #BCC3D7; line-height: 1.65">Every bus we sell passes through our workshop in Staffanstorp first. Our technicians refurbish, service and inspect it — so it arrives ready for the road, not ready for repairs.</p>
+<ol style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; border-top: 1px solid rgba(255,255,255,0.12)">
+<li style="display: flex; gap: 20px; padding: 20px 0; border-bottom: 1px solid rgba(255,255,255,0.12)"><span style="font-family: 'Barlow', sans-serif; font-weight: 700; font-size: 15px; color: #3C64D0; min-width: 24px">01</span><div><strong style="display: block; font-size: 17px">We buy direct</strong><span style="font-size: 15px; color: #BCC3D7">From operators and fleets. No middlemen, known history.</span></div></li>
+<li style="display: flex; gap: 20px; padding: 20px 0; border-bottom: 1px solid rgba(255,255,255,0.12)"><span style="font-family: 'Barlow', sans-serif; font-weight: 700; font-size: 15px; color: #3C64D0; min-width: 24px">02</span><div><strong style="display: block; font-size: 17px">We refurbish and inspect</strong><span style="font-size: 15px; color: #BCC3D7">Service, repairs and a full inspection in our own workshop.</span></div></li>
+<li style="display: flex; gap: 20px; padding: 20px 0; border-bottom: 1px solid rgba(255,255,255,0.12)"><span style="font-family: 'Barlow', sans-serif; font-weight: 700; font-size: 15px; color: #3C64D0; min-width: 24px">03</span><div><strong style="display: block; font-size: 17px">We deliver, papers included</strong><span style="font-size: 15px; color: #BCC3D7">Transport, export documents and registration support.</span></div></li>
+</ol>
+<a href="#about" style="align-self: flex-start; display: inline-flex; align-items: center; gap: 10px; background: #FFFFFF; color: #151923; text-decoration: none; font-weight: 600; font-size: 15px; padding: 14px 22px; border-radius: 8px">More about Truxco
+<svg aria-hidden="true" width="16" height="16" viewBox="0 0 256 256" fill="currentColor"><path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"/></svg></a>
+</div>
+</div>
+</section>
+
+<!-- SERVICES -->
+<section id="services" style="padding: 96px 24px 48px; background: #F5F6F9">
+<div style="max-width: 1240px; margin: 0 auto; display: flex; flex-direction: column; gap: 48px">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 24px">
+<div style="display: flex; flex-direction: column; gap: 10px; max-width: 620px">
+<p style="margin: 0; font-size: 13px; font-weight: 600; color: #3050A6; letter-spacing: 0.08em; text-transform: uppercase">Our services</p>
+<h2 style="margin: 0; font-family: 'Barlow', sans-serif; font-weight: 700; font-size: 44px; line-height: 1.08; letter-spacing: -0.01em">How we make it simple for you</h2>
+</div>
+<p style="margin: 0; font-size: 17px; color: #475476; max-width: 420px">Buying, selling, renting and servicing buses — all under one roof in Staffanstorp.</p>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px">
+<div style="background: #FFFFFF; border: 1px solid #D9DDE8; border-radius: 12px; padding: 32px; display: flex; flex-direction: column; gap: 24px">
+<span style="width: 60px; height: 60px; border-radius: 12px; background: #E2F8E8; display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="34" height="34" viewBox="0 0 256 256" fill="#278641"><path d="M48,184H88v24a8,8,0,0,1-8,8H56a8,8,0,0,1-8-8Zm120,24a8,8,0,0,0,8,8h24a8,8,0,0,0,8-8V184H168ZM48,72v40H208V72Z" opacity="0.2"/><path d="M184,32H72A32,32,0,0,0,40,64V208a16,16,0,0,0,16,16H80a16,16,0,0,0,16-16V192h64v16a16,16,0,0,0,16,16h24a16,16,0,0,0,16-16V64A32,32,0,0,0,184,32ZM56,176V120H200v56Zm0-96H200v24H56ZM72,48H184a16,16,0,0,1,16,16H56A16,16,0,0,1,72,48Zm8,160H56V192H80Zm96,0V192h24v16Zm-72-60a12,12,0,1,1-12-12A12,12,0,0,1,104,148Zm72,0a12,12,0,1,1-12-12A12,12,0,0,1,176,148Zm72-68v24a8,8,0,0,1-16,0V80a8,8,0,0,1,16,0ZM24,80v24a8,8,0,0,1-16,0V80a8,8,0,0,1,16,0Z"/></svg></span>
+<div style="display: flex; flex-direction: column; gap: 6px"><span style="font-size: 12px; font-weight: 600; color: #475476; text-transform: uppercase; letter-spacing: 0.08em">For buyers</span><h3 style="margin: 0; font-family: 'Barlow', sans-serif; font-weight: 700; font-size: 24px">Buy a bus</h3></div>
+<ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 12px; font-size: 15px; color: #475476">
+<li style="display: flex; gap: 10px"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 256 256" fill="#278641" style="flex: none; margin-top: 3px"><path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"/></svg>Coaches, city buses and minibuses, ready to deliver</li>
+<li style="display: flex; gap: 10px"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 256 256" fill="#278641" style="flex: none; margin-top: 3px"><path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"/></svg>Cross‑border transport and export documents</li>
+</ul>
+<a href="#buses" style="margin-top: auto; color: #278641; font-weight: 600; font-size: 15px; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; padding: 10px 0">Browse buses <svg aria-hidden="true" width="16" height="16" viewBox="0 0 256 256" fill="currentColor"><path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"/></svg></a>
+</div>
+<div style="background: #FFFFFF; border: 1px solid #D9DDE8; border-radius: 12px; padding: 32px; display: flex; flex-direction: column; gap: 24px">
+<span style="width: 60px; height: 60px; border-radius: 12px; background: #E2E8F8; display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="34" height="34" viewBox="0 0 256 256" fill="#3050A6"><path d="M224,96a64,64,0,0,1-94.94,56L73,217A24,24,0,0,1,39,183L104,126.94a64,64,0,0,1,80-90.29L144,80l5.66,26.34L176,112l43.35-40A63.8,63.8,0,0,1,224,96Z" opacity="0.2"/><path d="M226.76,69a8,8,0,0,0-12.84-2.88l-40.3,37.19-17.23-3.7-3.7-17.23,37.19-40.3A8,8,0,0,0,187,29.24,72,72,0,0,0,88,96,72.34,72.34,0,0,0,94,124.94L33.79,177c-.15.12-.29.26-.43.39a32,32,0,0,0,45.26,45.26c.13-.13.27-.28.39-.42L131.06,162A72,72,0,0,0,232,96,71.56,71.56,0,0,0,226.76,69ZM160,152a56.14,56.14,0,0,1-27.07-7,8,8,0,0,0-9.92,1.77L67.11,211.51a16,16,0,0,1-22.62-22.62L109.18,133a8,8,0,0,0,1.77-9.93,56,56,0,0,1,58.36-82.31l-31.2,33.81a8,8,0,0,0-1.94,7.1L141.83,108a8,8,0,0,0,6.14,6.14l26.35,5.66a8,8,0,0,0,7.1-1.94l33.81-31.2A56.06,56.06,0,0,1,160,152Z"/></svg></span>
+<div style="display: flex; flex-direction: column; gap: 6px"><span style="font-size: 12px; font-weight: 600; color: #475476; text-transform: uppercase; letter-spacing: 0.08em">For operators</span><h3 style="margin: 0; font-family: 'Barlow', sans-serif; font-weight: 700; font-size: 24px">Run your fleet</h3></div>
+<ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 12px; font-size: 15px; color: #475476">
+<li style="display: flex; gap: 10px"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 256 256" fill="#3050A6" style="flex: none; margin-top: 3px"><path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"/></svg>Short‑ and long‑term bus rental for extra capacity</li>
+<li style="display: flex; gap: 10px"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 256 256" fill="#3050A6" style="flex: none; margin-top: 3px"><path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"/></svg>Workshop service and repairs</li>
+</ul>
+<a href="#contact" style="margin-top: auto; color: #3050A6; font-weight: 600; font-size: 15px; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; padding: 10px 0">Talk to our team <svg aria-hidden="true" width="16" height="16" viewBox="0 0 256 256" fill="currentColor"><path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"/></svg></a>
+</div>
+<div style="background: #FFFFFF; border: 1px solid #D9DDE8; border-radius: 12px; padding: 32px; display: flex; flex-direction: column; gap: 24px">
+<span style="width: 60px; height: 60px; border-radius: 12px; background: #F8E2F4; display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="34" height="34" viewBox="0 0 256 256" fill="#A63090"><path d="M16,152H48v56H16a8,8,0,0,1-8-8V160A8,8,0,0,1,16,152ZM204,56a28,28,0,0,0-12,2.71h0A28,28,0,1,0,176,85.29h0A28,28,0,1,0,204,56Z" opacity="0.2"/><path d="M230.33,141.06a24.43,24.43,0,0,0-21.24-4.23l-41.84,9.62A28,28,0,0,0,140,112H89.94a31.82,31.82,0,0,0-22.63,9.37L44.69,144H16A16,16,0,0,0,0,160v40a16,16,0,0,0,16,16H120a7.93,7.93,0,0,0,1.94-.24l64-16a6.94,6.94,0,0,0,1.19-.4L226,182.82l.44-.2a24.6,24.6,0,0,0,3.93-41.56ZM16,160H40v40H16Zm203.43,8.21-38,16.18L119,200H56V155.31l22.63-22.62A15.86,15.86,0,0,1,89.94,128H140a12,12,0,0,1,0,24H112a8,8,0,0,0,0,16h32a8.32,8.32,0,0,0,1.79-.2l67-15.41.31-.08a8.6,8.6,0,0,1,6.3,15.9ZM164,96a36,36,0,0,0,5.9-.48,36,36,0,1,0,28.22-47A36,36,0,1,0,164,96Zm60-12a20,20,0,1,1-20-20A20,20,0,0,1,224,84ZM164,40a20,20,0,0,1,19.25,14.61,36,36,0,0,0-15,24.93A20.42,20.42,0,0,1,164,80a20,20,0,0,1,0-40Z"/></svg></span>
+<div style="display: flex; flex-direction: column; gap: 6px"><span style="font-size: 12px; font-weight: 600; color: #475476; text-transform: uppercase; letter-spacing: 0.08em">For sellers</span><h3 style="margin: 0; font-family: 'Barlow', sans-serif; font-weight: 700; font-size: 24px">Sell your bus</h3></div>
+<ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 12px; font-size: 15px; color: #475476">
+<li style="display: flex; gap: 10px"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 256 256" fill="#A63090" style="flex: none; margin-top: 3px"><path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"/></svg>We buy directly from operators and fleets</li>
+<li style="display: flex; gap: 10px"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 256 256" fill="#A63090" style="flex: none; margin-top: 3px"><path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"/></svg>Offer within 24 hours, no obligation</li>
+</ul>
+<a href="#sell" style="margin-top: auto; color: #A63090; font-weight: 600; font-size: 15px; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; padding: 10px 0">Get a free valuation <svg aria-hidden="true" width="16" height="16" viewBox="0 0 256 256" fill="currentColor"><path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"/></svg></a>
+</div>
+</div>
+</div>
+</section>
+
+<!-- CATEGORIES -->
+<section aria-labelledby="cat-h" style="padding: 48px 24px">
+<div style="max-width: 1240px; margin: 0 auto; display: flex; flex-direction: column; gap: 40px">
+<div style="display: flex; flex-direction: column; gap: 10px; max-width: 640px">
+<p style="margin: 0; font-size: 13px; font-weight: 600; color: #3050A6; letter-spacing: 0.08em; text-transform: uppercase">Shop by type</p>
+<h2 id="cat-h" style="margin: 0; font-family: 'Barlow', sans-serif; font-weight: 700; font-size: 44px; line-height: 1.08; letter-spacing: -0.01em">From city routes to long‑distance touring</h2>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px">
+<sc-for list="{{categories}}" as="c" hint-placeholder-count="4">
+<a href="#buses" class="sr-card" style="display: flex; flex-direction: column; border-radius: 12px; overflow: hidden; border: 1px solid #D9DDE8; background: #FFFFFF; text-decoration: none; color: #151923">
+<div class="sr-stage" style="position: relative; height: 210px; display: flex; align-items: center; justify-content: center">
+<img src="{{c.img}}" alt="" style="position: relative; width: {{c.w}}; height: auto; display: block">
+</div>
+<div style="padding: 24px; display: flex; flex-direction: column; gap: 4px; flex: 1">
+<span style="font-size: 12px; font-weight: 600; color: #3050A6; letter-spacing: 0.08em; text-transform: uppercase">{{c.tag}}</span>
+<strong style="font-family: 'Barlow', sans-serif; font-weight: 700; font-size: 20px; margin-top: 4px">{{c.name}}</strong>
+<span style="font-size: 15px; color: #475476">{{c.desc}}</span>
+<span style="position: relative; height: 1px; background: #ECEEF4; margin: 16px 0 12px"><span class="sr-line" style="position: absolute; left: 0; top: 0; height: 1px; width: 28px; background: #3050A6"></span></span>
+<span class="sr-link" style="display: flex; justify-content: space-between; align-items: center; font-size: 15px; font-weight: 600; color: #3050A6">{{c.cta}}<svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span>
+</div>
+</a>
+</sc-for>
+</div>
+</div>
+</section>
+
+<!-- TESTIMONIAL -->
+<section aria-labelledby="t-h" style="background: #FFFFFF; padding: 96px 24px">
+<div style="max-width: 1240px; margin: 0 auto; border-top: 1px solid #D9DDE8; padding-top: 48px; display: flex; flex-wrap: wrap; gap: 40px 96px">
+<div style="flex: 0 1 320px; display: flex; flex-direction: column; gap: 20px">
+<p style="margin: 0; font-size: 13px; font-weight: 600; color: #3050A6; letter-spacing: 0.1em; text-transform: uppercase">Trusted by operators</p>
+<h2 id="t-h" style="margin: 0; font-family: 'Barlow', sans-serif; font-weight: 700; font-size: 44px; line-height: 1.05">In their words</h2>
+<p style="margin: 0; display: flex; align-items: baseline; gap: 6px; font-family: 'Barlow', sans-serif"><span style="font-weight: 700; font-size: 28px">01</span><span style="font-weight: 600; font-size: 16px; color: #475476">/ 03</span></p>
+<div style="display: flex; gap: 10px">
+<button type="button" aria-label="Previous review" style="width: 44px; height: 44px; border-radius: 8px; border: 1px solid #BCC3D7; background: #FFFFFF; color: #8693B6; display: flex; align-items: center; justify-content: center; cursor: pointer"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 256 256" fill="currentColor"><path d="M224,128a8,8,0,0,1-8,8H59.31l58.35,58.34a8,8,0,0,1-11.32,11.32l-72-72a8,8,0,0,1,0-11.32l72-72a8,8,0,0,1,11.32,11.32L59.31,120H216A8,8,0,0,1,224,128Z"/></svg></button>
+<button type="button" aria-label="Next review" style="width: 44px; height: 44px; border-radius: 8px; border: 0; background: #0E162A; color: #FFFFFF; display: flex; align-items: center; justify-content: center; cursor: pointer"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 256 256" fill="currentColor"><path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"/></svg></button>
+</div>
+</div>
+<figure style="flex: 999 1 520px; min-width: 0; margin: 0; display: flex; flex-direction: column; gap: 40px">
+<blockquote style="margin: 0; font-family: 'Barlow', sans-serif; font-weight: 500; font-size: clamp(26px, 2.7vw, 38px); line-height: 1.3; letter-spacing: -0.005em; color: #151923">Truxco found us three coaches in two weeks and handled the cross‑border paperwork. Saved us a month of broker calls.</blockquote>
+<figcaption style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px 14px"><span aria-hidden="true" style="width: 40px; height: 2px; background: #3C64D0"></span><strong style="font-size: 16px">Henrik Larsson</strong><span style="font-size: 15px; color: #475476">Fleet manager, Nordvästen Partners</span></figcaption>
+</figure>
+</div>
+</section>
+
+<!-- SELL -->
+<section id="sell" style="background: linear-gradient(to bottom, #F5F6F9 0, #F5F6F9 62%, #0D1016 62%, #0D1016 100%); padding: 96px 24px 0">
+<div style="max-width: 1240px; margin: 0 auto; background: #FFFFFF; border-radius: 16px; border: 1px solid #D9DDE8; box-shadow: 0 1px 2px rgba(13,16,22,0.06), 0 24px 56px rgba(13,16,22,0.18); padding: clamp(28px, 4.5vw, 56px); display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 400px), 1fr)); gap: 56px; align-items: start">
+<div style="display: flex; flex-direction: column; gap: 20px">
+<p style="margin: 0; font-size: 13px; font-weight: 600; color: #3050A6; letter-spacing: 0.08em; text-transform: uppercase">Sell with us</p>
+<h2 style="margin: 0; font-family: 'Barlow', sans-serif; font-weight: 700; font-size: 42px; line-height: 1.08; letter-spacing: -0.01em">Got a bus to sell? We’ll handle everything.</h2>
+<p style="margin: 0; font-size: 16px; color: #475476; line-height: 1.7">We buy used buses directly. Fill in your details and we’ll come back with an offer for your bus — simple, fast and with no obligations.</p>
+<ol style="margin: 8px 0 0; padding: 0; list-style: none; display: flex; flex-direction: column">
+<li style="display: flex; gap: 16px; align-items: center; padding: 16px 0; border-bottom: 1px solid #D9DDE8"><span aria-hidden="true" style="width: 32px; height: 32px; flex: none; border-radius: 999px; background: #3C64D0; color: #FFFFFF; font-weight: 600; font-size: 14px; display: flex; align-items: center; justify-content: center">1</span><div style="line-height: 1.4"><strong style="display: block; font-size: 16px">Send your details</strong><span style="color: #475476; font-size: 14px">Make, model, year and mileage — takes a minute.</span></div></li>
+<li style="display: flex; gap: 16px; align-items: center; padding: 16px 0; border-bottom: 1px solid #D9DDE8"><span aria-hidden="true" style="width: 32px; height: 32px; flex: none; border-radius: 999px; background: #3C64D0; color: #FFFFFF; font-weight: 600; font-size: 14px; display: flex; align-items: center; justify-content: center">2</span><div style="line-height: 1.4"><strong style="display: block; font-size: 16px">Get an offer</strong><span style="color: #475476; font-size: 14px">We come back with an estimate within 24 hours.</span></div></li>
+<li style="display: flex; gap: 16px; align-items: center; padding: 16px 0"><span aria-hidden="true" style="width: 32px; height: 32px; flex: none; border-radius: 999px; background: #3C64D0; color: #FFFFFF; font-weight: 600; font-size: 14px; display: flex; align-items: center; justify-content: center">3</span><div style="line-height: 1.4"><strong style="display: block; font-size: 16px">We collect the bus</strong><span style="color: #475476; font-size: 14px">No obligations until you accept the offer.</span></div></li>
+</ol>
+</div>
+<form aria-label="Request a valuation" style="background: #F5F6F9; border-radius: 12px; padding: 28px; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 18px">
+<label style="grid-column: 1 / -1; display: flex; flex-direction: column; gap: 8px; font-size: 14px; font-weight: 600; color: #151923">Make &amp; model
+<input type="text" placeholder="e.g. Volvo 9700" style="font: inherit; font-weight: 400; font-size: 15px; height: 48px; padding: 0 14px; border: 1px solid #D9DDE8; border-radius: 8px; background: #FFFFFF"></label>
+<label style="display: flex; flex-direction: column; gap: 8px; font-size: 14px; font-weight: 600; color: #151923">Year
+<input type="text" inputmode="numeric" placeholder="YYYY" style="font: inherit; font-weight: 400; font-size: 15px; height: 48px; padding: 0 14px; border: 1px solid #D9DDE8; border-radius: 8px; background: #FFFFFF"></label>
+<label style="display: flex; flex-direction: column; gap: 8px; font-size: 14px; font-weight: 600; color: #151923">Mileage (km)
+<input type="text" inputmode="numeric" style="font: inherit; font-weight: 400; font-size: 15px; height: 48px; padding: 0 14px; border: 1px solid #D9DDE8; border-radius: 8px; background: #FFFFFF"></label>
+<label style="display: flex; flex-direction: column; gap: 8px; font-size: 14px; font-weight: 600; color: #151923"><span>Email <span style="color: #862774">*</span></span>
+<input type="email" required style="font: inherit; font-weight: 400; font-size: 15px; height: 48px; padding: 0 14px; border: 1px solid #D9DDE8; border-radius: 8px; background: #FFFFFF"></label>
+<label style="display: flex; flex-direction: column; gap: 8px; font-size: 14px; font-weight: 600; color: #151923">Phone
+<input type="tel" style="font: inherit; font-weight: 400; font-size: 15px; height: 48px; padding: 0 14px; border: 1px solid #D9DDE8; border-radius: 8px; background: #FFFFFF"></label>
+<button type="submit" style="grid-column: 1 / -1; font: inherit; font-weight: 600; font-size: 16px; height: 50px; background: #278641; color: #FFFFFF; border: 0; border-radius: 8px; cursor: pointer; margin-top: 4px">Get free valuation</button>
+<p style="grid-column: 1 / -1; margin: 0; font-size: 13px; color: #475476; text-align: center">No obligation. We reply within one working day.</p>
+</form>
+</div>
+</section>
+
+<!-- FOOTER -->
+<footer id="contact" style="background: #0D1016; color: #BCC3D7; padding: 72px 24px 0; overflow: hidden">
+<div style="max-width: 1240px; margin: 0 auto; display: flex; flex-direction: column; gap: 56px">
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 40px">
+<div style="display: flex; flex-direction: column; gap: 20px; grid-column: span 2; min-width: 0">
+<img src="/_blob/ee05d97b25eaa4cdf0a9b1a60a956924" alt="Truxco" style="height: 26px; width: auto; align-self: flex-start; display: block">
+<p style="margin: 0; font-size: 15px; line-height: 1.65; max-width: 340px">Truxco AB · Bus sales and rental. Based in Staffanstorp, Sweden — serving operators across Europe.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 10px">
+<a href="tel:+46102070444" style="color: #FFFFFF; text-decoration: none; font-size: 14px; font-weight: 600; padding: 12px 16px; background: rgba(255,255,255,0.07); border-radius: 8px">+46 (0) 10 207 04 44</a>
+<a href="mailto:info@truxco.se" style="color: #FFFFFF; text-decoration: none; font-size: 14px; font-weight: 600; padding: 12px 16px; background: rgba(255,255,255,0.07); border-radius: 8px">info@truxco.se</a>
+</div>
+</div>
+<nav aria-label="Browse" style="display: flex; flex-direction: column; gap: 10px; font-size: 15px"><strong style="color: #FFFFFF; font-size: 12px; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 6px">Browse</strong><a href="#c" style="color: #BCC3D7; text-decoration: none">Coaches</a><a href="#c" style="color: #BCC3D7; text-decoration: none">City buses</a><a href="#c" style="color: #BCC3D7; text-decoration: none">Minibuses</a><a href="#c" style="color: #BCC3D7; text-decoration: none">Electric</a></nav>
+<nav aria-label="Company" style="display: flex; flex-direction: column; gap: 10px; font-size: 15px"><strong style="color: #FFFFFF; font-size: 12px; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 6px">Company</strong><a href="#c" style="color: #BCC3D7; text-decoration: none">About us</a><a href="#c" style="color: #BCC3D7; text-decoration: none">How it works</a><a href="#c" style="color: #BCC3D7; text-decoration: none">Contact</a><a href="#c" style="color: #BCC3D7; text-decoration: none">Careers</a></nav>
+<nav aria-label="Resources" style="display: flex; flex-direction: column; gap: 10px; font-size: 15px"><strong style="color: #FFFFFF; font-size: 12px; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 6px">Resources</strong><a href="#c" style="color: #BCC3D7; text-decoration: none">Sell with us</a><a href="#c" style="color: #BCC3D7; text-decoration: none">Inspections</a><a href="#c" style="color: #BCC3D7; text-decoration: none">FAQ</a><a href="#c" style="color: #BCC3D7; text-decoration: none">Press</a></nav>
+</div>
+<div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px 24px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.1); font-size: 13px; color: #8693B6">
+<span style="display: flex; flex-wrap: wrap; align-items: center; gap: 24px">© 2026 Truxco AB · Org. 559002-5127</span>
+<span style="display: flex; gap: 24px"><a href="#c" style="color: #8693B6; text-decoration: none">Privacy</a><a href="#c" style="color: #8693B6; text-decoration: none">Terms</a><a href="#c" style="color: #8693B6; text-decoration: none">Cookies</a></span>
+</div>
+<p aria-hidden="true" style="margin: 0 0 -0.22em; font-family: 'Barlow', sans-serif; font-weight: 700; font-size: clamp(64px, 13vw, 200px); line-height: 1; letter-spacing: -0.02em; color: #212636; white-space: nowrap">Buy. Sell. Drive away.</p>
+</div>
+</footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":6400}}'>
+class Component extends DCLogic {
+  componentDidMount() {
+    this.busTimer = setInterval(() => {
+      if (typeof document !== 'undefined' && document.hidden) return;
+      this.setState({ busRun: ((this.state && this.state.busRun) || 0) + 1 });
+    }, 120000);
+    // Land the intro logo exactly on the header logo: measure it once, relative to the page root
+    if (typeof requestAnimationFrame !== 'undefined' && typeof document !== 'undefined') {
+      requestAnimationFrame(() => {
+        try {
+          const img = document.getElementById('tx-hdr-logo');
+          const root = document.getElementById('tx-root');
+          if (!img || !root) return;
+          const a = img.getBoundingClientRect(), b = root.getBoundingClientRect();
+          if (!a.width || !a.height) return;
+          this.setState({ fly: { l: a.left - b.left, t: a.top - b.top, w: a.width, h: a.height } });
+        } catch (e) {}
+      });
+    }
+  }
+  componentWillUnmount() {
+    clearInterval(this.busTimer);
+  }
+  navVals() {
+    const labels = [
+      { key: 'home', label: 'Home', hasMenu: false },
+      { key: 'buses', label: 'Buses', hasMenu: false },
+      { key: 'about', label: 'About', hasMenu: false },
+      { key: 'contact', label: 'Contact us', hasMenu: false }
+    ];
+    const st = this.state || {};
+    const hover = st.navHover;
+    const active = st.navActive || 0;
+    const has = (v) => v !== null && v !== undefined;
+    const open = has(hover) ? hover : st.navPinned;
+    const pillIndex = has(hover) ? hover : active;
+    const openKey = has(open) && labels[open] && labels[open].hasMenu ? labels[open].key : null;
+    const m = !!st.mobileOpen;
+    return {
+      items: labels.map((l, i) => ({
+        label: l.label,
+        hasMenu: l.hasMenu,
+        popup: l.hasMenu ? 'true' : 'false',
+        expanded: openKey === l.key ? 'true' : 'false',
+        colorStyle: 'color: ' + (i === active ? '#FFFFFF' : '#BCC3D7') + ';',
+        caretStyle: openKey === l.key ? 'transform: rotate(180deg);' : 'transform: rotate(0deg);',
+        enter: () => this.setState({ navHover: i }),
+        pick: () => this.setState({ navActive: i, navPinned: (st.navPinned === i ? null : i) })
+      })),
+      pillStyle: '',
+      menuStyle: openKey
+        ? 'opacity: 1; visibility: visible; transform: translateY(0) scale(1);'
+        : 'opacity: 0; visibility: hidden; transform: translateY(-12px) scale(.98);',
+      show: { used: openKey === 'used', electric: openKey === 'electric', sell: openKey === 'sell', services: openKey === 'services' },
+      navLeave: () => this.setState({ navHover: null, navPinned: null }),
+      toggleMenu: () => this.setState({ mobileOpen: !m }),
+      closeMenu: () => this.setState({ mobileOpen: false }),
+      menuExpanded: m ? 'true' : 'false',
+      burgerLabel: m ? 'Close menu' : 'Open menu',
+      mobileOpenClass: m ? 'nv-open' : '',
+      overlayStyle: m
+        ? 'clip-path: circle(150% at calc(100% - 46px) 52px); visibility: visible;'
+        : 'clip-path: circle(0px at calc(100% - 46px) 52px); visibility: hidden; transition: clip-path .6s cubic-bezier(.77,0,.18,1), visibility 0s .6s;',
+      bar1: m ? 'top: 21px; transform: rotate(45deg);' : 'top: 14px; transform: none;',
+      bar2: m ? 'top: 21px; opacity: 0; transform: scaleX(0);' : 'top: 21px; opacity: 1; transform: none;',
+      bar3: m ? 'top: 21px; transform: rotate(-45deg);' : 'top: 28px; transform: none;'
+    };
+  }
+  renderVals() {
+    const busRun = (this.state && this.state.busRun) || 0;
+    return {
+      ...this.navVals(),
+      busClass: busRun === 0 ? 'bus-drive-a bus-intro' : busRun % 2 === 0 ? 'bus-drive-a' : 'bus-drive-b',
+      flyStyle: (this.state && this.state.fly)
+        ? `--L: ${this.state.fly.l}px; --T: ${this.state.fly.t}px; --W: ${this.state.fly.w}px; --H: ${this.state.fly.h}px`
+        : '',
+      listings: [
+        { name: 'Volvo 9700 HD', type: 'Coach', price: '€129,000', year: '2017', km: '512,000', seats: '53', euro: 'Euro 6', img: '/_blob/888f61e236e46ad218b5d5a408fe067d', photos: '24', alt: 'White touring coach parked in the Truxco yard' },
+        { name: 'Volvo 8900 LE', type: 'City bus', price: '€59,000', year: '2016', km: '640,000', seats: '41', euro: 'Euro 6', img: '/_blob/dd95b6f20d00d43903a3e02f4c38c90e', photos: '18', alt: 'White city bus with blue stripe in the Truxco yard' },
+        { name: 'Volvo 7900 Electric', type: 'Electric', price: '€189,000', year: '2019', km: '310,000', seats: '33', euro: 'Zero emission', img: '/_blob/e27d4ecea2d9d9f690eb1485e27980df', photos: '21', alt: 'Blue and white electric bus in the Truxco yard' },
+        { name: 'Mercedes Sprinter 516', type: 'Minibus', price: '[PRICE]', year: '2020', km: '140,000', seats: '19', euro: 'Euro 6', img: '/_blob/918ae100514d2308a0a5af954888fed5', photos: '15', alt: 'White Mercedes Sprinter minibus in the Truxco yard' }
+      ],
+      categories: [
+        { name: 'Coaches', tag: 'Long‑distance', desc: 'Long‑distance, touring, premium', cta: 'Explore coaches', w: '84%', img: '/_blob/586f67309862ff70d5335d94168df9f3' },
+        { name: 'City buses', tag: 'Urban', desc: 'Urban, low‑floor, articulated', cta: 'Explore city buses', w: '84%', img: '/_blob/7f7b90f9a6bcbb29f8d619a1b7446e30' },
+        { name: 'Minibuses', tag: 'Small groups', desc: 'Shuttle, school, small groups', cta: 'Explore minibuses', w: '74%', img: '/_blob/dd2bd4b671986c6d71ea1aa1e90c46ad' },
+        { name: 'Electric', tag: 'Zero emission', desc: 'Battery‑electric and hydrogen', cta: 'Explore electric', w: '84%', img: '/_blob/fb35414f3b4ba2ee1454b699852aad2b' }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

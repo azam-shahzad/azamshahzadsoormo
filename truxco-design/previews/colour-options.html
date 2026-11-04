@@ -1,0 +1,156 @@
+<title>Truxco Colour Options</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* Layout: three mini homepages side by side, same layout, only the palette changes */
+:root{
+  --chrome-bg:#ECEEF4; --chrome-fg:#151923; --chrome-muted:#475476; --chrome-line:#D9DDE8; --chrome-card:#FFFFFF;
+  --display:"Barlow",system-ui,sans-serif; --body:"Inter",system-ui,sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--chrome-bg:#0D1016;--chrome-fg:#F5F6F9;--chrome-muted:#BCC3D7;--chrome-line:#212636;--chrome-card:#151923;color-scheme:dark}}
+:root[data-theme="dark"]{--chrome-bg:#0D1016;--chrome-fg:#F5F6F9;--chrome-muted:#BCC3D7;--chrome-line:#212636;--chrome-card:#151923;color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--chrome-bg);color:var(--chrome-fg);font-family:var(--body);font-size:15px;line-height:1.5}
+.wrap{max-width:1360px;margin:0 auto;padding-block:40px 64px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:flex;flex-direction:column;gap:32px}
+.top h1{margin:0;font-family:var(--display);font-weight:700;font-size:clamp(28px,3.4vw,40px);line-height:1.1;text-wrap:balance}
+.top p{margin:10px 0 0;color:var(--chrome-muted);max-width:70ch}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;align-items:start}
+@media (max-width:1100px){.grid{grid-template-columns:1fr;max-width:560px;margin:0 auto;width:100%}}
+.opt{display:flex;flex-direction:column;gap:14px;min-width:0}
+.opt-head{display:flex;flex-direction:column;gap:8px}
+.opt-head h2{margin:0;font-family:var(--display);font-weight:700;font-size:24px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.rec{font-family:var(--body);font-size:12px;font-weight:600;color:#fff;background:#278641;border-radius:999px;padding:3px 10px}
+.opt-head p{margin:0;color:var(--chrome-muted);font-size:14px}
+.chips{display:flex;gap:6px;flex-wrap:wrap}
+.chip{display:flex;align-items:center;gap:6px;font-size:12px;color:var(--chrome-muted);background:var(--chrome-card);border:1px solid var(--chrome-line);border-radius:999px;padding:3px 10px 3px 4px;font-variant-numeric:tabular-nums}
+.chip i{width:16px;height:16px;border-radius:50%;display:block;border:1px solid rgba(0,0,0,.08)}
+
+/* ---------- mini site (palette via vars) ---------- */
+.site{border-radius:16px;overflow:hidden;border:1px solid var(--chrome-line);background:var(--page);color:var(--text);font-size:13px;box-shadow:0 10px 30px rgba(13,16,22,.08)}
+.o1{--hero:#0E162A;--hero-2:#16224A;--primary:#3050A6;--on-primary:#FFFFFF;--accent:#DCC86F;--on-accent:#151923;--page:#FFFFFF;--subtle:#F5F6F9;--text:#151923;--muted:#475476;--border:#ECEEF4;--icon:#3050A6;--icon-bg:#E2E8F8;--check:#B8A045;--link:#3050A6;--foot:#0D1016}
+.o2{--hero:#0E162A;--hero-2:#0F2A1C;--primary:#278641;--on-primary:#FFFFFF;--accent:#278641;--on-accent:#FFFFFF;--page:#FFFFFF;--subtle:#F5F6F9;--text:#151923;--muted:#475476;--border:#ECEEF4;--icon:#278641;--icon-bg:#E2F5E7;--check:#278641;--link:#3050A6;--foot:#0D1016}
+.o3{--hero:#151923;--hero-2:#212636;--primary:#3050A6;--on-primary:#FFFFFF;--accent:#3050A6;--on-accent:#FFFFFF;--page:#FFFFFF;--subtle:#F5F6F9;--text:#151923;--muted:#475476;--border:#ECEEF4;--icon:#151923;--icon-bg:#ECEEF4;--check:#3050A6;--link:#3050A6;--foot:#151923}
+.hero{background:linear-gradient(135deg,var(--hero) 0%,var(--hero) 55%,var(--hero-2) 100%);color:#fff;padding:14px 14px 34px}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:8px;border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.04);border-radius:14px;padding:6px 6px 6px 14px}
+.logo{font-family:var(--display);font-weight:700;font-size:15px;letter-spacing:.04em}
+.logo b{color:#1582FF}
+.links{display:flex;gap:12px;font-size:11px;color:#BCC3D7;font-weight:600}
+.links span:first-child{color:#fff}
+.btn{display:inline-flex;align-items:center;gap:6px;border-radius:8px;font-weight:600;font-size:12px;padding:8px 12px;white-space:nowrap;border:0}
+.btn-accent{background:var(--accent);color:var(--on-accent)}
+.btn-primary{background:var(--primary);color:var(--on-primary)}
+.btn-ghost{background:transparent;color:var(--text);border:1px solid #BCC3D7}
+.hero h3{margin:30px 0 8px;text-align:center;font-family:var(--display);font-weight:700;font-size:28px;line-height:1.05;text-wrap:balance}
+.hero p{margin:0 auto 16px;text-align:center;color:#BCC3D7;max-width:34ch}
+.search{display:flex;align-items:center;gap:8px;background:#fff;border-radius:10px;padding:5px 5px 5px 12px;max-width:340px;margin:0 auto}
+.search > span:first-child{flex:1;color:#8693B6;font-size:12px}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;padding:16px 14px;background:var(--page);border-bottom:1px solid var(--border)}
+.stat{display:flex;flex-direction:column;gap:2px}
+.stat strong{font-family:var(--display);font-size:20px;color:var(--icon);font-variant-numeric:tabular-nums}
+.stat span{font-size:11px;color:var(--muted)}
+.sec{padding:18px 14px;display:flex;flex-direction:column;gap:12px}
+.sec.subtle{background:var(--subtle)}
+.sec h4{margin:0;font-family:var(--display);font-weight:700;font-size:18px}
+.card{background:#fff;border:1px solid var(--border);border-radius:12px;overflow:hidden}
+.card .img{height:96px;background:linear-gradient(180deg,#F5F6F9,#ECEEF4);display:flex;align-items:center;justify-content:center}
+.card .body{padding:12px;display:flex;flex-direction:column;gap:8px}
+.row{display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap}
+.tag{font-size:10px;font-weight:600;color:var(--muted);background:var(--subtle);border-radius:999px;padding:3px 8px}
+.price{font-family:var(--display);font-weight:700;font-size:17px}
+.services{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.svc{background:#fff;border:1px solid var(--border);border-radius:12px;padding:10px;display:flex;flex-direction:column;gap:6px}
+.ico{width:28px;height:28px;border-radius:8px;background:var(--icon-bg);color:var(--icon);display:flex;align-items:center;justify-content:center}
+.svc b{font-size:12px}
+.svc ul{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:3px;font-size:10.5px;color:var(--muted)}
+.svc li::before{content:"✓ ";color:var(--check);font-weight:700}
+.svc a{font-size:11px;font-weight:600;color:var(--link);text-decoration:none}
+.sell{margin:0 14px 18px;border-radius:14px;background:var(--hero);color:#fff;padding:16px;display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+.sell b{font-family:var(--display);font-size:17px}
+.sell div span{display:block;color:#BCC3D7;font-size:11px}
+.foot{background:var(--foot);color:#8693B6;padding:14px;font-size:11px;display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap}
+.foot b{color:#fff}
+.verdict{background:var(--chrome-card);border:1px solid var(--chrome-line);border-radius:12px;padding:12px 14px;font-size:13.5px;color:var(--chrome-muted)}
+.verdict strong{color:var(--chrome-fg)}
+</style>
+
+<div class="wrap">
+  <div class="top">
+    <h1>Truxco colour options</h1>
+    <p>Each preview is the same homepage with the same layout, fonts and spacing. Only the colours change. Nothing has been applied to the website or Figma yet.</p>
+  </div>
+
+  <div class="grid">
+    <!-- template repeated 3x -->
+    <section class="opt">
+      <div class="opt-head">
+        <h2>1 · Navy + Gold <span class="rec">Recommended</span></h2>
+        <p>Navy for trust, blue for actions, gold only for the few things that should stand out.</p>
+        <div class="chips"><span class="chip"><i style="background:#0E162A"></i>#0E162A</span><span class="chip"><i style="background:#3050A6"></i>#3050A6</span><span class="chip"><i style="background:#DCC86F"></i>#DCC86F</span><span class="chip"><i style="background:#F5F6F9"></i>#F5F6F9</span></div>
+      </div>
+      <div class="site o1" data-site></div>
+      <div class="verdict"><strong>Feel:</strong> premium and trustworthy. Gold ties in with the "Talk to us" button already in the nav.</div>
+    </section>
+
+    <section class="opt">
+      <div class="opt-head">
+        <h2>2 · Navy + Green</h2>
+        <p>Same navy base. Every action button is green, which also suits electric buses.</p>
+        <div class="chips"><span class="chip"><i style="background:#0E162A"></i>#0E162A</span><span class="chip"><i style="background:#278641"></i>#278641</span><span class="chip"><i style="background:#3050A6"></i>#3050A6</span><span class="chip"><i style="background:#F5F6F9"></i>#F5F6F9</span></div>
+      </div>
+      <div class="site o2" data-site></div>
+      <div class="verdict"><strong>Feel:</strong> fresh and eco. "Talk to us" would turn green instead of gold.</div>
+    </section>
+
+    <section class="opt">
+      <div class="opt-head">
+        <h2>3 · Charcoal + Blue</h2>
+        <p>Dark grey instead of navy, one blue for everything. No second accent.</p>
+        <div class="chips"><span class="chip"><i style="background:#151923"></i>#151923</span><span class="chip"><i style="background:#3050A6"></i>#3050A6</span><span class="chip"><i style="background:#ECEEF4"></i>#ECEEF4</span><span class="chip"><i style="background:#FFFFFF"></i>#FFFFFF</span></div>
+      </div>
+      <div class="site o3" data-site></div>
+      <div class="verdict"><strong>Feel:</strong> clean and corporate, but plainer. Easiest to keep consistent.</div>
+    </section>
+  </div>
+</div>
+
+<template id="tpl">
+  <div class="hero">
+    <div class="nav"><span class="logo">TRU<b>X</b>CO</span><span class="links"><span>Home</span><span>Buses</span><span>About</span><span>Contact us</span></span><span class="btn btn-accent">Talk to us →</span></div>
+    <h3>Find Buses BUY &amp; SELL in Europe</h3>
+    <p>Used coaches and city buses, inspected in our own workshop.</p>
+    <div class="search"><span>Make, model or keyword</span><span class="btn btn-primary">Search</span></div>
+  </div>
+  <div class="stats">
+    <div class="stat"><strong>120+</strong><span>Buses in stock</span></div>
+    <div class="stat"><strong>25</strong><span>Years trading</span></div>
+    <div class="stat"><strong>30</strong><span>Countries</span></div>
+    <div class="stat"><strong>4.9</strong><span>Customer rating</span></div>
+  </div>
+  <div class="sec">
+    <h4>Latest buses in stock</h4>
+    <div class="card">
+      <div class="img"><svg width="150" height="56" viewBox="0 0 150 56" aria-hidden="true"><rect x="4" y="6" width="140" height="38" rx="8" fill="#FFFFFF" stroke="#BCC3D7"/><rect x="12" y="12" width="96" height="14" rx="3" fill="#D9DDE8"/><rect x="114" y="12" width="24" height="22" rx="3" fill="#D9DDE8"/><rect x="4" y="30" width="140" height="4" fill="var(--icon)" opacity=".85"/><circle cx="34" cy="46" r="7" fill="#212636"/><circle cx="118" cy="46" r="7" fill="#212636"/></svg></div>
+      <div class="body">
+        <div class="row"><b>Setra S 516 HD · 2019</b><span class="tag">Coach</span></div>
+        <div class="row" style="color:var(--muted);font-size:11px"><span>412 000 km · Euro 6 · 53 seats</span></div>
+        <div class="row"><span class="price">€ 189 000</span><span style="display:flex;gap:6px"><span class="btn btn-ghost">View details</span><span class="btn btn-primary">Send enquiry</span></span></div>
+      </div>
+    </div>
+  </div>
+  <div class="sec subtle">
+    <h4>Our services</h4>
+    <div class="services">
+      <div class="svc"><span class="ico"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.6 2.6-2.4-.6-.6-2.4z"/></svg></span><b>Workshop</b><ul><li>Full inspection</li><li>Service history</li></ul><a href="#">Learn more →</a></div>
+      <div class="svc"><span class="ico"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h13v10H3zM16 10h4l1 3v4h-5"/><circle cx="7" cy="18" r="1.5"/><circle cx="18" cy="18" r="1.5"/></svg></span><b>Delivery</b><ul><li>Across Europe</li><li>Papers included</li></ul><a href="#">Learn more →</a></div>
+      <div class="svc"><span class="ico"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 6H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></span><b>We buy</b><ul><li>Fair valuation</li><li>Fast payment</li></ul><a href="#">Learn more →</a></div>
+    </div>
+  </div>
+  <div class="sell"><div><b>Selling a bus?</b><span>Free valuation within 24 hours.</span></div><span class="btn btn-accent">Get free valuation</span></div>
+  <div class="foot"><span><b>Truxco</b> · Staffanstorp, Sweden</span><span>+46 10 207 04 44</span></div>
+</template>
+
+<script>
+const tpl=document.getElementById('tpl');
+document.querySelectorAll('[data-site]').forEach(s=>s.appendChild(tpl.content.cloneNode(true)));
+</script>
