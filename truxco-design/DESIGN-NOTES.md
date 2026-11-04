@@ -10,7 +10,7 @@ Figma saves itself automatically; the Figma file link below is the source of tru
 ## Hero section — FINAL, do not change
 Locked in Figma (layer "Hero band (FINAL — do not change)", node 58:263).
 
-- Background: linear-gradient(135deg, #0E2A16 0%, #0E162A 50%, #2A0E25 100%). No dots, no animation.
+- Background: linear-gradient(135deg, #0E2A16 0%, #0E162A 50%, #2A0E25 100%) with the bus-yard drone photo (`assets/hero-yard.jpg`) clipped inside the banner, cover, at 20% opacity (client request, 4 Nov). No dots, no animation.
 - Height: fills the first screen (website: `min-height: calc(100svh - 37px)` after the 37px utility bar; Figma: 867px for a 1440×900 screen).
 - Navigation bar: 72px high, radius 16px, background rgba(255,255,255,.04), border rgba(255,255,255,.10).
   - Logo left · links centred: Home, Buses, About, Contact us (#BCC3D7, active #FFFFFF, Inter Semi Bold 15)
