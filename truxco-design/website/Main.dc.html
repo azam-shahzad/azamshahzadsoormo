@@ -35,7 +35,11 @@ a{color:#3050A6}a:hover{color:#151923}
 .nv-desk{display:flex}.nv-burger{display:none}
 .nv-item{animation:nvFade .6s cubic-bezier(.16,1,.3,1) both}
 .nv-item:nth-child(2){animation-delay:.08s}.nv-item:nth-child(3){animation-delay:.14s}.nv-item:nth-child(4){animation-delay:.2s}.nv-item:nth-child(5){animation-delay:.26s}.nv-item:nth-child(6){animation-delay:.32s}
-.nv-btn{transition:color .35s cubic-bezier(.16,1,.3,1)}
+.nv-btn{position:relative;transition:color .35s cubic-bezier(.16,1,.3,1)}
+.nv-btn::after{content:"";position:absolute;left:22px;right:22px;bottom:7px;height:2px;border-radius:2px;background:#DCC86F;transform:scaleX(0);transform-origin:center;transition:transform .3s cubic-bezier(.22,1,.36,1)}
+.nv-btn.is-active::after{transform:scaleX(1)}
+@media (hover:hover) and (pointer:fine){.nv-btn:not(.is-active):hover::after{transform:scaleX(.5);opacity:.7}}
+@media (prefers-reduced-motion: reduce){.nv-btn::after{transition:none}}
 .nv-btn:focus-visible,.nv-burger:focus-visible{outline:2px solid #9CB1E7;outline-offset:2px}
 .nv-cta{position:relative;overflow:hidden;transition:transform .35s cubic-bezier(.34,1.56,.64,1),box-shadow .35s ease}
 .nv-cta:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(220,200,111,.35)}
@@ -200,7 +204,7 @@ a{color:#3050A6}a:hover{color:#151923}
 <nav aria-label="Main" class="nv-desk" style="position: relative">
 <sc-for list="{{items}}" as="it" hint-placeholder-count="5">
 <div class="nv-item" style="position: relative; display: flex; justify-content: center">
-<button type="button" class="nv-btn" aria-haspopup="{{it.popup}}" aria-expanded="{{it.expanded}}" onMouseEnter="{{it.enter}}" onFocus="{{it.enter}}" onClick="{{it.pick}}" style="font: inherit; font-size: 15px; font-weight: 600; height: 48px; padding: 0 22px; border: 0; background: transparent; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; gap: 6px; {{it.colorStyle}}">{{it.label}}<sc-if value="{{it.hasMenu}}" hint-placeholder-val="{{true}}"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="transition: transform .4s cubic-bezier(.34,1.56,.64,1); {{it.caretStyle}}"><path d="M6 9l6 6 6-6"></path></svg></sc-if></button>
+<button type="button" class="nv-btn {{it.cls}}" aria-current="{{it.current}}" aria-haspopup="{{it.popup}}" aria-expanded="{{it.expanded}}" onMouseEnter="{{it.enter}}" onFocus="{{it.enter}}" onClick="{{it.pick}}" style="font: inherit; font-size: 15px; font-weight: 600; height: 48px; padding: 0 22px; border: 0; background: transparent; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; gap: 6px; {{it.colorStyle}}">{{it.label}}<sc-if value="{{it.hasMenu}}" hint-placeholder-val="{{true}}"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="transition: transform .4s cubic-bezier(.34,1.56,.64,1); {{it.caretStyle}}"><path d="M6 9l6 6 6-6"></path></svg></sc-if></button>
 </div>
 </sc-for>
 </nav>
@@ -546,6 +550,8 @@ class Component extends DCLogic {
         popup: l.hasMenu ? 'true' : 'false',
         expanded: openKey === l.key ? 'true' : 'false',
         colorStyle: 'color: ' + (i === active ? '#FFFFFF' : '#BCC3D7') + ';',
+        cls: i === active ? 'is-active' : '',
+        current: i === active ? 'page' : 'false',
         caretStyle: openKey === l.key ? 'transform: rotate(180deg);' : 'transform: rotate(0deg);',
         enter: () => this.setState({ navHover: i }),
         pick: () => this.setState({ navActive: i, navPinned: (st.navPinned === i ? null : i) })
