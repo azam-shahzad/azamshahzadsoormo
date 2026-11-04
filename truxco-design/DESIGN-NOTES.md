@@ -62,3 +62,8 @@ Kept as it was in Figma on request: the "Our own workshop" photos (Figma has its
 - Workshop (polish 2): step numbers 01–03 in gold #DCC86F and sitting on the title line; step titles 18px on both website and Figma (were 17 / 19).
 - Testimonials (polish): arrows show state — "previous" is dimmed (40%) at the start, "next" dims at the end; on the website both arrows hide when all cards already fit (e.g. 3 cards on desktop). Figma shows the start state.
 - Hero (polish, client request): soft dark shade over the bottom 45% of the banner (transparent → rgba(13,16,22,.55)) so the stats read clearly over the yard photo; bottom padding under the stats 48px (was 36). Lock re-applied.
+
+## Figma housekeeping (4 Nov)
+- Design Rationale page updated to the current design (sentence-case heading, hero shade, colour rules without magenta, richer listing cards, green primary / gold accent components).
+- Components & Controls: Button "Sell" (magenta) variants replaced by "Accent" (gold "Talk to us →"); Primary buttons now brand green (Green/700, hover Green/800, disabled Green/300); Loading button idle/loading green.
+- Old option frames (Trusted by operators A–C, Testimonial D–F, Triadic palette) moved to a new "Archive" page — nothing deleted.
