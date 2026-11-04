@@ -1,6 +1,7 @@
 {
   "permissions": {
     "allow": [
+      "mcp__Figma",
       "Artifact",
       "mcp__Figma__use_figma",
       "mcp__Figma__get_screenshot",
