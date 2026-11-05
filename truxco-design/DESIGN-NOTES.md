@@ -84,3 +84,4 @@ Main homepage page and website NOT changed.
 - Video play button: 80px circle bound to Amber/500 with a soft white ring (22%), white play icon (single clean vector, ~27×32, rounded corners, no stroke), optically centred.
 - Footer logo X also green #278641 (was blue #3C64D0), matching the header logo.
 - Footer phone and email icons green #278641 (were gold); pill text unchanged.
+- "Post a Bus" label 18px (was 15); button box kept at 154×52 (fixed size, side padding 20, content centred).
