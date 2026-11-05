@@ -1,0 +1,81 @@
+<!doctype html><html><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Inter,system-ui,sans-serif;background:#e9ebef;padding:40px}
+.pal{width:1200px;background:#fff;border-radius:20px;padding:36px;margin-bottom:40px;box-shadow:0 2px 12px rgba(0,0,0,.06)}
+.head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:22px}
+.head h2{font-size:30px;font-weight:800;color:#111}
+.head p{font-size:16px;color:#555}
+.sw{display:flex;gap:12px;margin-bottom:28px}
+.s{flex:1;border-radius:12px;overflow:hidden;border:1px solid #e3e5e8}
+.s .c{height:110px}
+.s .l{padding:10px 12px;font-size:13px;color:#333;background:#fff}
+.s .l b{display:block;font-size:14px;color:#111}
+.s .l code{font-family:ui-monospace,monospace;color:#666}
+.mock{border-radius:14px;overflow:hidden;border:1px solid #dfe2e6}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:16px 28px}
+.logo{font-weight:800;font-size:20px;letter-spacing:-.3px}
+.links{display:flex;gap:26px;font-size:14px;font-weight:600}
+.btn{padding:10px 18px;border-radius:8px;font-weight:700;font-size:14px;border:none}
+.hero{display:grid;grid-template-columns:1.05fr 1fr;gap:28px;padding:34px 28px}
+.hero h1{font-size:36px;line-height:1.15;font-weight:800;margin-bottom:12px}
+.hero .sub{font-size:15px;margin-bottom:20px;opacity:.85}
+.search{display:flex;gap:8px;background:#fff;padding:8px;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,.1)}
+.search div{flex:1;padding:10px 12px;font-size:13px;color:#555;border-right:1px solid #eee}
+.search div:last-of-type{border:none}
+.cards{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.card{border-radius:12px;overflow:hidden;background:#fff;box-shadow:0 1px 6px rgba(0,0,0,.08)}
+.card .img{height:110px;display:flex;align-items:center;justify-content:center}
+.card .bd{padding:10px 12px}
+.card h4{font-size:13px;font-weight:700;color:#111;margin-bottom:3px}
+.card .meta{font-size:11px;color:#666;margin-bottom:8px}
+.row{display:flex;justify-content:space-between;align-items:center}
+.price{font-size:15px;font-weight:800}
+.tag{font-size:10px;font-weight:700;padding:3px 8px;border-radius:20px}
+</style></head><body><div id="root"></div>
+<script>
+const P=[
+{n:"1. Autobahn Trust",d:"Corporate & reliable",brand:"BusMarkt",
+ c:[["Primary","Deep Navy","#0B2545"],["Secondary","Steel Blue","#3E6D9C"],["Accent / CTA","Signal Amber","#F5A524"],["Background","Cloud White","#F7F9FC"],["Text","Charcoal","#1C1F24"]],
+ navBg:"#0B2545",navFg:"#fff",heroBg:"#F7F9FC",heroFg:"#1C1F24",h1:"#0B2545",cta:"#F5A524",ctaFg:"#1C1F24",bus:"#3E6D9C",img:"#DCE6F1",price:"#0B2545"},
+{n:"2. Green Transit",d:"Sustainable & modern",brand:"eBus Exchange",
+ c:[["Primary","Forest Green","#14532D"],["Secondary","Eco Teal","#0F766E"],["Accent / CTA","Fresh Lime","#84CC16"],["Background","Mist","#F4F7F5"],["Text","Graphite","#1F2937"]],
+ navBg:"#14532D",navFg:"#fff",heroBg:"#F4F7F5",heroFg:"#1F2937",h1:"#14532D",cta:"#84CC16",ctaFg:"#14532D",bus:"#0F766E",img:"#D7EDE6",price:"#14532D"},
+{n:"3. Euro Coach Premium",d:"Luxury tourism",brand:"COACHÉ",
+ c:[["Primary","Midnight","#111827"],["Secondary","Slate","#374151"],["Accent / CTA","Brushed Gold","#C9A227"],["Background","Ivory","#FAF8F3"],["Text","Ink","#0F0F10"]],
+ navBg:"#111827",navFg:"#FAF8F3",heroBg:"#111827",heroFg:"#FAF8F3",h1:"#FAF8F3",cta:"#C9A227",ctaFg:"#111827",bus:"#374151",img:"#EDE7D8",price:"#111827"},
+{n:"4. City Line",d:"Bold urban energy",brand:"CityBus Trade",
+ c:[["Primary","Transit Red","#C8102E"],["Secondary","Asphalt","#2B2D31"],["Accent","Route Yellow","#FFC72C"],["Background","Off-White","#F8F8F6"],["Text","Near Black","#16171A"]],
+ navBg:"#2B2D31",navFg:"#fff",heroBg:"#F8F8F6",heroFg:"#16171A",h1:"#16171A",cta:"#C8102E",ctaFg:"#fff",bus:"#C8102E",img:"#FFF3CC",price:"#C8102E"},
+{n:"5. Nordic Fleet",d:"Clean & minimal",brand:"fleetnord",
+ c:[["Primary","Fjord Blue","#1E40AF"],["Secondary","Glacier","#93C5FD"],["Accent / CTA","Coral","#F97066"],["Background","Pure White","#FFFFFF"],["Surface","Frost Grey","#F1F5F9"],["Text","Slate Ink","#0F172A"]],
+ navBg:"#FFFFFF",navFg:"#0F172A",heroBg:"#F1F5F9",heroFg:"#0F172A",h1:"#1E40AF",cta:"#F97066",ctaFg:"#fff",bus:"#1E40AF",img:"#DBEAFE",price:"#1E40AF"}
+];
+const bus=(col,win)=>`<svg width="190" height="80" viewBox="0 0 190 80"><rect x="6" y="8" width="176" height="56" rx="10" fill="${col}"/><rect x="6" y="48" width="176" height="6" fill="rgba(0,0,0,.15)"/>${[0,1,2,3,4].map(i=>`<rect x="${16+i*28}" y="16" width="22" height="20" rx="3" fill="${win}"/>`).join("")}<rect x="158" y="16" width="18" height="34" rx="3" fill="${win}"/><circle cx="42" cy="66" r="10" fill="#222"/><circle cx="42" cy="66" r="4" fill="#bbb"/><circle cx="146" cy="66" r="10" fill="#222"/><circle cx="146" cy="66" r="4" fill="#bbb"/></svg>`;
+const L=[["Mercedes-Benz Citaro","2019 · 412,000 km · Germany","€89,500","Available","#DCFCE7","#166534"],
+         ["Setra S 516 HD","2017 · 610,000 km · Austria","€124,000","Reserved","#FEF3C7","#92400E"],
+         ["Solaris Urbino 12 E","2021 · 190,000 km · Poland","€215,000","Available","#DCFCE7","#166534"],
+         ["MAN Lion's Coach","2016 · 720,000 km · Netherlands","€78,900","Sold","#E5E7EB","#374151"]];
+document.getElementById("root").innerHTML=P.map((p,i)=>`
+<section class="pal" id="p${i+1}">
+ <div class="head"><h2>${p.n}</h2><p>${p.d}</p></div>
+ <div class="sw">${p.c.map(([r,n,h])=>`<div class="s"><div class="c" style="background:${h}"></div><div class="l">${r}<b>${n}</b><code>${h}</code></div></div>`).join("")}</div>
+ <div class="mock">
+  <div class="nav" style="background:${p.navBg};color:${p.navFg};${p.navBg=='#FFFFFF'?'border-bottom:1px solid #e5e7eb':''}">
+   <div class="logo">${p.brand}</div>
+   <div class="links"><span>Buy</span><span>Sell</span><span>Coaches</span><span>E-Buses</span><span>Dealers</span></div>
+   <button class="btn" style="background:${p.cta};color:${p.ctaFg}">List your bus</button>
+  </div>
+  <div class="hero" style="background:${p.heroBg};color:${p.heroFg}">
+   <div>
+    <h1 style="color:${p.h1}">Buy and sell buses across Europe</h1>
+    <p class="sub">12,400+ city buses, coaches and e-buses from verified dealers in 28 countries.</p>
+    <div class="search"><div>Make: Any</div><div>Type: Coach</div><div>Country: All EU</div>
+     <button class="btn" style="background:${p.cta};color:${p.ctaFg}">Search</button></div>
+   </div>
+   <div class="cards">${L.map(([t,m,pr,s,sb,sf])=>`<div class="card"><div class="img" style="background:${p.img}">${bus(p.bus,"#e8f1fb")}</div><div class="bd"><h4>${t}</h4><div class="meta">${m}</div><div class="row"><span class="price" style="color:${p.price}">${pr}</span><span class="tag" style="background:${sb};color:${sf}">${s}</span></div></div></div>`).join("")}</div>
+  </div>
+ </div>
+</section>`).join("");
+</script></body></html>
