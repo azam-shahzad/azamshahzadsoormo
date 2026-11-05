@@ -86,3 +86,4 @@ Main homepage page and website NOT changed.
 - Footer phone and email icons green #278641 (were gold); pill text unchanged.
 - "Post a Bus" label 18px (was 15); button box kept at 154×52 (fixed size, side padding 20, content centred).
 - "Post a Bus" arrow replaced by a 2-line chevron ( > ), white, 2.6 stroke, tight icon (9×16) with a 10px gap from the text; box still 154×52.
+- Video poster enlarged to 720×405 (was 640×360); gap to the text column 48px; play button re-centred.
