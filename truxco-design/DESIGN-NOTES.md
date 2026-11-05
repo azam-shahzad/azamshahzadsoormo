@@ -85,3 +85,4 @@ Main homepage page and website NOT changed.
 - Footer logo X also green #278641 (was blue #3C64D0), matching the header logo.
 - Footer phone and email icons green #278641 (were gold); pill text unchanged.
 - "Post a Bus" label 18px (was 15); button box kept at 154×52 (fixed size, side padding 20, content centred).
+- "Post a Bus" arrow replaced by a 2-line chevron ( > ), 18px, white, 2.6 stroke, 8px gap from the text; box still 154×52.
