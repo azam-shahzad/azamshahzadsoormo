@@ -78,3 +78,4 @@ Main homepage page and website NOT changed.
 - Navigation labels in capitals (HOME, BUSES, ABOUT, CONTACT US), +6% letter spacing.
 - "Talk to us" → "Post a Bus", button fill bound to Amber/500 (#DEA345), white text and arrow.
 - Hero stat icons (all four) in green #278641 (were gold).
+- Search icon bigger and bolder: 44px (was 38) with a thicker 2.6 stroke, white on green.
