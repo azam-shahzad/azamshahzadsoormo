@@ -67,3 +67,4 @@ Kept as it was in Figma on request: the "Our own workshop" photos (Figma has its
 - Design Rationale page updated to the current design (sentence-case heading, hero shade, colour rules without magenta, richer listing cards, green primary / gold accent components).
 - Components & Controls: Button "Sell" (magenta) variants replaced by "Accent" (gold "Talk to us →"); Primary buttons now brand green (Green/700, hover Green/800, disabled Green/300); Loading button idle/loading green.
 - Old option frames (Trusted by operators A–C, Testimonial D–F, Triadic palette) moved to a new "Archive" page — nothing deleted.
+- 5 Nov — client asked to undo the Components button change: Button set is back to Primary = blue (Blue/500, hover Blue/600, pressed Blue/700, disabled Blue/200) and Sell = magenta "+ Post your bus" (Magenta/600, hover/pressed Magenta/700); Loading button idle/loading back to Blue/500. (Design Rationale and Archive changes kept.)
