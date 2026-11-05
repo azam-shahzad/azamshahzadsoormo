@@ -77,3 +77,4 @@ Main homepage page and website NOT changed.
 - Header logo X in green #278641 (was blue #1582FF).
 - Navigation labels in capitals (HOME, BUSES, ABOUT, CONTACT US), +6% letter spacing.
 - "Talk to us" → "Post a Bus", button fill bound to Amber/500 (#DEA345), white text and arrow.
+- Hero stat icons (all four) in green #278641 (were gold).
