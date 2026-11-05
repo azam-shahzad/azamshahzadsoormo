@@ -83,3 +83,4 @@ Main homepage page and website NOT changed.
 - Video tour redesigned (A label + D layout, clean): white card, 640×360 video left (green play + soft white ring, "1:30"), right: "See it for yourself", "Take a tour of our yard and workshop", 3 chapters with green timestamps (0:00 The yard · 0:35 Inspection bay · 1:05 Delivery) on thin dividers, green "Book a visit to the yard →". Chips removed for a sleeker look.
 - Video play button: 80px circle bound to Amber/500 with a soft white ring (22%), white play icon (single clean vector, ~27×32, rounded corners, no stroke), optically centred.
 - Footer logo X also green #278641 (was blue #3C64D0), matching the header logo.
+- Footer phone and email icons green #278641 (were gold); pill text unchanged.
