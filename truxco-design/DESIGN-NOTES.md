@@ -70,3 +70,10 @@ Kept as it was in Figma on request: the "Our own workshop" photos (Figma has its
 - 5 Nov — client asked to undo the Components button change: Button set is back to Primary = blue (Blue/500, hover Blue/600, pressed Blue/700, disabled Blue/200) and Sell = magenta "+ Post your bus" (Magenta/600, hover/pressed Magenta/700); Loading button idle/loading back to Blue/500. (Design Rationale and Archive changes kept.)
 - 5 Nov (later) — the button undo was reverted on request: Components are back to green Primary (Green/700, hover/pressed Green/800, disabled Green/300), gold "Talk to us →" Accent, and green Loading button. Hero band re-locked.
 - 5 Nov — reverted two Figma edits from today (1–3 pm): "Talk to us" had been changed to solid amber #DEA345 and three hero stat icons to green #348C43; both back to the gold gradient button and gold #DCC86F icons, matching the website. Hero re-locked.
+
+## Tanveer feedback — Figma page "Truxco — Homepage V2 (Tanveer FeedBack)" only (5 Nov)
+Main homepage page and website NOT changed.
+- Top black utility bar removed.
+- Header logo X in green #278641 (was blue #1582FF).
+- Navigation labels in capitals (HOME, BUSES, ABOUT, CONTACT US), +6% letter spacing.
+- "Talk to us" → "Post a Bus", button fill bound to Amber/500 (#DEA345), dark text, arrow kept.
