@@ -79,3 +79,4 @@ Main homepage page and website NOT changed.
 - "Talk to us" → "Post a Bus", button fill bound to Amber/500 (#DEA345), white text and arrow.
 - Hero stat icons (all four) in green #278641 (were gold).
 - Search icon bigger and bolder: 40px (was 38) with a medium-bold 2.8 stroke (3.6 was too heavy), white on green.
+- New "Video tour" section (option B) after Our services: white card, "See it for yourself" / "Take a tour of our yard and workshop", short text, 3 green-check chips, green "Book a visit to the yard →" link; 16:9 poster (yard photo) with green play button, "▶ Yard & workshop tour" and "1:30" labels. Poster and length are placeholders until the real video.
