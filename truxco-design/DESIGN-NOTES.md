@@ -91,3 +91,4 @@ Main homepage page and website NOT changed.
 ## V2 web preview (Tanveer feedback), 6 Nov
 Separate link: https://claude.ai/artifact/5fQmU77HRx2xtJU8nshYa1 — source copy in `website-v2/Main.dc.html`. The main website (QnxH1x…) is unchanged.
 Applied: no utility bar; green X logo (`assets/logo-green-x.svg`, also in footer and the intro animation); uppercase nav; Amber #DEA345 "Post a Bus" (white 18px, chevron, 154×52; mobile menu too); green stat icons; bolder 40px search icon; Video tour section after Our services (video left with amber play button, chapters right); green footer contact icons.
+- V2 preview: Workshop now uses the three Figma photos (handshake large, wheel and papers below), same as the Figma V2 page.
