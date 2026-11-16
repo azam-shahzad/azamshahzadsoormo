@@ -220,3 +220,4 @@ Second artboard "UsedBuses.dc.html" in the V2 preview (https://claude.ai/artifac
   - Languages: a "We speak" label with Svenska / English / Deutsch / Polski chips.
   - Buttons: a green "Call now" and an outline "Email".
   - Mobile: a stronger dark gradient so the text stays readable over the photo.
+- Contact agent card: "Talk to a real person" on one line; Call now / Email buttons removed (the Call and Email cards below already cover these).
