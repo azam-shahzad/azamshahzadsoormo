@@ -179,3 +179,11 @@ Second artboard "UsedBuses.dc.html" in the V2 preview (https://claude.ai/artifac
   - Fields: Name* + Email* in one row, Phone + Company in the next, both rows stay 2 columns on mobile. The message box is 2 rows ("Please send me your best offer for this bus."). Country select and the "similar buses" checkbox are removed.
   - Size: dialog is 520px wide, with a smaller bus summary and title.
   - Small screens: inputs shrink on screens under 700px tall, and the privacy note hides under 600px.
+- Get an Offer popup restyled to look more modern:
+  - Layout: an 820px two-panel dialog with 24px corners.
+  - Left panel: bus photo with a navy gradient, the "Available" chip, "Coach · 2017 · Ref. TX-14", name, price, and two perks (Reply within 1 working day, No obligation).
+  - Right panel: "FREE OFFER" eyebrow and the "Get your best price" heading. Fields are soft grey with 12px corners and turn white with a green focus ring. There is a pill-shaped gradient "Send request →" button and a "Johan Andersson will handle your request personally" line.
+  - Close button: round, and it rotates on hover.
+  - Success state: green gradient check and a navy "Done" button.
+  - Mobile: the photo becomes a 104px banner above the form.
+  - No scroll at any size. Checked heights: 1366×640 → 445px, 375×667 → 587px, 320×568 → 536px.
