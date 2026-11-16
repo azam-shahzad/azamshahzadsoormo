@@ -208,3 +208,9 @@ Second artboard "UsedBuses.dc.html" in the V2 preview (https://claude.ai/artifac
     - "Visit us" banner: the aerial yard photo with a pulsing Truxco pin and an address card with Get directions and Book a visit. Book a visit selects "Visit the yard" in the form.
     - "Quick answers" FAQ with 4 questions, then the footer.
   - Nav: CONTACT US is active.
+- Navigation linked across all 4 V2 pages:
+  - Header nav: the items are now real links. Home → Main.dc.html, Buses → UsedBuses.dc.html, About → Main.dc.html#workshop, Contact us → Contact.dc.html.
+  - Mobile menu: same links.
+  - Footer: Coaches, City buses, Minibuses and Electric → UsedBuses; About us → Main#workshop; How it works → BusDetail#delivery; Contact → Contact; Sell with us → Main#sell; Inspections → BusDetail#inspection. Careers, FAQ and Press stay "#".
+  - Active tab: Home on Main, Buses on the listing and detail pages, Contact us on Contact.
+  - Already linked before: the logo goes to Main, View details goes to BusDetail, and "Back to all buses" goes to UsedBuses.
