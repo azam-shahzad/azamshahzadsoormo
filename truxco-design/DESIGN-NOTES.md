@@ -161,3 +161,8 @@ Second artboard "UsedBuses.dc.html" in the V2 preview (https://claude.ai/artifac
 - Inspection header: icon and "Inspection report" title now share one centred row; the "Checked in…" line sits below, left-aligned with the icon.
 - Bus detail: main button renamed "Send enquiry" → "Get an Offer" (price card and mobile sticky bar).
 - Bus detail tabs: removed the stray vertical scrollbar. The tabs no longer scroll vertically, and the horizontal scrollbar is hidden. The base line is now an inset shadow, so the green active underline is no longer clipped.
+- Bus status system (Available / Reserved / Sold):
+  - Cards (listing and similar buses): white pill at the image top-right with a coloured dot. Green #278641 = Available, amber #DEA345 = Reserved, grey #8693B6 = Sold. Sold cards show the photo in greyscale at 60% opacity.
+  - Data: each bus has a `status` field (default Available). Sample data: Volvo 7900 Electric is Reserved (it used to be a "Reserved" badge), Iveco Daily Line is Sold.
+  - Bus detail: white "● Available" tag first in the hero tags, and a green pill "● Available · ready for viewing" above the price, with a soft pulsing dot (off with reduced motion).
+  - Suggested rules for the other states on the detail page, not built yet: Reserved = amber pill "Reserved until [date]" and a "Join the waiting list" button; Sold = grey pill, buttons replaced by "See similar buses".
