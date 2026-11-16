@@ -42,15 +42,17 @@ a{color:#3050A6}a:hover{color:#151923}
 @media (prefers-reduced-motion: reduce){.bd-dot{animation:none}}
 .of-overlay{position:fixed;inset:0;z-index:100;background:rgba(13,16,22,0.62);backdrop-filter:blur(3px);animation:ofFade .2s ease both}
 .of-wrap{position:fixed;inset:0;z-index:101;display:flex;align-items:center;justify-content:center;padding:16px;pointer-events:none}
-.of-dialog{pointer-events:auto;position:relative;width:100%;max-width:560px;max-height:calc(100vh - 32px);overflow-y:auto;box-sizing:border-box;background:#FFFFFF;border-radius:20px;padding:24px;display:flex;flex-direction:column;gap:20px;box-shadow:0 30px 80px -20px rgba(13,16,22,0.5);animation:ofIn .25s cubic-bezier(.2,.8,.2,1) both}
-.of-x{position:absolute;top:20px;right:20px;width:40px;height:40px;border-radius:50%;border:1px solid #E3E6EE;background:#FFFFFF;color:#151923;display:flex;align-items:center;justify-content:center;cursor:pointer}.of-x:hover{background:#F5F6F9}
-.of-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px 12px}
-.of-f{display:flex;flex-direction:column;gap:6px}.of-f label{font-size:13px;font-weight:600;color:#343D56}
-.of-in{font:inherit;font-size:15px;width:100%;box-sizing:border-box;height:44px;padding:0 12px;border:1px solid #D9DDE8;border-radius:6px;background:#FFFFFF;color:#151923}.of-in:focus{outline:none;border-color:#278641;box-shadow:0 0 0 3px rgba(39,134,65,0.18)}
+.of-dialog{pointer-events:auto;position:relative;width:100%;max-width:520px;max-height:calc(100dvh - 24px);overflow-y:auto;box-sizing:border-box;background:#FFFFFF;border-radius:20px;padding:20px 22px 18px;display:flex;flex-direction:column;gap:16px;box-shadow:0 30px 80px -20px rgba(13,16,22,0.5);animation:ofIn .25s cubic-bezier(.2,.8,.2,1) both}
+.of-x{position:absolute;top:18px;right:18px;width:40px;height:40px;border-radius:50%;border:1px solid #E3E6EE;background:#FFFFFF;color:#151923;display:flex;align-items:center;justify-content:center;cursor:pointer}.of-x:hover{background:#F5F6F9}
+.of-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.of-f{display:flex;flex-direction:column;gap:5px}.of-f label{font-size:12px;font-weight:600;color:#343D56}
+.of-in{font:inherit;font-size:15px;width:100%;box-sizing:border-box;height:42px;padding:0 12px;border:1px solid #D9DDE8;border-radius:6px;background:#FFFFFF;color:#151923}.of-ta{height:auto!important;padding:9px 12px;resize:none;line-height:1.45}.of-in:focus{outline:none;border-color:#278641;box-shadow:0 0 0 3px rgba(39,134,65,0.18)}
 .of-x:focus-visible{outline:2px solid #278641;outline-offset:2px}
 @keyframes ofFade{from{opacity:0}}@keyframes ofIn{from{opacity:0;transform:translateY(12px) scale(.98)}}
-@media (max-width: 560px){.of-grid{grid-template-columns:minmax(0,1fr)}.of-dialog{padding:20px}}
-@media (prefers-reduced-motion: reduce){.of-overlay,.of-dialog{animation:none}}
+@media (max-width: 480px){.of-wrap{padding:10px}.of-dialog{padding:16px 16px 14px;gap:12px;border-radius:16px}.of-grid{gap:10px}.of-in{font-size:16px}}
+@media (max-height: 700px){.of-dialog{gap:12px;padding-top:16px;padding-bottom:14px}.of-grid{gap:10px}.of-in{height:38px}}
+@media (max-height: 600px){.of-note{display:none}}
+@media (prefers-reduced-motion: reduce){.of-overlay,.of-dialog{pointer-events:auto;position:relative;width:100%;max-width:520px;max-height:calc(100dvh - 24px);overflow-y:auto;box-sizing:border-box;background:#FFFFFF;border-radius:20px;padding:20px 22px 18px;display:flex;flex-direction:column;gap:16px;box-shadow:0 30px 80px -20px rgba(13,16,22,0.5);animation:ofIn .25s cubic-bezier(.2,.8,.2,1) both}}
 .bd-tag{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:600;color:#FFFFFF;padding:6px 12px;border-radius:999px}
 .bd-back:hover{color:#FFFFFF}
 .bd-ghost{font:inherit;display:inline-flex;align-items:center;gap:8px;height:44px;padding:0 16px;border-radius:6px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.2);color:#FFFFFF;font-size:14px;font-weight:600;cursor:pointer;transition:background .15s}.bd-ghost:hover{background:rgba(255,255,255,0.16)}.bd-ghost[aria-pressed="true"]{background:#FFFFFF;color:#C2185B;border-color:#FFFFFF}.bd-ghost[aria-pressed="true"] svg{fill:#C2185B}
@@ -465,29 +467,25 @@ a{color:#3050A6}a:hover{color:#151923}
 <div class="of-wrap" style="{{offerWrapStyle}}">
 <div role="dialog" aria-modal="true" aria-labelledby="of-title" class="of-dialog">
 <button type="button" class="of-x" aria-label="Close" onClick="{{closeOffer}}"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"></path></svg></button>
-<div style="display: flex; align-items: center; gap: 14px; padding: 12px; border-radius: 12px; background: #F5F6F9; margin-right: 44px">
-<img src="/_blob/bcab9233641a761d8bdcca8ab1e9cf3f" alt="" style="flex: none; width: 76px; height: 56px; border-radius: 8px; object-fit: cover">
+<div style="display: flex; align-items: center; gap: 12px; padding: 8px; border-radius: 12px; background: #F5F6F9; margin-right: 48px">
+<img src="/_blob/bcab9233641a761d8bdcca8ab1e9cf3f" alt="" style="flex: none; width: 64px; height: 44px; border-radius: 8px; object-fit: cover">
 <span style="display: flex; flex-direction: column; gap: 2px; min-width: 0"><strong style="font-size: 15px; color: #151923">Volvo 9700 HD · 2017</strong><span style="font-size: 13px; color: #475476">€129,000 excl. VAT · Ref. TX-14</span></span>
 </div>
 <sc-if value="{{offerForm}}" hint-placeholder-val="{{true}}">
-<form onSubmit="{{submitOffer}}" style="display: flex; flex-direction: column; gap: 18px">
-<div style="display: flex; flex-direction: column; gap: 4px">
-<h2 id="of-title" style="margin: 0; font-family: 'Barlow', sans-serif; font-weight: 700; font-size: 28px; line-height: 1.15; color: #151923">Get an offer</h2>
-<p style="margin: 0; font-size: 14px; color: #475476">Tell us who you are. Johan will send you an offer within 1 working day.</p>
+<form onSubmit="{{submitOffer}}" style="display: flex; flex-direction: column; gap: 14px">
+<div style="display: flex; flex-direction: column; gap: 2px">
+<h2 id="of-title" style="margin: 0; font-family: 'Barlow', sans-serif; font-weight: 700; font-size: 24px; line-height: 1.15; color: #151923">Get an offer</h2>
+<p style="margin: 0; font-size: 13px; color: #475476">Johan will send you an offer within 1 working day.</p>
 </div>
 <div class="of-grid">
-<div class="of-f"><label for="of-name">Full name <span aria-hidden="true" style="color: #278641">*</span></label><input id="of-name" type="text" required autocomplete="name" autofocus  class="of-in"></div>
-<div class="of-f"><label for="of-company">Company</label><input id="of-company" type="text"  autocomplete="organization"  class="of-in"></div>
-<div class="of-f"><label for="of-email">Email <span aria-hidden="true" style="color: #278641">*</span></label><input id="of-email" type="email" required autocomplete="email"  class="of-in"></div>
-<div class="of-f"><label for="of-phone">Phone</label><input id="of-phone" type="tel"  autocomplete="tel"  class="of-in"></div>
+<div class="of-f"><label for="of-name">Full name <span aria-hidden="true" style="color: #278641">*</span></label><input id="of-name" type="text" required autocomplete="name" autofocus class="of-in"></div>
+<div class="of-f"><label for="of-email">Email <span aria-hidden="true" style="color: #278641">*</span></label><input id="of-email" type="email" required autocomplete="email" class="of-in"></div>
+<div class="of-f"><label for="of-phone">Phone</label><input id="of-phone" type="tel"  autocomplete="tel" class="of-in"></div>
+<div class="of-f"><label for="of-company">Company</label><input id="of-company" type="text"  autocomplete="organization" class="of-in"></div>
 </div>
-<div class="of-f"><label for="of-country">Country</label><select id="of-country" class="of-in" autocomplete="country-name"><option>Sweden</option><option>Germany</option><option>Netherlands</option><option>Poland</option><option>Denmark</option><option>Other</option></select></div>
-<div class="of-f"><label for="of-msg">Message</label><textarea id="of-msg" rows="3" class="of-in" style="height: auto; padding: 10px 12px; resize: vertical">I’m interested in the Volvo 9700 HD (TX-14). Please send me your best offer.</textarea></div>
-<label style="display: flex; align-items: center; gap: 10px; font-size: 14px; color: #343D56; cursor: pointer"><input type="checkbox" style="width: 18px; height: 18px; accent-color: #278641; margin: 0">Also send me similar buses</label>
-<div style="display: flex; flex-direction: column; gap: 10px">
-<button type="submit" class="bd-cta" style="width: 100%; border: 0; font: inherit; font-weight: 600; font-size: 16px; cursor: pointer">Send request</button>
-<p style="margin: 0; font-size: 12px; color: #5A6A96; text-align: center">We only use your details to answer this request.</p>
-</div>
+<div class="of-f"><label for="of-msg">Message</label><textarea id="of-msg" rows="2" class="of-in of-ta">Please send me your best offer for this bus.</textarea></div>
+<button type="submit" class="bd-cta" style="width: 100%; height: 48px; border: 0; font: inherit; font-weight: 600; font-size: 16px; cursor: pointer">Send request</button>
+<p class="of-note" style="margin: -4px 0 0; font-size: 12px; color: #5A6A96; text-align: center">We only use your details to answer this request.</p>
 </form>
 </sc-if>
 <sc-if value="{{offerSent}}" hint-placeholder-val="{{false}}">
@@ -676,7 +674,7 @@ class Component extends DCLogic {
       saved, savedPressed: saved ? 'true' : 'false', saveLabel: saved ? 'Saved' : 'Save',
       toggleSave: () => this.setState({ saved: !saved }),
       offerOpen: !!st.offerOpen, offerForm: !!st.offerOpen && !st.offerSent, offerSent: !!st.offerOpen && !!st.offerSent,
-      openOffer: (e) => { if (e && e.preventDefault) e.preventDefault(); let y = null; try { const vh = window.innerHeight || 0; if (vh > 1400 && e && typeof e.clientY === 'number') y = Math.max(16, e.clientY - 300); } catch (er) {} this.setState({ offerOpen: true, offerSent: false, offerY: y }); },
+      openOffer: (e) => { if (e && e.preventDefault) e.preventDefault(); let y = null; try { const vh = window.innerHeight || 0; if (vh > 1400 && e && typeof e.clientY === 'number') y = Math.max(16, e.clientY - 260); } catch (er) {} this.setState({ offerOpen: true, offerSent: false, offerY: y }); },
       offerWrapStyle: (st.offerY != null) ? 'align-items: flex-start; padding-top: ' + st.offerY + 'px;' : '',
       closeOffer: () => this.setState({ offerOpen: false, offerSent: false }),
       submitOffer: (e) => { if (e && e.preventDefault) e.preventDefault(); this.setState({ offerSent: true }); },

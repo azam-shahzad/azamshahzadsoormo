@@ -175,3 +175,7 @@ Second artboard "UsedBuses.dc.html" in the V2 preview (https://claude.ai/artifac
   - Submit: shows a "Request sent" success state with a Close button.
   - Closing: Esc, the X or a click outside.
   - Behaviour: required fields use the browser's own checks. In the tall canvas view the popup opens near the button, and in a normal browser window it is centred. Nothing is actually sent; this is a prototype.
+- Get an Offer popup made compact so it fits every screen with no scroll. Checked heights: 1366×640 → 492px, 375×667 → 515px, 320×568 → 530px.
+  - Fields: Name* + Email* in one row, Phone + Company in the next, both rows stay 2 columns on mobile. The message box is 2 rows ("Please send me your best offer for this bus."). Country select and the "similar buses" checkbox are removed.
+  - Size: dialog is 520px wide, with a smaller bus summary and title.
+  - Small screens: inputs shrink on screens under 700px tall, and the privacy note hides under 600px.
