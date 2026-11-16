@@ -138,3 +138,9 @@ Second artboard "UsedBuses.dc.html" in the V2 preview (https://claude.ai/artifac
   - Contact box is tighter: languages are one line of text, Call and Email buttons are 40px.
   - The card stops being sticky on screens shorter than 640px.
 - Bus detail Specifications and Equipment simplified, no more boxes. Specs: 3 columns (Vehicle / Engine and drive / Size and seating) split by thin vertical lines, green uppercase group titles with icons, grey label above a bold value, airy spacing. Equipment: plain 3-column checklist with small solid-green check circles. Mobile: specs in 1 column, equipment in 2.
+- Bus detail price card simplified (546px tall): 28px padding, 24px gaps, thin dividers between 4 sections.
+  - Price section: "Price excl. VAT" label above a 40px price.
+  - Specs section: 2x2 plain label/value pairs with no tiles or icons.
+  - Buttons section: green Send enquiry and outline Book a viewing, no icons.
+  - Contact section: avatar, name and "Bus sales", plus round call and email icons.
+  - Removed: trust line, eyebrow label, language line and online dot.
