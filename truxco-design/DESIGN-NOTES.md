@@ -104,3 +104,4 @@ Second artboard "UsedBuses.dc.html" in the V2 preview (https://claude.ai/artifac
 - Used buses: the search bar is back as a single field with a light placeholder, "Search by make, model or location…", plus the green search button (it replaces the three fields: make/model, country, price).
 - Used buses cards: "Send enquiry" button removed; "View details" is the only button and fills the card width (the homepage cards still have both).
 - Used buses: "Home / Buses" breadcrumb removed from the banner.
+- Used buses cards: "View details" is now solid green (#278641) with white text.
