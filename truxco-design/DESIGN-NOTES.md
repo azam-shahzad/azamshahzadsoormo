@@ -214,3 +214,9 @@ Second artboard "UsedBuses.dc.html" in the V2 preview (https://claude.ai/artifac
   - Footer: Coaches, City buses, Minibuses and Electric → UsedBuses; About us → Main#workshop; How it works → BusDetail#delivery; Contact → Contact; Sell with us → Main#sell; Inspections → BusDetail#inspection. Careers, FAQ and Press stay "#".
   - Active tab: Home on Main, Buses on the listing and detail pages, Contact us on Contact.
   - Already linked before: the logo goes to Main, View details goes to BusDetail, and "Back to all buses" goes to UsedBuses.
+- Contact "Talk to a real person" card filled out, because it looked too empty:
+  - Look: green glow in the top-left, card 360px tall, agent photo blending in on the right.
+  - Text: a "Support team · Mon–Fri 08–17" pill with a pulsing dot, a 26px two-line title, and the line "No bots, no call centre. Our bus specialists answer you directly."
+  - Languages: a "We speak" label with Svenska / English / Deutsch / Polski chips.
+  - Buttons: a green "Call now" and an outline "Email".
+  - Mobile: a stronger dark gradient so the text stays readable over the photo.
