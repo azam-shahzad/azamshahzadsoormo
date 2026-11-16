@@ -199,3 +199,12 @@ Second artboard "UsedBuses.dc.html" in the V2 preview (https://claude.ai/artifac
   - Still no scroll. Checked heights: 1366×640 → 526px, 375×667 → 613px, 320×568 → 532px.
   - Small screens: the compact sizes only apply under 600px screen height.
 - Offer popup message pre-filled as "I’m interested in buying the Volvo 9700 HD (Ref. TX-14). Please send me your best offer." On mobile the message box is 3 lines (14px) and spacing is tightened on short phones; still no scroll (checked 1366×640, 1280×600, 375×667, 360×640, 320×568, 390×844).
+- Contact us page (V2): new 4th artboard "Contact.dc.html". The content comes from the live truxco.se/en/contact-us page: phone, Mon–Fri 08:00–17:00 CET, info@truxco.se, "We reply within 24 hours", "Truxco AB, Staffanstorp, Skåne, Sweden, by appointment only", Get directions, the languages SV/EN/DE/PL, and the form fields.
+  - UX strategy (JTBD): visitors come to buy, sell, visit or ask something else. The hidden "Type of request" dropdown is replaced by 4 visible topic cards (Buy a bus / Sell a bus / Visit the yard / Something else). The selected card changes the message placeholder.
+  - Layout:
+    - Dark hero: "We reply within 24 hours" pill and the heading "Let’s talk buses."
+    - Overlapping form card "Send a message" with the topic cards, name*, email*, phone, message, and a "Send Enquiry" button. Sending shows a "Message sent" state.
+    - Right column: support-agent photo card "Talk to a real person" with language chips, plus Call / Email / Visit cards with arrow buttons.
+    - "Visit us" banner: the aerial yard photo with a pulsing Truxco pin and an address card with Get directions and Book a visit. Book a visit selects "Visit the yard" in the form.
+    - "Quick answers" FAQ with 4 questions, then the footer.
+  - Nav: CONTACT US is active.
