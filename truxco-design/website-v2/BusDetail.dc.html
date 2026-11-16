@@ -47,8 +47,8 @@ a{color:#3050A6}a:hover{color:#151923}
 .bd-cta{display:flex;align-items:center;justify-content:center;gap:10px;height:52px;border-radius:6px;background:#278641;color:#FFFFFF;text-decoration:none;font-weight:600;font-size:16px;transition:background .15s,transform .15s}.bd-cta:hover{background:#1F6E35}
 .bd-cta2{display:inline-flex;align-items:center;justify-content:center;gap:10px;height:50px;padding:0 18px;border-radius:6px;background:#FFFFFF;color:#151923;text-decoration:none;font-weight:600;font-size:15px;border:1px solid #BCC3D7;transition:border-color .15s}.bd-cta2:hover{border-color:#475476}
 .bd-round{flex:none;width:42px;height:42px;border-radius:50%;border:1px solid #D9DDE8;display:flex;align-items:center;justify-content:center;transition:background .15s}.bd-round:hover{background:#EEF6F0}
-.bd-tabs{position:sticky;top:0;z-index:5;display:flex;gap:48px;padding:0 4px;background:#F5F6F9;border-bottom:1px solid #D9DDE8;overflow-x:auto}
-.bd-tab{flex:none;font-size:15px;font-weight:500;color:#475476;text-decoration:none;padding:16px 0 14px;margin-bottom:-1px;border-bottom:3px solid transparent;transition:color .15s,border-color .15s}.bd-tab:hover{color:#151923}.bd-tab.on{color:#226333;font-weight:600;border-bottom-color:#278641}
+.bd-tabs{position:sticky;top:0;z-index:5;display:flex;gap:48px;padding:0 4px;background:#F5F6F9;box-shadow:inset 0 -1px 0 #D9DDE8;overflow-x:auto;overflow-y:hidden;scrollbar-width:none}.bd-tabs::-webkit-scrollbar{display:none}
+.bd-tab{flex:none;font-size:15px;font-weight:500;color:#475476;text-decoration:none;padding:16px 0 13px;border-bottom:3px solid transparent;transition:color .15s,border-color .15s}.bd-tab:hover{color:#151923}.bd-tab.on{color:#226333;font-weight:600;border-bottom-color:#278641}
 .bd-hl{display:flex;gap:12px;align-items:center;padding:14px;border-radius:14px;background:linear-gradient(180deg,#F7FBF8,#FFFFFF);border:1px solid #E2EEE5}
 .bd-hl-ic{flex:none;width:44px;height:44px;border-radius:12px;background:#E2F8E8;display:flex;align-items:center;justify-content:center}
 .bd-sgroup{padding:0 28px;border-left:1px solid #DFE3EC}.bd-sgroup:first-child{padding-left:0;border-left:0}.bd-sgroup:last-child{padding-right:0}.bd-spec{display:flex;flex-direction:column;gap:2px;padding-bottom:14px;border-bottom:1px solid #DFE3EC}.bd-spec:last-child{padding-bottom:0;border-bottom:0}.bd-spec dt{font-size:13px;color:#5A6A96}.bd-spec dd{margin:0;font-size:16px;font-weight:600;color:#151923}
@@ -352,6 +352,15 @@ a{color:#3050A6}a:hover{color:#151923}
 </section>
 
 <!-- SIMILAR BUSES -->
+
+
+<!-- MOBILE STICKY BAR -->
+<div class="bd-mbar" style="display: none; position: sticky; bottom: 0; z-index: 30; background: #FFFFFF; border-top: 1px solid #D9DDE8; padding: 12px 16px; box-shadow: 0 -8px 24px rgba(14,22,42,0.12); align-items: center; justify-content: space-between; gap: 12px">
+<span style="display: flex; flex-direction: column"><strong style="font-family: 'Barlow', sans-serif; font-size: 22px; line-height: 1">€129,000</strong><span style="font-size: 12px; color: #475476">excl. VAT</span></span>
+<a href="#enquire" class="bd-cta" style="flex: 0 0 auto; padding: 0 20px">Get an Offer</a>
+</div>
+
+<!-- REQUEST A BUS -->
 <section aria-labelledby="sim-h" style="padding: 0 24px 72px">
 <div style="max-width: 1240px; margin: 0 auto; display: flex; flex-direction: column; gap: 24px">
 <div style="display: flex; justify-content: space-between; align-items: flex-end; gap: 16px; flex-wrap: wrap">
@@ -388,16 +397,7 @@ a{color:#3050A6}a:hover{color:#151923}
 </sc-for>
 </div>
 </div>
-</section>
-
-<!-- MOBILE STICKY BAR -->
-<div class="bd-mbar" style="display: none; position: sticky; bottom: 0; z-index: 30; background: #FFFFFF; border-top: 1px solid #D9DDE8; padding: 12px 16px; box-shadow: 0 -8px 24px rgba(14,22,42,0.12); align-items: center; justify-content: space-between; gap: 12px">
-<span style="display: flex; flex-direction: column"><strong style="font-family: 'Barlow', sans-serif; font-size: 22px; line-height: 1">€129,000</strong><span style="font-size: 12px; color: #475476">excl. VAT</span></span>
-<a href="#enquire" class="bd-cta" style="flex: 0 0 auto; padding: 0 20px">Get an Offer</a>
-</div>
-
-<!-- REQUEST A BUS -->
-<section aria-labelledby="req-h" style="padding: 0 24px 80px">
+</section><section aria-labelledby="req-h" style="padding: 0 24px 80px">
 <div class="rq-card" style="max-width: 1240px; margin: 0 auto; position: relative; overflow: hidden; background: #0E162A; color: #FFFFFF; border-radius: 16px; display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr); align-items: stretch">
 <div aria-hidden="true" style="position: absolute; inset: 0; background: radial-gradient(600px 320px at 85% 70%, rgba(39,134,65,0.28), transparent 70%), radial-gradient(rgba(255,255,255,0.06) 1px, transparent 1px) 0 0 / 22px 22px; pointer-events: none"></div>
 <div style="position: relative; padding: clamp(32px, 5vw, 56px); display: flex; flex-direction: column; gap: 24px; min-width: 0">
