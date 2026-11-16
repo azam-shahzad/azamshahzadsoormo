@@ -169,3 +169,9 @@ Second artboard "UsedBuses.dc.html" in the V2 preview (https://claude.ai/artifac
 - "Can’t find the right bus?" band (Used buses + Bus detail): the coach cutout is replaced by the support-agent photo from Figma (node 437:930, uploaded as /_blob/4c695799953b218865a34d33f232d3ef, saved in assets/support-agent.png). It is bottom-aligned like in Figma (left -4%, width 108%), its left and top edges fade into the navy card, and the "Typical reply" chip still sits on top. Mobile: the photo is full width under the text.
 - Bus detail "Similar buses" cards simplified. Kept: photo with type, status pill and photo count, the bus name, and a full-width green View details button. Removed: location, price, specs row, inspected line and report link.
 - Similar buses cards: location line and price (with "excl. VAT") added back under the name; the View details button stays. Still no specs, inspected line or report link.
+- Bus detail "Get an Offer" now opens a popup (in the price card and the mobile bar):
+  - Layout: dark blurred overlay, a 560px white dialog, and a bus summary at the top (thumbnail, "Volvo 9700 HD · 2017", "€129,000 excl. VAT · Ref. TX-14"), with a round close button.
+  - Form: Full name* and Company; Email* and Phone (2 columns; 1 column on mobile); Country select; Message pre-filled with the bus name; an "Also send me similar buses" checkbox; a green "Send request" button and a privacy note.
+  - Submit: shows a "Request sent" success state with a Close button.
+  - Closing: Esc, the X or a click outside.
+  - Behaviour: required fields use the browser's own checks. In the tall canvas view the popup opens near the button, and in a normal browser window it is centred. Nothing is actually sent; this is a prototype.
