@@ -92,3 +92,11 @@ Main homepage page and website NOT changed.
 Separate link: https://claude.ai/artifact/5fQmU77HRx2xtJU8nshYa1 — source copy in `website-v2/Main.dc.html`. The main website (QnxH1x…) is unchanged.
 Applied: no utility bar; green X logo (`assets/logo-green-x.svg`, also in footer and the intro animation); uppercase nav; Amber #DEA345 "Post a Bus" (white 18px, chevron, 154×52; mobile menu too); green stat icons; bolder 40px search icon; Video tour section after Our services (video left with amber play button, chapters right); green footer contact icons.
 - V2 preview: Workshop now uses the three Figma photos (handshake large, wheel and papers below), same as the Figma V2 page.
+
+## Used buses listing page (V2 style), 16 Nov
+Second artboard "UsedBuses.dc.html" in the V2 preview (https://claude.ai/artifact/5fQmU77HRx2xtJU8nshYa1, canvas now opens in canvas view). Copy in `website-v2/UsedBuses.dc.html`. Not in Figma yet.
+- Same header as V2 (no utility bar, green X, uppercase nav with BUSES active, amber "Post a Bus"), compact hero with breadcrumb, "Used buses for sale" and the same search bar; trust strip; footer.
+- Left filter panel (collapsible groups): Bus type with counts (working), Make, Price, Year, Mileage, Seats, Emission class (Euro 6 toggle, working), Gearbox, Location; "Clear all".
+- Results: count, removable filter chips, working Sort (newest, price, year, mileage), 3-column card grid (same card as home), pagination, empty state.
+- "Can't find the right bus?" navy request band with green button and phone.
+- The live truxco.se page renders its listings with JavaScript, so no real stock data could be read. First 4 cards reuse the homepage listings; the other 5 are examples with [PRICE]/[YEAR]/[KM]/[SEATS] placeholders; pagination "[LAST]" is a placeholder.
