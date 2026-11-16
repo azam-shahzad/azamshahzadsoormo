@@ -228,3 +228,17 @@ Second artboard "UsedBuses.dc.html" in the V2 preview (https://claude.ai/artifac
   - Layout: the yard photo fills the section, with a dark gradient at the top and "Visit us / Our yard in Staffanstorp" in white.
   - Info bar: a white bar along the bottom with 3 columns (Address, Opening hours, Visits) and two buttons, "Book a visit" (which selects Visit the yard in the form) and "Get directions".
   - Mobile: the bar stacks into one column and the buttons sit side by side.
+- Figma update (page "Truxco — Homepage V2 (Tanveer FeedBack)", 246:5108):
+  - NEW frame "Truxco — Bus detail V2 (Tanveer FeedBack)" (497:864, x 4826).
+    - Header band: cloned, BUSES active, with back link, tags (Available / Coach / New in / Workshop inspected), title, meta and Save/Share.
+    - Overlapping gallery with thumbnails, underline tabs, and the price card (status, price, 4 tiles, Get an Offer, Book a viewing, trust line, Johan contact box).
+    - Sections: Overview highlights, Specifications (3 columns with dividers), Equipment checklist, Inspection report, How buying works (STEP 01–04).
+    - Similar buses (4 simplified cards), request band with the support agent, footer.
+  - NEW frame "Get an Offer popup (Bus detail)" (507:968), under the Bus detail frame: 820px two-panel dialog with the bus front, name/price and the form.
+  - NEW frame "Truxco — Contact us V2 (Tanveer FeedBack)" (504:950, x 6466).
+    - Header band with CONTACT US active and "Let’s talk buses."
+    - Form card with 4 topic cards and fields, next to the right column: agent card ("We reply within 24 hours", Talk to a real person, languages) and Call / Email / Visit cards.
+    - Visit us (option B photo with info bar), Quick answers (4 cards), footer.
+  - Used buses V2 frame: Available/Reserved status pills on all cards. The 7900 Electric badge is replaced by Reserved.
+  - The "Truxco — Volvo 9700 · Refined listing" frame (444:525), made by someone else, was left untouched.
+  - Colours are bound to the file variables.
