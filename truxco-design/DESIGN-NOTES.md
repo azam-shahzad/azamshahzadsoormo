@@ -149,3 +149,4 @@ Second artboard "UsedBuses.dc.html" in the V2 preview (https://claude.ai/artifac
   - Dates: first registered March 2017; serviced October 2026; inspected 12 October 2026; tyres 8 mm tread.
   - Description and similar buses: description sentence; prices, years, km and seats for the similar-bus cards.
 - Bus detail price card reverted to the tiles + contact-box design at the user's request, with more spacing: 26px padding, 22px gaps, 10px tile gaps, roomier tiles (12/14px), contact box 18px padding / 16px gap, 48px avatar. 601px tall.
+- Bus detail specs: no divider under the last item in each column; divider and column lines slightly darker (#DFE3EC, was #ECEEF4).
