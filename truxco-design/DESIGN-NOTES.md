@@ -198,3 +198,4 @@ Second artboard "UsedBuses.dc.html" in the V2 preview (https://claude.ai/artifac
   - Size: the popup is a bit taller and roomier, with 36/34px padding, 20px gaps and 48px inputs.
   - Still no scroll. Checked heights: 1366×640 → 526px, 375×667 → 613px, 320×568 → 532px.
   - Small screens: the compact sizes only apply under 600px screen height.
+- Offer popup message pre-filled as "I’m interested in buying the Volvo 9700 HD (Ref. TX-14). Please send me your best offer." On mobile the message box is 3 lines (14px) and spacing is tightened on short phones; still no scroll (checked 1366×640, 1280×600, 375×667, 360×640, 320×568, 390×844).
