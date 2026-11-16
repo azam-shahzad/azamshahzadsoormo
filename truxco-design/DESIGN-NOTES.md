@@ -101,3 +101,4 @@ Second artboard "UsedBuses.dc.html" in the V2 preview (https://claude.ai/artifac
 - "Can't find the right bus?" navy request band with green button and phone.
 - The live truxco.se page renders its listings with JavaScript, so no real stock data could be read. First 4 cards reuse the homepage listings; the other 5 are examples with [PRICE]/[YEAR]/[KM]/[SEATS] placeholders; pagination "[LAST]" is a placeholder.
 - Used buses: search bar removed from the banner (the filter panel does the searching); banner bottom padding 56px.
+- Used buses: the search bar is back as a single field with a light placeholder, "Search by make, model or location…", plus the green search button (it replaces the three fields: make/model, country, price).
