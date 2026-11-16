@@ -112,3 +112,11 @@ Second artboard "UsedBuses.dc.html" in the V2 preview (https://claude.ai/artifac
 - Used buses sidebar, Bus type: icons removed. Each type is a full-width, text-only row (44px tall) with its count in a small rounded label on the right (green with white number when selected, grey otherwise), so long names like "City buses" no longer wrap.
 - Used buses: amber "Post a Bus" button removed from the header (desktop and mobile menu). The homepage V2 still has it.
 - Used buses "Request a bus" band redesign: 2 columns. Left: eyebrow, headline with "We’ll find it." in light green, 3 numbered steps, green "Send a bus request →" button and a phone button with icon. Right: coach cutout on a green glow with a "Typical reply: within 1 working day" card. Faint dot pattern. Stacks on mobile. Placeholder copy to confirm: "Takes about two minutes", "Including buses not listed online", "With photos, history and a price".
+- Figma: added frame "Truxco — Used buses V2 (Tanveer FeedBack)" (node 431:610) on page 246:5108, to the right of the Homepage V2 frame. Sections:
+  - Header + listing banner (cloned from the V2 hero; BUSES active, Post a Bus hidden, single search field)
+  - Trust strip (clone)
+  - Listing: Filters sidebar with text-only bus type rows, plus 9 bus cards in 3 columns (clones of the homepage cards, Send enquiry hidden, View details green)
+  - Pagination
+  - Request-a-bus band with the uploaded coach cutout
+  - Footer (clone)
+  Colours are bound to the file variables.
