@@ -153,3 +153,4 @@ Second artboard "UsedBuses.dc.html" in the V2 preview (https://claude.ai/artifac
 - Bus detail price card tiles: white icon box removed, icons enlarged from 18px to 24px; nothing else changed.
 - Price card tile icons now 32px (same size the white box was), stroke 1.7.
 - Contact box: languages line moved 4px down from the name; Call/Email buttons moved down (box gap 16px to 22px).
+- "How buying works" redesigned as a dark navy feature panel: green glow + faint dot pattern, eyebrow "From our yard to your depot", horizontal timeline with 56px green icon nodes (last node white = destination) on a green gradient line, big outlined numbers 01–04, white titles, light-grey text; bottom bar "Buying from abroad? We help you with every step." + green "Start with an enquiry". Mobile: vertical timeline.
