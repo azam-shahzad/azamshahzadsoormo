@@ -132,3 +132,8 @@ Second artboard "UsedBuses.dc.html" in the V2 preview (https://claude.ai/artifac
   - Placeholders like [ENGINE], [HP], [DATE] and [NAME] need the real data, which truxco.se did not provide because it was not reachable.
 - Bus detail updates: "250 people viewed this week"; financing pill removed; contact box redesigned (sample name Johan Andersson, solid green avatar with initials and online dot, "Your bus expert", language chips, Call and Email buttons); section tabs now an underline style (active tab green with a green bar); Specifications shown as tiles in 3 groups with icons (label on top, value below) to make it less crowded.
 - Bus detail tabs simplified to match the reference: no card or shadow, plain text tabs (Inter Medium 15, wider spacing) on a full-width grey line, active tab green with a 3px green underline; still sticky.
+- Bus detail price card made compact so it fits on laptop screens (525px tall; it was 825px):
+  - Removed the "Price" label. Price is now 38px. Spec tiles are smaller, with the icon beside the text.
+  - Buttons are 50 and 46px tall. The trust list is a single small line inside the card.
+  - Contact box is tighter: languages are one line of text, Call and Email buttons are 40px.
+  - The card stops being sticky on screens shorter than 640px.
