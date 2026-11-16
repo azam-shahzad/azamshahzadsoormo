@@ -151,3 +151,4 @@ Second artboard "UsedBuses.dc.html" in the V2 preview (https://claude.ai/artifac
 - Bus detail price card reverted to the tiles + contact-box design at the user's request, with more spacing: 26px padding, 22px gaps, 10px tile gaps, roomier tiles (12/14px), contact box 18px padding / 16px gap, 48px avatar. 601px tall.
 - Bus detail specs: no divider under the last item in each column; divider and column lines slightly darker (#DFE3EC, was #ECEEF4).
 - Bus detail price card tiles: white icon box removed, icons enlarged from 18px to 24px; nothing else changed.
+- Price card tile icons now 32px (same size the white box was), stroke 1.7.
