@@ -144,3 +144,7 @@ Second artboard "UsedBuses.dc.html" in the V2 preview (https://claude.ai/artifac
   - Buttons section: green Send enquiry and outline Book a viewing, no icons.
   - Contact section: avatar, name and "Bus sales", plus round call and email icons.
   - Removed: trust line, eyebrow label, language line and online dot.
+- Bus detail: thin divider under every spec item. All [PLACEHOLDERS] on the page are replaced with example values, which need to be confirmed against the real listing:
+  - Engine and size: Volvo D11K 11 litre, 460 hp, I-Shift; 13.8 m long, 3.7 m high, 11 m³ luggage.
+  - Dates: first registered March 2017; serviced October 2026; inspected 12 October 2026; tyres 8 mm tread.
+  - Description and similar buses: description sentence; prices, years, km and seats for the similar-bus cards.
