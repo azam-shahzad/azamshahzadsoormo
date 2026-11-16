@@ -32,6 +32,7 @@ a{color:#3050A6}a:hover{color:#151923}
 @media (max-width: 640px){.t-card{flex-basis:88%!important}}
 @media (prefers-reduced-motion: reduce){.t-track{scroll-behavior:auto!important}}
 .ft-nav a,.ft-legal{transition:color .2s ease}.ft-nav a:hover,.ft-legal:hover{color:#FFFFFF!important}.ft-pill{transition:background-color .2s ease}.ft-pill:hover{background:rgba(255,255,255,0.12)!important}
+.pg-n{min-width:40px;height:40px;padding:0 8px;box-sizing:border-box;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:600;color:#151923;text-decoration:none;transition:background .15s}.pg-n:hover{background:#F2F4F8}.pg-n.on{background:#278641;color:#FFFFFF}.pg-dots{min-width:28px;text-align:center;color:#8693B6;letter-spacing:1px}.pg-arrow{display:inline-flex;align-items:center;gap:6px;height:40px;padding:0 14px;border-radius:6px;font-size:14px;font-weight:600;text-decoration:none}.pg-next{background:#0E162A;color:#FFFFFF;transition:background .15s}.pg-next:hover{background:#1C2741}.pg-n:focus-visible,.pg-next:focus-visible{outline:2px solid #278641;outline-offset:2px}@media (max-width: 560px){.pg-lbl{display:none}.pg-arrow{padding:0 10px}}
 .fl-in{font:inherit;font-size:14px;width:100%;min-width:0;height:44px;box-sizing:border-box;padding:0 12px;border:1px solid #D9DDE8;border-radius:6px;background:#FFFFFF;color:#151923}.fl-in:hover{border-color:#BCC3D7}.fl-in:focus{outline:2px solid #278641;outline-offset:-1px;border-color:#278641}.fl-tile{font:inherit;display:flex;flex-direction:column;align-items:flex-start;gap:10px;padding:12px;border-radius:8px;cursor:pointer;text-align:left;transition:border-color .15s,background .15s}.fl-tile:hover{border-color:#8693B6!important}.fl-pill{font:inherit;font-size:13px;font-weight:500;height:34px;padding:0 12px;border-radius:6px;border:1px solid #D9DDE8;background:#FFFFFF;color:#151923;cursor:pointer}.fl-pill:hover{border-color:#8693B6}.fl-pill.on{background:#EEF6F0;border-color:#278641;color:#1F6E35;font-weight:600}.fl-seg{font:inherit;font-size:13px;font-weight:500;height:34px;border:0;border-radius:6px;background:transparent;color:#475476;cursor:pointer}.fl-seg.on{background:#FFFFFF;color:#151923;font-weight:600;box-shadow:0 1px 2px rgba(14,22,42,.12)}.fl-sw{appearance:none;-webkit-appearance:none;flex:none;margin:0;width:40px;height:24px;border-radius:12px;background:#BCC3D7;position:relative;cursor:pointer;transition:background .2s}.fl-sw::after{content:"";position:absolute;top:3px;left:3px;width:18px;height:18px;border-radius:50%;background:#FFFFFF;box-shadow:0 1px 2px rgba(0,0,0,.2);transition:transform .2s}.fl-sw:checked{background:#278641}.fl-sw:checked::after{transform:translateX(16px)}.fl-tile:focus-visible,.fl-pill:focus-visible,.fl-seg:focus-visible,.fl-sw:focus-visible{outline:2px solid #278641;outline-offset:2px}@media (prefers-reduced-motion: reduce){.fl-sw,.fl-sw::after,.fl-tile,.fl-chev{transition:none}}
 .fl-group>summary::-webkit-details-marker{display:none}.fl-group[open] .fl-chev{transform:rotate(180deg)}.fl-chev{transition:transform .2s ease}
 @media (max-width: 860px){.fl-show{display:block!important}}
@@ -327,14 +328,22 @@ a{color:#3050A6}a:hover{color:#151923}
 </article>
 </sc-for>
 </div>
-<nav aria-label="Pagination" style="display: flex; justify-content: center; align-items: center; gap: 6px; padding-top: 12px; flex-wrap: wrap">
-<a href="#results" aria-label="Previous page" style="width: 44px; height: 44px; border-radius: 6px; border: 1px solid #BCC3D7; background: #FFFFFF; color: #8693B6; display: flex; align-items: center; justify-content: center; text-decoration: none; opacity: .5"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"></path></svg></a>
-<a href="#results" aria-current="page" style="min-width: 44px; height: 44px; border-radius: 6px; background: #0E162A; color: #FFFFFF; display: flex; align-items: center; justify-content: center; text-decoration: none; font-weight: 600">1</a>
-<a href="#results" style="min-width: 44px; height: 44px; border-radius: 6px; border: 1px solid #D9DDE8; background: #FFFFFF; color: #151923; display: flex; align-items: center; justify-content: center; text-decoration: none; font-weight: 600">2</a>
-<a href="#results" style="min-width: 44px; height: 44px; border-radius: 6px; border: 1px solid #D9DDE8; background: #FFFFFF; color: #151923; display: flex; align-items: center; justify-content: center; text-decoration: none; font-weight: 600">3</a>
-<span aria-hidden="true" style="padding: 0 6px; color: #8693B6">…</span>
-<a href="#results" style="min-width: 44px; height: 44px; border-radius: 6px; border: 1px solid #D9DDE8; background: #FFFFFF; color: #151923; display: flex; align-items: center; justify-content: center; text-decoration: none; font-weight: 600">[LAST]</a>
-<a href="#results" aria-label="Next page" style="width: 44px; height: 44px; border-radius: 6px; background: #0E162A; color: #FFFFFF; display: flex; align-items: center; justify-content: center; text-decoration: none"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"></path></svg></a>
+<nav aria-label="Pagination" style="margin-top: 16px; display: flex; flex-direction: column; align-items: center; gap: 14px">
+<div style="width: 100%; box-sizing: border-box; display: flex; justify-content: space-between; align-items: center; gap: 12px; background: #FFFFFF; border: 1px solid #D9DDE8; border-radius: 16px; padding: 10px">
+<span class="pg-arrow" aria-disabled="true" style="color: #BCC3D7; cursor: default"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"></path></svg><span class="pg-lbl">Previous</span></span>
+<ol style="list-style: none; margin: 0; padding: 0; display: flex; align-items: center; gap: 4px">
+<li><a href="#results" class="pg-n on" aria-current="page" aria-label="Page 1">1</a></li>
+<li><a href="#results" class="pg-n" aria-label="Page 2">2</a></li>
+<li><a href="#results" class="pg-n" aria-label="Page 3">3</a></li>
+<li class="pg-dots" aria-hidden="true">…</li>
+<li><a href="#results" class="pg-n" aria-label="Page 8, last page">8</a></li>
+</ol>
+<a href="#results" class="pg-arrow pg-next"><span class="pg-lbl">Next</span><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"></path></svg></a>
+</div>
+<div style="display: flex; flex-direction: column; align-items: center; gap: 8px">
+<p style="margin: 0; font-size: 14px; color: #475476">Showing <strong style="color: #151923; font-weight: 600">1–{{count}}</strong> of <strong style="color: #151923; font-weight: 600">72</strong> buses</p>
+<div aria-hidden="true" style="width: 160px; height: 4px; border-radius: 2px; background: #E6E9F0; overflow: hidden"><div style="width: 12.5%; height: 100%; background: #278641; border-radius: 2px"></div></div>
+</div>
 </nav>
 </sc-if>
 <sc-if value="{{noResults}}" hint-placeholder-val="{{false}}">

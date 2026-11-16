@@ -106,3 +106,4 @@ Second artboard "UsedBuses.dc.html" in the V2 preview (https://claude.ai/artifac
 - Used buses: "Home / Buses" breadcrumb removed from the banner.
 - Used buses cards: "View details" is now solid green (#278641) with white text.
 - Used buses sidebar redesign: filter icon + active-filter count, bus type as icon tiles (2-column, green selected state), € prefix on price + quick price buttons, Euro 6 on/off switch, buttons for mileage/seats, Any/Automatic/Manual toggle for gearbox, "Save search & get alerts" button at the bottom.
+- Used buses pagination redesign: white bar (16px corners) with Previous (grey) on the left, page numbers in the middle (current page green), navy Next on the right. Below it: "Showing 1–N of 72 buses" plus a thin green progress bar. On mobile only the arrows show. 72 and 8 pages are example numbers.
