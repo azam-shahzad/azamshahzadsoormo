@@ -242,3 +242,4 @@ Second artboard "UsedBuses.dc.html" in the V2 preview (https://claude.ai/artifac
   - Used buses V2 frame: Available/Reserved status pills on all cards. The 7900 Electric badge is replaced by Reserved.
   - The "Truxco — Volvo 9700 · Refined listing" frame (444:525), made by someone else, was left untouched.
   - Colours are bound to the file variables.
+- Figma: added a separate frame "Visit us · Option D (Plan your visit steps)" (510:968) under the Contact us V2 frame. It is a white card with "Visit us · Staffanstorp, Skåne" and "Plan your visit in 3 steps" (01 Book a time / 02 Come to the yard / 03 See the buses in person), green Book a visit and outline Get directions buttons, and the handover photo with a "We speak Swedish, English, German and Polish" chip. It is not used on the Contact page (that uses option B); it is kept as an alternative.
