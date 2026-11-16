@@ -120,3 +120,13 @@ Second artboard "UsedBuses.dc.html" in the V2 preview (https://claude.ai/artifac
   - Request-a-bus band with the uploaded coach cutout
   - Footer (clone)
   Colours are bound to the file variables.
+- Bus detail page (V2), new third artboard "BusDetail.dc.html", for truxco.se/en/buses/14 with sample data: Volvo 9700 HD.
+  - Dark banner: back link, tags (Coach, New in, Workshop inspected), large title with the year, location, Save and Share.
+  - Gallery overlaps the banner: large photo with arrows, video and photo counter, plus 5 thumbnails (working).
+  - Sticky price card: €129,000, financing pill, 4 spec tiles, green Send enquiry, Book a viewing, contact person, trust list.
+  - Sticky section tabs.
+  - Sections: Overview with highlights, Specifications (3 groups), Equipment (sample list), Inspection report with checklist and workshop photo, How buying works (4 steps).
+  - Similar buses, then the request band and the footer.
+  - On mobile, a sticky bottom bar shows the price and Send enquiry.
+  - The View details buttons on the listing cards link here.
+  - Placeholders like [ENGINE], [HP], [DATE] and [NAME] need the real data, which truxco.se did not provide because it was not reachable.
