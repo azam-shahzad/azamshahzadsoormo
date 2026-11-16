@@ -187,3 +187,9 @@ Second artboard "UsedBuses.dc.html" in the V2 preview (https://claude.ai/artifac
   - Success state: green gradient check and a navy "Done" button.
   - Mobile: the photo becomes a 104px banner above the form.
   - No scroll at any size. Checked heights: 1366×640 → 445px, 375×667 → 587px, 320×568 → 536px.
+- Get an Offer popup: kept the modern two-panel style but brought back the earlier content.
+  - Left panel: "Available" chip, "Volvo 9700 HD · 2017", "€129,000 excl. VAT · Ref. TX-14". Perks and meta line removed.
+  - Right panel: "Get an offer" heading, "Johan will send you an offer within 1 working day." subtitle, name/email/phone/company, message, Send request, and the privacy note.
+  - Success state: "Thanks! …" text and a Close button.
+  - Photo is cropped to the bus front (object-position 78% 40%).
+  - Still no scroll. Checked heights: 1366×640 → 442px, 375×667 → 593px, 320×568 → 530px.
