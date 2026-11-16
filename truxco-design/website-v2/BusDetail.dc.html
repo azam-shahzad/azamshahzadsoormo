@@ -50,20 +50,20 @@ a{color:#3050A6}a:hover{color:#151923}
 .of-side-body{display:flex;flex-direction:column;gap:6px}
 .of-chip{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:600;color:#151923;background:rgba(255,255,255,0.95);padding:6px 12px;border-radius:999px}
 .of-perks{list-style:none;margin:10px 0 0;padding:12px 0 0;border-top:1px solid rgba(255,255,255,0.14);display:flex;flex-direction:column;gap:6px;font-size:13px;color:#D9DDE8}.of-perks li{display:flex;align-items:center;gap:8px}
-.of-main{padding:26px 28px 22px;display:flex;flex-direction:column;justify-content:center}
-.of-form{display:flex;flex-direction:column;gap:16px}
+.of-main{padding:36px 34px 30px;display:flex;flex-direction:column;justify-content:center}
+.of-form{display:flex;flex-direction:column;gap:20px}
 .of-x{position:absolute;z-index:2;top:16px;right:16px;width:40px;height:40px;border-radius:50%;border:0;background:#F2F4F8;color:#151923;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background .15s,transform .2s}.of-x:hover{background:#E3E6EE;transform:rotate(90deg)}
-.of-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.of-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px 14px}
 .of-f{display:flex;flex-direction:column;gap:6px}.of-f label{font-size:12px;font-weight:600;color:#475476}
-.of-in{font:inherit;font-size:15px;width:100%;box-sizing:border-box;height:44px;padding:0 14px;border:1.5px solid transparent;border-radius:12px;background:#F2F4F8;color:#151923;transition:background .15s,border-color .15s,box-shadow .15s}.of-in:hover{background:#ECEEF4}.of-ta{height:auto!important;padding:10px 14px;resize:none;line-height:1.45}
+.of-in{font:inherit;font-size:15px;width:100%;box-sizing:border-box;height:48px;padding:0 14px;border:1.5px solid transparent;border-radius:12px;background:#F2F4F8;color:#151923;transition:background .15s,border-color .15s,box-shadow .15s}.of-in:hover{background:#ECEEF4}.of-ta{height:auto!important;padding:10px 14px;resize:none;line-height:1.45}
 .of-in:focus{outline:none;background:#FFFFFF;border-color:#278641;box-shadow:0 0 0 4px rgba(39,134,65,0.14)}
-.of-submit{font:inherit;display:flex;align-items:center;justify-content:center;gap:10px;width:100%;height:52px;border:0;border-radius:999px;background:linear-gradient(135deg,#278641 0%,#2FA14E 100%);color:#FFFFFF;font-weight:600;font-size:16px;cursor:pointer;box-shadow:0 12px 24px -10px rgba(39,134,65,0.65);transition:transform .15s,box-shadow .15s}.of-submit:hover{transform:translateY(-1px)}.of-submit svg{transition:transform .15s}.of-submit:hover svg{transform:translateX(3px)}
+.of-submit{font:inherit;display:flex;align-items:center;justify-content:center;gap:10px;width:100%;height:54px;border:0;border-radius:6px;background:#278641;color:#FFFFFF;font-weight:600;font-size:16px;cursor:pointer;transition:background .15s}.of-submit:hover{background:#1F6E35}.of-submit svg{transition:transform .15s}.of-submit:hover svg{transform:translateX(3px)}
 .of-agent{display:flex;align-items:center;justify-content:center;gap:8px;font-size:12px;color:#5A6A96}.of-av{flex:none;width:24px;height:24px;border-radius:50%;background:#278641;color:#FFFFFF;font-size:10px;font-weight:700;display:flex;align-items:center;justify-content:center}
 .of-x:focus-visible,.of-submit:focus-visible{outline:2px solid #278641;outline-offset:3px}
 @keyframes ofFade{from{opacity:0}}@keyframes ofIn{from{opacity:0;transform:translateY(16px) scale(.97)}}
-@media (max-width: 760px){.of-dialog{grid-template-columns:minmax(0,1fr);max-width:480px;border-radius:20px}.of-side{height:104px;padding:12px 16px;justify-content:flex-end}.of-side-top{position:absolute;top:12px;left:16px}.of-perks,.of-side-meta{display:none}.of-side-body{gap:0}.of-side-name{font-size:21px!important}.of-main{padding:18px 18px 16px}.of-form{gap:12px}.of-x{background:rgba(255,255,255,0.92)}}
-@media (max-width: 480px){.of-wrap{padding:10px}.of-in{font-size:16px}.of-grid{gap:10px}}
-@media (max-height: 700px){.of-main{padding-top:20px;padding-bottom:16px}.of-form{gap:12px}.of-in{height:40px}}
+@media (max-width: 760px){.of-dialog{grid-template-columns:minmax(0,1fr);max-width:480px;border-radius:20px}.of-side{height:104px;padding:12px 16px;justify-content:flex-end}.of-side-top{position:absolute;top:12px;left:16px}.of-perks,.of-side-meta{display:none}.of-side-body{gap:0}.of-side-name{font-size:21px!important}.of-main{padding:20px 18px 18px}.of-form{gap:14px}.of-x{background:rgba(255,255,255,0.92)}}
+@media (max-width: 480px){.of-wrap{padding:10px}.of-in{font-size:16px;height:44px}.of-grid{gap:12px 10px}.of-submit{height:52px}}
+@media (max-height: 600px){.of-main{padding-top:20px;padding-bottom:16px}.of-form{gap:12px}.of-in{height:40px}}
 @media (max-height: 600px){.of-agent{display:none}.of-side{height:72px}.of-side-top{display:none}}
 @media (prefers-reduced-motion: reduce){.of-overlay,.of-dialog{animation:none}.of-x:hover{transform:none}}
 .bd-tag{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:600;color:#FFFFFF;padding:6px 12px;border-radius:999px}
@@ -512,7 +512,7 @@ a{color:#3050A6}a:hover{color:#151923}
 <span aria-hidden="true" style="width: 68px; height: 68px; border-radius: 50%; background: linear-gradient(135deg, #278641, #3CD064); display: flex; align-items: center; justify-content: center; box-shadow: 0 12px 24px -8px rgba(39,134,65,0.6)"><svg aria-hidden="true" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg></span>
 <h2 id="of-title" role="status" style="margin: 0; font-family: 'Barlow', sans-serif; font-weight: 700; font-size: 28px; color: #151923">Request sent</h2>
 <p style="margin: 0; font-size: 15px; color: #475476; max-width: 34ch">Thanks! Johan Andersson will send you an offer for the Volvo 9700 HD within 1 working day.</p>
-<button type="button" class="of-submit" style="margin-top: 8px; background: #0E162A; box-shadow: none" onClick="{{closeOffer}}">Close</button>
+<button type="button" class="of-submit" style="margin-top: 8px" onClick="{{closeOffer}}">Close</button>
 </div>
 </sc-if>
 </div>

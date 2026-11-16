@@ -193,3 +193,8 @@ Second artboard "UsedBuses.dc.html" in the V2 preview (https://claude.ai/artifac
   - Success state: "Thanks! …" text and a Close button.
   - Photo is cropped to the bus front (object-position 78% 40%).
   - Still no scroll. Checked heights: 1366×640 → 442px, 375×667 → 593px, 320×568 → 530px.
+- Get an Offer popup changes:
+  - Buttons: Send request and Close now use the site's standard green button (solid #278641, 6px corners, hover #1F6E35, 54px tall). The gradient pill is gone.
+  - Size: the popup is a bit taller and roomier, with 36/34px padding, 20px gaps and 48px inputs.
+  - Still no scroll. Checked heights: 1366×640 → 526px, 375×667 → 613px, 320×568 → 532px.
+  - Small screens: the compact sizes only apply under 600px screen height.
