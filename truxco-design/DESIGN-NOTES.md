@@ -130,3 +130,4 @@ Second artboard "UsedBuses.dc.html" in the V2 preview (https://claude.ai/artifac
   - On mobile, a sticky bottom bar shows the price and Send enquiry.
   - The View details buttons on the listing cards link here.
   - Placeholders like [ENGINE], [HP], [DATE] and [NAME] need the real data, which truxco.se did not provide because it was not reachable.
+- Bus detail updates: "250 people viewed this week"; financing pill removed; contact box redesigned (sample name Johan Andersson, solid green avatar with initials and online dot, "Your bus expert", language chips, Call and Email buttons); section tabs now an underline style (active tab green with a green bar); Specifications shown as tiles in 3 groups with icons (label on top, value below) to make it less crowded.
