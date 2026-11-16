@@ -221,3 +221,4 @@ Second artboard "UsedBuses.dc.html" in the V2 preview (https://claude.ai/artifac
   - Buttons: a green "Call now" and an outline "Email".
   - Mobile: a stronger dark gradient so the text stays readable over the photo.
 - Contact agent card: "Talk to a real person" on one line; Call now / Email buttons removed (the Call and Email cards below already cover these).
+- Contact top grid: the black agent card has no shadow and is wider (columns 1.35fr/1fr → 1.2fr/1fr, right column 553px). Form card and right column now end on the same line: the grid is stretched, the agent card grows to fill, and the form content is vertically centred.
