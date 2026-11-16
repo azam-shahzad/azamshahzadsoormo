@@ -224,3 +224,7 @@ Second artboard "UsedBuses.dc.html" in the V2 preview (https://claude.ai/artifac
 - Contact top grid: the black agent card has no shadow and is wider (columns 1.35fr/1fr → 1.2fr/1fr, right column 553px). Form card and right column now end on the same line: the grid is stretched, the agent card grows to fill, and the form content is vertically centred.
 - Contact: "We reply within 24 hours" pill removed from the hero; it now replaces "Support team · Mon–Fri 08–17" as the pill at the top of the black agent card.
 - Contact "Quick answers" redesigned: the left heading + accordion is replaced by a centred heading and 4 equal white answer cards in one row (2 columns on tablet, 1 on mobile). Each card has a 44px green icon circle (clock, eye, truck, globe), a bold question and the answer, all visible. Below the cards: "Still have a question? Send us a message".
+- Contact "Visit us" replaced with option B, chosen from the options canvas https://claude.ai/artifact/Vd6wzQGTv563XTU96yh7tq.
+  - Layout: the yard photo fills the section, with a dark gradient at the top and "Visit us / Our yard in Staffanstorp" in white.
+  - Info bar: a white bar along the bottom with 3 columns (Address, Opening hours, Visits) and two buttons, "Book a visit" (which selects Visit the yard in the form) and "Get directions".
+  - Mobile: the bar stacks into one column and the buttons sit side by side.

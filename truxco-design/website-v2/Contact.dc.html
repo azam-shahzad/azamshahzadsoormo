@@ -82,6 +82,15 @@ a{color:#3050A6}a:hover{color:#151923}
 .ct-qa-link{color:#278641;font-weight:600;text-underline-offset:3px}.ct-qa-link:hover{color:#1F6E35}
 @media (max-width: 1020px){.ct-qa-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width: 560px){.ct-qa-grid{grid-template-columns:minmax(0,1fr)}}
+.vb{position:relative;overflow:hidden;border-radius:24px;min-height:480px;display:flex;flex-direction:column;justify-content:space-between}
+.vb-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.vb-shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(14,22,42,0.75) 0%,rgba(14,22,42,0.1) 45%,rgba(14,22,42,0) 100%)}
+.vb-head{position:relative;padding:40px 44px;display:flex;flex-direction:column;gap:8px}
+.vb-bar{position:relative;margin:0 24px 24px;background:#FFFFFF;border-radius:18px;padding:22px 24px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr)) auto;gap:24px;align-items:center}
+.vb-cell{display:flex;gap:12px;align-items:center;min-width:0;border-left:1px solid #ECEEF4;padding-left:24px}.vb-cell.vb-first{border-left:0;padding-left:0}
+.vb-actions{display:flex;gap:10px}
+@media (max-width: 1080px){.vb-bar{grid-template-columns:repeat(3,minmax(0,1fr))}.vb-actions{grid-column:1/-1}}
+@media (max-width: 700px){.vb{min-height:560px}.vb-head{padding:28px 24px}.vb-bar{grid-template-columns:minmax(0,1fr);margin:0 12px 12px;gap:14px;padding:18px}.vb-cell{border-left:0;padding-left:0}.vb-actions{flex-wrap:wrap}.vb-actions>*{flex:1 1 auto;justify-content:center}}
 .ct-side{display:flex;flex-direction:column;gap:16px;min-width:0}
 .ct-agent{position:relative;overflow:hidden;border-radius:20px;background:radial-gradient(420px 260px at 0% 0%,rgba(39,134,65,0.35),transparent 70%),#0E162A;min-height:360px;display:flex;align-items:stretch;flex:1 1 auto}
 .ct-agent-img{position:absolute;right:-14%;bottom:0;height:92%;width:auto;max-width:none;-webkit-mask-image:linear-gradient(90deg,transparent 0%,#000 30%);mask-image:linear-gradient(90deg,transparent 0%,#000 30%)}
@@ -393,24 +402,20 @@ a{color:#3050A6}a:hover{color:#151923}
 
 <!-- VISIT US -->
 <section id="visit" aria-labelledby="ct-visit-h" style="padding: 0 24px 72px; scroll-margin-top: 24px">
-<div class="ct-visit" style="max-width: 1240px; margin: 0 auto">
-<img src="/_blob/c412b4374d734066a683e1b2284738be" alt="Aerial view of the Truxco bus yard in Staffanstorp" class="ct-visit-img">
-<div class="ct-visit-shade" aria-hidden="true"></div>
-<div class="ct-pin" aria-hidden="true"><span class="ct-pin-dot"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="flex: none"><path d="M3 19V9a3 3 0 0 1 3-3h15l3 5v8z"></path><path d="M3 12h21M8 6v6M13 6v6"></path><circle cx="8" cy="19.5" r="1.8"></circle><circle cx="19" cy="19.5" r="1.8"></circle></svg></span><span class="ct-pin-label">Truxco AB</span></div>
-<div class="ct-visit-card">
-<span class="ct-icc"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#278641" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="flex: none"><path d="M12 22s7-6.5 7-12a7 7 0 0 0-14 0c0 5.5 7 12 7 12z"></path><circle cx="12" cy="10" r="2.5"></circle></svg></span>
-<div style="display: flex; flex-direction: column; gap: 4px">
-<span style="font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #278641">Visit us</span>
-<h2 id="ct-visit-h" style="margin: 0; font-family: 'Barlow', sans-serif; font-weight: 700; font-size: 28px; line-height: 1.1; color: #151923">Truxco AB, Staffanstorp</h2>
-<span style="font-size: 15px; color: #475476">Skåne, Sweden</span>
+<div class="vb" style="max-width: 1240px; margin: 0 auto">
+<img src="/_blob/c412b4374d734066a683e1b2284738be" alt="Aerial view of the Truxco bus yard in Staffanstorp" class="vb-img">
+<div aria-hidden="true" class="vb-shade"></div>
+<div class="vb-head">
+<span style="font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #9CE7B1">Visit us</span>
+<h2 id="ct-visit-h" style="margin: 0; font-family: 'Barlow', sans-serif; font-weight: 700; font-size: clamp(30px, 3.4vw, 42px); line-height: 1.05; color: #FFFFFF">Our yard in Staffanstorp</h2>
 </div>
-<ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px; font-size: 15px; color: #343D56">
-<li style="display: flex; align-items: center; gap: 10px"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#278641" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="flex: none"><rect x="3" y="5" width="18" height="16" rx="2"></rect><path d="M3 10h18M8 3v4M16 3v4"></path></svg>By appointment only</li>
-<li style="display: flex; align-items: center; gap: 10px"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#278641" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="flex: none"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg>Mon–Fri · 08:00–17:00 CET</li>
-</ul>
-<div style="display: flex; flex-wrap: wrap; gap: 10px">
-<a href="https://maps.google.com/?q=Staffanstorp,Sweden" target="_blank" rel="noopener" class="bd-cta" style="padding: 0 22px; height: 48px">Get directions<svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex: none"><path d="M14 4h6v6M20 4l-9 9"></path><path d="M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"></path></svg></a>
-<button type="button" class="bd-cta2" style="font: inherit; font-weight: 600; cursor: pointer; height: 48px" onClick="{{ctBookVisit}}">Book a visit</button>
+<div class="vb-bar">
+<div class="vb-cell vb-first"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#278641" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="flex: none"><path d="M12 22s7-6.5 7-12a7 7 0 0 0-14 0c0 5.5 7 12 7 12z"></path><circle cx="12" cy="10" r="2.5"></circle></svg><span style="display: flex; flex-direction: column; gap: 2px"><span style="font-size: 12px; color: #5A6A96">Address</span><strong style="font-size: 15px; color: #151923">Truxco AB, Staffanstorp, Skåne</strong></span></div>
+<div class="vb-cell"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#278641" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="flex: none"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg><span style="display: flex; flex-direction: column; gap: 2px"><span style="font-size: 12px; color: #5A6A96">Opening hours</span><strong style="font-size: 15px; color: #151923">Mon–Fri · 08:00–17:00 CET</strong></span></div>
+<div class="vb-cell"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#278641" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="flex: none"><rect x="3" y="5" width="18" height="16" rx="2"></rect><path d="M3 10h18M8 3v4M16 3v4"></path></svg><span style="display: flex; flex-direction: column; gap: 2px"><span style="font-size: 12px; color: #5A6A96">Visits</span><strong style="font-size: 15px; color: #151923">By appointment only</strong></span></div>
+<div class="vb-actions">
+<button type="button" class="bd-cta2" style="font: inherit; font-weight: 600; font-size: 15px; cursor: pointer; height: 48px" onClick="{{ctBookVisit}}">Book a visit</button>
+<a href="https://maps.google.com/?q=Staffanstorp,Sweden" target="_blank" rel="noopener" class="bd-cta" style="padding: 0 20px; height: 48px; font-size: 15px">Get directions</a>
 </div>
 </div>
 </div>
