@@ -244,3 +244,15 @@ Second artboard "UsedBuses.dc.html" in the V2 preview (https://claude.ai/artifac
   - Colours are bound to the file variables.
 - Figma: added a separate frame "Visit us · Option D (Plan your visit steps)" (510:968) under the Contact us V2 frame. It is a white card with "Visit us · Staffanstorp, Skåne" and "Plan your visit in 3 steps" (01 Book a time / 02 Come to the yard / 03 See the buses in person), green Book a visit and outline Get directions buttons, and the handover photo with a "We speak Swedish, English, German and Polish" chip. It is not used on the Contact page (that uses option B); it is kept as an alternative.
 - Components & Controls V2 canvas (review copy before Figma): https://claude.ai/artifact/3TPgv2hQyy1zzwu6iLq5pi, files in components-v2/. It has 8 boards: Foundations, Buttons & links, Tags/badges/status, Form controls (interactive), Navigation, Cards & content blocks, Popups & mobile bar, and Website features (what works in the prototype, what is design only, what needs a backend, and ideas). The existing Figma "Components & Controls" page (113:268) still holds the older buttons; it will be updated after review.
+- Figma "Components & Controls" page (113:268) updated to V2, matching the review canvas https://claude.ai/artifact/3TPgv2hQyy1zzwu6iLq5pi:
+  - Top of the page: V2 header and a Foundations board (colours, type, radii/icons/spacing note).
+  - Component sets, colours bound to the file variables:
+    - Button: Type Primary/Secondary/Navy/Amber × State Default/Hover/Focus/Disabled, 16 variants.
+    - Status pill: Available, Reserved, Sold.
+    - Badge: Type, New in, Passed, Photo count.
+    - Input: Default, Focus, Filled.
+    - Switch: Off, On.
+    - Topic card, Filter row, Section tab and Page number: each with 2 states.
+  - Components: Bus card, Similar bus card, KPI tile, Highlight, Spec item, Inspection row, Step, Answer card, Channel card, Offer popup.
+  - "Website features" board with the same status legend as the canvas.
+  - Old V1 controls (gold Accent "Talk to us", blue Ghost links, copy field, loading button, etc.) moved down to y≈6100 under the label "OLD · V1 controls"; not deleted. The user's reference photos on the page were left untouched.
