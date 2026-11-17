@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Website features</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@700&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:#278641}a:hover{color:#1F6E35}
+</style>
+</helmet>
+<div style="width: 1280px; height: 1180px; box-sizing: border-box; padding: 56px; background: #F5F6F9; font-family: Inter, sans-serif; color: #151923; display: flex; flex-direction: column; gap: 24px">
+<div style="display: flex; justify-content: space-between; align-items: flex-end; gap: 24px">
+<div style="display: flex; flex-direction: column; gap: 6px">
+<span style="font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #278641">Feature list</span>
+<h1 style="margin: 0; font-family: Barlow, sans-serif; font-weight: 700; font-size: 40px; line-height: 1.05">Website features</h1>
+</div>
+<div style="display: flex; gap: 14px; font-size: 13px; font-weight: 600">
+<span style="display: inline-flex; align-items: center; gap: 6px"><span aria-hidden="true" style="width: 10px; height: 10px; border-radius: 50%; background: #278641"></span>Works in prototype</span>
+<span style="display: inline-flex; align-items: center; gap: 6px"><span aria-hidden="true" style="width: 10px; height: 10px; border-radius: 50%; background: #3050A6"></span>Design only</span>
+<span style="display: inline-flex; align-items: center; gap: 6px"><span aria-hidden="true" style="width: 10px; height: 10px; border-radius: 50%; background: #DEA345"></span>Needs backend</span>
+<span style="display: inline-flex; align-items: center; gap: 6px"><span aria-hidden="true" style="width: 10px; height: 10px; border-radius: 2px; background: #8693B6"></span>Idea</span>
+</div>
+</div>
+<div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px">
+<sc-for list="{{groups}}" as="g" hint-placeholder-count="6">
+<section style="background: #FFFFFF; border: 1px solid #E3E6EE; border-radius: 16px; padding: 22px; display: flex; flex-direction: column; gap: 12px">
+<h2 style="margin: 0; font-family: Barlow, sans-serif; font-weight: 700; font-size: 20px">{{g.title}}</h2>
+<ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column">
+<sc-for list="{{g.items}}" as="it" hint-placeholder-count="6">
+<li style="display: flex; gap: 10px; align-items: flex-start; padding: 9px 0; border-top: 1px solid #ECEEF4"><span aria-hidden="true" style="flex: none; width: 10px; height: 10px; margin-top: 5px; border-radius: {{it.radius}}; background: {{it.color}}"></span><span style="display: flex; flex-direction: column; gap: 1px"><strong style="font-size: 14px">{{it.name}}</strong><span style="font-size: 12px; color: #475476">{{it.note}}</span></span></li>
+</sc-for>
+</ul>
+</section>
+</sc-for>
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1280,"height":1180}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const C = { w: '#278641', d: '#3050A6', b: '#DEA345', i: '#8693B6' };
+    const mk = (title, rows) => ({ title, items: rows.map(([s, name, note]) => ({ name, note, color: C[s], radius: s === 'i' ? '2px' : '50%' })) });
+    return { groups: [
+      mk('Everywhere', [
+        ['w', 'Header navigation', 'Home, Buses, About, Contact us link between pages'],
+        ['w', 'Mobile menu', 'Burger opens a full-screen menu'],
+        ['w', 'Footer links', 'Bus types, About, Contact, Sell with us'],
+        ['d', 'Request a bus band', 'Send a bus request button has no form yet'],
+        ['b', 'Phone and email links', 'Open the phone dialler and email app']
+      ]),
+      mk('Homepage', [
+        ['w', 'Logo intro animation', 'Plays once when the page opens'],
+        ['b', 'Hero search', 'Search by make, model, country, price'],
+        ['w', 'Latest buses row', 'Cards with arrows'],
+        ['w', 'Shop by type', 'Coaches, City buses, Minibuses, Electric'],
+        ['d', 'Video tour', 'Needs the real yard video'],
+        ['b', 'Sell your bus form', 'Valuation request']
+      ]),
+      mk('Used buses', [
+        ['w', 'Bus type filter', 'Counts per type, updates the list'],
+        ['w', 'Euro 6 switch, sort, clear all', 'Active filter count in the header'],
+        ['w', 'Status on cards', 'Available, Reserved, Sold'],
+        ['d', 'Make, price, year, mileage, seats', 'Fields drawn, not filtering yet'],
+        ['d', 'Pagination', 'Pages 1–8 shown as an example'],
+        ['b', 'Save search & get alerts', 'Email when a matching bus arrives']
+      ]),
+      mk('Bus detail', [
+        ['w', 'Photo gallery', 'Arrows and 5 thumbnails'],
+        ['w', 'Save and section tabs', 'Save toggles, tabs jump to sections'],
+        ['w', 'Get an Offer popup', 'Form and success screen, no scroll'],
+        ['w', 'Mobile sticky bar', 'Price and Get an Offer on phones'],
+        ['b', 'Send the offer request', 'Form needs an email or CRM connection'],
+        ['b', 'Inspection report PDF', 'Needs the real file per bus'],
+        ['d', 'Share, Book a viewing', 'Buttons drawn, no action yet']
+      ]),
+      mk('Contact us', [
+        ['w', 'Request type cards', 'Changes the message hint'],
+        ['w', 'Book a visit', 'Selects Visit the yard in the form'],
+        ['w', 'Get directions', 'Opens Google Maps'],
+        ['w', 'Quick answers', '4 answer cards'],
+        ['b', 'Send Enquiry', 'Form needs an email or CRM connection']
+      ]),
+      mk('Ideas for later', [
+        ['i', 'Language switcher', 'SV, EN, DE, PL'],
+        ['i', 'Compare buses', 'Pick 2–3 buses side by side'],
+        ['i', 'Recently viewed', 'Quick way back to buses you opened'],
+        ['i', 'WhatsApp chat', 'Message a specialist from any page'],
+        ['i', 'Financing calculator', 'Monthly cost estimate on Bus detail']
+      ])
+    ] };
+  }
+}
+</script>
+</body>
+</html>

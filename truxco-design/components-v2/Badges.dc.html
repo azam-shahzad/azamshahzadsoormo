@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Tags, badges and status</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@700&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:#278641}a:hover{color:#1F6E35}
+</style>
+</helmet>
+<div style="width: 1280px; height: 600px; box-sizing: border-box; padding: 56px; background: #F5F6F9; font-family: Inter, sans-serif; color: #151923; display: flex; flex-direction: column; gap: 28px">
+<div style="display: flex; flex-direction: column; gap: 6px">
+<span style="font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #278641">Labels</span>
+<h1 style="margin: 0; font-family: Barlow, sans-serif; font-weight: 700; font-size: 40px; line-height: 1.05">Tags, badges &amp; status</h1>
+</div>
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px">
+<section style="background: #FFFFFF; border: 1px solid #E3E6EE; border-radius: 16px; padding: 24px; display: flex; flex-direction: column; gap: 16px">
+<span style="font-size: 12px; font-weight: 600; color: #5A6A96">Bus status · on photos and cards</span>
+<div style="display: flex; flex-wrap: wrap; gap: 10px">
+<span style="display: inline-flex; align-items: center; gap: 6px; background: #FFFFFF; font-size: 12px; font-weight: 600; padding: 5px 10px; border-radius: 999px; box-shadow: 0 1px 3px rgba(13,16,22,0.18)"><span aria-hidden="true" style="width: 8px; height: 8px; border-radius: 50%; background: #278641"></span>Available</span>
+<span style="display: inline-flex; align-items: center; gap: 6px; background: #FFFFFF; font-size: 12px; font-weight: 600; padding: 5px 10px; border-radius: 999px; box-shadow: 0 1px 3px rgba(13,16,22,0.18)"><span aria-hidden="true" style="width: 8px; height: 8px; border-radius: 50%; background: #DEA345"></span>Reserved</span>
+<span style="display: inline-flex; align-items: center; gap: 6px; background: #FFFFFF; font-size: 12px; font-weight: 600; padding: 5px 10px; border-radius: 999px; box-shadow: 0 1px 3px rgba(13,16,22,0.18)"><span aria-hidden="true" style="width: 8px; height: 8px; border-radius: 50%; background: #8693B6"></span>Sold</span>
+<span style="display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; color: #226333; background: #E2F8E8; padding: 6px 12px; border-radius: 999px"><span aria-hidden="true" style="width: 8px; height: 8px; border-radius: 50%; background: #278641; box-shadow: 0 0 0 3px rgba(39,134,65,0.2)"></span>Available · ready for viewing</span>
+</div>
+<span style="font-size: 12px; font-weight: 600; color: #5A6A96">Card badges</span>
+<div style="display: flex; flex-wrap: wrap; gap: 8px">
+<span style="background: #FFFFFF; font-size: 12px; font-weight: 600; padding: 5px 10px; border-radius: 6px; box-shadow: 0 1px 3px rgba(13,16,22,0.18)">Coach</span>
+<span style="background: #278641; color: #FFFFFF; font-size: 12px; font-weight: 600; padding: 5px 10px; border-radius: 6px">New in</span>
+<span style="display: inline-flex; align-items: center; gap: 5px; background: rgba(13,16,22,0.72); color: #FFFFFF; font-size: 12px; font-weight: 600; padding: 4px 8px; border-radius: 6px">24 photos</span>
+<span style="font-size: 12px; font-weight: 700; color: #226333; background: #E2F8E8; padding: 4px 10px; border-radius: 999px">Passed</span>
+<span style="font-size: 12px; font-weight: 700; color: #226333; background: #E2F8E8; padding: 4px 10px; border-radius: 999px">8 mm tread</span>
+<span style="min-width: 22px; height: 20px; padding: 0 6px; box-sizing: border-box; border-radius: 10px; background: #278641; color: #FFFFFF; font-size: 12px; font-weight: 600; display: inline-flex; align-items: center; justify-content: center">3</span>
+<span style="min-width: 22px; height: 20px; padding: 0 6px; box-sizing: border-box; border-radius: 10px; background: #F2F4F8; color: #475476; font-size: 12px; font-weight: 600; display: inline-flex; align-items: center; justify-content: center">2</span>
+</div>
+</section>
+<section style="background: #0E162A; border-radius: 16px; padding: 24px; display: flex; flex-direction: column; gap: 16px">
+<span style="font-size: 12px; font-weight: 600; color: #8693B6">On dark bands</span>
+<div style="display: flex; flex-wrap: wrap; gap: 8px">
+<span style="display: inline-flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 600; color: #151923; background: #FFFFFF; padding: 6px 12px; border-radius: 999px"><span aria-hidden="true" style="width: 8px; height: 8px; border-radius: 50%; background: #278641"></span>Available</span>
+<span style="font-size: 13px; font-weight: 600; color: #FFFFFF; background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.18); padding: 6px 12px; border-radius: 999px">Coach</span>
+<span style="font-size: 13px; font-weight: 600; color: #FFFFFF; background: #278641; padding: 6px 12px; border-radius: 999px">New in</span>
+<span style="font-size: 13px; font-weight: 600; color: #9CE7B1; background: rgba(111,220,141,0.14); border: 1px solid rgba(111,220,141,0.35); padding: 6px 12px; border-radius: 999px">Workshop inspected</span>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 8px">
+<span style="display: inline-flex; align-items: center; gap: 8px; font-size: 12px; font-weight: 600; color: #FFFFFF; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.18); padding: 5px 10px; border-radius: 999px"><span aria-hidden="true" style="width: 8px; height: 8px; border-radius: 50%; background: #278641"></span>We reply within 24 hours</span>
+<span style="font-size: 12px; font-weight: 700; color: #FFFFFF; background: rgba(255,255,255,0.14); border: 1px solid rgba(255,255,255,0.22); padding: 4px 10px; border-radius: 999px">Svenska</span>
+<span style="font-size: 12px; font-weight: 700; color: #FFFFFF; background: rgba(255,255,255,0.14); border: 1px solid rgba(255,255,255,0.22); padding: 4px 10px; border-radius: 999px">English</span>
+</div>
+<span style="font-size: 12px; font-weight: 600; color: #8693B6">Eyebrows</span>
+<div style="display: flex; gap: 24px">
+<span style="font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #DCC86F">Can’t find the right bus?</span>
+<span style="font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #9CE7B1">Visit us</span>
+</div>
+</section>
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1280,"height":600}}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

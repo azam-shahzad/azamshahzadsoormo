@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Form controls</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@700&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:#278641}a:hover{color:#1F6E35}
+.fc-in{font:inherit;font-size:15px;width:100%;box-sizing:border-box;height:46px;padding:0 14px;border:1.5px solid transparent;border-radius:12px;background:#F2F4F8;color:#151923}
+.fc-in::placeholder{color:#8693B6}
+.fc-in:focus{outline:none;background:#FFFFFF;border-color:#278641;box-shadow:0 0 0 4px rgba(39,134,65,0.14)}
+.fc-sw{appearance:none;-webkit-appearance:none;margin:0;flex:none;width:40px;height:24px;border-radius:12px;background:#BCC3D7;position:relative;cursor:pointer;transition:background .2s}
+.fc-sw::after{content:"";position:absolute;top:3px;left:3px;width:18px;height:18px;border-radius:50%;background:#FFFFFF;box-shadow:0 1px 2px rgba(0,0,0,.2);transition:transform .2s}
+.fc-sw:checked{background:#278641}.fc-sw:checked::after{transform:translateX(16px)}
+</style>
+</helmet>
+<div style="width: 1280px; height: 980px; box-sizing: border-box; padding: 56px; background: #F5F6F9; font-family: Inter, sans-serif; color: #151923; display: flex; flex-direction: column; gap: 28px">
+<div style="display: flex; flex-direction: column; gap: 6px">
+<span style="font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #278641">Controls · try them</span>
+<h1 style="margin: 0; font-family: Barlow, sans-serif; font-weight: 700; font-size: 40px; line-height: 1.05">Form controls</h1>
+</div>
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px">
+<section style="background: #FFFFFF; border: 1px solid #E3E6EE; border-radius: 16px; padding: 24px; display: flex; flex-direction: column; gap: 16px">
+<span style="font-size: 12px; font-weight: 600; color: #5A6A96">Text fields · Contact, offer popup</span>
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px">
+<div style="display: flex; flex-direction: column; gap: 6px"><label for="f1" style="font-size: 12px; font-weight: 600; color: #475476">Your name <span aria-hidden="true" style="color: #278641">*</span></label><input id="f1" class="fc-in" type="text" required></div>
+<div style="display: flex; flex-direction: column; gap: 6px"><label for="f2" style="font-size: 12px; font-weight: 600; color: #475476">Your email <span aria-hidden="true" style="color: #278641">*</span></label><input id="f2" class="fc-in" type="email" required></div>
+</div>
+<div style="display: flex; flex-direction: column; gap: 6px"><label for="f3" style="font-size: 12px; font-weight: 600; color: #475476">Your message</label><textarea id="f3" class="fc-in" rows="3" style="height: auto; padding: 10px 14px; resize: none" placeholder="Which bus are you interested in?"></textarea></div>
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px">
+<div style="display: flex; flex-direction: column; gap: 6px"><label for="f4" style="font-size: 12px; font-weight: 600; color: #475476">Make</label><select id="f4" class="fc-in" style="cursor: pointer"><option>All makes</option><option>Volvo</option><option>Setra</option></select></div>
+<div style="display: flex; flex-direction: column; gap: 6px"><label for="f5" style="font-size: 12px; font-weight: 600; color: #475476">Price from</label><input id="f5" class="fc-in" type="text" inputmode="numeric" placeholder="€ Min"></div>
+</div>
+</section>
+<section style="background: #FFFFFF; border: 1px solid #E3E6EE; border-radius: 16px; padding: 24px; display: flex; flex-direction: column; gap: 16px">
+<span style="font-size: 12px; font-weight: 600; color: #5A6A96">Search bar · listing hero</span>
+<form role="search" aria-label="Search buses" style="display: flex; border-radius: 16px; overflow: hidden; box-shadow: 0 16px 40px rgba(0,0,0,0.18)">
+<label for="f6" style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0)">Search buses</label>
+<input id="f6" type="search" placeholder="Search by make, model or location…" style="flex: 1; min-width: 0; height: 64px; box-sizing: border-box; font: inherit; font-size: 15px; padding: 0 20px; border: 0; background: #FFFFFF; color: #151923">
+<button type="submit" aria-label="Search" style="flex: 0 0 76px; height: 64px; border: 0; background: #278641; display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="10.8" cy="10.8" r="6.6"></circle><path d="M20 20l-4.4-4.4"></path></svg></button>
+</form>
+<span style="font-size: 12px; font-weight: 600; color: #5A6A96">Switch, checkbox</span>
+<label for="f7" style="display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 12px 14px; border: 1px solid #D9DDE8; border-radius: 8px; cursor: pointer"><span style="display: flex; flex-direction: column; gap: 2px"><strong style="font-size: 14px">Euro 6 or zero emission</strong><span style="font-size: 13px; color: #475476">{{euroLabel}}</span></span><input id="f7" type="checkbox" role="switch" class="fc-sw" checked="{{euro6}}" onChange="{{toggleEuro}}"></label>
+<label for="f8" style="display: flex; align-items: center; gap: 10px; font-size: 14px; cursor: pointer"><input id="f8" type="checkbox" checked="{{similar}}" onChange="{{toggleSimilar}}" style="width: 18px; height: 18px; accent-color: #278641; margin: 0">Also send me similar buses</label>
+</section>
+</div>
+<section style="background: #FFFFFF; border: 1px solid #E3E6EE; border-radius: 16px; padding: 24px; display: flex; flex-direction: column; gap: 16px">
+<span style="font-size: 12px; font-weight: 600; color: #5A6A96">Topic cards · Contact “Type of request” (click one)</span>
+<div role="radiogroup" aria-label="Type of request" style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px">
+<sc-for list="{{topics}}" as="t" hint-placeholder-count="4">
+<button type="button" role="radio" aria-checked="{{t.checked}}" onClick="{{t.pick}}" style="font: inherit; display: flex; flex-direction: column; align-items: flex-start; gap: 10px; padding: 14px; border-radius: 14px; cursor: pointer; text-align: left; font-size: 14px; font-weight: 600; color: #151923; {{t.style}}"><span style="width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; {{t.dot}}"></span>{{t.label}}</button>
+</sc-for>
+</div>
+<span style="font-size: 12px; font-weight: 600; color: #5A6A96">Filter rows · Used buses sidebar (click one)</span>
+<div style="display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 10px">
+<sc-for list="{{types}}" as="b" hint-placeholder-count="5">
+<button type="button" aria-pressed="{{b.pressed}}" onClick="{{b.pick}}" style="font: inherit; display: flex; justify-content: space-between; align-items: center; height: 44px; padding: 0 12px 0 14px; border-radius: 8px; cursor: pointer; font-size: 14px; font-weight: 600; color: #151923; {{b.style}}"><span>{{b.label}}</span><span style="min-width: 22px; height: 20px; padding: 0 6px; box-sizing: border-box; border-radius: 10px; font-size: 12px; display: inline-flex; align-items: center; justify-content: center; {{b.countStyle}}">{{b.count}}</span></button>
+</sc-for>
+</div>
+<span style="font-size: 12px; font-weight: 600; color: #5A6A96">Quick picks · price presets</span>
+<div style="display: flex; gap: 8px">
+<sc-for list="{{presets}}" as="p" hint-placeholder-count="4">
+<button type="button" aria-pressed="{{p.pressed}}" onClick="{{p.pick}}" style="font: inherit; height: 34px; padding: 0 14px; border-radius: 6px; cursor: pointer; font-size: 13px; {{p.style}}">{{p.label}}</button>
+</sc-for>
+</div>
+</section>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1280,"height":980}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const st = this.state || {};
+    const euro6 = !!st.euro6, similar = st.similar !== false;
+    const topic = st.topic || 'buy', type = st.type || 'all', preset = st.preset || 'Any';
+    const T = [['buy','Buy a bus'],['sell','Sell a bus'],['visit','Visit the yard'],['other','Something else']];
+    const B = [['all','All buses','9'],['coach','Coaches','3'],['city','City buses','2'],['mini','Minibuses','2'],['el','Electric','2']];
+    return {
+      euro6, similar,
+      euroLabel: euro6 ? 'On · showing low-emission buses only' : 'Off · showing all buses',
+      toggleEuro: () => this.setState({ euro6: !euro6 }),
+      toggleSimilar: () => this.setState({ similar: !similar }),
+      topics: T.map(([k, l]) => ({ label: l, checked: k === topic ? 'true' : 'false',
+        style: k === topic ? 'background: #F3FCF5; border: 1.5px solid #278641;' : 'background: #FFFFFF; border: 1.5px solid #E3E6EE;',
+        dot: k === topic ? 'background: #278641;' : 'background: #F2F4F8;',
+        pick: () => this.setState({ topic: k }) })),
+      types: B.map(([k, l, c]) => ({ label: l, count: c, pressed: k === type ? 'true' : 'false',
+        style: k === type ? 'background: #EEF6F0; border: 1.5px solid #278641;' : 'background: #FFFFFF; border: 1.5px solid #D9DDE8;',
+        countStyle: k === type ? 'background: #278641; color: #FFFFFF;' : 'background: #F2F4F8; color: #475476;',
+        pick: () => this.setState({ type: k }) })),
+      presets: ['Any', '< 50k', '50–100k', '100k+'].map((l) => ({ label: l, pressed: l === preset ? 'true' : 'false',
+        style: l === preset ? 'background: #EEF6F0; border: 1px solid #278641; color: #1F6E35; font-weight: 600;' : 'background: #FFFFFF; border: 1px solid #D9DDE8; color: #151923; font-weight: 500;',
+        pick: () => this.setState({ preset: l }) }))
+    };
+  }
+}
+</script>
+</body>
+</html>

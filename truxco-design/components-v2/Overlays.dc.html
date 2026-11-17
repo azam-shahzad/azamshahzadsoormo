@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Popups and mobile bar</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@700&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:#278641}a:hover{color:#1F6E35}
+</style>
+</helmet>
+<div style="width: 1280px; height: 760px; box-sizing: border-box; padding: 56px; background: #F5F6F9; font-family: Inter, sans-serif; color: #151923; display: flex; flex-direction: column; gap: 24px">
+<div style="display: flex; flex-direction: column; gap: 6px">
+<span style="font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #278641">Overlays</span>
+<h1 style="margin: 0; font-family: Barlow, sans-serif; font-weight: 700; font-size: 40px; line-height: 1.05">Popups &amp; mobile bar</h1>
+</div>
+<div style="display: grid; grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr); gap: 24px; align-items: start">
+<div style="display: flex; flex-direction: column; gap: 10px">
+<div role="dialog" aria-label="Get an offer" style="display: grid; grid-template-columns: 240px minmax(0, 1fr); border-radius: 24px; overflow: hidden; background: #FFFFFF; box-shadow: 0 30px 70px -24px rgba(13,16,22,0.45)">
+<div style="position: relative; min-height: 440px; background: #0E162A"><img src="/_blob/3ae42bcf6e99f9bbbeeca456d2cc08b3" alt="" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 78% 40%"><div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(14,22,42,0.1) 0%, rgba(14,22,42,0.5) 45%, rgba(14,22,42,0.96) 100%)"></div><span style="position: absolute; top: 16px; left: 16px; display: inline-flex; align-items: center; gap: 8px; background: #FFFFFF; font-size: 12px; font-weight: 600; padding: 6px 12px; border-radius: 999px"><span aria-hidden="true" style="width: 8px; height: 8px; border-radius: 50%; background: #278641"></span>Available</span><div style="position: absolute; left: 16px; right: 16px; bottom: 16px; color: #FFFFFF; display: flex; flex-direction: column; gap: 4px"><strong style="font-family: Barlow, sans-serif; font-size: 22px">Volvo 9700 HD · 2017</strong><span style="font-size: 13px; color: #D9DDE8">€129,000 excl. VAT · Ref. TX-14</span></div></div>
+<div style="position: relative; padding: 28px; display: flex; flex-direction: column; gap: 16px">
+<button type="button" aria-label="Close" style="position: absolute; top: 16px; right: 16px; width: 40px; height: 40px; border-radius: 50%; border: 0; background: #F2F4F8; display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#151923" stroke-width="2.2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"></path></svg></button>
+<div style="display: flex; flex-direction: column; gap: 4px; padding-right: 44px"><h2 style="margin: 0; font-family: Barlow, sans-serif; font-size: 26px">Get an offer</h2><span style="font-size: 13px; color: #475476">Johan will send you an offer within 1 working day.</span></div>
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px"><span style="display: flex; flex-direction: column; gap: 6px"><span style="font-size: 12px; font-weight: 600; color: #475476">Full name *</span><span style="height: 44px; border-radius: 12px; background: #F2F4F8"></span></span><span style="display: flex; flex-direction: column; gap: 6px"><span style="font-size: 12px; font-weight: 600; color: #475476">Email *</span><span style="height: 44px; border-radius: 12px; background: #F2F4F8"></span></span></div>
+<span style="display: flex; flex-direction: column; gap: 6px"><span style="font-size: 12px; font-weight: 600; color: #475476">Message</span><span style="border-radius: 12px; background: #F2F4F8; padding: 10px 14px; font-size: 14px; line-height: 1.45">I’m interested in buying the Volvo 9700 HD (Ref. TX-14). Please send me your best offer.</span></span>
+<span style="height: 52px; border-radius: 6px; background: #278641; color: #FFFFFF; font-weight: 600; display: flex; align-items: center; justify-content: center">Send request</span>
+<span style="font-size: 12px; color: #5A6A96; text-align: center">We only use your details to answer this request.</span>
+</div>
+</div>
+<p style="margin: 0; font-size: 12px; color: #5A6A96">Get an Offer popup · opens from the price card and the mobile bar · no scroll on any screen</p>
+</div>
+<div style="display: flex; flex-direction: column; gap: 20px">
+<div style="background: #FFFFFF; border: 1px solid #E3E6EE; border-radius: 20px; padding: 28px; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 12px">
+<span aria-hidden="true" style="width: 64px; height: 64px; border-radius: 50%; background: #E2F8E8; display: flex; align-items: center; justify-content: center"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#278641" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg></span>
+<strong style="font-family: Barlow, sans-serif; font-size: 24px">Request sent</strong>
+<span style="font-size: 14px; color: #475476">Thanks! Johan Andersson will send you an offer within 1 working day.</span>
+<span style="height: 48px; width: 100%; border-radius: 6px; background: #278641; color: #FFFFFF; font-weight: 600; display: flex; align-items: center; justify-content: center">Close</span>
+</div>
+<p style="margin: -10px 0 0; font-size: 12px; color: #5A6A96">Success state · offer popup and Contact form (“Message sent”)</p>
+<div style="width: 390px; max-width: 100%; align-self: center; background: #FFFFFF; border: 1px solid #D9DDE8; border-radius: 14px; padding: 12px 16px; box-shadow: 0 -8px 24px rgba(14,22,42,0.12); display: flex; align-items: center; justify-content: space-between; gap: 12px; box-sizing: border-box">
+<span style="display: flex; flex-direction: column"><strong style="font-family: Barlow, sans-serif; font-size: 22px; line-height: 1">€129,000</strong><span style="font-size: 12px; color: #475476">excl. VAT</span></span>
+<span style="height: 48px; padding: 0 20px; border-radius: 6px; background: #278641; color: #FFFFFF; font-weight: 600; display: flex; align-items: center">Get an Offer</span>
+</div>
+<p style="margin: -10px 0 0; font-size: 12px; color: #5A6A96; text-align: center">Mobile sticky bar · Bus detail, phones only</p>
+</div>
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1280,"height":760}}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

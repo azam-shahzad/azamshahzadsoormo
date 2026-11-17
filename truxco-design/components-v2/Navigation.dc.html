@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Navigation</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@700&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:#278641}a:hover{color:#1F6E35}
+</style>
+</helmet>
+<div style="width: 1280px; height: 820px; box-sizing: border-box; padding: 56px; background: #F5F6F9; font-family: Inter, sans-serif; color: #151923; display: flex; flex-direction: column; gap: 24px">
+<div style="display: flex; flex-direction: column; gap: 6px">
+<span style="font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #278641">Way-finding</span>
+<h1 style="margin: 0; font-family: Barlow, sans-serif; font-weight: 700; font-size: 40px; line-height: 1.05">Navigation</h1>
+</div>
+<section style="background: linear-gradient(135deg, #0E2A16 0%, #0E162A 50%, #2A0E25 100%); border-radius: 16px; padding: 24px; display: flex; flex-direction: column; gap: 14px">
+<span style="font-size: 12px; font-weight: 600; color: #8693B6">Header · glass bar, active item underlined</span>
+<nav aria-label="Main" style="display: flex; align-items: center; justify-content: space-between; height: 72px; padding: 0 28px; border-radius: 16px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.12)">
+<img src="/_blob/6ef02f683df41213262a219ddb28d32c" alt="Truxco" style="height: 28px; width: auto">
+<div style="display: flex; gap: 8px">
+<a href="#home" style="height: 48px; padding: 0 22px; display: inline-flex; align-items: center; color: #BCC3D7; text-decoration: none; font-size: 15px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em">Home</a>
+<a href="#buses" aria-current="page" style="height: 48px; padding: 0 22px; display: inline-flex; flex-direction: column; justify-content: center; gap: 6px; color: #FFFFFF; text-decoration: none; font-size: 15px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em">Buses<span aria-hidden="true" style="height: 2px; background: #DCC86F; border-radius: 2px"></span></a>
+<a href="#about" style="height: 48px; padding: 0 22px; display: inline-flex; align-items: center; color: #BCC3D7; text-decoration: none; font-size: 15px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em">About</a>
+<a href="#contact" style="height: 48px; padding: 0 22px; display: inline-flex; align-items: center; color: #BCC3D7; text-decoration: none; font-size: 15px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em">Contact us</a>
+</div>
+<button type="button" aria-label="Open menu" style="width: 44px; height: 44px; border-radius: 10px; border: 0; background: rgba(255,255,255,0.1); display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 5px"><span aria-hidden="true" style="width: 20px; height: 2px; background: #FFFFFF; border-radius: 2px"></span><span aria-hidden="true" style="width: 20px; height: 2px; background: #FFFFFF; border-radius: 2px"></span><span aria-hidden="true" style="width: 20px; height: 2px; background: #FFFFFF; border-radius: 2px"></span></button>
+</nav>
+<span style="font-size: 12px; color: #8693B6">Burger button shows on mobile only. Links: Home → Homepage, Buses → Used buses, About → Workshop, Contact us → Contact.</span>
+</section>
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px">
+<section style="background: #FFFFFF; border: 1px solid #E3E6EE; border-radius: 16px; padding: 24px; display: flex; flex-direction: column; gap: 14px">
+<span style="font-size: 12px; font-weight: 600; color: #5A6A96">Section tabs · Bus detail (sticky)</span>
+<div style="display: flex; gap: 40px; box-shadow: inset 0 -1px 0 #D9DDE8">
+<a href="#overview" aria-current="true" style="padding: 16px 0 13px; border-bottom: 3px solid #278641; color: #226333; font-weight: 600; font-size: 15px; text-decoration: none">Overview</a>
+<a href="#specs" style="padding: 16px 0 13px; border-bottom: 3px solid transparent; color: #475476; font-weight: 500; font-size: 15px; text-decoration: none">Specifications</a>
+<a href="#equipment" style="padding: 16px 0 13px; border-bottom: 3px solid transparent; color: #475476; font-weight: 500; font-size: 15px; text-decoration: none">Equipment</a>
+<a href="#inspection" style="padding: 16px 0 13px; border-bottom: 3px solid transparent; color: #475476; font-weight: 500; font-size: 15px; text-decoration: none">Inspection</a>
+</div>
+<span style="font-size: 12px; font-weight: 600; color: #5A6A96">Back link</span>
+<a href="#back" style="display: inline-flex; align-items: center; gap: 6px; color: #475476; text-decoration: none; font-weight: 600; font-size: 14px"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"></path></svg>Back to all buses</a>
+</section>
+<section style="background: #FFFFFF; border: 1px solid #E3E6EE; border-radius: 16px; padding: 24px; display: flex; flex-direction: column; gap: 14px">
+<span style="font-size: 12px; font-weight: 600; color: #5A6A96">Results bar · Used buses</span>
+<div style="display: flex; justify-content: space-between; align-items: center">
+<p style="margin: 0; font-size: 15px; color: #475476"><strong style="color: #151923">9 buses</strong> match your filters</p>
+<div style="display: flex; align-items: center; gap: 10px"><label for="srt" style="font-size: 14px; color: #475476">Sort by</label><select id="srt" style="font: inherit; font-size: 14px; height: 44px; padding: 0 12px; border: 1px solid #D9DDE8; border-radius: 6px; background: #FFFFFF"><option>Newest first</option><option>Price: low to high</option></select></div>
+</div>
+<span style="font-size: 12px; font-weight: 600; color: #5A6A96">Filter chips</span>
+<div style="display: flex; gap: 8px"><span style="display: inline-flex; align-items: center; gap: 8px; height: 32px; padding: 0 12px; border-radius: 999px; background: #EEF6F0; color: #1F6E35; font-size: 13px; font-weight: 600">Coaches ×</span><span style="display: inline-flex; align-items: center; gap: 8px; height: 32px; padding: 0 12px; border-radius: 999px; background: #EEF6F0; color: #1F6E35; font-size: 13px; font-weight: 600">Euro 6 ×</span></div>
+</section>
+</div>
+<section style="background: #FFFFFF; border: 1px solid #E3E6EE; border-radius: 16px; padding: 24px; display: flex; flex-direction: column; gap: 14px">
+<span style="font-size: 12px; font-weight: 600; color: #5A6A96">Pagination · Used buses</span>
+<nav aria-label="Pagination" style="display: flex; justify-content: space-between; align-items: center; padding: 10px; border: 1px solid #D9DDE8; border-radius: 16px">
+<span style="display: inline-flex; align-items: center; gap: 6px; height: 40px; padding: 0 14px; color: #BCC3D7; font-weight: 600; font-size: 14px">Previous</span>
+<div style="display: flex; align-items: center; gap: 4px">
+<a href="#p1" aria-current="page" style="width: 40px; height: 40px; border-radius: 6px; background: #278641; color: #FFFFFF; display: flex; align-items: center; justify-content: center; font-weight: 600; text-decoration: none">1</a>
+<a href="#p2" style="width: 40px; height: 40px; border-radius: 6px; color: #151923; display: flex; align-items: center; justify-content: center; font-weight: 600; text-decoration: none">2</a>
+<a href="#p3" style="width: 40px; height: 40px; border-radius: 6px; color: #151923; display: flex; align-items: center; justify-content: center; font-weight: 600; text-decoration: none">3</a>
+<span aria-hidden="true" style="color: #8693B6; padding: 0 6px">…</span>
+<a href="#p8" style="width: 40px; height: 40px; border-radius: 6px; color: #151923; display: flex; align-items: center; justify-content: center; font-weight: 600; text-decoration: none">8</a>
+</div>
+<a href="#next" style="display: inline-flex; align-items: center; height: 40px; padding: 0 14px; border-radius: 6px; background: #0E162A; color: #FFFFFF; font-weight: 600; font-size: 14px; text-decoration: none">Next</a>
+</nav>
+<div style="display: flex; flex-direction: column; align-items: center; gap: 8px"><span style="font-size: 14px; color: #475476">Showing <strong style="color: #151923">1–9</strong> of <strong style="color: #151923">72</strong> buses</span><span aria-hidden="true" style="width: 160px; height: 4px; border-radius: 2px; background: #E6E9F0; overflow: hidden; display: block"><span style="display: block; width: 12.5%; height: 100%; background: #278641"></span></span></div>
+</section>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1280,"height":820}}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>
