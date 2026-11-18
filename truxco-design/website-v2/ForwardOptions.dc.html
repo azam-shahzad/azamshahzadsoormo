@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Looking forward options</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@500;700;800&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<style>body{margin:0;background:#F5F6F9}
+.to-root{font-family:Inter,system-ui,sans-serif;color:#151923;background:#F5F6F9;padding:56px 24px 40px;display:flex;flex-direction:column;gap:40px}
+.to-opt{border:1px dashed #C9CFDD;border-radius:28px;padding:32px 32px 56px}
+.to-label{display:flex;gap:14px;align-items:center;margin:0 auto 40px;max-width:1240px}
+.to-k{width:40px;height:40px;border-radius:50%;background:#0E162A;color:#FFFFFF;font-family:Barlow,sans-serif;font-weight:700;font-size:18px;display:flex;align-items:center;justify-content:center;flex:none}
+.to-label strong{display:block;font-family:Barlow,sans-serif;font-size:20px}.to-label>span>span{font-size:14px;color:#5A6A96}
+.to-wrap{max-width:1240px;margin:0 auto}
+.to-eye{font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#278641}
+h2{margin:0;font-family:Barlow,sans-serif;font-weight:700;font-size:36px;line-height:1.12;letter-spacing:-.01em;color:#151923}
+h3,p{margin:0}
+.lead{font-size:17px;line-height:1.65;color:#475476}
+.ic40{flex:none;width:40px;height:40px;border-radius:50%;background:#F3FCF5;border:1px solid #C5F1D1;box-sizing:border-box;display:inline-flex;align-items:center;justify-content:center}
+.row{display:flex;flex-wrap:wrap;gap:10px}
+.b1,.b2{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:48px;padding:0 20px;border-radius:6px;font-weight:600;font-size:15px;text-decoration:none}
+.b1{background:#278641;color:#FFFFFF}.b1:hover{background:#1F6E35;color:#FFFFFF}
+.b2{background:#FFFFFF;color:#151923;border:1px solid #D9DDE8}.b2:hover{border-color:#278641;color:#151923}
+/* A */
+.a-card{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:56px;background:#FFFFFF;border:1px solid #E3E6EE;border-radius:24px;padding:48px}
+.a-tx{display:flex;flex-direction:column;gap:18px}
+.a-list{list-style:none;margin:8px 0 10px;padding:0;display:flex;flex-direction:column}
+.a-list li{display:flex;gap:14px;align-items:flex-start;padding:14px 0;border-top:1px solid #ECEEF4}
+.a-list li:last-child{border-bottom:1px solid #ECEEF4}
+.a-list strong{display:block;font-size:16px}.a-list li span span{display:block;font-size:14px;line-height:1.55;color:#475476;margin-top:2px}
+.a-img{position:relative;border-radius:18px;overflow:hidden;min-height:480px}
+.a-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.a-chip{position:absolute;left:16px;top:16px;display:inline-flex;align-items:center;gap:6px;background:#FFFFFF;font-size:13px;font-weight:600;padding:7px 12px;border-radius:999px}
+/* B */
+.b-band{position:relative;border-radius:24px;overflow:hidden;min-height:560px;display:flex;flex-direction:column;justify-content:space-between;padding:32px}
+.b-band>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:60% 50%}
+.b-shade{position:absolute;inset:0;background:linear-gradient(90deg,rgba(14,22,42,.35),rgba(14,22,42,0) 60%)}
+.b-panel{position:relative;max-width:520px;background:#FFFFFF;border-radius:20px;padding:32px;display:flex;flex-direction:column;gap:14px}
+.b-panel h2{font-size:30px}.b-panel p{font-size:15px;line-height:1.6;color:#475476}.b-panel .row{margin-top:6px}
+.b-bar{position:relative;margin-top:24px;background:#FFFFFF;border-radius:18px;padding:22px 8px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr))}
+.b-cell{display:flex;gap:14px;align-items:flex-start;padding:0 24px;border-left:1px solid #ECEEF4}.b-cell:first-child{border-left:0}
+.b-cell strong{display:block;font-size:15px}.b-cell span span{display:block;font-size:13px;line-height:1.5;color:#475476;margin-top:2px}
+/* C */
+.c-band{background:#F3FCF5;border:1px solid #DCF2E2;border-radius:24px;padding:64px 56px;display:flex;flex-direction:column;align-items:center;gap:18px;text-align:center}
+.c-band h2{max-width:22ch;font-size:42px}
+.c-band .lead{max-width:56ch}
+.c-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;width:100%;margin:24px 0 12px;text-align:left}
+.c-c{position:relative;background:#FFFFFF;border:1px solid #E3E6EE;border-radius:18px;padding:26px;display:flex;flex-direction:column;gap:12px}
+.c-n{position:absolute;top:22px;right:24px;font-family:Barlow,sans-serif;font-weight:700;font-size:15px;color:#BCC3D7}
+.c-c h3{font-family:Barlow,sans-serif;font-size:21px;margin-top:4px}.c-c p{font-size:14px;line-height:1.6;color:#475476}
+</style>
+</helmet>
+<div class="to-root">
+<div class="to-wrap" style="display: flex; flex-direction: column; gap: 6px"><span class="to-eye">About us · pick one</span><h1 style="margin: 0; font-family: Barlow, sans-serif; font-size: 48px">“Looking forward” — 3 options</h1></div>
+<section class="to-opt"><div class="to-label"><span class="to-k">A</span><span><strong>Clean split</strong><span>White card: message and three clear points on the left, a clean photo on the right. No dark overlay.</span></span></div>
+<div class="to-wrap a-card"><div class="a-tx"><span class="to-eye">Looking forward</span><h2>The biggest transition the bus industry has seen in decades — and we want to help drive it.</h2><p class="lead">Our goal: to be your partner for sustainable transport — today, and twenty years from now.</p><ul class="a-list"><li><span class="ic40"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#278641" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="flex: none"><path d="M13 2L4 14h7l-1 8 9-12h-7l1-8z"></path></svg></span><span><strong>Electric buses</strong><span>We invest in electric buses for Swedish and European operators.</span></span></li><li><span class="ic40"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#278641" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="flex: none"><path d="M9 2v5M15 2v5M6 7h12v4a6 6 0 0 1-12 0V7zM12 17v5"></path></svg></span><span><strong>Charging infrastructure</strong><span>We build know-how in charging, so the bus and the depot work together.</span></span></li><li><span class="ic40"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#278641" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="flex: none"><path d="M5 19c0-8 6-14 15-14 0 9-6 15-14 15"></path><path d="M5 19l7-7"></path></svg></span><span><strong>Self-sufficient depots</strong><span>We explore depot concepts that produce and store their own energy.</span></span></li></ul><div class="row"><a class="b1" href="Contact.dc.html">Get in touch</a><a class="b2" href="UsedBuses.dc.html">Browse electric buses</a></div></div>
+<div class="a-img"><img src="/_blob/f430994695698a72d72784b9fdf0f2eb" alt="An electric city bus at the Truxco yard"><span class="a-chip"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#278641" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex: none"><path d="M13 2L4 14h7l-1 8 9-12h-7l1-8z"></path></svg>Zero emission</span></div></div></section>
+<section class="to-opt"><div class="to-label"><span class="to-k">B</span><span><strong>Photo with white panel</strong><span>Full-width photo, the message in a white card on top, and the three points in a white bar along the bottom — same style as the Visit us section.</span></span></div>
+<div class="to-wrap b-band"><img src="/_blob/f430994695698a72d72784b9fdf0f2eb" alt="An electric city bus at the Truxco yard"><div class="b-shade"></div>
+<div class="b-panel"><span class="to-eye">Looking forward</span><h2>The biggest transition the bus industry has seen in decades — and we want to help drive it.</h2><p>Our goal: to be your partner for sustainable transport — today, and twenty years from now.</p><div class="row"><a class="b1" href="Contact.dc.html">Get in touch</a><a class="b2" href="UsedBuses.dc.html">Browse electric buses</a></div></div>
+<div class="b-bar"><div class="b-cell"><span class="ic40"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#278641" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="flex: none"><path d="M13 2L4 14h7l-1 8 9-12h-7l1-8z"></path></svg></span><span><strong>Electric buses</strong><span>We invest in electric buses for Swedish and European operators.</span></span></div><div class="b-cell"><span class="ic40"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#278641" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="flex: none"><path d="M9 2v5M15 2v5M6 7h12v4a6 6 0 0 1-12 0V7zM12 17v5"></path></svg></span><span><strong>Charging infrastructure</strong><span>We build know-how in charging, so the bus and the depot work together.</span></span></div><div class="b-cell"><span class="ic40"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#278641" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="flex: none"><path d="M5 19c0-8 6-14 15-14 0 9-6 15-14 15"></path><path d="M5 19l7-7"></path></svg></span><span><strong>Self-sufficient depots</strong><span>We explore depot concepts that produce and store their own energy.</span></span></div></div></div></section>
+<section class="to-opt"><div class="to-label"><span class="to-k">C</span><span><strong>Centred statement</strong><span>Calm light-green section: one strong centred sentence, three small cards, one clear button. Photo left out for a cleaner look.</span></span></div>
+<div class="to-wrap c-band"><span class="to-eye">Looking forward</span><h2>The biggest transition the bus industry has seen in decades — and we want to help drive it.</h2><p class="lead" style="text-align: center">Our goal: to be your partner for sustainable transport — today, and twenty years from now.</p><div class="c-grid"><article class="c-c"><span class="c-n">01</span><span class="ic40"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#278641" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="flex: none"><path d="M13 2L4 14h7l-1 8 9-12h-7l1-8z"></path></svg></span><h3>Electric buses</h3><p>We invest in electric buses for Swedish and European operators.</p></article><article class="c-c"><span class="c-n">02</span><span class="ic40"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#278641" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="flex: none"><path d="M9 2v5M15 2v5M6 7h12v4a6 6 0 0 1-12 0V7zM12 17v5"></path></svg></span><h3>Charging infrastructure</h3><p>We build know-how in charging, so the bus and the depot work together.</p></article><article class="c-c"><span class="c-n">03</span><span class="ic40"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#278641" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="flex: none"><path d="M5 19c0-8 6-14 15-14 0 9-6 15-14 15"></path><path d="M5 19l7-7"></path></svg></span><h3>Self-sufficient depots</h3><p>We explore depot concepts that produce and store their own energy.</p></article></div><div class="row" style="justify-content: center"><a class="b1" href="Contact.dc.html">Get in touch <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex: none"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a></div></div></section>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":2830}}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>
