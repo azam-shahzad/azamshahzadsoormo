@@ -1,0 +1,744 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>V2 · About us — Truxco</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@500;700;800&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#F5F6F9}
+a{color:#3050A6}a:hover{color:#151923}
+.bus-drive-a,.bus-drive-b{transform-origin:28% 92%;will-change:transform}
+.bus-drive-a{animation:busDriveA 1.9s cubic-bezier(.16,.84,.3,1) both}
+.bus-drive-b{animation:busDriveB 1.9s cubic-bezier(.16,.84,.3,1) both}
+@keyframes busDriveA{0%{transform:translateX(120%);filter:blur(3px);opacity:0}12%{opacity:1}58%{transform:translateX(-3%) rotate(-.9deg);filter:blur(0)}76%{transform:translateX(.8%) rotate(.35deg)}90%{transform:translateX(-.3%) rotate(-.1deg)}100%{transform:none;filter:none;opacity:1}}
+@keyframes busDriveB{0%{transform:translateX(120%);filter:blur(3px);opacity:0}12%{opacity:1}58%{transform:translateX(-3%) rotate(-.9deg);filter:blur(0)}76%{transform:translateX(.8%) rotate(.35deg)}90%{transform:translateX(-.3%) rotate(-.1deg)}100%{transform:none;filter:none;opacity:1}}
+@media (prefers-reduced-motion: reduce){.bus-drive-a,.bus-drive-b{animation:none}}
+.hero-band{background-color:#0E162A;background-image:linear-gradient(135deg,#0E2A16 0%,#0E162A 50%,#2A0E25 100%)}
+.hero-bg{background:transparent}
+.hero-band::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background:url('/_blob/c412b4374d734066a683e1b2284738be') center/cover no-repeat;opacity:.2}
+.hero-band::after{content:"";position:absolute;left:0;right:0;bottom:0;height:45%;z-index:-1;pointer-events:none;background:linear-gradient(180deg,rgba(13,16,22,0) 0%,rgba(13,16,22,.55) 100%)}
+.hero-band{position:relative;isolation:isolate;overflow:hidden;display:flex;flex-direction:column}
+.hero-band > #top{flex:1;display:flex;align-items:center;justify-content:center}
+.hero-band > #top > div{width:100%}
+@media (max-width: 700px){.sb-btn{flex:1 1 100%!important}}
+.t-track{scrollbar-width:none}.t-arrows button{transition:opacity .2s ease,background-color .2s ease}.t-arrows button[aria-disabled="true"]{opacity:.4;cursor:default}.t-track::-webkit-scrollbar{display:none}
+@media (max-width: 960px){.t-card{flex-basis:calc((100% - 24px) / 2)!important}}
+@media (max-width: 640px){.t-card{flex-basis:88%!important}}
+@media (prefers-reduced-motion: reduce){.t-track{scroll-behavior:auto!important}}
+.ft-nav a,.ft-legal{transition:color .2s ease}.ft-nav a:hover,.ft-legal:hover{color:#FFFFFF!important}.ft-pill{transition:background-color .2s ease}.ft-pill:hover{background:rgba(255,255,255,0.12)!important}
+.rq-primary{transition:background .15s}.rq-primary:hover{background:#1F6E35}.rq-phone{transition:border-color .15s,background .15s}.rq-phone:hover{border-color:rgba(255,255,255,0.5);background:rgba(255,255,255,0.04)}.rq-primary:focus-visible,.rq-phone:focus-visible{outline:2px solid #6FD08C;outline-offset:3px}@media (max-width: 860px){.rq-card{grid-template-columns:1fr!important}.rq-art{min-height:0!important;aspect-ratio:584/500}.rq-chip{top:0!important;left:clamp(32px,5vw,56px)!important}.rq-art img{bottom:0!important;left:0!important;width:100%!important}}
+.pg-n{min-width:40px;height:40px;padding:0 8px;box-sizing:border-box;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:600;color:#151923;text-decoration:none;transition:background .15s}.pg-n:hover{background:#F2F4F8}.pg-n.on{background:#278641;color:#FFFFFF}.pg-dots{min-width:28px;text-align:center;color:#8693B6;letter-spacing:1px}.pg-arrow{display:inline-flex;align-items:center;gap:6px;height:40px;padding:0 14px;border-radius:6px;font-size:14px;font-weight:600;text-decoration:none}.pg-next{background:#0E162A;color:#FFFFFF;transition:background .15s}.pg-next:hover{background:#1C2741}.pg-n:focus-visible,.pg-next:focus-visible{outline:2px solid #278641;outline-offset:2px}@media (max-width: 560px){.pg-lbl{display:none}.pg-arrow{padding:0 10px}}
+.fl-in{font:inherit;font-size:14px;width:100%;min-width:0;height:44px;box-sizing:border-box;padding:0 12px;border:1px solid #D9DDE8;border-radius:6px;background:#FFFFFF;color:#151923}.fl-in:hover{border-color:#BCC3D7}.fl-in:focus{outline:2px solid #278641;outline-offset:-1px;border-color:#278641}.fl-tile{font:inherit;display:flex;flex-direction:row;align-items:center;justify-content:space-between;gap:8px;height:44px;padding:0 12px 0 14px;box-sizing:border-box;border-radius:8px;cursor:pointer;text-align:left;min-width:0;transition:border-color .15s,background .15s}.fl-tile:hover{border-color:#8693B6!important}.fl-pill{font:inherit;font-size:13px;font-weight:500;height:34px;padding:0 12px;border-radius:6px;border:1px solid #D9DDE8;background:#FFFFFF;color:#151923;cursor:pointer}.fl-pill:hover{border-color:#8693B6}.fl-pill.on{background:#EEF6F0;border-color:#278641;color:#1F6E35;font-weight:600}.fl-seg{font:inherit;font-size:13px;font-weight:500;height:34px;border:0;border-radius:6px;background:transparent;color:#475476;cursor:pointer}.fl-seg.on{background:#FFFFFF;color:#151923;font-weight:600;box-shadow:0 1px 2px rgba(14,22,42,.12)}.fl-sw{appearance:none;-webkit-appearance:none;flex:none;margin:0;width:40px;height:24px;border-radius:12px;background:#BCC3D7;position:relative;cursor:pointer;transition:background .2s}.fl-sw::after{content:"";position:absolute;top:3px;left:3px;width:18px;height:18px;border-radius:50%;background:#FFFFFF;box-shadow:0 1px 2px rgba(0,0,0,.2);transition:transform .2s}.fl-sw:checked{background:#278641}.fl-sw:checked::after{transform:translateX(16px)}.fl-tile:focus-visible,.fl-pill:focus-visible,.fl-seg:focus-visible,.fl-sw:focus-visible{outline:2px solid #278641;outline-offset:2px}@media (prefers-reduced-motion: reduce){.fl-sw,.fl-sw::after,.fl-tile,.fl-chev{transition:none}}
+.fl-group>summary::-webkit-details-marker{display:none}.fl-group[open] .fl-chev{transform:rotate(180deg)}.fl-chev{transition:transform .2s ease}
+@media (max-width: 860px){.fl-show{display:block!important}}
+.bd-status{align-self:flex-start;display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:600;color:#226333;background:#E2F8E8;padding:6px 12px;border-radius:999px}
+.bd-dot{flex:none;width:8px;height:8px;border-radius:50%;background:#278641;box-shadow:0 0 0 3px rgba(39,134,65,0.2);animation:bdPulse 2s ease-in-out infinite}@keyframes bdPulse{50%{box-shadow:0 0 0 5px rgba(39,134,65,0.08)}}
+@media (prefers-reduced-motion: reduce){.bd-dot{animation:none}}
+.of-overlay{position:fixed;inset:0;z-index:100;background:rgba(13,16,22,0.55);backdrop-filter:blur(6px);animation:ofFade .2s ease both}
+.of-wrap{position:fixed;inset:0;z-index:101;display:flex;align-items:center;justify-content:center;padding:16px;pointer-events:none}
+.of-dialog{pointer-events:auto;position:relative;width:100%;max-width:820px;max-height:calc(100dvh - 24px);overflow:hidden;box-sizing:border-box;background:#FFFFFF;border-radius:24px;display:grid;grid-template-columns:300px minmax(0,1fr);box-shadow:0 40px 100px -24px rgba(13,16,22,0.6);animation:ofIn .3s cubic-bezier(.2,.8,.2,1) both}
+.of-side{position:relative;overflow:hidden;background:#0E162A;color:#FFFFFF;display:flex;flex-direction:column;justify-content:space-between;padding:20px}
+.of-side-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.of-side-shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(14,22,42,0.1) 0%,rgba(14,22,42,0.5) 45%,rgba(14,22,42,0.96) 100%)}
+.of-side-top,.of-side-body{position:relative}
+.of-side-body{display:flex;flex-direction:column;gap:6px}
+.of-chip{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:600;color:#151923;background:rgba(255,255,255,0.95);padding:6px 12px;border-radius:999px}
+.of-perks{list-style:none;margin:10px 0 0;padding:12px 0 0;border-top:1px solid rgba(255,255,255,0.14);display:flex;flex-direction:column;gap:6px;font-size:13px;color:#D9DDE8}.of-perks li{display:flex;align-items:center;gap:8px}
+.of-main{padding:36px 34px 30px;display:flex;flex-direction:column;justify-content:center}
+.of-form{display:flex;flex-direction:column;gap:20px}
+.of-x{position:absolute;z-index:2;top:16px;right:16px;width:40px;height:40px;border-radius:50%;border:0;background:#F2F4F8;color:#151923;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background .15s,transform .2s}.of-x:hover{background:#E3E6EE;transform:rotate(90deg)}
+.of-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px 14px}
+.of-f{display:flex;flex-direction:column;gap:6px}.of-f label{font-size:12px;font-weight:600;color:#475476}
+.of-in{font:inherit;font-size:15px;width:100%;box-sizing:border-box;height:48px;padding:0 14px;border:1.5px solid transparent;border-radius:12px;background:#F2F4F8;color:#151923;transition:background .15s,border-color .15s,box-shadow .15s}.of-in:hover{background:#ECEEF4}.of-ta{height:auto!important;padding:10px 14px;resize:none;line-height:1.45}
+.of-in:focus{outline:none;background:#FFFFFF;border-color:#278641;box-shadow:0 0 0 4px rgba(39,134,65,0.14)}
+.of-submit{font:inherit;display:flex;align-items:center;justify-content:center;gap:10px;width:100%;height:54px;border:0;border-radius:6px;background:#278641;color:#FFFFFF;font-weight:600;font-size:16px;cursor:pointer;transition:background .15s}.of-submit:hover{background:#1F6E35}.of-submit svg{transition:transform .15s}.of-submit:hover svg{transform:translateX(3px)}
+.of-agent{display:flex;align-items:center;justify-content:center;gap:8px;font-size:12px;color:#5A6A96}.of-av{flex:none;width:24px;height:24px;border-radius:50%;background:#278641;color:#FFFFFF;font-size:10px;font-weight:700;display:flex;align-items:center;justify-content:center}
+.of-x:focus-visible,.of-submit:focus-visible{outline:2px solid #278641;outline-offset:3px}
+@keyframes ofFade{from{opacity:0}}@keyframes ofIn{from{opacity:0;transform:translateY(16px) scale(.97)}}
+@media (max-width: 760px){.of-dialog{grid-template-columns:minmax(0,1fr);max-width:480px;border-radius:20px}.of-side{height:104px;padding:12px 16px;justify-content:flex-end}.of-side-top{position:absolute;top:12px;left:16px}.of-perks,.of-side-meta{display:none}.of-side-body{gap:0}.of-side-name{font-size:21px!important}.of-main{padding:20px 18px 18px}.of-form{gap:14px}.of-x{background:rgba(255,255,255,0.92)}}
+@media (max-width: 480px){.of-wrap{padding:10px}.of-ta{font-size:14px!important;line-height:1.4!important;min-height:84px}.of-form{gap:12px!important}.of-in{font-size:16px;height:44px}.of-grid{gap:10px}.of-submit{height:52px}}
+@media (max-height: 600px){.of-main{padding-top:20px;padding-bottom:16px}.of-form{gap:12px}.of-in{height:40px}}
+@media (max-height: 600px){.of-agent{display:none}.of-side{height:72px}.of-side-top{display:none}}
+@media (max-width: 480px) and (max-height: 660px){.of-side{height:92px}.of-main{padding-top:16px;padding-bottom:14px}}
+@media (max-height: 600px){.of-side{height:72px}}
+@media (prefers-reduced-motion: reduce){.of-overlay,.of-dialog{animation:none}.of-x:hover{transform:none}}
+.ct-eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:600;color:#FFFFFF;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);padding:7px 14px;border-radius:999px}
+.ct-card{background:#FFFFFF;border:1px solid #E3E6EE;border-radius:20px;padding:clamp(22px,3vw,36px);box-shadow:0 30px 60px -30px rgba(14,22,42,0.35)}
+.ct-topics{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+.ct-topic{font:inherit;display:flex;flex-direction:column;align-items:flex-start;gap:10px;padding:14px;border-radius:14px;border:1.5px solid #E3E6EE;background:#FFFFFF;color:#151923;font-size:14px;font-weight:600;cursor:pointer;text-align:left;transition:border-color .15s,background .15s,transform .15s}.ct-topic:hover{border-color:#BCC3D7;transform:translateY(-1px)}
+.ct-topic.on{border-color:#278641;background:#F3FCF5}.ct-topic-ic{width:36px;height:36px;border-radius:50%;background:#F2F4F8;display:flex;align-items:center;justify-content:center}.ct-topic.on .ct-topic-ic{background:#278641}.ct-topic.on .ct-topic-ic svg{stroke:#FFFFFF}
+.ct-online{align-self:flex-start;display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:600;color:#FFFFFF;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.18);padding:5px 10px;border-radius:999px}
+.ct-abtn{display:inline-flex;align-items:center;gap:8px;height:40px;padding:0 14px;border-radius:6px;font-size:14px;font-weight:600;text-decoration:none;color:#FFFFFF;border:1px solid rgba(255,255,255,0.3);transition:background .15s}.ct-abtn:hover{background:rgba(255,255,255,0.08);color:#FFFFFF}
+.ct-abtn-p{background:#278641;border-color:#278641}.ct-abtn-p:hover{background:#1F6E35}
+.ct-qa-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px}
+.ct-qa{background:#FFFFFF;border:1px solid #E3E6EE;border-radius:16px;padding:24px;display:flex;flex-direction:column;gap:12px}
+.ct-qa h3{margin:6px 0 0;font-size:17px;font-weight:700;line-height:1.3;color:#151923}.ct-qa p{margin:0;font-size:14px;line-height:1.6;color:#475476}
+.ct-qa-link{color:#278641;font-weight:600;text-underline-offset:3px}.ct-qa-link:hover{color:#1F6E35}
+@media (max-width: 1020px){.ct-qa-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width: 560px){.ct-qa-grid{grid-template-columns:minmax(0,1fr)}}
+.vb{position:relative;overflow:hidden;border-radius:24px;min-height:480px;display:flex;flex-direction:column;justify-content:space-between}
+.vb-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.vb-shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(14,22,42,0.75) 0%,rgba(14,22,42,0.1) 45%,rgba(14,22,42,0) 100%)}
+.vb-head{position:relative;padding:40px 44px;display:flex;flex-direction:column;gap:8px}
+.vb-bar{position:relative;margin:0 24px 24px;background:#FFFFFF;border-radius:18px;padding:22px 24px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr)) auto;gap:24px;align-items:center}
+.vb-cell{display:flex;gap:12px;align-items:center;min-width:0;border-left:1px solid #ECEEF4;padding-left:24px}.vb-cell.vb-first{border-left:0;padding-left:0}
+.vb-actions{display:flex;gap:10px}
+@media (max-width: 1080px){.vb-bar{grid-template-columns:repeat(3,minmax(0,1fr))}.vb-actions{grid-column:1/-1}}
+@media (max-width: 700px){.vb{min-height:560px}.vb-head{padding:28px 24px}.vb-bar{grid-template-columns:minmax(0,1fr);margin:0 12px 12px;gap:14px;padding:18px}.vb-cell{border-left:0;padding-left:0}.vb-actions{flex-wrap:wrap}.vb-actions>*{flex:1 1 auto;justify-content:center}}
+.ct-side{display:flex;flex-direction:column;gap:16px;min-width:0}
+.ct-agent{position:relative;overflow:hidden;border-radius:20px;background:radial-gradient(420px 260px at 0% 0%,rgba(39,134,65,0.35),transparent 70%),#0E162A;min-height:360px;display:flex;align-items:stretch;flex:1 1 auto}
+.ct-agent-img{position:absolute;right:-14%;bottom:0;height:92%;width:auto;max-width:none;-webkit-mask-image:linear-gradient(90deg,transparent 0%,#000 30%);mask-image:linear-gradient(90deg,transparent 0%,#000 30%)}
+.ct-agent::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(14,22,42,0.92) 0%,rgba(14,22,42,0.55) 48%,transparent 75%);pointer-events:none}
+.ct-agent-txt{position:relative;z-index:1;padding:28px;display:flex;flex-direction:column;justify-content:center;gap:16px;max-width:300px}
+.ct-lang{font-size:12px;font-weight:700;color:#FFFFFF;background:rgba(255,255,255,0.14);border:1px solid rgba(255,255,255,0.22);padding:4px 10px;border-radius:999px}
+.ct-chan{display:flex;align-items:center;gap:14px;padding:18px 20px;background:#FFFFFF;border:1px solid #E3E6EE;border-radius:16px;text-decoration:none;transition:border-color .15s,box-shadow .15s,transform .15s}.ct-chan:hover{border-color:#278641;box-shadow:0 14px 28px -18px rgba(39,134,65,0.6);transform:translateY(-2px)}
+.ct-go{flex:none;width:38px;height:38px;border-radius:50%;background:#F2F4F8;display:flex;align-items:center;justify-content:center;transition:background .15s}.ct-chan:hover .ct-go{background:#E2F8E8}
+.ct-icc{flex:none;width:44px;height:44px;border-radius:50%;background:#F3FCF5;border:1px solid #C5F1D1;display:inline-flex;align-items:center;justify-content:center;box-sizing:border-box}
+.ct-visit{position:relative;overflow:hidden;border-radius:24px;min-height:440px;display:flex;align-items:center;padding:clamp(20px,4vw,48px);box-sizing:border-box}
+.ct-visit-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.ct-visit-shade{position:absolute;inset:0;background:linear-gradient(90deg,rgba(14,22,42,0.55) 0%,rgba(14,22,42,0.15) 55%,rgba(14,22,42,0.05) 100%)}
+.ct-visit-card{position:relative;z-index:1;background:#FFFFFF;border-radius:20px;padding:28px;display:flex;flex-direction:column;gap:18px;max-width:380px;box-shadow:0 30px 60px -20px rgba(0,0,0,0.45)}
+.ct-pin{position:absolute;z-index:1;left:66%;top:42%;display:flex;flex-direction:column;align-items:center;gap:8px}
+.ct-pin-dot{width:52px;height:52px;border-radius:50%;background:#278641;display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 8px rgba(39,134,65,0.3),0 0 0 18px rgba(39,134,65,0.15);animation:ctPing 2.4s ease-in-out infinite}
+.ct-pin-label{font-size:13px;font-weight:700;color:#151923;background:#FFFFFF;padding:6px 12px;border-radius:999px;box-shadow:0 6px 16px rgba(0,0,0,0.25)}
+@keyframes ctPing{50%{box-shadow:0 0 0 12px rgba(39,134,65,0.22),0 0 0 26px rgba(39,134,65,0.08)}}
+.ct-faq{background:#FFFFFF;border:1px solid #E3E6EE;border-radius:14px;padding:0 20px;transition:border-color .15s}.ct-faq[open]{border-color:#C5F1D1}
+.ct-faq summary{list-style:none;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:18px 0;font-size:16px;font-weight:600;color:#151923;cursor:pointer}.ct-faq summary::-webkit-details-marker{display:none}.ct-faq summary svg{transition:transform .2s}.ct-faq[open] summary svg{transform:rotate(180deg)}
+.ct-faq p{margin:0 0 18px;font-size:15px;line-height:1.6;color:#475476}
+.ct-topic:focus-visible,.ct-chan:focus-visible,.ct-faq summary:focus-visible{outline:2px solid #278641;outline-offset:3px}
+@media (max-width: 960px){.ct-grid,.ct-faqwrap{grid-template-columns:minmax(0,1fr)!important}.ct-pin{left:auto;right:12%;top:12%}}
+@media (max-width: 640px){.ct-agent-img{right:-34%;height:80%}.ct-agent::after{background:linear-gradient(90deg,rgba(14,22,42,0.95) 0%,rgba(14,22,42,0.8) 60%,rgba(14,22,42,0.2) 100%)}.ct-topics{grid-template-columns:repeat(2,minmax(0,1fr))}.ct-visit{align-items:flex-end;min-height:560px}.ct-visit-card{padding:22px}.ct-agent{position:relative;overflow:hidden;border-radius:20px;background:radial-gradient(420px 260px at 0% 0%,rgba(39,134,65,0.35),transparent 70%),#0E162A;min-height:360px;display:flex;align-items:stretch;flex:1 1 auto}}
+@media (prefers-reduced-motion: reduce){.ct-pin-dot{animation:none}.ct-topic,.ct-chan{transition:none}}
+.bd-tag{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:600;color:#FFFFFF;padding:6px 12px;border-radius:999px}
+.bd-back:hover{color:#FFFFFF}
+.bd-ghost{font:inherit;display:inline-flex;align-items:center;gap:8px;height:44px;padding:0 16px;border-radius:6px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.2);color:#FFFFFF;font-size:14px;font-weight:600;cursor:pointer;transition:background .15s}.bd-ghost:hover{background:rgba(255,255,255,0.16)}.bd-ghost[aria-pressed="true"]{background:#FFFFFF;color:#C2185B;border-color:#FFFFFF}.bd-ghost[aria-pressed="true"] svg{fill:#C2185B}
+.bd-arrow{position:absolute;top:50%;transform:translateY(-50%);width:48px;height:48px;border-radius:50%;border:0;background:rgba(255,255,255,0.9);color:#151923;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 6px 18px rgba(0,0,0,0.25);transition:transform .15s,background .15s}.bd-arrow:hover{background:#FFFFFF;transform:translateY(-50%) scale(1.06)}
+.bd-chip-glass{white-space:nowrap;display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:600;padding:7px 12px;border-radius:999px;background:rgba(13,16,22,0.55);border:1px solid rgba(255,255,255,0.18);backdrop-filter:blur(6px)}
+.bd-thumb{font:inherit;padding:0;border:0;border-radius:12px;overflow:hidden;aspect-ratio:4/3;cursor:pointer;background:#E3E6EE;transition:opacity .15s,outline-color .15s;outline:3px solid transparent;outline-offset:2px}.bd-thumb:hover{opacity:1!important}
+.bd-kpi{display:flex;align-items:center;gap:12px;padding:12px 14px;border-radius:12px;background:#F5F6F9;border:1px solid #ECEEF4;min-width:0}.bd-kpi-ic{flex:none;width:32px;height:32px;border-radius:9px;background:#FFFFFF;display:flex;align-items:center;justify-content:center}
+.bd-cta{display:flex;align-items:center;justify-content:center;gap:10px;height:52px;border-radius:6px;background:#278641;color:#FFFFFF;text-decoration:none;font-weight:600;font-size:16px;transition:background .15s,transform .15s}.bd-cta:hover{background:#1F6E35}
+.bd-cta2{display:inline-flex;align-items:center;justify-content:center;gap:10px;height:50px;padding:0 18px;border-radius:6px;background:#FFFFFF;color:#151923;text-decoration:none;font-weight:600;font-size:15px;border:1px solid #BCC3D7;transition:border-color .15s}.bd-cta2:hover{border-color:#475476}
+.bd-round{flex:none;width:42px;height:42px;border-radius:50%;border:1px solid #D9DDE8;display:flex;align-items:center;justify-content:center;transition:background .15s}.bd-round:hover{background:#EEF6F0}
+.bd-tabs{position:sticky;top:0;z-index:5;display:flex;gap:48px;padding:0 4px;background:#F5F6F9;box-shadow:inset 0 -1px 0 #D9DDE8;overflow-x:auto;overflow-y:hidden;scrollbar-width:none}.bd-tabs::-webkit-scrollbar{display:none}
+.bd-tab{flex:none;font-size:15px;font-weight:500;color:#475476;text-decoration:none;padding:16px 0 13px;border-bottom:3px solid transparent;transition:color .15s,border-color .15s}.bd-tab:hover{color:#151923}.bd-tab.on{color:#226333;font-weight:600;border-bottom-color:#278641}
+.bd-hl{display:flex;gap:12px;align-items:center;padding:14px;border-radius:14px;background:linear-gradient(180deg,#F7FBF8,#FFFFFF);border:1px solid #E2EEE5}
+.bd-hl-ic{flex:none;width:44px;height:44px;border-radius:12px;background:#E2F8E8;display:flex;align-items:center;justify-content:center}
+.bd-sgroup{padding:0 28px;border-left:1px solid #DFE3EC}.bd-sgroup:first-child{padding-left:0;border-left:0}.bd-sgroup:last-child{padding-right:0}.bd-spec{display:flex;flex-direction:column;gap:2px;padding-bottom:14px;border-bottom:1px solid #DFE3EC}.bd-spec:last-child{padding-bottom:0;border-bottom:0}.bd-spec dt{font-size:13px;color:#5A6A96}.bd-spec dd{margin:0;font-size:16px;font-weight:600;color:#151923}
+.bd-contact{display:flex;flex-direction:column;gap:22px;padding:18px;border-radius:16px;background:#F5F6F9;border:1px solid #ECEEF4}.bd-lang{font-size:12px;font-weight:600;color:#343D56;background:#FFFFFF;border:1px solid #E3E6EE;padding:4px 10px;border-radius:999px}.bd-cbtn{display:flex;align-items:center;justify-content:center;gap:8px;height:40px;border-radius:6px;background:#FFFFFF;border:1px solid #D9DDE8;color:#151923;text-decoration:none;font-weight:600;font-size:14px;transition:border-color .15s}.bd-cbtn:hover{border-color:#278641}
+.bd-row{display:flex;justify-content:space-between;gap:16px;padding:11px 0;border-bottom:1px dashed #E3E6EE;font-size:15px}.bd-row dt{color:#475476}.bd-row dd{margin:0;font-weight:600;color:#151923;text-align:right}
+.bd-eq{display:flex;align-items:center;gap:12px;font-size:15px;font-weight:500;color:#151923}.bd-eq-ic{flex:none;width:22px;height:22px;border-radius:50%;background:#278641;display:flex;align-items:center;justify-content:center}
+.bd-check{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px 0;border-bottom:1px solid #ECEEF4;font-size:15px;color:#151923}
+.bd-pass{font-size:12px;font-weight:700;color:#226333;background:#E2F8E8;padding:4px 10px;border-radius:999px;white-space:nowrap}
+.bd-how-line{position:absolute;top:28px;left:28px;right:12%;height:2px;background:linear-gradient(90deg,#278641 0%,#6FDC8D 60%,rgba(255,255,255,0.25) 100%);border-radius:2px}
+.bd-how-step{position:relative;display:flex;flex-direction:column;gap:10px}
+.bd-how-node{width:56px;height:56px;border-radius:50%;background:#278641;display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 6px rgba(39,134,65,0.22),0 12px 24px -8px rgba(39,134,65,0.7);margin-bottom:8px;position:relative;z-index:1}
+.bd-how-node.last{background:#FFFFFF;box-shadow:0 0 0 6px rgba(255,255,255,0.14),0 12px 24px -8px rgba(0,0,0,0.5)}
+.bd-how-num{font-family:'Barlow',sans-serif;font-weight:800;font-size:44px;line-height:1;color:transparent;-webkit-text-stroke:1px rgba(255,255,255,0.28);letter-spacing:-0.02em}
+.bd-icc{flex:none;position:relative;z-index:1;width:40px;height:40px;border-radius:50%;background:#F3FCF5;border:1px solid #C5F1D1;display:inline-flex;align-items:center;justify-content:center;box-sizing:border-box}
+.bd-step-ic{position:relative;z-index:1;width:44px;height:44px;border-radius:50%;background:#F3FCF5;border:1px solid #C5F1D1;display:flex;align-items:center;justify-content:center}
+.bd-step-n{position:absolute;top:-7px;right:-7px;width:24px;height:24px;border-radius:50%;background:#DEA345;color:#FFFFFF;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;border:2px solid #FFFFFF;box-shadow:0 2px 6px rgba(222,163,69,0.5)}
+.bd-steps li:not(:last-child)::after{content:"";position:absolute;top:20px;left:52px;right:-12px;border-top:1px solid #D9DDE8}
+.bd-panel{animation:bdIn .5s ease both}@keyframes bdIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+.bd-ghost:focus-visible,.bd-arrow:focus-visible,.bd-thumb:focus-visible,.bd-cta:focus-visible,.bd-cta2:focus-visible,.bd-round:focus-visible,.bd-tab:focus-visible,.bd-back:focus-visible{outline:2px solid #6FDC8D;outline-offset:3px}
+@media (max-height: 640px){.bd-buy{position:static!important}}
+@media (max-width: 1020px){.bd-grid{grid-template-columns:minmax(0,1fr)!important}.bd-buy{position:static!important}}
+@media (max-width: 760px){.bd-insp{grid-template-columns:minmax(0,1fr)!important}.bd-steps{grid-template-columns:repeat(2,minmax(0,1fr))!important}.bd-steps li::after{display:none}.bd-mbar{display:flex!important}.bd-how-steps{grid-template-columns:minmax(0,1fr)!important;gap:28px!important;padding-left:76px!important}.bd-how-line{top:28px!important;bottom:auto;left:27px!important;right:auto!important;width:2px!important;height:calc(100% - 140px)!important;background:linear-gradient(180deg,#278641,#6FDC8D 60%,rgba(255,255,255,0.25))!important}.bd-how-node{position:absolute!important;left:-76px;top:0}.bd-sgrid{grid-template-columns:minmax(0,1fr)!important;gap:28px}.bd-sgroup{padding:0!important;border-left:0!important}.bd-eqlist{grid-template-columns:repeat(2,minmax(0,1fr))!important}.bd-tabs{gap:28px}.bd-hls{grid-template-columns:minmax(0,1fr)!important}.bd-ov-label,.bd-vw{display:none!important}.bd-arrow{width:40px;height:40px}}
+@media (prefers-reduced-motion: reduce){.bd-panel{animation:none}.bd-arrow,.bd-cta,.bd-thumb{transition:none}}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.nv-desk{display:flex}.nv-burger{display:none}
+.nv-item{animation:nvFade .6s cubic-bezier(.16,1,.3,1) both}
+.nv-item:nth-child(2){animation-delay:.08s}.nv-item:nth-child(3){animation-delay:.14s}.nv-item:nth-child(4){animation-delay:.2s}.nv-item:nth-child(5){animation-delay:.26s}.nv-item:nth-child(6){animation-delay:.32s}
+.nv-btn{position:relative;transition:color .35s cubic-bezier(.16,1,.3,1)}
+.nv-btn::after{content:"";position:absolute;left:22px;right:22px;bottom:7px;height:2px;border-radius:2px;background:#DCC86F;transform:scaleX(0);transform-origin:center;transition:transform .3s cubic-bezier(.22,1,.36,1)}
+.nv-btn.is-active::after{transform:scaleX(1)}
+@media (hover:hover) and (pointer:fine){.nv-btn:not(.is-active):hover::after{transform:scaleX(.5);opacity:.7}}
+@media (prefers-reduced-motion: reduce){.nv-btn::after{transition:none}}
+.nv-btn:focus-visible,.nv-burger:focus-visible{outline:2px solid #9CB1E7;outline-offset:2px}
+.nv-cta{position:relative;overflow:hidden;transition:transform .35s cubic-bezier(.34,1.56,.64,1),box-shadow .35s ease}
+.nv-cta:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(222,163,69,.40)}
+.nv-cta svg{transition:transform .3s cubic-bezier(.22,1,.36,1)}.nv-cta:hover svg{transform:translateX(3px)}
+.nv-btn:hover{color:#FFFFFF!important}
+.nv-bar-wrap{display:grid!important;grid-template-columns:1fr auto 1fr}
+@media (max-width: 1060px){.nv-bar-wrap{grid-template-columns:1fr auto}}
+.nv-cta::after{content:"";position:absolute;top:0;left:-60%;width:40%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.35),transparent);transform:skewX(-20deg)}
+.nv-cta:hover::after{animation:nvShine .9s ease}
+.nv-link{transition:background .25s ease,transform .35s cubic-bezier(.34,1.56,.64,1)}
+.nv-link:hover{background:rgba(21,25,35,.05);transform:translateX(4px)}
+.nv-link:hover .nv-arrow{transform:translateX(3px);opacity:1}
+.nv-arrow{transition:transform .3s ease,opacity .3s ease;opacity:.5}
+.nv-in{animation:nvIn .5s cubic-bezier(.16,1,.3,1) both}
+.nv-in:nth-child(2){animation-delay:.05s}.nv-in:nth-child(3){animation-delay:.1s}.nv-in:nth-child(4){animation-delay:.15s}
+.nv-bar{position:absolute;left:12px;width:20px;height:2px;border-radius:2px;background:#FFFFFF;transition:transform .5s cubic-bezier(.34,1.56,.64,1),opacity .25s ease,top .5s cubic-bezier(.34,1.56,.64,1)}
+.nv-overlay{display:none;transition:clip-path .7s cubic-bezier(.77,0,.18,1)}
+.nv-row,.nv-foot{opacity:0;transform:translateY(16px)}
+.nv-open .nv-row{animation:nvIn .55s cubic-bezier(.16,1,.3,1) both}
+.nv-open .nv-row:nth-child(1){animation-delay:.18s}.nv-open .nv-row:nth-child(2){animation-delay:.24s}.nv-open .nv-row:nth-child(3){animation-delay:.3s}.nv-open .nv-row:nth-child(4){animation-delay:.36s}.nv-open .nv-row:nth-child(5){animation-delay:.42s}
+.nv-open .nv-foot{animation:nvIn .55s .5s cubic-bezier(.16,1,.3,1) both}
+.nv-mlink{transition:padding-left .35s cubic-bezier(.34,1.56,.64,1),color .25s ease}.nv-mlink:hover{padding-left:8px;color:#DCC86F}
+@keyframes nvFade{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:none}}
+@keyframes nvIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+@keyframes nvShine{from{left:-60%}to{left:130%}}
+@media (max-width: 1060px){.nv-desk{display:none!important}.nv-burger{display:block}.nv-overlay{display:flex}.nv-menu{display:none}}
+@media (prefers-reduced-motion: reduce){.nv-item,.nv-in{animation:none}.nv-cta:hover::after{animation:none}.nv-pill,.nv-menu,.nv-bar,.nv-overlay{transition:none!important}.nv-row,.nv-foot{opacity:1;transform:none;animation:none!important}}
+.sr-card .sr-stage img{transform-origin:50% 100%}
+.sr-stage{background:#F4F4F4}
+.sr-card{transition:transform .5s cubic-bezier(.16,1,.3,1),box-shadow .5s ease}
+.sr-card:hover{transform:translateY(-6px);box-shadow:0 28px 60px rgba(13,16,22,.10)}
+.sr-card img{transition:transform .8s cubic-bezier(.16,1,.3,1)}
+.sr-card:hover img{transform:scale(1.05)}
+.sr-link svg{transition:transform .4s cubic-bezier(.16,1,.3,1)}
+.sr-card:hover .sr-link svg{transform:translateX(6px)}
+.sr-line{transition:width .6s cubic-bezier(.16,1,.3,1)}
+.sr-card:hover .sr-line{width:100%}
+.sr-card:focus-visible{outline:2px solid #3050A6;outline-offset:4px}
+@media (prefers-reduced-motion: reduce){.sr-card,.sr-card img,.sr-link svg,.sr-line{transition:none}}
+/* ===== Intro: light beams build the X, then the logo rattles and flies to the header ===== */
+.bus-intro{animation-delay:1.3s}
+.tx-intro{position:absolute;top:0;left:0;width:100%;height:0;z-index:60;pointer-events:none;
+  --W:138px;--H:30px;--L:max(24px, calc(50vw - 596px));--T:56px;--S:4;
+  --dx:calc(50vw - var(--L) - var(--W) / 2);--dy:calc(50vh - var(--T) - var(--H) / 2)}
+/* Timeline (1.84s): 0 spark + bloom · .14 beams sweep in · .34 X fills along the beams · .64 TRU/CO wipe out
+   · .94 blue flash, logo white · 1.02 white slash splits the blue screen · 1.16 logo whips to the header
+   · 1.43 impact pop + shine · 1.8 header logo takes over */
+.tx-stage{position:absolute;top:0;left:0;width:100%;height:100vh;overflow:hidden;background:#0D1016;pointer-events:auto;animation:txStage 1.575s linear forwards}
+/* exit: blue screen is two halves split along the X diagonal; a white slash cuts it, the halves fly apart */
+.tx-panel{position:absolute;left:calc(50% + 0.084 * var(--W) * var(--S));top:50%;width:400vmax;height:200vmax;margin-left:-200vmax;background:#3C64D0;opacity:0}
+.tx-panel-a{margin-top:-200vmax;transform-origin:50% 100%;animation:txPanelA 1.575s linear both}
+.tx-panel-b{margin-top:0;transform-origin:50% 0;animation:txPanelB 1.575s linear both}
+.tx-slash{position:absolute;left:calc(50% + 0.084 * var(--W) * var(--S));top:50%;width:300vmax;height:4px;margin:-2px 0 0 -150vmax;background:#FFFFFF;box-shadow:0 0 14px 4px rgba(255,255,255,.9),0 0 40px 10px rgba(156,177,231,.7);opacity:0;animation:txSlash .285s 1.02s cubic-bezier(.2,.8,.2,1) both}
+.tx-glint{position:absolute;inset:0;background:linear-gradient(110deg,rgba(255,255,255,0) 38%,rgba(255,255,255,.95) 50%,rgba(255,255,255,0) 62%);background-size:300% 100%;background-repeat:no-repeat;-webkit-mask:url(/_blob/44a8bd7bf7dc8fc12c2d14ade7cca85e) center / 100% 100% no-repeat;mask:url(/_blob/44a8bd7bf7dc8fc12c2d14ade7cca85e) center / 100% 100% no-repeat;opacity:0;animation:txGlint .315s 1.485s ease-in-out both}
+.tx-halo{position:absolute;left:calc(50% + 0.084 * var(--W) * var(--S));top:50%;width:min(120vmin,980px);aspect-ratio:1;transform:translate(-50%,-50%);border-radius:50%;background:radial-gradient(closest-side,rgba(111,141,220,.42),rgba(48,80,166,.15) 48%,rgba(14,22,42,0));opacity:0;animation:txHalo .975s ease-out both}
+.tx-beam{position:absolute;left:calc(50% + 0.084 * var(--W) * var(--S));top:50%;width:300vmax;box-sizing:border-box;border-top:1px solid rgba(226,232,248,.8);border-bottom:1px solid rgba(226,232,248,.8);background:linear-gradient(to bottom,rgba(197,209,241,.24),rgba(156,177,231,.07),rgba(197,209,241,.24));opacity:0;animation:txBeam .75s cubic-bezier(.2,.8,.2,1) both}
+.tx-spark{position:absolute;left:calc(50% + 0.084 * var(--W) * var(--S));top:50%;width:12px;height:18px;margin:-9px 0 0 -6px;border-radius:3px;background:#C5D1F1;box-shadow:0 0 22px 8px rgba(111,141,220,.85);opacity:0;animation:txSpark .41s ease both}
+.tx-flash{position:absolute;inset:0;background:#FFFFFF;opacity:0;animation:txFlash .225s .86s ease-out both}
+.tx-fly{position:absolute;left:var(--L);top:var(--T);width:var(--W);height:var(--H);transform-origin:50% 50%;will-change:transform,filter;animation:txFly 1.84s linear both,txBlur 1.84s linear both,txGone .09s 1.84s forwards}
+.tx-fly svg{display:block;width:100%;height:100%;overflow:visible;animation:txGlow 1.05s .41s ease both}
+.tx-x{fill:#F3F5FC;animation-fill-mode:both}
+.tx-diag{animation:txWipeDiag .225s .34s cubic-bezier(.4,0,.2,1) both,txXCol .225s 1.215s ease both}
+.tx-up{animation:txWipeUp .15s .525s cubic-bezier(.4,0,.2,1) both,txXCol .225s 1.215s ease both}
+.tx-lo{animation:txWipeLo .15s .57s cubic-bezier(.4,0,.2,1) both,txXCol .225s 1.215s ease both}
+.tx-word{fill:#F5F6F9}
+.tx-tru{animation:txWipeTru .24s .64s cubic-bezier(.2,.8,.2,1) both,txWordCol .225s 1.215s ease both}
+.tx-co{animation:txWipeCo .24s .64s cubic-bezier(.2,.8,.2,1) both,txWordCol .225s 1.215s ease both}
+.tx-hdr{animation:txHdrIn .075s 1.8s both}
+@keyframes txStage{0%{background-color:#0D1016}59.4%{background-color:#0D1016}59.6%{background-color:rgba(13,16,22,0)}99%{visibility:visible}100%{background-color:rgba(13,16,22,0);visibility:hidden}}
+@keyframes txPanelA{0%{opacity:0;transform:rotate(-56.1deg) translateY(0)}59.4%{opacity:0;transform:rotate(-56.1deg) translateY(0)}59.6%{opacity:1;transform:rotate(-56.1deg) translateY(0)}71.4%{opacity:1;transform:rotate(-56.1deg) translateY(0);animation-timing-function:cubic-bezier(.7,0,.25,1)}95%{opacity:1;transform:rotate(-56.1deg) translateY(-75vmax)}100%{opacity:1;transform:rotate(-56.1deg) translateY(-75vmax)}}
+@keyframes txPanelB{0%{opacity:0;transform:rotate(-56.1deg) translateY(0)}59.4%{opacity:0;transform:rotate(-56.1deg) translateY(0)}59.6%{opacity:1;transform:rotate(-56.1deg) translateY(0)}71.4%{opacity:1;transform:rotate(-56.1deg) translateY(0);animation-timing-function:cubic-bezier(.7,0,.25,1)}95%{opacity:1;transform:rotate(-56.1deg) translateY(75vmax)}100%{opacity:1;transform:rotate(-56.1deg) translateY(75vmax)}}
+@keyframes txSlash{0%{opacity:0;transform:rotate(-56.1deg) scaleX(0)}45%{opacity:1;transform:rotate(-56.1deg) scaleX(1)}100%{opacity:0;transform:rotate(-56.1deg) scaleX(1) scaleY(.3)}}
+@keyframes txGlint{0%{opacity:1;background-position:120% 0}100%{opacity:1;background-position:-20% 0}}
+@keyframes txBlur{0%{filter:blur(0)}63.3%{filter:blur(0)}69%{filter:blur(3px)}73%{filter:blur(4px)}77.6%{filter:blur(0)}100%{filter:blur(0)}}
+@keyframes txFlash{0%{opacity:0}35%{opacity:.6}100%{opacity:0}}
+@keyframes txGone{to{opacity:0;visibility:hidden}}
+@keyframes txHdrIn{from{opacity:0}to{opacity:1}}
+@keyframes txHalo{0%{opacity:0}18%{opacity:1}35%{opacity:.35}62%{opacity:.2}80%{opacity:.75}100%{opacity:0}}
+@keyframes txSpark{0%{opacity:0;transform:rotate(34deg) scale(.5)}30%{opacity:1;transform:rotate(34deg) scale(1.15)}50%{opacity:.3}62%{opacity:1}100%{opacity:0;transform:rotate(34deg) scale(1.4)}}
+@keyframes txBeam{
+  0%{opacity:0;transform:translate(-50%,-50%) rotate(var(--a)) translateY(var(--off,0px)) translateX(var(--from)) scaleY(1)}
+  10%{opacity:1}
+  30%{transform:translate(-50%,-50%) rotate(var(--a)) translateY(var(--off,0px)) translateX(0) scaleY(1)}
+  58%{opacity:1;transform:translate(-50%,-50%) rotate(var(--a)) translateY(var(--off,0px)) translateX(0) scaleY(1)}
+  84%{opacity:.6;transform:translate(-50%,-50%) rotate(var(--a)) translateY(var(--off,0px)) translateX(0) scaleY(.15)}
+  100%{opacity:0;transform:translate(-50%,-50%) rotate(var(--a)) translateY(var(--off,0px)) translateX(0) scaleY(.08)}}
+/* the X fills in along each beam: a moving edge sweeps across each piece's box */
+@keyframes txWipeDiag{from{clip-path:polygon(200% 100%,0% -100%,200% -300%,400% -100%)}to{clip-path:polygon(95% 205%,-105% 5%,95% -195%,295% 5%)}}
+@keyframes txWipeUp{from{clip-path:polygon(200% 0%,0% 200%,200% 400%,400% 200%)}to{clip-path:polygon(95% -105%,-105% 95%,95% 295%,295% 95%)}}
+@keyframes txWipeLo{from{clip-path:polygon(100% -100%,-100% 100%,-300% -100%,-100% -300%)}to{clip-path:polygon(205% 5%,5% 205%,-195% 5%,5% -195%)}}
+@keyframes txWipeTru{from{clip-path:inset(-20% -20% -20% 100%);transform:translateX(14px)}to{clip-path:inset(-20% -20% -20% -20%);transform:none}}
+@keyframes txWipeCo{from{clip-path:inset(-20% 100% -20% -20%);transform:translateX(-14px)}to{clip-path:inset(-20% -20% -20% -20%);transform:none}}
+@keyframes txXCol{from{fill:#F3F5FC}to{fill:#278641}}
+@keyframes txWordCol{from{fill:#F5F6F9}to{fill:#FFFFFF}}
+@keyframes txGlow{0%{filter:drop-shadow(0 0 0 rgba(111,141,220,0))}32%{filter:drop-shadow(0 0 5px rgba(111,141,220,.95))}50%{filter:drop-shadow(0 0 2px rgba(255,255,255,.6))}66%{filter:drop-shadow(0 0 8px rgba(255,255,255,1))}85%{filter:drop-shadow(0 0 0 rgba(255,255,255,0))}100%{filter:drop-shadow(0 0 0 rgba(255,255,255,0))}}
+/* fly: hold centred & big -> charge up -> pull back -> whip to the header with motion blur -> impact pop */
+@keyframes txFly{
+  0%{transform:translate(var(--dx),var(--dy)) scale(calc(var(--S) * 1.06)) rotate(0deg)}
+  51%{transform:translate(var(--dx),var(--dy)) scale(var(--S)) rotate(0deg)}
+  60.4%{transform:translate(var(--dx),var(--dy)) scale(calc(var(--S) * 1.1)) rotate(0deg)}
+  63.3%{transform:translate(calc(var(--dx) * 1.04),calc(var(--dy) * 1.04)) scale(calc(var(--S) * 1.13)) rotate(1deg);animation-timing-function:cubic-bezier(.5,0,.75,0)}
+  67.3%{transform:translate(calc(var(--dx) * .88),calc(var(--dy) * .88)) scale(calc(1 + (var(--S) - 1) * .88)) rotate(-3deg)}
+  71.4%{transform:translate(calc(var(--dx) * .48),calc(var(--dy) * .48)) scale(calc(1 + (var(--S) - 1) * .48)) rotate(-5deg)}
+  75.1%{transform:translate(calc(var(--dx) * .1),calc(var(--dy) * .1)) scale(calc(1 + (var(--S) - 1) * .1)) rotate(-2deg)}
+  77.6%{transform:translate(0px,0px) scale(1) rotate(0deg);animation-timing-function:cubic-bezier(.2,.8,.3,1)}
+  80.4%{transform:translate(0px,0px) scale(1.14) rotate(0deg);animation-timing-function:cubic-bezier(.3,0,.2,1)}
+  86%{transform:translate(0px,0px) scale(1) rotate(0deg)}
+  100%{transform:translate(0px,0px) scale(1) rotate(0deg)}}
+@media (max-width: 720px){.tx-intro{--T:104px;--S:2.2}}
+@media (prefers-reduced-motion: reduce){.tx-intro{display:none}.tx-hdr{animation:none}.bus-intro{animation-delay:0s}}
+
+.ab-eyebrow{font-size:13px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#278641}
+.ab-h2{margin:0;font-family:'Barlow',sans-serif;font-weight:700;font-size:clamp(32px,3.6vw,46px);line-height:1.06;letter-spacing:-0.01em;color:#151923}
+.ab-lead{margin:0;font-size:18px;line-height:1.65;color:#475476}
+.ab-p{margin:0;font-size:16px;line-height:1.75;color:#475476}
+.ab-wrap{max-width:1240px;margin:0 auto}
+.ab-ic{flex:none;width:40px;height:40px;border-radius:50%;background:#F3FCF5;border:1px solid #C5F1D1;box-sizing:border-box;display:inline-flex;align-items:center;justify-content:center}
+.ab-pill{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:600;color:#FFFFFF;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.18);padding:7px 14px;border-radius:999px}
+.ab-photo{position:relative;border-radius:24px;overflow:hidden;height:460px;background:#0E162A}
+.ab-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.ab-facts{position:relative;margin:-64px 32px 0;background:#FFFFFF;border-radius:18px;padding:24px 8px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));box-shadow:0 24px 50px -28px rgba(14,22,42,0.35)}
+.ab-fact{display:flex;gap:14px;align-items:center;padding:0 24px;border-left:1px solid #DFE3EC;min-width:0}.ab-fact:first-child{border-left:0}
+.ab-fact strong{display:block;font-family:'Barlow',sans-serif;font-size:20px;line-height:1.15;color:#151923}.ab-fact span.s{display:block;font-size:13px;line-height:1.4;color:#5A6A96}
+.ab-story{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:72px;align-items:center}
+.ab-story-img{position:relative;border-radius:24px;overflow:hidden;min-height:560px;background:#0E162A}
+.ab-story-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.ab-quote{position:absolute;left:24px;right:24px;bottom:24px;margin:0;background:#FFFFFF;border-radius:18px;padding:24px 26px;display:flex;flex-direction:column;gap:12px}
+.ab-quote p{margin:0;font-family:'Barlow',sans-serif;font-weight:500;font-size:22px;line-height:1.35;color:#151923}
+.ab-quote footer{font-size:13px;font-weight:600;color:#278641}
+.ab-mile{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;margin-top:8px}
+.ab-mile div{border-top:2px solid #DFE3EC;padding-top:14px;display:flex;flex-direction:column;gap:4px}
+.ab-mile div.on{border-top-color:#278641}
+.ab-mile strong{font-family:'Barlow',sans-serif;font-size:22px;color:#151923;line-height:1.1}.ab-mile span{font-size:14px;line-height:1.5;color:#475476}
+.ab-princ{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:40px}
+.ab-pr{display:flex;flex-direction:column;gap:10px;padding-top:22px;border-top:1px solid #DFE3EC;position:relative}
+.ab-pr::before{content:"";position:absolute;top:-1px;left:0;width:48px;height:3px;border-radius:2px;background:#278641}
+.ab-pr .n{font-family:'Barlow',sans-serif;font-weight:700;font-size:15px;letter-spacing:0.08em;color:#278641}
+.ab-pr h3{margin:0;font-family:'Barlow',sans-serif;font-weight:700;font-size:24px;color:#151923}
+.ab-pr p{margin:0;font-size:15px;line-height:1.65;color:#475476}
+.ab-team{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px}
+.ab-person{background:#FFFFFF;border:1px solid #E3E6EE;border-radius:18px;padding:28px 24px 24px;display:flex;flex-direction:column;gap:18px;transition:border-color .15s,box-shadow .15s}
+.ab-person:hover{border-color:#C5F1D1;box-shadow:0 18px 40px -26px rgba(14,22,42,0.3)}
+.ab-av{width:64px;height:64px;border-radius:50%;background:#F3FCF5;border:1px solid #C5F1D1;box-sizing:border-box;display:flex;align-items:center;justify-content:center;font-family:'Barlow',sans-serif;font-weight:700;font-size:22px;color:#226333;letter-spacing:0.02em}
+.ab-person h3{margin:0;font-family:'Barlow',sans-serif;font-weight:700;font-size:21px;color:#151923;line-height:1.15}
+.ab-role{font-size:14px;color:#5A6A96}
+.ab-links{display:flex;flex-direction:column;gap:10px;padding-top:18px;border-top:1px solid #ECEEF4}
+.ab-link{display:flex;align-items:center;gap:10px;font-size:14px;font-weight:600;color:#151923;text-decoration:none;min-height:24px}
+.ab-link svg{width:18px;height:18px}.ab-link:hover{color:#278641}
+.ab-offices{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.ab-office{background:#FFFFFF;border:1px solid #E3E6EE;border-radius:20px;padding:32px;display:flex;flex-direction:column;gap:16px}
+.ab-tag{align-self:flex-start;font-size:12px;font-weight:600;color:#226333;background:#E2F8E8;padding:5px 12px;border-radius:999px}
+.ab-office h3{margin:0;font-family:'Barlow',sans-serif;font-weight:700;font-size:30px;color:#151923;line-height:1.1}
+.ab-office p{margin:0;font-size:15px;line-height:1.65;color:#475476}
+.ab-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:auto;padding-top:8px}
+.ab-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:48px;padding:0 20px;border-radius:6px;background:#278641;color:#FFFFFF;text-decoration:none;font-weight:600;font-size:15px;transition:background .15s}.ab-btn:hover{background:#1F6E35;color:#FFFFFF}
+.ab-btn2{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:48px;padding:0 20px;border-radius:6px;background:#FFFFFF;color:#151923;border:1px solid #D9DDE8;text-decoration:none;font-weight:600;font-size:15px;transition:border-color .15s}.ab-btn2:hover{border-color:#278641;color:#151923}
+.ab-fwd{position:relative;overflow:hidden;border-radius:24px;background:#0E162A;min-height:480px;display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr)}
+.ab-fwd-img{position:absolute;top:0;right:0;bottom:0;width:58%;height:100%;object-fit:cover}
+.ab-fwd-shade{position:absolute;inset:0;background:linear-gradient(90deg,#0E162A 0%,#0E162A 42%,rgba(14,22,42,0.55) 62%,rgba(14,22,42,0.05) 100%)}
+.ab-fwd-txt{position:relative;padding:56px;display:flex;flex-direction:column;justify-content:center;gap:20px}
+.ab-fwd h2{margin:0;font-family:'Barlow',sans-serif;font-weight:700;font-size:clamp(28px,3vw,38px);line-height:1.12;color:#FFFFFF}
+.ab-fwd p{margin:0;font-size:16px;line-height:1.7;color:#BCC3D7}
+.ab-ticks{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:10px}
+.ab-ticks li{display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:600;color:#FFFFFF;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.14);padding:8px 14px;border-radius:999px}
+.ab-ghost{display:inline-flex;align-items:center;justify-content:center;height:48px;padding:0 20px;border-radius:6px;border:1px solid rgba(255,255,255,0.28);color:#FFFFFF;text-decoration:none;font-weight:600;font-size:15px;transition:background .15s}.ab-ghost:hover{background:rgba(255,255,255,0.08);color:#FFFFFF}
+.ab-btn:focus-visible,.ab-btn2:focus-visible,.ab-ghost:focus-visible,.ab-link:focus-visible{outline:2px solid #278641;outline-offset:3px}
+@media (max-width: 1080px){.ab-facts{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:22px}.ab-fact:nth-child(3){border-left:0}.ab-team{grid-template-columns:repeat(2,minmax(0,1fr))}.ab-princ{grid-template-columns:repeat(2,minmax(0,1fr))}.ab-story{gap:48px}}
+@media (max-width: 860px){.ab-story,.ab-offices{grid-template-columns:minmax(0,1fr)}.ab-story-img{min-height:460px}.ab-fwd{grid-template-columns:minmax(0,1fr)}.ab-fwd-img{width:100%;height:220px;top:auto;bottom:0}.ab-fwd-shade{background:linear-gradient(180deg,#0E162A 0%,#0E162A 60%,rgba(14,22,42,0.3) 100%)}.ab-fwd-txt{padding:36px 28px 240px}}
+@media (max-width: 600px){.ab-photo{height:280px}.ab-facts{margin:-40px 12px 0;grid-template-columns:minmax(0,1fr);padding:20px}.ab-fact{border-left:0;padding:0}.ab-team,.ab-princ,.ab-mile{grid-template-columns:minmax(0,1fr)}.ab-office{padding:24px}.ab-quote p{font-size:18px}.ab-sec{padding-top:64px!important;padding-bottom:64px!important}}
+</style>
+</helmet>
+<div id="tx-root" style="position: relative; font-family: Inter, system-ui, sans-serif; color: #151923; background: #F5F6F9; font-size: 16px; font-weight: 500; line-height: 1.55">
+
+
+<!-- HEADER + HERO BAND -->
+<div class="hero-band">
+<header style="background: transparent; position: relative; z-index: 10; padding: 16px 24px 0">
+<div onMouseLeave="{{navLeave}}" style="max-width: 1240px; margin: 0 auto; position: relative">
+<div class="nv-bar-wrap" style="height: 72px; box-sizing: border-box; padding: 0 10px 0 32px; align-items: center; gap: 24px; border-radius: 16px; border: 1px solid rgba(255,255,255,0.10); background: rgba(255,255,255,0.04)">
+<a href="Main.dc.html" aria-label="Truxco home" style="display: flex; align-items: center; padding: 8px 0"><img id="tx-hdr-logo" src="/_blob/a576d4ce67c7b4c79b6f5a3eda53f582" alt="Truxco" style="height: 28px; width: auto; display: block"></a>
+<nav aria-label="Main" class="nv-desk" style="position: relative">
+<sc-for list="{{items}}" as="it" hint-placeholder-count="5">
+<div class="nv-item" style="position: relative; display: flex; justify-content: center">
+<a href="{{it.href}}" class="nv-btn {{it.cls}}" aria-current="{{it.current}}" aria-haspopup="{{it.popup}}" aria-expanded="{{it.expanded}}" onMouseEnter="{{it.enter}}" onFocus="{{it.enter}}" onClick="{{it.pick}}" style="font: inherit; font-size: 15px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; height: 48px; padding: 0 22px; border: 0; background: transparent; cursor: pointer; text-decoration: none; display: inline-flex; align-items: center; justify-content: center; gap: 6px; {{it.colorStyle}}">{{it.label}}<sc-if value="{{it.hasMenu}}" hint-placeholder-val="{{true}}"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="transition: transform .4s cubic-bezier(.34,1.56,.64,1); {{it.caretStyle}}"><path d="M6 9l6 6 6-6"></path></svg></sc-if></a>
+</div>
+</sc-for>
+</nav>
+<div style="display: flex; align-items: center; justify-content: flex-end; gap: 14px">
+<button type="button" class="nv-burger" aria-label="{{burgerLabel}}" aria-expanded="{{menuExpanded}}" onClick="{{toggleMenu}}" style="position: relative; z-index: 90; width: 44px; height: 44px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.16); background: rgba(13,16,22,0.5); cursor: pointer; padding: 0"><span class="nv-bar" style="{{bar1}}"></span><span class="nv-bar" style="{{bar2}}"></span><span class="nv-bar" style="{{bar3}}"></span></button>
+</div>
+</div>
+<div class="nv-menu" style="position: absolute; left: 24px; right: 24px; top: calc(100% + 4px); border-radius: 18px; background: #FFFFFF; color: #151923; box-shadow: 0 30px 70px rgba(0,0,0,0.45); transform-origin: top center; transition: opacity .35s ease, transform .5s cubic-bezier(.16,1,.3,1), visibility .35s; {{menuStyle}}">
+<sc-if value="{{show.used}}" hint-placeholder-val="{{true}}">
+<div style="padding: 28px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px">
+<div style="grid-column: span 2; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px">
+<a href="#coaches" class="nv-link nv-in" style="display: flex; gap: 14px; align-items: center; padding: 14px; border-radius: 12px; text-decoration: none; color: #151923"><span style="width: 44px; height: 44px; flex: none; border-radius: 12px; background: #E2E8F8; color: #3050A6; display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="13" rx="3"></rect><path d="M3 11h18M8 4v7M16 4v7"></path><circle cx="7.5" cy="19.5" r="1.5"></circle><circle cx="16.5" cy="19.5" r="1.5"></circle></svg></span><span style="flex: 1"><strong style="display: block; font-size: 15px">Coaches</strong><span style="font-size: 13px; color: #475476">Long‑distance and touring</span></span><svg class="nv-arrow" aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3050A6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+<a href="#city" class="nv-link nv-in" style="display: flex; gap: 14px; align-items: center; padding: 14px; border-radius: 12px; text-decoration: none; color: #151923"><span style="width: 44px; height: 44px; flex: none; border-radius: 12px; background: #E2E8F8; color: #3050A6; display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="15" rx="2"></rect><path d="M4 10h16M12 3v7"></path><circle cx="8" cy="20" r="1.5"></circle><circle cx="16" cy="20" r="1.5"></circle></svg></span><span style="flex: 1"><strong style="display: block; font-size: 15px">City buses</strong><span style="font-size: 13px; color: #475476">Urban, low‑floor, articulated</span></span><svg class="nv-arrow" aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3050A6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+<a href="#mini" class="nv-link nv-in" style="display: flex; gap: 14px; align-items: center; padding: 14px; border-radius: 12px; text-decoration: none; color: #151923"><span style="width: 44px; height: 44px; flex: none; border-radius: 12px; background: #E2E8F8; color: #3050A6; display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 15V8a2 2 0 0 1 2-2h10l5 5v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><path d="M3 11h17M9 6v5"></path><circle cx="7.5" cy="18.5" r="1.5"></circle><circle cx="16.5" cy="18.5" r="1.5"></circle></svg></span><span style="flex: 1"><strong style="display: block; font-size: 15px">Minibuses</strong><span style="font-size: 13px; color: #475476">Shuttle, school, small groups</span></span><svg class="nv-arrow" aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3050A6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+<a href="#electric" class="nv-link nv-in" style="display: flex; gap: 14px; align-items: center; padding: 14px; border-radius: 12px; text-decoration: none; color: #151923"><span style="width: 44px; height: 44px; flex: none; border-radius: 12px; background: #E2F8E8; color: #278641; display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L4 14h7l-1 8 9-12h-7l1-8z"></path></svg></span><span style="flex: 1"><strong style="display: block; font-size: 15px">Electric</strong><span style="font-size: 13px; color: #475476">Battery‑electric and hydrogen</span></span><svg class="nv-arrow" aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3050A6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+</div>
+<a href="#featured" class="nv-in" style="display: flex; flex-direction: column; justify-content: space-between; gap: 16px; padding: 20px; border-radius: 14px; text-decoration: none; color: #FFFFFF; background: #0E162A; min-height: 180px; animation-delay: .2s">
+<span style="font-size: 12px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: #DCC86F">Featured</span>
+<span style="display: flex; flex-direction: column; gap: 4px"><strong style="font-family: Barlow, sans-serif; font-size: 22px">Volvo 9700 HD</strong><span style="font-size: 14px; color: #BCC3D7">2017 · 512,000 km · 53 seats</span><span style="font-family: Barlow, sans-serif; font-weight: 700; font-size: 26px; margin-top: 6px">€129,000</span></span>
+<span style="display: inline-flex; align-items: center; gap: 6px; font-size: 14px; font-weight: 600; color: #9CB1E7">View all buses <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span>
+</a>
+</div>
+</sc-if>
+<sc-if value="{{show.electric}}" hint-placeholder-val="{{false}}">
+<div style="padding: 28px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px">
+<a href="#ebus" class="nv-link nv-in" style="display: flex; gap: 14px; align-items: center; padding: 14px; border-radius: 12px; text-decoration: none; color: #151923"><span style="width: 44px; height: 44px; flex: none; border-radius: 12px; background: #E2F8E8; color: #278641; display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L4 14h7l-1 8 9-12h-7l1-8z"></path></svg></span><span><strong style="display: block; font-size: 15px">Electric buses</strong><span style="font-size: 13px; color: #475476">Battery‑electric city and coach</span></span></a>
+<a href="#h2" class="nv-link nv-in" style="display: flex; gap: 14px; align-items: center; padding: 14px; border-radius: 12px; text-decoration: none; color: #151923"><span style="width: 44px; height: 44px; flex: none; border-radius: 12px; background: #E2F8E8; color: #278641; display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c3 4 6 7 6 11a6 6 0 0 1-12 0c0-4 3-7 6-11z"></path></svg></span><span><strong style="display: block; font-size: 15px">Hydrogen</strong><span style="font-size: 13px; color: #475476">Fuel‑cell buses</span></span></a>
+<a href="#charging" class="nv-link nv-in" style="display: flex; gap: 14px; align-items: center; padding: 14px; border-radius: 12px; text-decoration: none; color: #151923"><span style="width: 44px; height: 44px; flex: none; border-radius: 12px; background: #E2F8E8; color: #278641; display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="16" height="10" rx="2"></rect><path d="M22 11v2M6 10v4M10 10v4"></path></svg></span><span><strong style="display: block; font-size: 15px">Range &amp; charging</strong><span style="font-size: 13px; color: #475476">Advice before you buy</span></span></a>
+</div>
+</sc-if>
+<sc-if value="{{show.sell}}" hint-placeholder-val="{{false}}">
+<div style="padding: 28px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px">
+<a href="#valuation" class="nv-link nv-in" style="display: flex; gap: 14px; align-items: center; padding: 14px; border-radius: 12px; text-decoration: none; color: #151923"><span style="width: 44px; height: 44px; flex: none; border-radius: 12px; background: #F8E2F4; color: #0E162A; display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12l-8 8-9-9V3h8z"></path><circle cx="7.5" cy="7.5" r="1.5"></circle></svg></span><span><strong style="display: block; font-size: 15px">Free valuation</strong><span style="font-size: 13px; color: #475476">An offer within 24 hours</span></span></a>
+<a href="#how" class="nv-link nv-in" style="display: flex; gap: 14px; align-items: center; padding: 14px; border-radius: 12px; text-decoration: none; color: #151923"><span style="width: 44px; height: 44px; flex: none; border-radius: 12px; background: #F8E2F4; color: #0E162A; display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 3"></path></svg></span><span><strong style="display: block; font-size: 15px">How selling works</strong><span style="font-size: 13px; color: #475476">Three simple steps</span></span></a>
+<a href="#collect" class="nv-link nv-in" style="display: flex; gap: 14px; align-items: center; padding: 14px; border-radius: 12px; text-decoration: none; color: #151923"><span style="width: 44px; height: 44px; flex: none; border-radius: 12px; background: #F8E2F4; color: #0E162A; display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7"></path><circle cx="7" cy="18" r="1.5"></circle><circle cx="17" cy="18" r="1.5"></circle></svg></span><span><strong style="display: block; font-size: 15px">We collect the bus</strong><span style="font-size: 13px; color: #475476">Anywhere in Europe</span></span></a>
+</div>
+</sc-if>
+<sc-if value="{{show.services}}" hint-placeholder-val="{{false}}">
+<div style="padding: 28px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px">
+<a href="#rental" class="nv-link nv-in" style="display: flex; gap: 14px; align-items: center; padding: 14px; border-radius: 12px; text-decoration: none; color: #151923"><span style="width: 44px; height: 44px; flex: none; border-radius: 12px; background: #F8F4E2; color: #635622; display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="15" r="4"></circle><path d="M10.8 12.2L21 2M18 5l3 3M15 8l2 2"></path></svg></span><span><strong style="display: block; font-size: 15px">Bus rental</strong><span style="font-size: 13px; color: #475476">Short‑ and long‑term</span></span></a>
+<a href="#workshop" class="nv-link nv-in" style="display: flex; gap: 14px; align-items: center; padding: 14px; border-radius: 12px; text-decoration: none; color: #151923"><span style="width: 44px; height: 44px; flex: none; border-radius: 12px; background: #F8F4E2; color: #635622; display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 0 0 5 5L22 14l-8 8-2.3-2.3a4 4 0 0 0-5-5L4 12l8-8z"></path></svg></span><span><strong style="display: block; font-size: 15px">Workshop &amp; repairs</strong><span style="font-size: 13px; color: #475476">In Staffanstorp, Sweden</span></span></a>
+<a href="#export" class="nv-link nv-in" style="display: flex; gap: 14px; align-items: center; padding: 14px; border-radius: 12px; text-decoration: none; color: #151923"><span style="width: 44px; height: 44px; flex: none; border-radius: 12px; background: #F8F4E2; color: #635622; display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"></path></svg></span><span><strong style="display: block; font-size: 15px">Export &amp; delivery</strong><span style="font-size: 13px; color: #475476">Paperwork handled for you</span></span></a>
+</div>
+</sc-if>
+</div>
+</div>
+<nav aria-label="Mobile" class="nv-overlay {{mobileOpenClass}}" style="position: fixed; inset: 0; z-index: 80; background: #0D1016; padding: 104px 24px 32px; box-sizing: border-box; display: flex; flex-direction: column; justify-content: space-between; {{overlayStyle}}">
+<ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column"><li class="nv-row" style="border-bottom: 1px solid rgba(255,255,255,0.1)"><a href="Main.dc.html" onClick="{{closeMenu}}" class="nv-mlink" style="display: flex; justify-content: space-between; align-items: center; padding: 18px 0; text-decoration: none; color: #FFFFFF; font-family: Barlow, sans-serif; font-weight: 700; font-size: 30px">Home<svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#9CB1E7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a></li><li class="nv-row" style="border-bottom: 1px solid rgba(255,255,255,0.1)"><a href="UsedBuses.dc.html" onClick="{{closeMenu}}" class="nv-mlink" style="display: flex; justify-content: space-between; align-items: center; padding: 18px 0; text-decoration: none; color: #FFFFFF; font-family: Barlow, sans-serif; font-weight: 700; font-size: 30px">Buses<svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#9CB1E7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a></li><li class="nv-row" style="border-bottom: 1px solid rgba(255,255,255,0.1)"><a href="AboutUs.dc.html" onClick="{{closeMenu}}" class="nv-mlink" style="display: flex; justify-content: space-between; align-items: center; padding: 18px 0; text-decoration: none; color: #FFFFFF; font-family: Barlow, sans-serif; font-weight: 700; font-size: 30px">About<svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#9CB1E7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a></li><li class="nv-row" style="border-bottom: 1px solid rgba(255,255,255,0.1)"><a href="Contact.dc.html" onClick="{{closeMenu}}" class="nv-mlink" style="display: flex; justify-content: space-between; align-items: center; padding: 18px 0; text-decoration: none; color: #FFFFFF; font-family: Barlow, sans-serif; font-weight: 700; font-size: 30px">Contact us<svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#9CB1E7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a></li></ul>
+<div class="nv-foot" style="display: flex; flex-direction: column; gap: 12px">
+<a href="tel:+46102070444" style="display: flex; align-items: center; justify-content: center; color: #FFFFFF; text-decoration: none; font-weight: 600; font-size: 15px; padding: 14px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.18)">Call +46 10 207 04 44</a>
+</div>
+</nav>
+</header>
+
+
+<!-- ABOUT HERO -->
+<section id="top" style="color: #FFFFFF; padding: 48px 24px 170px; position: relative; z-index: 1">
+<div style="max-width: 860px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 20px">
+<span class="ab-pill">About Truxco</span>
+<h1 style="margin: 0; font-family: 'Barlow', sans-serif; font-weight: 700; font-size: clamp(38px, 5vw, 64px); line-height: 1.04; letter-spacing: -0.015em">Buses are our everyday — and our passion.</h1>
+<p style="margin: 0; max-width: 60ch; font-size: 18px; line-height: 1.65; color: #D9DDE8">Since 2015 we have helped bus operators in Sweden and across Europe find the right bus for the right route. We are a family-owned company in Skåne that buys, sells and brokers new and used buses.</p>
+</div>
+</section>
+</div>
+
+<!-- PHOTO + FACTS -->
+<section aria-label="Truxco at a glance" style="padding: 0 24px; margin-top: -130px; position: relative; z-index: 2">
+<div class="ab-wrap">
+<div class="ab-photo"><img src="/_blob/c412b4374d734066a683e1b2284738be" alt="Buses lined up at the Truxco yard in Staffanstorp"></div>
+<div class="ab-facts"><div class="ab-fact"><span class="ab-ic"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#278641" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="flex: none"><rect x="3" y="4.5" width="18" height="16.5" rx="2"></rect><path d="M3 9.5h18M8 2.5v4M16 2.5v4"></path></svg></span><span><strong>Since 2015</strong><span class="s">Founded in Lund, Skåne</span></span></div><div class="ab-fact"><span class="ab-ic"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#278641" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="flex: none"><path d="M3 10.5L12 3l9 7.5"></path><path d="M5 9.5V21h14V9.5"></path></svg></span><span><strong>Family-owned</strong><span class="s">Part of Laryan Holding</span></span></div><div class="ab-fact"><span class="ab-ic"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#278641" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="flex: none"><path d="M12 22s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12z"></path><circle cx="12" cy="10" r="2.6"></circle></svg></span><span><strong>Two offices</strong><span class="s">Staffanstorp and Lund</span></span></div><div class="ab-fact"><span class="ab-ic"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#278641" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="flex: none"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"></path></svg></span><span><strong>Across Europe</strong><span class="s">Buses on Swedish and European roads</span></span></div></div>
+</div>
+</section>
+
+<!-- STORY -->
+<section id="story" class="ab-sec" aria-labelledby="ab-story-h" style="padding: 112px 24px 104px">
+<div class="ab-wrap ab-story">
+<div style="display: flex; flex-direction: column; gap: 22px">
+<span class="ab-eyebrow">Our story</span>
+<h2 id="ab-story-h" class="ab-h2">We are Truxco.</h2>
+<p class="ab-lead">We started in Lund in 2015 with one idea: bus trading should be personal and direct.</p>
+<p class="ab-p">Today we are a growing team based in Staffanstorp, with an extra office in Lund. As part of the family-owned Laryan Holding group, we trade new and used vehicles — from a single bus to a full fleet. Our buses run on Swedish roads and across Europe.</p>
+<p class="ab-p">Our team comes from different backgrounds and speaks many languages. What we share is how we work: with professionalism, collaboration, growth and trust.</p>
+<div class="ab-mile">
+<div><strong>2015</strong><span>Founded in Lund</span></div>
+<div><strong>Today</strong><span>Head office in Staffanstorp, office in Lund</span></div>
+<div class="on"><strong>Next</strong><span>Electric buses and charging</span></div>
+</div>
+</div>
+<div class="ab-story-img">
+<img src="/_blob/3eae12920f603ca30a13bfc0fcc0e7fe" alt="A Truxco specialist shaking hands with a customer at handover">
+<blockquote class="ab-quote"><p>“We believe in business built on trust, accountability, and a handshake mentality.”</p><footer>Welcome to Truxco.</footer></blockquote>
+</div>
+</div>
+</section>
+
+<!-- PRINCIPLES -->
+<section id="how-we-work" class="ab-sec" aria-labelledby="ab-pr-h" style="background: #FFFFFF; padding: 104px 24px; border-top: 1px solid #ECEEF4; border-bottom: 1px solid #ECEEF4">
+<div class="ab-wrap" style="display: flex; flex-direction: column; gap: 56px">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 20px 48px">
+<div style="display: flex; flex-direction: column; gap: 14px"><span class="ab-eyebrow">How we work</span><h2 id="ab-pr-h" class="ab-h2">Four principles, one handshake</h2></div>
+<p class="ab-p" style="max-width: 44ch">The same four principles guide every deal — whether you buy one bus or a whole fleet.</p>
+</div>
+<div class="ab-princ"><div class="ab-pr"><span class="n">01</span><h3>Professionalism</h3><p>We do the work properly — on every inspection, every contract and every delivery.</p></div><div class="ab-pr"><span class="n">02</span><h3>Collaboration</h3><p>Different backgrounds, one way of working. We win together with our customers.</p></div><div class="ab-pr"><span class="n">03</span><h3>Growth</h3><p>We invest in our people, our processes and the future of transport.</p></div><div class="ab-pr"><span class="n">04</span><h3>Trust</h3><p>Long-term relationships, clear communication and business you can feel confident in.</p></div></div>
+</div>
+</section>
+
+<!-- TEAM -->
+<section id="team" class="ab-sec" aria-labelledby="ab-team-h" style="padding: 104px 24px 96px">
+<div class="ab-wrap" style="display: flex; flex-direction: column; gap: 48px">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 20px 48px">
+<div style="display: flex; flex-direction: column; gap: 14px"><span class="ab-eyebrow">Our team</span><h2 id="ab-team-h" class="ab-h2">People you can call by name</h2></div>
+<p class="ab-p" style="max-width: 44ch">No call centre. You talk directly to the person who handles your deal.</p>
+</div>
+<div class="ab-team"><article class="ab-person"><span class="ab-av" aria-hidden="true">MH</span><div style="display: flex; flex-direction: column; gap: 4px"><h3>Malika Haidari</h3><span class="ab-role">CEO</span></div><div class="ab-links"><a class="ab-link" href="mailto:malika@truxco.se"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#278641" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="flex: none"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="M3 7l9 6 9-6"></path></svg>malika@truxco.se</a><a class="ab-link" href="tel:+46102070444" aria-label="Call Malika"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#278641" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="flex: none"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"></path></svg>+46 10 207 04 44</a></div></article><article class="ab-person"><span class="ab-av" aria-hidden="true">MA</span><div style="display: flex; flex-direction: column; gap: 4px"><h3>Matin Amini</h3><span class="ab-role">Business Development Manager</span></div><div class="ab-links"><a class="ab-link" href="mailto:matin@truxco.se"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#278641" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="flex: none"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="M3 7l9 6 9-6"></path></svg>matin@truxco.se</a><a class="ab-link" href="tel:+46102070444" aria-label="Call Matin"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#278641" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="flex: none"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"></path></svg>+46 10 207 04 44</a></div></article><article class="ab-person"><span class="ab-av" aria-hidden="true">RO</span><div style="display: flex; flex-direction: column; gap: 4px"><h3>Roger Olsson</h3><span class="ab-role">Sales Manager</span></div><div class="ab-links"><a class="ab-link" href="mailto:roger@truxco.se"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#278641" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="flex: none"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="M3 7l9 6 9-6"></path></svg>roger@truxco.se</a><a class="ab-link" href="tel:+46102070444" aria-label="Call Roger"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#278641" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="flex: none"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"></path></svg>+46 10 207 04 44</a></div></article><article class="ab-person"><span class="ab-av" aria-hidden="true">SH</span><div style="display: flex; flex-direction: column; gap: 4px"><h3>Saboor Haidari</h3><span class="ab-role">Key Account Manager</span></div><div class="ab-links"><a class="ab-link" href="mailto:saboor@truxco.se"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#278641" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="flex: none"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="M3 7l9 6 9-6"></path></svg>saboor@truxco.se</a><a class="ab-link" href="tel:+46102070444" aria-label="Call Saboor"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#278641" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="flex: none"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"></path></svg>+46 10 207 04 44</a></div></article></div>
+</div>
+</section>
+
+<!-- OFFICES -->
+<section id="offices" class="ab-sec" aria-labelledby="ab-off-h" style="padding: 0 24px 104px">
+<div class="ab-wrap" style="display: flex; flex-direction: column; gap: 48px">
+<div style="display: flex; flex-direction: column; gap: 14px"><span class="ab-eyebrow">Where to find us</span><h2 id="ab-off-h" class="ab-h2">Two offices in Skåne</h2></div>
+<div class="ab-offices">
+<article class="ab-office">
+<div style="display: flex; justify-content: space-between; align-items: center; gap: 12px"><span class="ab-ic"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#278641" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="flex: none"><path d="M12 22s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12z"></path><circle cx="12" cy="10" r="2.6"></circle></svg></span><span class="ab-tag">Headquarters</span></div>
+<h3>Staffanstorp</h3>
+<p>Our head office and bus yard. Come and see the buses in person — visits are by appointment.</p>
+<div class="ab-row"><a class="ab-btn" href="Contact.dc.html#visit">Book a visit</a><a class="ab-btn2" href="https://maps.google.com/?q=Staffanstorp,Sweden" target="_blank" rel="noopener">Get directions</a></div>
+</article>
+<article class="ab-office">
+<div style="display: flex; justify-content: space-between; align-items: center; gap: 12px"><span class="ab-ic"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#278641" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="flex: none"><path d="M12 22s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12z"></path><circle cx="12" cy="10" r="2.6"></circle></svg></span><span class="ab-tag" style="background: #F2F4F8; color: #475476">Office</span></div>
+<h3>Lund</h3>
+<p>Close to where it all started in 2015. Truxco is part of the family-owned Laryan Holding group.</p>
+<div class="ab-row"><a class="ab-btn2" href="https://maps.google.com/?q=Lund,Sweden" target="_blank" rel="noopener">Get directions</a></div>
+</article>
+</div>
+</div>
+</section>
+
+<!-- LOOKING FORWARD -->
+<section id="forward" class="ab-sec" aria-labelledby="ab-fwd-h" style="padding: 0 24px 112px">
+<div class="ab-wrap ab-fwd">
+<img class="ab-fwd-img" src="/_blob/f430994695698a72d72784b9fdf0f2eb" alt="An electric city bus at the Truxco yard">
+<div aria-hidden="true" class="ab-fwd-shade"></div>
+<div class="ab-fwd-txt">
+<span class="ab-eyebrow" style="color: #9CE7B1">Looking forward</span>
+<h2 id="ab-fwd-h">The biggest transition the bus industry has seen in decades — and we want to help drive it.</h2>
+<p>We invest in electric buses, build know-how in charging infrastructure and explore self-sufficient depots. Our goal: to be your partner for sustainable transport — today, and twenty years from now.</p>
+<ul class="ab-ticks"><li><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#9CE7B1" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="flex: none"><path d="M13 2L4 14h7l-1 8 9-12h-7l1-8z"></path></svg>Electric buses</li><li><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#9CE7B1" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="flex: none"><path d="M9 2v5M15 2v5M6 7h12v4a6 6 0 0 1-12 0V7zM12 17v5"></path></svg>Charging infrastructure</li><li><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#9CE7B1" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="flex: none"><path d="M5 19c0-8 6-14 15-14 0 9-6 15-14 15"></path><path d="M5 19l7-7"></path></svg>Self-sufficient depots</li></ul>
+<div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 8px"><a class="ab-btn" href="Contact.dc.html">Get in touch</a><a class="ab-ghost" href="UsedBuses.dc.html">Browse buses</a></div>
+</div>
+</div>
+</section>
+
+<!-- FOOTER -->
+<footer id="contact" style="background: #0D1016; color: #BCC3D7; padding: 96px 24px 0; overflow: hidden">
+<div style="max-width: 1240px; margin: 0 auto; display: flex; flex-direction: column; gap: 40px">
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 40px">
+<div style="display: flex; flex-direction: column; gap: 20px; grid-column: span 2; min-width: 0">
+<img src="/_blob/a576d4ce67c7b4c79b6f5a3eda53f582" alt="Truxco" style="height: 26px; width: auto; align-self: flex-start; display: block">
+<p style="margin: 0; font-size: 15px; line-height: 1.65; max-width: 340px">Truxco AB · Bus sales and rental. Based in Staffanstorp, Sweden — serving operators across Europe.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 10px">
+<a href="tel:+46102070444" class="ft-pill" style="display: inline-flex; align-items: center; gap: 8px; min-height: 44px; box-sizing: border-box; color: #FFFFFF; text-decoration: none; font-size: 14px; font-weight: 600; padding: 12px 16px; background: rgba(255,255,255,0.07); border-radius: 6px"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#278641" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"></path></svg>+46 (0) 10 207 04 44</a>
+<a href="mailto:info@truxco.se" class="ft-pill" style="display: inline-flex; align-items: center; gap: 8px; min-height: 44px; box-sizing: border-box; color: #FFFFFF; text-decoration: none; font-size: 14px; font-weight: 600; padding: 12px 16px; background: rgba(255,255,255,0.07); border-radius: 6px"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#278641" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="M22 6l-10 7L2 6"></path></svg>info@truxco.se</a>
+</div>
+</div>
+<nav aria-label="Browse" class="ft-nav" style="display: flex; flex-direction: column; gap: 12px; font-size: 15px"><strong style="color: #FFFFFF; font-size: 12px; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 8px">Browse</strong><a href="UsedBuses.dc.html" style="color: #BCC3D7; text-decoration: none">Coaches</a><a href="UsedBuses.dc.html" style="color: #BCC3D7; text-decoration: none">City buses</a><a href="UsedBuses.dc.html" style="color: #BCC3D7; text-decoration: none">Minibuses</a><a href="UsedBuses.dc.html" style="color: #BCC3D7; text-decoration: none">Electric</a></nav>
+<nav aria-label="Company" class="ft-nav" style="display: flex; flex-direction: column; gap: 12px; font-size: 15px"><strong style="color: #FFFFFF; font-size: 12px; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 8px">Company</strong><a href="AboutUs.dc.html" style="color: #BCC3D7; text-decoration: none">About us</a><a href="BusDetail.dc.html#delivery" style="color: #BCC3D7; text-decoration: none">How it works</a><a href="Contact.dc.html" style="color: #BCC3D7; text-decoration: none">Contact</a><a href="#c" style="color: #BCC3D7; text-decoration: none">Careers</a></nav>
+<nav aria-label="Resources" class="ft-nav" style="display: flex; flex-direction: column; gap: 12px; font-size: 15px"><strong style="color: #FFFFFF; font-size: 12px; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 8px">Resources</strong><a href="Main.dc.html#sell" style="color: #BCC3D7; text-decoration: none">Sell with us</a><a href="BusDetail.dc.html#inspection" style="color: #BCC3D7; text-decoration: none">Inspections</a><a href="#c" style="color: #BCC3D7; text-decoration: none">FAQ</a><a href="#c" style="color: #BCC3D7; text-decoration: none">Press</a></nav>
+</div>
+<svg aria-hidden="true" viewBox="0 0 1240 168" preserveAspectRatio="xMidYMid meet" style="display: block; width: 100%; height: auto; margin-bottom: 8px"><defs><linearGradient id="ftWord" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2A3044"></stop><stop offset="1" stop-color="#151923"></stop></linearGradient></defs><text x="0" y="122" textLength="1240" lengthAdjust="spacingAndGlyphs" fill="#BCC3D7" fill-opacity="0.16" style="font-family: 'Barlow', sans-serif; font-weight: 700; font-size: 160px; letter-spacing: -0.02em">Buy. Sell. Drive Away.</text></svg>
+<div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px 24px; padding: 24px 0 32px; border-top: 1px solid rgba(255,255,255,0.1); font-size: 13px; color: #8693B6">
+<span style="display: flex; flex-wrap: wrap; align-items: center; gap: 24px">© 2026 Truxco AB · Org. 559002-5127</span>
+<span style="display: flex; gap: 24px"><a href="#c" class="ft-legal" style="color: #8693B6; text-decoration: none">Privacy</a><a href="#c" class="ft-legal" style="color: #8693B6; text-decoration: none">Terms</a><a href="#c" class="ft-legal" style="color: #8693B6; text-decoration: none">Cookies</a></span>
+</div>
+</div>
+</footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":4720}}'>
+class Component extends DCLogic {
+  componentDidMount() {
+    try { this.ofKey = (e) => { if (e.key === 'Escape' && this.state && this.state.offerOpen) this.setState({ offerOpen: false, offerSent: false }); }; window.addEventListener('keydown', this.ofKey); } catch (e) {}
+    // Testimonial arrows: reflect whether the row can scroll left / right
+    try {
+      const el = typeof document !== 'undefined' && document.getElementById('t-track');
+      if (el) {
+        this.tSync = () => {
+          const max = el.scrollWidth - el.clientWidth;
+          const next = { tStart: el.scrollLeft <= 2, tEnd: el.scrollLeft >= max - 2, tOver: max > 2 };
+          const cur = this.state || {};
+          if (cur.tStart !== next.tStart || cur.tEnd !== next.tEnd || cur.tOver !== next.tOver) this.setState(next);
+        };
+        el.addEventListener('scroll', this.tSync, { passive: true });
+        window.addEventListener('resize', this.tSync);
+        this.tSync();
+      }
+    } catch (e) {}
+    this.busTimer = setInterval(() => {
+      if (typeof document !== 'undefined' && document.hidden) return;
+      this.setState({ busRun: ((this.state && this.state.busRun) || 0) + 1 });
+    }, 120000);
+    // Land the intro logo exactly on the header logo: measure it once, relative to the page root
+    if (typeof requestAnimationFrame !== 'undefined' && typeof document !== 'undefined') {
+      requestAnimationFrame(() => {
+        try {
+          const img = document.getElementById('tx-hdr-logo');
+          const root = document.getElementById('tx-root');
+          if (!img || !root) return;
+          const a = img.getBoundingClientRect(), b = root.getBoundingClientRect();
+          if (!a.width || !a.height) return;
+          this.setState({ fly: { l: a.left - b.left, t: a.top - b.top, w: a.width, h: a.height } });
+        } catch (e) {}
+      });
+    }
+  }
+  componentWillUnmount() {
+    try { window.removeEventListener('keydown', this.ofKey); } catch (e) {}
+    try { const el = document.getElementById('t-track'); if (el && this.tSync) el.removeEventListener('scroll', this.tSync); if (this.tSync) window.removeEventListener('resize', this.tSync); } catch (e) {}
+    clearInterval(this.busTimer);
+  }
+  navVals() {
+    const labels = [
+      { key: 'home', label: 'Home', hasMenu: false, href: 'Main.dc.html' },
+      { key: 'buses', label: 'Buses', hasMenu: false, href: 'UsedBuses.dc.html' },
+      { key: 'about', label: 'About', hasMenu: false, href: 'AboutUs.dc.html' },
+      { key: 'contact', label: 'Contact us', hasMenu: false, href: 'Contact.dc.html' }
+    ];
+    const st = this.state || {};
+    const hover = st.navHover;
+    const active = st.navActive ?? 2;
+    const has = (v) => v !== null && v !== undefined;
+    const open = has(hover) ? hover : st.navPinned;
+    const pillIndex = has(hover) ? hover : active;
+    const openKey = has(open) && labels[open] && labels[open].hasMenu ? labels[open].key : null;
+    const m = !!st.mobileOpen;
+    return {
+      items: labels.map((l, i) => ({
+        label: l.label,
+        href: l.href,
+        hasMenu: l.hasMenu,
+        popup: l.hasMenu ? 'true' : 'false',
+        expanded: openKey === l.key ? 'true' : 'false',
+        colorStyle: 'color: ' + (i === active ? '#FFFFFF' : '#BCC3D7') + ';',
+        cls: i === active ? 'is-active' : '',
+        current: i === active ? 'page' : 'false',
+        caretStyle: openKey === l.key ? 'transform: rotate(180deg);' : 'transform: rotate(0deg);',
+        enter: () => this.setState({ navHover: i }),
+        pick: () => this.setState({ navActive: i, navPinned: (st.navPinned === i ? null : i) })
+      })),
+      pillStyle: '',
+      menuStyle: openKey
+        ? 'opacity: 1; visibility: visible; transform: translateY(0) scale(1);'
+        : 'opacity: 0; visibility: hidden; transform: translateY(-12px) scale(.98);',
+      show: { used: openKey === 'used', electric: openKey === 'electric', sell: openKey === 'sell', services: openKey === 'services' },
+      navLeave: () => this.setState({ navHover: null, navPinned: null }),
+      toggleMenu: () => this.setState({ mobileOpen: !m }),
+      closeMenu: () => this.setState({ mobileOpen: false }),
+      menuExpanded: m ? 'true' : 'false',
+      burgerLabel: m ? 'Close menu' : 'Open menu',
+      mobileOpenClass: m ? 'nv-open' : '',
+      overlayStyle: m
+        ? 'clip-path: circle(150% at calc(100% - 46px) 52px); visibility: visible;'
+        : 'clip-path: circle(0px at calc(100% - 46px) 52px); visibility: hidden; transition: clip-path .6s cubic-bezier(.77,0,.18,1), visibility 0s .6s;',
+      bar1: m ? 'top: 21px; transform: rotate(45deg);' : 'top: 14px; transform: none;',
+      bar2: m ? 'top: 21px; opacity: 0; transform: scaleX(0);' : 'top: 21px; opacity: 1; transform: none;',
+      bar3: m ? 'top: 21px; transform: rotate(-45deg);' : 'top: 28px; transform: none;'
+    };
+  }
+  tScroll(dir) {
+    try {
+      const el = document.getElementById('t-track');
+      if (!el) return;
+      const card = el.querySelector('.t-card');
+      const step = card ? card.getBoundingClientRect().width + 24 : el.clientWidth;
+      el.scrollBy({ left: dir * step, behavior: 'smooth' });
+    } catch (e) {}
+  }
+  listVals() {
+    const st = this.state || {};
+    const all = [
+      { name: 'Volvo 9700 HD', type: 'Coach', price: '€129,000', pv: 129000, vat: 'excl. VAT', year: '2017', km: '512,000 km', kmv: 512000, seats: '53', euro: 'Euro 6', img: '/_blob/bcab9233641a761d8bdcca8ab1e9cf3f', fit: 'cover', photos: '24', loc: 'Staffanstorp, SE', badge: 'New in', badgeStyle: 'background: #278641; color: #FFFFFF;', alt: 'White touring coach parked in the Truxco yard' },
+      { name: 'Volvo 8900 LE', type: 'City bus', price: '€59,000', pv: 59000, vat: 'excl. VAT', year: '2016', km: '640,000 km', kmv: 640000, seats: '41', euro: 'Euro 6', img: '/_blob/0ec4a4911a036115febf70feece06c86', fit: 'cover', photos: '18', loc: 'Staffanstorp, SE', badge: '', badgeStyle: '', alt: 'White city bus with blue stripe in the Truxco yard' },
+      { name: 'Volvo 7900 Electric', type: 'Electric', price: '€189,000', pv: 189000, vat: 'excl. VAT', year: '2019', km: '310,000 km', kmv: 310000, seats: '33', euro: 'Zero emission', img: '/_blob/f430994695698a72d72784b9fdf0f2eb', fit: 'cover', photos: '21', loc: 'Malmö, SE', badge: '', badgeStyle: '', status: 'Reserved', alt: 'Blue and white electric bus in the Truxco yard' },
+      { name: 'Mercedes Sprinter 516', type: 'Minibus', price: 'Price on request', pv: 0, vat: '', year: '2020', km: '140,000 km', kmv: 140000, seats: '19', euro: 'Euro 6', img: '/_blob/32e2e0c4f03fb7b23a2a3c8fefd766da', fit: 'cover', photos: '15', loc: 'Staffanstorp, SE', badge: 'New in', badgeStyle: 'background: #278641; color: #FFFFFF;', alt: 'White Mercedes Sprinter minibus in the Truxco yard' },
+      { name: 'Setra S 516 HD', type: 'Coach', price: '[PRICE]', pv: 0, vat: '', year: '[YEAR]', km: '[KM]', kmv: 0, seats: '[SEATS]', euro: 'Euro 6', img: '/_blob/f24ddb65ed50bb2eb7e897d3f9d3960f', fit: 'contain', photos: '[N]', loc: 'Staffanstorp, SE', badge: '', badgeStyle: '', alt: 'White touring coach' },
+      { name: 'Scania Citywide LE', type: 'City bus', price: '[PRICE]', pv: 0, vat: '', year: '[YEAR]', km: '[KM]', kmv: 0, seats: '[SEATS]', euro: 'Euro 6', img: '/_blob/6431e50445eacca404ac486951e73bc6', fit: 'contain', photos: '[N]', loc: 'Staffanstorp, SE', badge: '', badgeStyle: '', alt: 'City bus with blue stripe' },
+      { name: 'Iveco Daily Line', type: 'Minibus', price: '[PRICE]', pv: 0, vat: '', year: '[YEAR]', km: '[KM]', kmv: 0, seats: '[SEATS]', euro: 'Euro 6', img: '/_blob/3cc0680f6f3fc151b091e3c48e109969', fit: 'contain', photos: '[N]', loc: 'Staffanstorp, SE', status: 'Sold', badge: '', badgeStyle: '', alt: 'White minibus' },
+      { name: 'BYD eBus 12', type: 'Electric', price: '[PRICE]', pv: 0, vat: '', year: '[YEAR]', km: '[KM]', kmv: 0, seats: '[SEATS]', euro: 'Zero emission', img: '/_blob/58fd51f80fc980fe643f9a43ab45f4ee', fit: 'contain', photos: '[N]', loc: 'Staffanstorp, SE', badge: '', badgeStyle: '', alt: 'Blue and white electric bus' },
+      { name: 'MAN Lion’s Coach', type: 'Coach', price: '[PRICE]', pv: 0, vat: '', year: '[YEAR]', km: '[KM]', kmv: 0, seats: '[SEATS]', euro: 'Euro 6', img: '/_blob/f24ddb65ed50bb2eb7e897d3f9d3960f', fit: 'contain', photos: '[N]', loc: 'Staffanstorp, SE', badge: '', badgeStyle: '', alt: 'White touring coach' }
+    ];
+    all.forEach((b) => { const s = b.status || 'Available'; b.status = s; b.statusDot = s === 'Available' ? '#278641' : s === 'Reserved' ? '#DEA345' : '#8693B6'; b.imgStyle = s === 'Sold' ? 'filter: grayscale(1); opacity: .6;' : ''; });
+    const type = st.type || 'all';
+    const euro6 = !!st.euro6;
+    const sort = st.sort || 'new';
+    const T = [['all','All buses'],['Coach','Coaches'],['City bus','City buses'],['Minibus','Minibuses'],['Electric','Electric']];
+    const types = T.map(([k, label]) => {
+      const on = type === k;
+      return {
+        label, pressed: on ? 'true' : 'false',
+        count: String(k === 'all' ? all.length : all.filter((b) => b.type === k).length),
+        style: (on ? 'background: #EEF6F0; border: 1.5px solid #278641;' : 'background: #FFFFFF; border: 1.5px solid #D9DDE8;'),
+        countStyle: on ? 'flex: none; font-size: 12px; font-weight: 600; color: #FFFFFF; background: #278641; border-radius: 10px; min-width: 22px; height: 20px; padding: 0 6px; box-sizing: border-box; display: inline-flex; align-items: center; justify-content: center;' : 'flex: none; font-size: 12px; font-weight: 600; color: #475476; background: #F2F4F8; border-radius: 10px; min-width: 22px; height: 20px; padding: 0 6px; box-sizing: border-box; display: inline-flex; align-items: center; justify-content: center;',
+        pick: () => this.setState({ type: k })
+      };
+    });
+    let list = all.filter((b) => (type === 'all' || b.type === type) && (!euro6 || b.euro === 'Euro 6' || b.euro === 'Zero emission'));
+    const byNum = (k, dir) => (a, b) => { const x = a[k] || (dir > 0 ? Infinity : -Infinity), y = b[k] || (dir > 0 ? Infinity : -Infinity); return dir > 0 ? x - y : y - x; };
+    if (sort === 'price-asc') list = list.slice().sort(byNum('pv', 1));
+    if (sort === 'price-desc') list = list.slice().sort(byNum('pv', -1));
+    if (sort === 'year-desc') list = list.slice().sort((a, b) => (parseInt(b.year) || 0) - (parseInt(a.year) || 0));
+    if (sort === 'km-asc') list = list.slice().sort(byNum('kmv', 1));
+    const chips = [];
+    if (type !== 'all') chips.push({ label: (T.find((t) => t[0] === type) || [type, type])[1], remove: () => this.setState({ type: 'all' }) });
+    if (euro6) chips.push({ label: 'Euro 6 / zero emission', remove: () => this.setState({ euro6: false }) });
+    return {
+      types, buses: list, count: String(list.length), sort, euro6,
+      chips, hasChips: chips.length > 0, activeCount: String(chips.length), hasResults: list.length > 0, noResults: list.length === 0,
+      setSort: (e) => this.setState({ sort: e && e.target ? e.target.value : 'new' }),
+      toggleEuro6: () => this.setState({ euro6: !euro6 }),
+      clearAll: () => this.setState({ type: 'all', euro6: false, sort: 'new' })
+    };
+  }
+  detailVals() {
+    const st = this.state || {};
+    const P = [
+      { src: '/_blob/bcab9233641a761d8bdcca8ab1e9cf3f', alt: 'Volvo 9700 HD, front three-quarter view', label: 'Exterior · front' },
+      { src: '/_blob/c412b4374d734066a683e1b2284738be', alt: 'The Truxco yard in Staffanstorp', label: 'At our yard in Staffanstorp' },
+      { src: '/_blob/7c1bc52a75e93d007de8b10817cd35d1', alt: 'Wheel and tyre check in the workshop', label: 'Wheels and tyres' },
+      { src: '/_blob/4a23e3b611eb7bcb96240473700161ea', alt: 'Service and export papers', label: 'Service history and papers' },
+      { src: '/_blob/3eae12920f603ca30a13bfc0fcc0e7fe', alt: 'Handover at the yard', label: 'Handover at the yard' }
+    ];
+    const i = st.photo || 0;
+    const go = (d) => this.setState({ photo: (i + d + P.length) % P.length });
+    const tabsList = [['overview','Overview'],['specs','Specifications'],['equipment','Equipment'],['inspection','Inspection'],['delivery','How buying works']];
+    const tab = st.tab || 'overview';
+    const saved = !!st.saved;
+    const all = this.listVals().buses;
+    const FILL = {
+      'Setra S 516 HD': { price: '€145,000', vat: 'excl. VAT', year: '2018', km: '420,000 km', seats: '49', photos: '16' },
+      'Scania Citywide LE': { price: '€75,000', vat: 'excl. VAT', year: '2017', km: '560,000 km', seats: '37', photos: '20' },
+      "MAN Lion’s Coach": { price: '€115,000', vat: 'excl. VAT', year: '2016', km: '610,000 km', seats: '49', photos: '14' }
+    };
+    return {
+      photo: P[i], photoIndex: String(i + 1),
+      photos: P.map((p, k) => ({ src: p.src, label: 'Show photo ' + (k + 1) + ': ' + p.label, pressed: k === i ? 'true' : 'false',
+        style: k === i ? 'opacity: 1; outline-color: #278641;' : 'opacity: .7;', pick: () => this.setState({ photo: k }) })),
+      prevPhoto: () => go(-1), nextPhoto: () => go(1),
+      tabs: tabsList.map(([k, l]) => ({ label: l, href: '#' + k, cls: k === tab ? 'on' : '', current: k === tab ? 'true' : 'false', pick: () => this.setState({ tab: k }) })),
+      saved, savedPressed: saved ? 'true' : 'false', saveLabel: saved ? 'Saved' : 'Save',
+      toggleSave: () => this.setState({ saved: !saved }),
+      offerOpen: !!st.offerOpen, offerForm: !!st.offerOpen && !st.offerSent, offerSent: !!st.offerOpen && !!st.offerSent,
+      openOffer: (e) => { if (e && e.preventDefault) e.preventDefault(); let y = null; try { const vh = window.innerHeight || 0; if (vh > 1400 && e && typeof e.clientY === 'number') y = Math.max(16, e.clientY - 240); } catch (er) {} this.setState({ offerOpen: true, offerSent: false, offerY: y }); },
+      offerWrapStyle: (st.offerY != null) ? 'align-items: flex-start; padding-top: ' + st.offerY + 'px;' : '',
+      closeOffer: () => this.setState({ offerOpen: false, offerSent: false }),
+      submitOffer: (e) => { if (e && e.preventDefault) e.preventDefault(); this.setState({ offerSent: true }); },
+      similar: all.filter((b) => b.name !== 'Volvo 9700 HD').filter((b) => b.type === 'Coach' || b.type === 'City bus').slice(0, 4).map((b) => ({ ...b, ...(FILL[b.name] || {}) }))
+    };
+  }
+  contactVals() {
+    const st = this.state || {};
+    const T = [
+      ['buy', 'Buy a bus', 'Which bus are you interested in? Add the model or reference number if you have it.'],
+      ['sell', 'Sell a bus', 'Tell us the make, model, year and mileage of the bus you want to sell.'],
+      ['visit', 'Visit the yard', 'When would you like to visit? Visits are by appointment only.'],
+      ['other', 'Something else', 'How can we help?']
+    ];
+    const t = st.ctTopic || 'buy';
+    return {
+      ...Object.fromEntries(T.map(([k]) => ['ct_' + k, { cls: k === t ? 'on' : '', checked: k === t ? 'true' : 'false', pick: () => this.setState({ ctTopic: k }) }])),
+      ctPlaceholder: (T.find((x) => x[0] === t) || T[0])[2],
+      ctForm: !st.ctSent, ctSent: !!st.ctSent,
+      ctSubmit: (e) => { if (e && e.preventDefault) e.preventDefault(); this.setState({ ctSent: true }); },
+      ctReset: () => this.setState({ ctSent: false }),
+      ctBookVisit: () => { this.setState({ ctTopic: 'visit', ctSent: false }); try { const el = document.getElementById('ct-form-h'); if (el) el.scrollIntoView({ behavior: 'smooth', block: 'center' }); } catch (e) {} }
+    };
+  }
+  renderVals() {
+    const busRun = (this.state && this.state.busRun) || 0;
+    return {
+      ...this.navVals(),
+      ...this.listVals(),
+      ...this.detailVals(),
+      ...this.contactVals(),
+      tPrev: () => this.tScroll(-1),
+      tNext: () => this.tScroll(1),
+      tPrevDis: (this.state && this.state.tStart !== false) ? 'true' : 'false',
+      tNextDis: (this.state && this.state.tEnd) ? 'true' : 'false',
+      tArrowsStyle: (this.state && this.state.tOver === false) ? 'display: none;' : 'display: flex;',
+      busClass: busRun === 0 ? 'bus-drive-a bus-intro' : busRun % 2 === 0 ? 'bus-drive-a' : 'bus-drive-b',
+      flyStyle: (this.state && this.state.fly)
+        ? `--L: ${this.state.fly.l}px; --T: ${this.state.fly.t}px; --W: ${this.state.fly.w}px; --H: ${this.state.fly.h}px`
+        : '',
+    };
+  }
+}
+</script>
+</body>
+</html>
