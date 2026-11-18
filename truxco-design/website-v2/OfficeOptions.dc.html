@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Offices section options</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@500;700;800&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<style>body{margin:0;background:#F5F6F9}
+.to-root{font-family:Inter,system-ui,sans-serif;color:#151923;background:#F5F6F9;padding:56px 24px 40px;display:flex;flex-direction:column;gap:40px}
+.to-opt{border:1px dashed #C9CFDD;border-radius:28px;padding:32px 32px 56px}
+.to-label{display:flex;gap:14px;align-items:center;margin:0 auto 40px;max-width:1240px}
+.to-k{width:40px;height:40px;border-radius:50%;background:#0E162A;color:#FFFFFF;font-family:Barlow,sans-serif;font-weight:700;font-size:18px;display:flex;align-items:center;justify-content:center;flex:none}
+.to-label strong{display:block;font-family:Barlow,sans-serif;font-size:20px}.to-label span span{font-size:14px;color:#5A6A96}
+.to-wrap{max-width:1240px;margin:0 auto}
+.to-head{display:flex;flex-direction:column;gap:14px;margin-bottom:44px}
+.to-eye{font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#278641}
+.to-h2{margin:0;font-family:Barlow,sans-serif;font-weight:700;font-size:44px;line-height:1.06;letter-spacing:-.01em}
+h3{margin:0;font-family:Barlow,sans-serif;font-weight:700}
+p{margin:0}
+.ic40{flex:none;width:40px;height:40px;border-radius:50%;background:#F3FCF5;border:1px solid #C5F1D1;box-sizing:border-box;display:inline-flex;align-items:center;justify-content:center}
+.tag-g{font-size:12px;font-weight:600;color:#475476;background:#F2F4F8;padding:5px 12px;border-radius:999px}
+.tag-gr{font-size:12px;font-weight:600;color:#226333;background:#E2F8E8;padding:5px 12px;border-radius:999px}
+.tag-w{align-self:flex-start;font-size:12px;font-weight:600;color:#151923;background:#FFFFFF;padding:5px 12px;border-radius:999px}
+.row{display:flex;flex-wrap:wrap;gap:10px}
+.b1,.b2,.b3{display:inline-flex;align-items:center;justify-content:center;height:46px;padding:0 18px;border-radius:6px;font-weight:600;font-size:15px;text-decoration:none}
+.b1{background:#278641;color:#FFFFFF}.b1:hover{background:#1F6E35;color:#FFFFFF}
+.b2{background:#FFFFFF;color:#151923;border:1px solid #D9DDE8}.b2:hover{border-color:#278641;color:#151923}
+.b3{color:#FFFFFF;border:1px solid rgba(255,255,255,.3)}.b3:hover{background:rgba(255,255,255,.1);color:#FFFFFF}
+/* A */
+.a-grid{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:20px}
+.a-hq{position:relative;border-radius:22px;overflow:hidden;min-height:420px;display:flex;align-items:flex-end}
+.a-hq img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.a-shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(14,22,42,.05) 20%,rgba(14,22,42,.9) 100%)}
+.a-in{position:relative;padding:32px;display:flex;flex-direction:column;gap:12px;color:#FFFFFF}
+.a-in h3{font-size:40px;line-height:1.05}.a-in p{font-size:16px;color:#D9DDE8;max-width:46ch}
+.a-info{display:flex;flex-wrap:wrap;gap:20px;font-size:14px;font-weight:600}.a-info span{display:inline-flex;align-items:center;gap:8px}
+.a-lund{background:#FFFFFF;border:1px solid #E3E6EE;border-radius:22px;padding:32px;display:flex;flex-direction:column;gap:10px}
+.a-lund-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
+.a-year{font-family:Barlow,sans-serif;font-weight:800;font-size:64px;line-height:1;color:#E2F2E7}
+.a-lund h3{font-size:34px}.a-lund p{font-size:15px;line-height:1.6;color:#475476}
+.a-note{display:flex;gap:10px;align-items:center;font-size:14px;color:#475476;padding:14px 0;border-top:1px solid #ECEEF4;margin-top:8px}
+/* B */
+.b-card{background:#FFFFFF;border:1px solid #E3E6EE;border-radius:24px;padding:40px 48px 44px}
+.b-line{display:flex;align-items:center;gap:0;margin:0 0 32px}
+.b-dot{flex:none;width:22px;height:22px;border-radius:50%;background:#FFFFFF;border:5px solid #BCC3D7;box-sizing:border-box}
+.b-dot.on{border-color:#278641;box-shadow:0 0 0 6px rgba(39,134,65,.15)}
+.b-track{flex:1;height:4px;background:repeating-linear-gradient(90deg,#278641 0 14px,transparent 14px 22px)}
+.b-bus{flex:none;width:52px;height:52px;border-radius:50%;background:#278641;display:flex;align-items:center;justify-content:center;box-shadow:0 10px 24px -8px rgba(39,134,65,.6)}
+.b-stops{display:grid;grid-template-columns:1fr 1fr;gap:48px}
+.b-stop{display:flex;flex-direction:column;gap:10px;align-items:flex-start}
+.b-r{align-items:flex-end;text-align:right}.b-r .row{justify-content:flex-end}
+.b-when{font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#8693B6}
+.b-stop h3{font-size:36px;line-height:1.05}.b-stop p{font-size:15px;line-height:1.6;color:#475476;max-width:40ch}
+/* C */
+.c-grid{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:20px}
+.c-map{position:relative;border-radius:22px;overflow:hidden;min-height:440px;background:#E6EFE8}
+.c-roads{position:absolute;inset:0;width:100%;height:100%}
+.c-pin{position:absolute;transform:translate(-50%,-100%);display:flex;flex-direction:column;align-items:center;gap:8px}
+.c-pd{width:52px;height:52px;border-radius:50%;background:#278641;display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 10px rgba(39,134,65,.18)}
+.c-pd.small{width:40px;height:40px;background:#0E162A;box-shadow:0 0 0 8px rgba(14,22,42,.12)}
+.c-pl{font-size:13px;font-weight:700;background:#FFFFFF;padding:6px 12px;border-radius:999px;box-shadow:0 6px 16px rgba(14,22,42,.12);white-space:nowrap}
+.c-region{position:absolute;left:20px;bottom:20px;font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#475476;background:rgba(255,255,255,.85);padding:6px 12px;border-radius:999px}
+.c-list{display:flex;flex-direction:column;gap:20px}
+.c-row{flex:1;background:#FFFFFF;border:1px solid #E3E6EE;border-radius:22px;padding:28px;display:flex;flex-direction:column;gap:10px}
+.c-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:4px}
+.c-row h3{font-size:28px}.c-row p{font-size:15px;line-height:1.6;color:#475476}.c-row .row{margin-top:auto;padding-top:6px}
+/* D */
+.d-grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr) minmax(0,1fr);gap:56px;align-items:start}
+.d-intro{display:flex;flex-direction:column;gap:16px}.d-intro p{font-size:16px;line-height:1.7;color:#475476}
+.d-off{display:flex;flex-direction:column;gap:12px;padding-top:24px;border-top:2px solid #151923}
+.d-n{font-family:Barlow,sans-serif;font-weight:800;font-size:72px;line-height:.9;color:#278641}
+.d-off h3{font-size:34px}.d-off p{font-size:15px;line-height:1.65;color:#475476}
+.d-links{display:flex;flex-direction:column;gap:2px;margin-top:6px}
+.d-links a{display:flex;justify-content:space-between;align-items:center;padding:14px 0;border-bottom:1px solid #DFE3EC;color:#151923;text-decoration:none;font-weight:600;font-size:15px}
+.d-links a:hover{color:#278641}
+</style>
+</helmet>
+<div class="to-root">
+<div class="to-wrap" style="display: flex; flex-direction: column; gap: 6px"><span class="to-eye">About us · pick one</span><h1 style="margin: 0; font-family: Barlow, sans-serif; font-size: 48px">“Two offices in Skåne” — 4 options</h1></div>
+<section class="to-opt"><div class="to-label"><span class="to-k">A</span><span><strong>Photo feature</strong><span>Head office shown big with the yard photo and visit details. Lund sits next to it as a calm second card.</span></span></div>
+<div class="to-wrap"><div class="to-head"><span class="to-eye">Where to find us</span><h2 class="to-h2">Two offices in Skåne</h2></div><div class="a-grid">
+<article class="a-hq"><img src="/_blob/c412b4374d734066a683e1b2284738be" alt="The Truxco yard in Staffanstorp"><div class="a-shade"></div>
+<div class="a-in"><span class="tag-w">Headquarters</span><h3>Staffanstorp</h3><p>Our head office and bus yard — come and see the buses in person.</p>
+<div class="a-info"><span><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#9CE7B1" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="flex: none"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg>Mon–Fri · 08:00–17:00</span><span><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#9CE7B1" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="flex: none"><rect x="3" y="4.5" width="18" height="16.5" rx="2"></rect><path d="M3 9.5h18M8 2.5v4M16 2.5v4"></path></svg>Visits by appointment</span></div>
+<div class="row"><a class="b1" href="Contact.dc.html#visit">Book a visit</a><a class="b3" href="https://maps.google.com/?q=Staffanstorp,Sweden" target="_blank" rel="noopener">Get directions</a></div></div></article>
+<article class="a-lund"><div class="a-lund-top"><span class="ic40"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#278641" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="flex: none"><path d="M12 22s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12z"></path><circle cx="12" cy="10" r="2.6"></circle></svg></span><span class="tag-g">Office</span></div><span class="a-year">2015</span><h3>Lund</h3><p>Close to where it all started in 2015.</p><div class="a-note"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#278641" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="flex: none"><path d="M4 21V5a1 1 0 0 1 1-1h9a1 1 0 0 1 1 1v16M15 9h4a1 1 0 0 1 1 1v11M3 21h18M8 8h3M8 12h3M8 16h3"></path></svg>Part of the family-owned Laryan Holding group</div><div class="row" style="margin-top: auto"><a class="b2" href="https://maps.google.com/?q=Lund,Sweden" target="_blank" rel="noopener">Get directions</a></div></article>
+</div></div></section>
+<section class="to-opt"><div class="to-label"><span class="to-k">B</span><span><strong>Bus route</strong><span>The two offices as stops on a bus line — from where Truxco started to where it is today.</span></span></div>
+<div class="to-wrap"><div class="to-head"><span class="to-eye">Where to find us</span><h2 class="to-h2">Two offices in Skåne</h2></div><div class="b-card">
+<div class="b-line" aria-hidden="true"><span class="b-dot"></span><span class="b-track"></span><span class="b-bus"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex: none"><rect x="4" y="3" width="16" height="15" rx="3"></rect><path d="M4 11h16M8 18v3M16 18v3"></path></svg></span><span class="b-track"></span><span class="b-dot on"></span></div>
+<div class="b-stops">
+<div class="b-stop"><span class="b-when">Since 2015</span><h3>Lund</h3><span class="tag-g">Office</span><p>Close to where it all started. Truxco is part of the family-owned Laryan Holding group.</p><div class="row"><a class="b2" href="https://maps.google.com/?q=Lund,Sweden" target="_blank" rel="noopener">Get directions</a></div></div>
+<div class="b-stop b-r"><span class="b-when">Today</span><h3>Staffanstorp</h3><span class="tag-gr">Headquarters</span><p>Our head office and bus yard. Visits are by appointment.</p><div class="row"><a class="b1" href="Contact.dc.html#visit">Book a visit</a><a class="b2" href="https://maps.google.com/?q=Staffanstorp,Sweden" target="_blank" rel="noopener">Get directions</a></div></div>
+</div></div></div></section>
+<section class="to-opt"><div class="to-label"><span class="to-k">C</span><span><strong>Map view</strong><span>A clean map card with both pins on the left, the two offices listed on the right.</span></span></div>
+<div class="to-wrap"><div class="to-head"><span class="to-eye">Where to find us</span><h2 class="to-h2">Two offices in Skåne</h2></div><div class="c-grid">
+<div class="c-map" aria-label="Map of Truxco offices in Skåne" role="img">
+<svg class="c-roads" aria-hidden="true" viewBox="0 0 600 440" preserveAspectRatio="xMidYMid slice"><path d="M-20 300 C 120 280 220 330 320 300 S 520 220 640 240" stroke="#FFFFFF" stroke-width="14" fill="none"></path><path d="M180 -20 C 200 120 170 240 230 460" stroke="#FFFFFF" stroke-width="10" fill="none"></path><path d="M380 -20 C 360 100 420 200 400 460" stroke="#FFFFFF" stroke-width="8" fill="none"></path><path d="M-20 120 C 160 140 360 90 640 110" stroke="#FFFFFF" stroke-width="6" fill="none"></path><path d="M390 150 C 340 200 260 240 215 280" stroke="#278641" stroke-width="3" stroke-dasharray="8 8" fill="none"></path></svg>
+<span class="c-pin" style="left: 62%; top: 30%"><span class="c-pd small"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex: none"><path d="M12 22s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12z"></path><circle cx="12" cy="10" r="2.6"></circle></svg></span><span class="c-pl">Lund</span></span>
+<span class="c-pin" style="left: 34%; top: 60%"><span class="c-pd"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex: none"><path d="M12 22s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12z"></path><circle cx="12" cy="10" r="2.6"></circle></svg></span><span class="c-pl">Staffanstorp · HQ</span></span>
+<span class="c-region">Skåne, Sweden</span>
+</div>
+<div class="c-list">
+<article class="c-row"><div class="c-top"><span class="ic40"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#278641" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="flex: none"><path d="M12 22s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12z"></path><circle cx="12" cy="10" r="2.6"></circle></svg></span><span class="tag-gr">Headquarters</span></div><h3>Staffanstorp</h3><p>Head office and bus yard. Visits by appointment, Mon–Fri 08:00–17:00.</p><div class="row"><a class="b1" href="Contact.dc.html#visit">Book a visit</a><a class="b2" href="https://maps.google.com/?q=Staffanstorp,Sweden" target="_blank" rel="noopener">Get directions</a></div></article>
+<article class="c-row"><div class="c-top"><span class="ic40"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#278641" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="flex: none"><path d="M12 22s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12z"></path><circle cx="12" cy="10" r="2.6"></circle></svg></span><span class="tag-g">Office</span></div><h3>Lund</h3><p>Close to where it all started in 2015.</p><div class="row"><a class="b2" href="https://maps.google.com/?q=Lund,Sweden" target="_blank" rel="noopener">Get directions</a></div></article>
+</div></div></div></section>
+<section class="to-opt"><div class="to-label"><span class="to-k">D</span><span><strong>Big numbers</strong><span>Minimal and editorial: each office gets a large number, short text and links — no boxes inside boxes.</span></span></div>
+<div class="to-wrap"><div class="d-grid">
+<div class="d-intro"><span class="to-eye">Where to find us</span><h2 class="to-h2">Two offices in Skåne</h2><p>Both offices are in southern Sweden, a short drive apart. Truxco is part of the family-owned Laryan Holding group.</p></div>
+<article class="d-off"><span class="d-n">01</span><span class="tag-gr" style="align-self: flex-start">Headquarters</span><h3>Staffanstorp</h3><p>Head office and bus yard. Come and see the buses in person — visits by appointment.</p><div class="d-links"><a href="Contact.dc.html#visit">Book a visit <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#278641" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex: none"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a><a href="https://maps.google.com/?q=Staffanstorp,Sweden" target="_blank" rel="noopener">Get directions <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#278641" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex: none"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a></div></article>
+<article class="d-off"><span class="d-n">02</span><span class="tag-g" style="align-self: flex-start">Office</span><h3>Lund</h3><p>Close to where it all started in 2015.</p><div class="d-links"><a href="https://maps.google.com/?q=Lund,Sweden" target="_blank" rel="noopener">Get directions <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#278641" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex: none"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a></div></article>
+</div></div></section>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":3090}}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>
