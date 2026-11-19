@@ -256,3 +256,8 @@ Second artboard "UsedBuses.dc.html" in the V2 preview (https://claude.ai/artifac
   - Components: Bus card, Similar bus card, KPI tile, Highlight, Spec item, Inspection row, Step, Answer card, Channel card, Offer popup.
   - "Website features" board with the same status legend as the canvas.
   - Old V1 controls (gold Accent "Talk to us", blue Ghost links, copy field, loading button, etc.) moved down to y≈6100 under the label "OLD · V1 controls"; not deleted. The user's reference photos on the page were left untouched.
+
+## About us page — V2 (19 Nov)
+- Preview board `website-v2/AboutUs.dc.html`; Figma frame "Truxco — About us V2 (Tanveer FeedBack)" (node 629:930) on the V2 page, right of Contact us.
+- Sections: hero (header + footer cloned from Contact, About active) · Our story (option D: handshake photo with quote + icon timeline 2015 / Growing / Today / Next) · Four principles · Our team (option D Spotlight: name list + profile card) · Two offices (option C map view, illustrative map) · Looking forward (option A clean split) · footer.
+- To confirm: team photos (green silhouettes for now), one-line bios per person, org number (site 559123-4567 vs footer 559002-5127). Map is illustrative, not a real map.
