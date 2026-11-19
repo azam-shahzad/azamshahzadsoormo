@@ -399,6 +399,26 @@ a{color:#3050A6}a:hover{color:#151923}
 @media (prefers-reduced-motion: reduce){.ofm-pd{animation:none}}
 @media (max-width: 860px){.ofm-grid{grid-template-columns:minmax(0,1fr)}.ofm-map{min-height:320px}}
 @media (max-width: 600px){.ofm-row{padding:24px}}
+
+.sty-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:64px;align-items:stretch}
+.sty-img{position:relative;border-radius:24px;overflow:hidden;min-height:600px;display:flex;align-items:flex-end;background:#0E162A}
+.sty-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.sty-shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(14,22,42,0) 40%,rgba(14,22,42,.85) 100%)}
+.sty-q{position:relative;margin:0;padding:36px;color:#FFFFFF}
+.sty-q p{margin:0;font-family:'Barlow',sans-serif;font-weight:600;font-size:28px;line-height:1.3}
+.sty-q footer{margin-top:12px;font-weight:600;color:#9CE7B1;font-size:14px}
+.sty-tx{display:flex;flex-direction:column;gap:20px;justify-content:center}
+.sty-tl{list-style:none;margin:12px 0 0;padding:0;display:flex;flex-direction:column}
+.sty-tl li{position:relative;display:grid;grid-template-columns:44px minmax(0,1fr);gap:20px;padding:0 0 24px}
+.sty-tl li::before{content:"";position:absolute;left:21px;top:48px;bottom:4px;width:2px;background:repeating-linear-gradient(180deg,#BCC3D7 0 8px,transparent 8px 14px)}
+.sty-tl li:last-child{padding-bottom:0}.sty-tl li:last-child::before{display:none}
+.sty-dot{width:44px;height:44px;border-radius:50%;background:#FFFFFF;border:2px solid #C5F1D1;box-sizing:border-box;display:flex;align-items:center;justify-content:center}
+.sty-tl li.on .sty-dot{background:#278641;border-color:#278641;box-shadow:0 0 0 8px rgba(39,134,65,.15)}
+.sty-c{display:flex;flex-direction:column;gap:3px;padding-top:2px}
+.sty-when{font-family:'Barlow',sans-serif;font-weight:700;font-size:14px;letter-spacing:.06em;text-transform:uppercase;color:#278641}
+.sty-c strong{font-family:'Barlow',sans-serif;font-size:21px;color:#151923}.sty-c>span:last-child{font-size:14px;line-height:1.55;color:#475476}
+@media (max-width: 860px){.sty-grid{grid-template-columns:minmax(0,1fr);gap:40px}.sty-img{min-height:440px}}
+@media (max-width: 600px){.sty-q{padding:24px}.sty-q p{font-size:22px}}
 </style>
 </helmet>
 <div id="tx-root" style="position: relative; font-family: Inter, system-ui, sans-serif; color: #151923; background: #F5F6F9; font-size: 16px; font-weight: 500; line-height: 1.55">
@@ -480,22 +500,14 @@ a{color:#3050A6}a:hover{color:#151923}
 
 <!-- STORY -->
 <section id="story" class="ab-sec" aria-labelledby="ab-story-h" style="padding: 112px 24px 104px">
-<div class="ab-wrap ab-story">
-<div style="display: flex; flex-direction: column; gap: 22px">
+<div class="ab-wrap sty-grid">
+<div class="sty-img"><img src="/_blob/3eae12920f603ca30a13bfc0fcc0e7fe" alt="A Truxco specialist shaking hands with a customer at handover"><div aria-hidden="true" class="sty-shade"></div>
+<blockquote class="sty-q"><p>“We believe in business built on trust, accountability, and a handshake mentality.”</p><footer>Welcome to Truxco.</footer></blockquote></div>
+<div class="sty-tx">
 <span class="ab-eyebrow">Our story</span>
 <h2 id="ab-story-h" class="ab-h2">We are Truxco.</h2>
 <p class="ab-lead">We started in Lund in 2015 with one idea: bus trading should be personal and direct.</p>
-<p class="ab-p">Today we are a growing team based in Staffanstorp, with an extra office in Lund. As part of the family-owned Laryan Holding group, we trade new and used vehicles — from a single bus to a full fleet. Our buses run on Swedish roads and across Europe.</p>
-<p class="ab-p">Our team comes from different backgrounds and speaks many languages. What we share is how we work: with professionalism, collaboration, growth and trust.</p>
-<div class="ab-mile">
-<div><strong>2015</strong><span>Founded in Lund</span></div>
-<div><strong>Today</strong><span>Head office in Staffanstorp, office in Lund</span></div>
-<div class="on"><strong>Next</strong><span>Electric buses and charging</span></div>
-</div>
-</div>
-<div class="ab-story-img">
-<img src="/_blob/3eae12920f603ca30a13bfc0fcc0e7fe" alt="A Truxco specialist shaking hands with a customer at handover">
-<blockquote class="ab-quote"><p>“We believe in business built on trust, accountability, and a handshake mentality.”</p><footer>Welcome to Truxco.</footer></blockquote>
+<ol class="sty-tl"><li class=""><span class="sty-dot"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#278641" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex: none"><path d="M5 21V4M5 4h11l-2 4 2 4H5"></path></svg></span><span class="sty-c"><span class="sty-when">2015</span><strong>Founded in Lund</strong><span>Started with one idea: personal, direct bus trading.</span></span></li><li class=""><span class="sty-dot"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#278641" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex: none"><circle cx="9" cy="8" r="3.5"></circle><path d="M2.5 20a6.5 6.5 0 0 1 13 0"></path><path d="M16 4.6a3.5 3.5 0 0 1 0 6.8M18 14.2a6.5 6.5 0 0 1 3.5 5.8"></path></svg></span><span class="sty-c"><span class="sty-when">Growing</span><strong>Laryan Holding group</strong><span>Part of a family-owned group — from one bus to full fleets.</span></span></li><li class=""><span class="sty-dot"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#278641" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex: none"><path d="M12 22s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12z"></path><circle cx="12" cy="10" r="2.6"></circle></svg></span><span class="sty-c"><span class="sty-when">Today</span><strong>Staffanstorp &amp; Lund</strong><span>Head office and yard in Staffanstorp, second office in Lund.</span></span></li><li class="on"><span class="sty-dot"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex: none"><path d="M13 2L4 14h7l-1 8 9-12h-7l1-8z"></path></svg></span><span class="sty-c"><span class="sty-when">Next</span><strong>Electric future</strong><span>Electric buses, charging and self-sufficient depots.</span></span></li></ol>
 </div>
 </div>
 </section>
