@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Our story options</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@500;600;700;800&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<style>body{margin:0;background:#F5F6F9}
+.to-root{font-family:Inter,system-ui,sans-serif;color:#151923;background:#F5F6F9;padding:56px 24px 40px;display:flex;flex-direction:column;gap:40px}
+.to-opt{border:1px dashed #C9CFDD;border-radius:28px;padding:32px 32px 56px}
+.to-label{display:flex;gap:14px;align-items:center;margin:0 auto 40px;max-width:1240px}
+.to-k{width:40px;height:40px;border-radius:50%;background:#0E162A;color:#FFFFFF;font-family:Barlow,sans-serif;font-weight:700;font-size:18px;display:flex;align-items:center;justify-content:center;flex:none}
+.to-label strong{display:block;font-family:Barlow,sans-serif;font-size:20px}.to-label>span>span{font-size:14px;color:#5A6A96}
+.to-wrap{max-width:1240px;margin:0 auto}
+.to-eye{font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#278641}
+.to-h2{margin:0;font-family:Barlow,sans-serif;font-weight:700;font-size:46px;line-height:1.06;letter-spacing:-.01em}
+h3,p,blockquote{margin:0}
+.lead{font-size:19px;line-height:1.6;color:#151923;font-weight:500}
+.p{font-size:16px;line-height:1.75;color:#475476}
+.ic40{flex:none;width:40px;height:40px;border-radius:50%;background:#F3FCF5;border:1px solid #C5F1D1;box-sizing:border-box;display:inline-flex;align-items:center;justify-content:center}
+img{display:block}
+/* A */
+.a-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:72px;align-items:center}
+.a-tx{display:flex;flex-direction:column;gap:20px}
+.a-q{border-left:3px solid #278641;padding:6px 0 6px 20px}.a-q p{font-family:Barlow,sans-serif;font-weight:500;font-size:22px;line-height:1.4;color:#151923}
+.a-sign{display:flex;align-items:center;gap:10px;font-weight:600;color:#278641}.a-dot{width:28px;height:2px;background:#278641}
+.a-art{position:relative;height:560px}
+.a-big{position:absolute;right:0;top:0;width:78%;height:82%;border-radius:24px;overflow:hidden}
+.a-small{position:absolute;left:0;bottom:0;width:48%;height:44%;border-radius:20px;overflow:hidden;border:8px solid #F5F6F9}
+.a-big img,.a-small img{width:100%;height:100%;object-fit:cover}
+.a-badge{position:absolute;left:6%;top:12%;background:#278641;color:#FFFFFF;border-radius:20px;padding:20px 22px;display:flex;flex-direction:column;gap:4px;box-shadow:0 20px 40px -18px rgba(39,134,65,.6);font-size:13px;line-height:1.35;color:#E2F8E8}
+.a-y{font-family:Barlow,sans-serif;font-weight:800;font-size:44px;line-height:1;color:#FFFFFF}
+.a-chip{position:absolute;right:20px;bottom:22%;display:inline-flex;align-items:center;gap:8px;background:#FFFFFF;font-size:13px;font-weight:600;padding:10px 14px;border-radius:999px;box-shadow:0 10px 24px -10px rgba(14,22,42,.3)}
+/* B */
+.b-top{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:64px;align-items:end;margin-bottom:56px}
+.b-h{display:flex;flex-direction:column;gap:14px}.b-r{display:flex;flex-direction:column;gap:14px}
+.b-line{position:relative;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px}
+.b-line::before{content:"";position:absolute;left:22px;right:22px;top:22px;height:2px;background:repeating-linear-gradient(90deg,#BCC3D7 0 10px,transparent 10px 18px)}
+.b-step{position:relative;display:flex;flex-direction:column;gap:8px}
+.b-dot{width:44px;height:44px;border-radius:50%;background:#FFFFFF;border:2px solid #C5F1D1;display:flex;align-items:center;justify-content:center;margin-bottom:12px;box-sizing:border-box}
+.b-step.on .b-dot{background:#278641;border-color:#278641;box-shadow:0 0 0 8px rgba(39,134,65,.15)}
+.b-when{font-family:Barlow,sans-serif;font-weight:700;font-size:15px;letter-spacing:.06em;text-transform:uppercase;color:#278641}
+.b-step h3{font-family:Barlow,sans-serif;font-weight:700;font-size:22px}.b-step p{font-size:14px;line-height:1.6;color:#475476}
+.b-quote{margin-top:56px;display:grid;grid-template-columns:200px minmax(0,1fr);gap:32px;align-items:center;background:#FFFFFF;border:1px solid #E3E6EE;border-radius:22px;padding:16px 40px 16px 16px}
+.b-quote img{width:200px;height:150px;object-fit:cover;border-radius:14px}
+.b-quote p{font-family:Barlow,sans-serif;font-weight:500;font-size:26px;line-height:1.35;color:#151923}.b-quote span{display:block;margin-top:10px;font-weight:600;color:#278641;font-size:14px}
+/* C */
+.c-wrap{display:flex;flex-direction:column;gap:28px}
+.c-h{margin:0;font-family:Barlow,sans-serif;font-weight:700;font-size:72px;line-height:1;letter-spacing:-.02em;max-width:16ch}
+.c-h span{color:#BCC3D7}
+.c-cols{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);gap:64px;padding-top:28px;border-top:1px solid #DFE3EC}
+.c-quote{position:relative;background:#F3FCF5;border:1px solid #DCF2E2;border-radius:24px;padding:48px 56px 48px 120px}
+.c-mark{position:absolute;left:40px;top:18px;font-family:Barlow,sans-serif;font-weight:800;font-size:140px;line-height:1;color:#278641}
+.c-quote p{font-family:Barlow,sans-serif;font-weight:600;font-size:34px;line-height:1.3;color:#151923}
+.c-facts{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px}
+.c-facts div{display:flex;flex-direction:column;gap:4px;padding-top:16px;border-top:2px solid #278641}
+.c-facts strong{font-family:Barlow,sans-serif;font-size:28px}.c-facts span{font-size:14px;color:#475476}
+/* D */
+.d-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:64px;align-items:stretch}
+.d-img{position:relative;border-radius:24px;overflow:hidden;min-height:600px;display:flex;align-items:flex-end}
+.d-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.d-shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(14,22,42,0) 40%,rgba(14,22,42,.85) 100%)}
+.d-q{position:relative;padding:36px;color:#FFFFFF}.d-q p{font-family:Barlow,sans-serif;font-weight:600;font-size:28px;line-height:1.3}.d-q span{display:block;margin-top:12px;font-weight:600;color:#9CE7B1;font-size:14px}
+.d-tx{display:flex;flex-direction:column;gap:20px;justify-content:center}
+.d-tl{list-style:none;margin:12px 0 0;padding:0;display:flex;flex-direction:column}
+.d-tl li{position:relative;display:grid;grid-template-columns:80px minmax(0,1fr);gap:20px;padding:0 0 26px}
+.d-tl li::before{content:"";position:absolute;left:96px;top:8px;bottom:-8px;width:2px;background:#DFE3EC}
+.d-tl li:last-child::before{display:none}
+.d-tl li::after{content:"";position:absolute;left:91px;top:4px;width:12px;height:12px;border-radius:50%;background:#FFFFFF;border:2px solid #278641}
+.d-tl li.on::after{background:#278641;box-shadow:0 0 0 6px rgba(39,134,65,.15)}
+.d-y{font-family:Barlow,sans-serif;font-weight:700;font-size:18px;color:#278641}
+.d-c{padding-left:24px;display:flex;flex-direction:column;gap:2px}.d-c strong{font-family:Barlow,sans-serif;font-size:21px}.d-c span{font-size:14px;color:#475476}
+</style>
+</helmet>
+<div class="to-root">
+<div class="to-wrap" style="display: flex; flex-direction: column; gap: 6px"><span class="to-eye">About us · pick one</span><h1 style="margin: 0; font-family: Barlow, sans-serif; font-size: 48px">“Our story” — 4 options</h1></div>
+<section class="to-opt"><div class="to-label"><span class="to-k">A</span><span><strong>Photo collage</strong><span>Two overlapping photos with a floating “Since 2015” badge. Text on the left, quote as a highlighted line.</span></span></div>
+<div class="to-wrap a-grid"><div class="a-tx"><span class="to-eye">Our story</span><h2 class="to-h2">We are Truxco.</h2><p class="lead">We started in Lund in 2015 with one idea: bus trading should be personal and direct.</p><p class="p">Today we are a growing team based in Staffanstorp, with an extra office in Lund. As part of the family-owned Laryan Holding group, we trade new and used vehicles — from a single bus to a full fleet.</p>
+<blockquote class="a-q"><p>“We believe in business built on trust, accountability, and a handshake mentality.”</p></blockquote>
+<div class="a-sign"><span class="a-dot"></span>Welcome to Truxco.</div></div>
+<div class="a-art"><div class="a-big"><img src="/_blob/3eae12920f603ca30a13bfc0fcc0e7fe" alt="A Truxco specialist shaking hands with a customer"></div><div class="a-small"><img src="/_blob/c412b4374d734066a683e1b2284738be" alt="The Truxco yard in Staffanstorp"></div>
+<div class="a-badge"><span class="a-y">2015</span><span>Founded in Lund,<br>Skåne</span></div>
+<div class="a-chip"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#278641" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex: none"><circle cx="9" cy="8" r="3.5"></circle><path d="M2.5 20a6.5 6.5 0 0 1 13 0"></path><path d="M16 4.6a3.5 3.5 0 0 1 0 6.8M18 14.2a6.5 6.5 0 0 1 3.5 5.8"></path></svg>Family-owned · Laryan Holding</div></div></div></section>
+<section class="to-opt"><div class="to-label"><span class="to-k">B</span><span><strong>Journey timeline</strong><span>Short intro and quote on top, then the story as four steps on a line — easy to scan in seconds.</span></span></div>
+<div class="to-wrap"><div class="b-top"><div class="b-h"><span class="to-eye">Our story</span><h2 class="to-h2">We are Truxco.</h2></div><div class="b-r"><p class="lead">We started in Lund in 2015 with one idea: bus trading should be personal and direct.</p><p class="p">Our team comes from different backgrounds and speaks many languages. What we share is how we work: with professionalism, collaboration, growth and trust.</p></div></div>
+<div class="b-line"><div class="b-step "><span class="b-dot"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#278641" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex: none"><path d="M5 21V4M5 4h11l-2 4 2 4H5"></path></svg></span><span class="b-when">2015</span><h3>Founded in Lund</h3><p>Started with one idea: personal, direct bus trading.</p></div><div class="b-step "><span class="b-dot"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#278641" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex: none"><circle cx="9" cy="8" r="3.5"></circle><path d="M2.5 20a6.5 6.5 0 0 1 13 0"></path><path d="M16 4.6a3.5 3.5 0 0 1 0 6.8M18 14.2a6.5 6.5 0 0 1 3.5 5.8"></path></svg></span><span class="b-when">Growing</span><h3>Laryan Holding group</h3><p>Part of a family-owned group — from one bus to full fleets.</p></div><div class="b-step "><span class="b-dot"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#278641" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex: none"><path d="M12 22s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12z"></path><circle cx="12" cy="10" r="2.6"></circle></svg></span><span class="b-when">Today</span><h3>Staffanstorp & Lund</h3><p>Head office and yard in Staffanstorp, second office in Lund.</p></div><div class="b-step on"><span class="b-dot"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex: none"><path d="M13 2L4 14h7l-1 8 9-12h-7l1-8z"></path></svg></span><span class="b-when">Next</span><h3>Electric future</h3><p>Electric buses, charging and self-sufficient depots.</p></div></div>
+<div class="b-quote"><img src="/_blob/3eae12920f603ca30a13bfc0fcc0e7fe" alt="Handshake at the Truxco yard"><div><p>“We believe in business built on trust, accountability, and a handshake mentality.”</p><span>Welcome to Truxco.</span></div></div></div></section>
+<section class="to-opt"><div class="to-label"><span class="to-k">C</span><span><strong>Editorial</strong><span>Large heading across the page, the quote as a big statement with green quote marks, then text in two columns and three facts.</span></span></div>
+<div class="to-wrap c-wrap"><span class="to-eye">Our story</span><h2 class="c-h">We are Truxco.<span> Personal, direct bus trading since 2015.</span></h2>
+<div class="c-cols"><p class="lead">We started in Lund in 2015 with one idea: bus trading should be personal and direct.</p><p class="p">Today we are a growing team based in Staffanstorp, with an extra office in Lund. As part of the family-owned Laryan Holding group, we trade new and used vehicles — from a single bus to a full fleet. Our team comes from different backgrounds and speaks many languages. What we share is how we work: with professionalism, collaboration, growth and trust.</p></div>
+<div class="c-quote"><span class="c-mark" aria-hidden="true">“</span><p>We believe in business built on trust, accountability, and a handshake mentality.</p></div>
+<div class="c-facts"><div><strong>2015</strong><span>Founded in Lund</span></div><div><strong>2 offices</strong><span>Staffanstorp and Lund</span></div><div><strong>Family-owned</strong><span>Part of Laryan Holding</span></div><div><strong>Europe</strong><span>Buses on Swedish and European roads</span></div></div></div></section>
+<section class="to-opt"><div class="to-label"><span class="to-k">D</span><span><strong>Photo + vertical timeline</strong><span>Big photo with the quote on it on the left; heading, short text and a vertical timeline on the right.</span></span></div>
+<div class="to-wrap d-grid"><div class="d-img"><img src="/_blob/3eae12920f603ca30a13bfc0fcc0e7fe" alt="A Truxco specialist shaking hands with a customer"><div class="d-shade"></div><div class="d-q"><p>“We believe in business built on trust, accountability, and a handshake mentality.”</p><span>Welcome to Truxco.</span></div></div>
+<div class="d-tx"><span class="to-eye">Our story</span><h2 class="to-h2">We are Truxco.</h2><p class="lead">We started in Lund in 2015 with one idea: bus trading should be personal and direct.</p><ol class="d-tl"><li class=""><span class="d-y">2015</span><span class="d-c"><strong>Started in Lund</strong><span>Bus trading made personal and direct.</span></span></li><li class=""><span class="d-y">Today</span><span class="d-c"><strong>Head office in Staffanstorp</strong><span>A growing team, plus our office in Lund.</span></span></li><li class=""><span class="d-y">Group</span><span class="d-c"><strong>Laryan Holding</strong><span>Family-owned — from one bus to full fleets.</span></span></li><li class="on"><span class="d-y">Next</span><span class="d-c"><strong>Electric buses</strong><span>Charging know-how and self-sufficient depots.</span></span></li></ol></div></div></section>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":3560}}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>
