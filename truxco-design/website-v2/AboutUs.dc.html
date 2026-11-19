@@ -321,18 +321,21 @@ a{color:#3050A6}a:hover{color:#151923}
 .ab-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:auto;padding-top:8px}
 .ab-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:48px;padding:0 20px;border-radius:6px;background:#278641;color:#FFFFFF;text-decoration:none;font-weight:600;font-size:15px;transition:background .15s}.ab-btn:hover{background:#1F6E35;color:#FFFFFF}
 .ab-btn2{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:48px;padding:0 20px;border-radius:6px;background:#FFFFFF;color:#151923;border:1px solid #D9DDE8;text-decoration:none;font-weight:600;font-size:15px;transition:border-color .15s}.ab-btn2:hover{border-color:#278641;color:#151923}
-.ab-fwd{position:relative;overflow:hidden;border-radius:24px;background:#0E162A;min-height:480px;display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr)}
-.ab-fwd-img{position:absolute;top:0;right:0;bottom:0;width:58%;height:100%;object-fit:cover}
-.ab-fwd-shade{position:absolute;inset:0;background:linear-gradient(90deg,#0E162A 0%,#0E162A 42%,rgba(14,22,42,0.55) 62%,rgba(14,22,42,0.05) 100%)}
-.ab-fwd-txt{position:relative;padding:56px;display:flex;flex-direction:column;justify-content:center;gap:20px}
-.ab-fwd h2{margin:0;font-family:'Barlow',sans-serif;font-weight:700;font-size:clamp(28px,3vw,38px);line-height:1.12;color:#FFFFFF}
-.ab-fwd p{margin:0;font-size:16px;line-height:1.7;color:#BCC3D7}
-.ab-ticks{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:10px}
-.ab-ticks li{display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:600;color:#FFFFFF;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.14);padding:8px 14px;border-radius:999px}
+.ab-fwd{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:56px;background:#FFFFFF;border:1px solid #E3E6EE;border-radius:24px;padding:48px}
+.ab-fwd-txt{display:flex;flex-direction:column;gap:18px}
+.ab-fwd h2{margin:0;font-family:'Barlow',sans-serif;font-weight:700;font-size:clamp(28px,3vw,36px);line-height:1.12;letter-spacing:-0.01em;color:#151923}
+.ab-fwd-lead{margin:0;font-size:17px;line-height:1.65;color:#475476}
+.ab-fwd-list{list-style:none;margin:8px 0 10px;padding:0;display:flex;flex-direction:column}
+.ab-fwd-list li{display:flex;gap:14px;align-items:flex-start;padding:14px 0;border-top:1px solid #ECEEF4}
+.ab-fwd-list li:last-child{border-bottom:1px solid #ECEEF4}
+.ab-fwd-list strong{display:block;font-size:16px;color:#151923}.ab-fwd-list li span span{display:block;font-size:14px;line-height:1.55;color:#475476;margin-top:2px}
+.ab-fwd-img{position:relative;border-radius:18px;overflow:hidden;min-height:480px}
+.ab-fwd-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.ab-fwd-chip{position:absolute;left:16px;top:16px;display:inline-flex;align-items:center;gap:6px;background:#FFFFFF;font-size:13px;font-weight:600;color:#151923;padding:7px 12px;border-radius:999px}
 .ab-ghost{display:inline-flex;align-items:center;justify-content:center;height:48px;padding:0 20px;border-radius:6px;border:1px solid rgba(255,255,255,0.28);color:#FFFFFF;text-decoration:none;font-weight:600;font-size:15px;transition:background .15s}.ab-ghost:hover{background:rgba(255,255,255,0.08);color:#FFFFFF}
 .ab-btn:focus-visible,.ab-btn2:focus-visible,.ab-ghost:focus-visible,.ab-link:focus-visible{outline:2px solid #278641;outline-offset:3px}
 @media (max-width: 1080px){.ab-facts{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:22px}.ab-fact:nth-child(3){border-left:0}.ab-team{grid-template-columns:repeat(2,minmax(0,1fr))}.ab-princ{grid-template-columns:repeat(2,minmax(0,1fr))}.ab-story{gap:48px}}
-@media (max-width: 860px){.ab-story,.ab-offices{grid-template-columns:minmax(0,1fr)}.ab-story-img{min-height:460px}.ab-fwd{grid-template-columns:minmax(0,1fr)}.ab-fwd-img{width:100%;height:220px;top:auto;bottom:0}.ab-fwd-shade{background:linear-gradient(180deg,#0E162A 0%,#0E162A 60%,rgba(14,22,42,0.3) 100%)}.ab-fwd-txt{padding:36px 28px 240px}}
+@media (max-width: 860px){.ab-story,.ab-offices{grid-template-columns:minmax(0,1fr)}.ab-story-img{min-height:460px}.ab-fwd{grid-template-columns:minmax(0,1fr);gap:32px;padding:32px}.ab-fwd-img{min-height:300px}}
 @media (max-width: 600px){.ab-panel{height:360px}.ab-cut{height:450px}.ab-photo{height:280px}.ab-facts{margin:-40px 12px 0;grid-template-columns:minmax(0,1fr);padding:20px}.ab-fact{border-left:0;padding:0}.ab-team,.ab-princ,.ab-mile{grid-template-columns:minmax(0,1fr)}.ab-office{padding:24px}.ab-quote p{font-size:18px}.ab-sec{padding-top:64px!important;padding-bottom:64px!important}}
 
 .d-box{display:grid;grid-template-columns:380px minmax(0,1fr);gap:24px;align-items:stretch}
@@ -508,15 +511,14 @@ a{color:#3050A6}a:hover{color:#151923}
 <!-- LOOKING FORWARD -->
 <section id="forward" class="ab-sec" aria-labelledby="ab-fwd-h" style="padding: 0 24px 112px">
 <div class="ab-wrap ab-fwd">
-<img class="ab-fwd-img" src="/_blob/f430994695698a72d72784b9fdf0f2eb" alt="An electric city bus at the Truxco yard">
-<div aria-hidden="true" class="ab-fwd-shade"></div>
 <div class="ab-fwd-txt">
-<span class="ab-eyebrow" style="color: #9CE7B1">Looking forward</span>
+<span class="ab-eyebrow">Looking forward</span>
 <h2 id="ab-fwd-h">The biggest transition the bus industry has seen in decades — and we want to help drive it.</h2>
-<p>We invest in electric buses, build know-how in charging infrastructure and explore self-sufficient depots. Our goal: to be your partner for sustainable transport — today, and twenty years from now.</p>
-<ul class="ab-ticks"><li><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#9CE7B1" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="flex: none"><path d="M13 2L4 14h7l-1 8 9-12h-7l1-8z"></path></svg>Electric buses</li><li><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#9CE7B1" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="flex: none"><path d="M9 2v5M15 2v5M6 7h12v4a6 6 0 0 1-12 0V7zM12 17v5"></path></svg>Charging infrastructure</li><li><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#9CE7B1" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="flex: none"><path d="M5 19c0-8 6-14 15-14 0 9-6 15-14 15"></path><path d="M5 19l7-7"></path></svg>Self-sufficient depots</li></ul>
-<div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 8px"><a class="ab-btn" href="Contact.dc.html">Get in touch</a><a class="ab-ghost" href="UsedBuses.dc.html">Browse buses</a></div>
+<p class="ab-fwd-lead">Our goal: to be your partner for sustainable transport — today, and twenty years from now.</p>
+<ul class="ab-fwd-list"><li><span class="ab-ic"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#278641" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="flex: none"><path d="M13 2L4 14h7l-1 8 9-12h-7l1-8z"></path></svg></span><span><strong>Electric buses</strong><span>We invest in electric buses for Swedish and European operators.</span></span></li><li><span class="ab-ic"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#278641" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="flex: none"><path d="M9 2v5M15 2v5M6 7h12v4a6 6 0 0 1-12 0V7zM12 17v5"></path></svg></span><span><strong>Charging infrastructure</strong><span>We build know-how in charging, so the bus and the depot work together.</span></span></li><li><span class="ab-ic"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#278641" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="flex: none"><path d="M5 19c0-8 6-14 15-14 0 9-6 15-14 15"></path><path d="M5 19l7-7"></path></svg></span><span><strong>Self-sufficient depots</strong><span>We explore depot concepts that produce and store their own energy.</span></span></li></ul>
+<div style="display: flex; flex-wrap: wrap; gap: 10px"><a class="ab-btn" href="Contact.dc.html">Get in touch</a><a class="ab-btn2" href="UsedBuses.dc.html">Browse electric buses</a></div>
 </div>
+<div class="ab-fwd-img"><img src="/_blob/f430994695698a72d72784b9fdf0f2eb" alt="An electric city bus at the Truxco yard"><span class="ab-fwd-chip"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#278641" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex: none"><path d="M13 2L4 14h7l-1 8 9-12h-7l1-8z"></path></svg>Zero emission</span></div>
 </div>
 </section>
 
